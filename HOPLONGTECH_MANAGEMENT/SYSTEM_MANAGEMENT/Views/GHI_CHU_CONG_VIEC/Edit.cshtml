@@ -9,7 +9,7 @@
             <form id="candidatedata" class="form-horizontal" method="POST">
                
                 <div class="row">
-                    <div class="col-md-offset-2 col-md-8">
+                    <div class="col-md-offset-2 col-md-8 content">
                         <div class="panel">
                             <div class="panel-body">
                                 @using (Html.BeginForm())
@@ -17,7 +17,7 @@
                                     @Html.AntiForgeryToken()
 
                                     <div class="form-horizontal">
-                                        <h2 style="color: blue; font-family:'Times New Roman'; font-weight:bold">Cập nhật ghi chú công việc</h2>
+                                        <h2 class="col-md-offset-5">Cập nhật ghi chú công việc</h2>
                                         <hr />
                                         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
                                         @Html.HiddenFor(model => model.NOTED_ID)
@@ -25,7 +25,7 @@
                                         
 
                                         <div class="form-group">
-                                            <div class="control-label col-md-2" style="font-size:14px; font-weight:bold; font-family:'Times New Roman'">Ngày ghi chú:</div>
+                                            <div class="control-label col-md-2 text">Ngày ghi chú:</div>
                                             <div class="col-md-10">
                                                 @Html.EditorFor(model => model.DATE_NOTED, new { htmlAttributes = new { @class = "form-control" } })
                                                 @Html.ValidationMessageFor(model => model.DATE_NOTED, "", new { @class = "text-danger" })
@@ -33,7 +33,7 @@
                                         </div>
 
                                         <div class="form-group">
-                                            <div class="control-label col-md-2" style="font-size:14px; font-weight:bold; font-family:'Times New Roman'">Tiêu đề:</div>
+                                            <div class="control-label col-md-2">Tiêu đề:</div>
                                             <div class="col-md-10">
                                                 @Html.EditorFor(model => model.NOTED_NAME, new { htmlAttributes = new { @class = "form-control" } })
                                                 @Html.ValidationMessageFor(model => model.NOTED_NAME, "", new { @class = "text-danger" })
@@ -41,7 +41,7 @@
                                         </div>
 
                                         <div class="form-group">
-                                            <div class="control-label col-md-2" style="font-size:14px; font-weight:bold; font-family:'Times New Roman'">Nội dung:</div>
+                                            <div class="control-label col-md-2">Nội dung:</div>
                                             <div class="col-md-10">
                                                 @Html.EditorFor(model => model.NOTED_INFO, new { htmlAttributes = new { @class = "form-control"} })
                                                 @Html.ValidationMessageFor(model => model.NOTED_INFO, "", new { @class = "text-danger" })
@@ -49,7 +49,7 @@
                                         </div>
 
                                         <div class="form-group">
-                                            <div class="control-label col-md-2" style="font-size:14px; font-weight:bold; font-family:'Times New Roman'">Trạng thái:</div>
+                                            <div class="control-label col-md-2">Trạng thái:</div>
                                             <div class="col-md-10">
                                                 @Html.EditorFor(model => model.IS_DONE, new { htmlAttributes = new { @class = "form-control" } })
                                                 @Html.ValidationMessageFor(model => model.IS_DONE, "", new { @class = "text-danger" })
@@ -57,22 +57,21 @@
                                         </div>
 
                                         <div class="form-group">
-                                            <div class="control-label col-md-2" style="font-size:14px; font-weight:bold; font-family:'Times New Roman'">Ngày kết thúc:</div>
+                                            <div class="control-label col-md-2">Ngày kết thúc:</div>
                                             <div class="col-md-10">
                                                 @Html.EditorFor(model => model.DATE_DONE, new { htmlAttributes = new { @class = "form-control" } })
                                                 @Html.ValidationMessageFor(model => model.DATE_DONE, "", new { @class = "text-danger" })
                                             </div>
-                                        </div>
-
-                                        <div class="form-group">
-                                            <div class="col-md-offset-2 col-md-10">
-                                                <input type="submit" value="Cập nhật" class="btn btn-orange-md roboto" style="background-color:blue; color:white; font-family:'Times New Roman'"/>
-                                            </div>
+                                        </div>                                   
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="col-md-offset-2 col-md-10">
+                                            <input type="submit" value="Cập nhật" class="btn btn-orange-md roboto"/>
                                         </div>
                                     </div>
                                 }   
                                 <div>
-                                    @Html.ActionLink("Quay lại", "/Index/" + @Session["USER_ID"])
+                                    @Html.ActionLink("Quay lại danh sách ghi chú", "/Index/" + @Session["USER_ID"])
                                 </div>
                             </div>
                         </div>

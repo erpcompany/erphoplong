@@ -1,0 +1,13 @@
+﻿*{
+    margin: 0px;
+    padding: 0px;
+}
+.form-horizontal{
+    margin: 30px 0px;
+}
+.form-group .btn-default:hover{
+    background: aqua;
+}
+.backlink a:hover{
+    color: red;
+}

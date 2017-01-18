@@ -3,24 +3,24 @@
 @{
     ViewBag.Title = "Danh sách phòng ban";
 }
+<link href="~/Content/css/Departments/indexDepart.css" rel="stylesheet" type="text/css"/>
+<h2>PHÒNG BAN</h2>
 
-<h2>Index</h2>
-
-<p>
-    @Html.ActionLink("Create New", "Create")
+<p class="create">
+    @Html.ActionLink("Tạo mới", "Create")
 </p>
 <table class="table" border="1">
-    <tr style="background-color:cornflowerblue; color: white; ">
-        <th style="text-align:center">
+    <tr class="title">
+        <th>
             Tên Phòng ban
         </th>
-        <th style="text-align:center">
+        <th>
             Trưởng phòng
         </th>
-        <th style="text-align:center">
+        <th>
             Ghi chú
         </th>
-        <th style="text-align:center"> Chức năng</th>
+        <th> Chức năng</th>
     </tr>
 
 @foreach (var item in Model) {
@@ -37,9 +37,8 @@
         <td style="text-align:center; font-size: 38;">
             <a href="/DEPARTMENTs/Edit/@item.DEPARTMENT_ID"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a> &nbsp;&nbsp;&nbsp;
             <a href="/DEPARTMENTs/Details/@item.DEPARTMENT_ID"><i class="fa fa-info-circle" aria-hidden="true"></i></a> &nbsp;&nbsp;&nbsp;
-            <a href="/DEPARTMENTs/Delete/@item.DEPARTMENT_ID"><i class="fa fa-trash-o " aria-hidden="true"></i></a> &nbsp;&nbsp;&nbsp;
-            <a href="/DEPARTMENTs/Department_Users/@item.DEPARTMENT_ID"><i class="fa fa-list" aria-hidden="true"></i></a> &nbsp;&nbsp;&nbsp;
-           
+            <a href="/DEPARTMENTs/Delete/@item.DEPARTMENT_ID"><i class="fa fa-trash-o " onclick="return confirm("Bạn có chắc muốn xóa không?")" aria-hidden="true"></i></a> &nbsp;&nbsp;&nbsp;
+            <a href="/DEPARTMENTs/Department_Users/@item.DEPARTMENT_ID"><i class="fa fa-list" aria-hidden="true"></i></a> &nbsp;&nbsp;&nbsp;          
         </td>
     </tr>
 }
