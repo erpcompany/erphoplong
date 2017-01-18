@@ -1,0 +1,90 @@
+﻿@model SYSTEM_MANAGEMENT.Models.USER_METAS
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>USER_METAS</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.SEX)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SEX)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BIRTHDAY)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BIRTHDAY)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.START_TIME)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.START_TIME)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NUMBER_PHONE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NUMBER_PHONE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SENIORITY)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SENIORITY)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NATIVE_LAND)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NATIVE_LAND)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LITERACY)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LITERACY)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DEPARTMENT.DEPARTMENT_NAME)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DEPARTMENT.DEPARTMENT_NAME)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.USER.USERNAME)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.USER.USERNAME)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

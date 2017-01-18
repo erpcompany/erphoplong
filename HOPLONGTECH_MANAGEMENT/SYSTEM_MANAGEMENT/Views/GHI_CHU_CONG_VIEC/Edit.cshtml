@@ -1,0 +1,92 @@
+﻿@model SYSTEM_MANAGEMENT.Models.GHI_CHU_CONG_VIEC
+
+@{
+    ViewBag.Title = "Cập nhật ghi chú";
+}
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <form id="candidatedata" class="form-horizontal" method="POST">
+               
+                <div class="row">
+                    <div class="col-md-offset-2 col-md-8">
+                        <div class="panel">
+                            <div class="panel-body">
+                                @using (Html.BeginForm())
+                                {
+                                    @Html.AntiForgeryToken()
+
+                                    <div class="form-horizontal">
+                                        <h2 style="color: blue; font-family:'Times New Roman'; font-weight:bold">Cập nhật ghi chú công việc</h2>
+                                        <hr />
+                                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                                        @Html.HiddenFor(model => model.NOTED_ID)
+                                        @Html.HiddenFor(model => model.USER_ID)
+                                        
+
+                                        <div class="form-group">
+                                            <div class="control-label col-md-2" style="font-size:14px; font-weight:bold; font-family:'Times New Roman'">Ngày ghi chú:</div>
+                                            <div class="col-md-10">
+                                                @Html.EditorFor(model => model.DATE_NOTED, new { htmlAttributes = new { @class = "form-control" } })
+                                                @Html.ValidationMessageFor(model => model.DATE_NOTED, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <div class="control-label col-md-2" style="font-size:14px; font-weight:bold; font-family:'Times New Roman'">Tiêu đề:</div>
+                                            <div class="col-md-10">
+                                                @Html.EditorFor(model => model.NOTED_NAME, new { htmlAttributes = new { @class = "form-control" } })
+                                                @Html.ValidationMessageFor(model => model.NOTED_NAME, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <div class="control-label col-md-2" style="font-size:14px; font-weight:bold; font-family:'Times New Roman'">Nội dung:</div>
+                                            <div class="col-md-10">
+                                                @Html.EditorFor(model => model.NOTED_INFO, new { htmlAttributes = new { @class = "form-control"} })
+                                                @Html.ValidationMessageFor(model => model.NOTED_INFO, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <div class="control-label col-md-2" style="font-size:14px; font-weight:bold; font-family:'Times New Roman'">Trạng thái:</div>
+                                            <div class="col-md-10">
+                                                @Html.EditorFor(model => model.IS_DONE, new { htmlAttributes = new { @class = "form-control" } })
+                                                @Html.ValidationMessageFor(model => model.IS_DONE, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <div class="control-label col-md-2" style="font-size:14px; font-weight:bold; font-family:'Times New Roman'">Ngày kết thúc:</div>
+                                            <div class="col-md-10">
+                                                @Html.EditorFor(model => model.DATE_DONE, new { htmlAttributes = new { @class = "form-control" } })
+                                                @Html.ValidationMessageFor(model => model.DATE_DONE, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <div class="col-md-offset-2 col-md-10">
+                                                <input type="submit" value="Cập nhật" class="btn btn-orange-md roboto" style="background-color:blue; color:white; font-family:'Times New Roman'"/>
+                                            </div>
+                                        </div>
+                                    </div>
+                                }   
+                                <div>
+                                    @Html.ActionLink("Quay lại", "/Index/" + @Session["USER_ID"])
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </form> <!-- Fint form -->
+        </div>
+    </div>
+    <!-- Tab panes -->
+</div>
+</div>
+
+
+
+
+

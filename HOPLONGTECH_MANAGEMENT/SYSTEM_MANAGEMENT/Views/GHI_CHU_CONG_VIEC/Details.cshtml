@@ -1,0 +1,45 @@
+﻿@model SYSTEM_MANAGEMENT.Models.GHI_CHU_CONG_VIEC
+
+@{
+    ViewBag.Title = "Chi tiết ghi chú";
+}
+<html>
+    <head>
+        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet">
+        <link href="~/Content/css/detail_note.css" rel="stylesheet" />
+    </head>
+    <body>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-md-offset-3">
+                    <div class="panel panel-default coupon">
+                        <div class="panel-heading" id="head">
+                            <div class="panel-title" id="title" style="font-family:'Times New Roman'; font-size: 28px; color:blue">
+                                <span style="font-size:10px;">
+                                    @Html.ActionLink("Sửa ghi chú", "Edit", new { id = Model.NOTED_ID }) |
+                                    @Html.ActionLink("Danh sách ghi chú", "/Index/" + @Session["USER_ID"])
+                                </span>
+                                <b>@Html.DisplayFor(model => model.NOTED_NAME)</b>
+                                
+                            </div>
+                        </div>
+                        <div class="panel-body">
+                            @Html.DisplayFor(model => model.NOTED_INFO)
+                        </div>
+                        <div class="panel-footer">
+                            <div class="coupon-code">
+                                Ngày tạo: @Html.DisplayFor(model => model.DATE_NOTED)
+                                
+                                <span class="print">
+                                    Trạng thái: @Html.DisplayFor(model => model.IS_DONE) <br />
+                                    Ghi chú của: @Html.DisplayFor(model => model.USER.USERNAME)
+                                </span>
+                            </div>
+                            <div class="exp">Ngày hoàn thành: @Html.DisplayFor(model => model.DATE_DONE)</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

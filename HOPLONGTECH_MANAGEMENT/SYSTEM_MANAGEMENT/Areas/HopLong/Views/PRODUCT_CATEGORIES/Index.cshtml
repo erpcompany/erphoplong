@@ -1,0 +1,46 @@
+﻿@model IEnumerable<SYSTEM_MANAGEMENT.Models.PRODUCT_CATEGORIES>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Thêm nhóm hàng mới", "Create")
+</p> 
+<table class="table" border="1">
+    <tr>
+        <th>
+            Mã nhóm
+        </th>
+        <th>
+            Tên nhóm hàng
+        </th>
+        <th>
+            Mô tả
+        </th>
+        <th> Tác vụ</th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <th>
+            @item.MA_NHOM_HANG
+        </th>
+        <th>
+            @item.TEN_NHOM_HANG
+        </th>
+        <td>
+            @item.MO_TA
+        </td>
+        <td>
+            <a href="/HopLong/PRODUCT_CATEGORIES/Edit/@item.MA_NHOM_HANG"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a> &nbsp;&nbsp;&nbsp;
+            <a href="/HopLong/PRODUCT_CATEGORIES/Details/@item.MA_NHOM_HANG"><i class="fa fa-info-circle" aria-hidden="true"></i></a> &nbsp;&nbsp;&nbsp;
+            <a href="/HopLong/PRODUCT_CATEGORIES/Delete/@item.MA_NHOM_HANG"><i class="fa fa-trash-o " aria-hidden="true"></i></a> &nbsp;&nbsp;&nbsp;
+            <a href="/HopLong/PRODUCT_CATEGORIES/list_product_category_details/@item.MA_NHOM_HANG"><i class="fa fa-list" aria-hidden="true"></i></a> &nbsp;&nbsp;&nbsp;
+        </td>
+    </tr>
+}
+
+</table>

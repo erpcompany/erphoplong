@@ -1,0 +1,113 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="SYSTEM_DATABASEModelStoreContainer" CdmEntityContainer="SYSTEM_DATABASEEntities">
+    <EntitySetMapping Name="BANG_CHAM_CONG">
+      <EntityTypeMapping TypeName="SYSTEM_DATABASEModel.BANG_CHAM_CONG">
+        <MappingFragment StoreEntitySet="BANG_CHAM_CONG">
+          <ScalarProperty Name="CHAM_CONG_ID" ColumnName="CHAM_CONG_ID" />
+          <ScalarProperty Name="USER_ID" ColumnName="USER_ID" />
+          <ScalarProperty Name="NGAY_CHUAN" ColumnName="NGAY_CHUAN" />
+          <ScalarProperty Name="GIO_DI_MUON" ColumnName="GIO_DI_MUON" />
+          <ScalarProperty Name="GIO_VE_SOM" ColumnName="GIO_VE_SOM" />
+          <ScalarProperty Name="TANG_CA_NGAY_THUONG" ColumnName="TANG_CA_NGAY_THUONG" />
+          <ScalarProperty Name="TANG_CA_NGAY_LE" ColumnName="TANG_CA_NGAY_LE" />
+          <ScalarProperty Name="SO_LAN_QUEN_CHAM" ColumnName="SO_LAN_QUEN_CHAM" />
+          <ScalarProperty Name="SO_NGAY_NGHI" ColumnName="SO_NGAY_NGHI" />
+          <ScalarProperty Name="CONG_THUC_TE" ColumnName="CONG_THUC_TE" />
+          <ScalarProperty Name="UNG_LUONG" ColumnName="UNG_LUONG" />
+          <ScalarProperty Name="GHI_CHU" ColumnName="GHI_CHU" />
+          <ScalarProperty Name="THANG_CHAM_CONG" ColumnName="THANG_CHAM_CONG" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BANG_LUONG">
+      <EntityTypeMapping TypeName="SYSTEM_DATABASEModel.BANG_LUONG">
+        <MappingFragment StoreEntitySet="BANG_LUONG">
+          <ScalarProperty Name="LUONG_ID" ColumnName="LUONG_ID" />
+          <ScalarProperty Name="USER_ID" ColumnName="USER_ID" />
+          <ScalarProperty Name="LUONG_CO_BAN" ColumnName="LUONG_CO_BAN" />
+          <ScalarProperty Name="LUONG_BAO_HIEM" ColumnName="LUONG_BAO_HIEM" />
+          <ScalarProperty Name="PHU_CAP_AN_TRUA" ColumnName="PHU_CAP_AN_TRUA" />
+          <ScalarProperty Name="PHU_CAP_DI_LAI_DIEN_THOAI" ColumnName="PHU_CAP_DI_LAI_DIEN_THOAI" />
+          <ScalarProperty Name="PHU_CAP_THUONG_DOANH_SO" ColumnName="PHU_CAP_THUONG_DOANH_SO" />
+          <ScalarProperty Name="PHU_CAP_TRACH_NHIEM" ColumnName="PHU_CAP_TRACH_NHIEM" />
+          <ScalarProperty Name="CONG_CO_BAN" ColumnName="CONG_CO_BAN" />
+          <ScalarProperty Name="CONG_CO_BAN_NGAY" ColumnName="CONG_CO_BAN_NGAY" />
+          <ScalarProperty Name="CONG_CO_BAN_GIO" ColumnName="CONG_CO_BAN_GIO" />
+          <ScalarProperty Name="BAO_HIEM_CONG_TY" ColumnName="BAO_HIEM_CONG_TY" />
+          <ScalarProperty Name="BAO_HIEM_NHAN_VIEN" ColumnName="BAO_HIEM_NHAN_VIEN" />
+          <ScalarProperty Name="LUONG_THUC_TE_CONG_LAM_THUC" ColumnName="LUONG_THUC_TE_CONG_LAM_THUC" />
+          <ScalarProperty Name="LUONG_THUC_TE_SO_TIEN" ColumnName="LUONG_THUC_TE_SO_TIEN" />
+          <ScalarProperty Name="LUONG_LAM_THEM_CONG_NGAY_THUONG" ColumnName="LUONG_LAM_THEM_CONG_NGAY_THUONG" />
+          <ScalarProperty Name="LUONG_LAM_THEM_TIEN_CONG_NGAY_THUONG" ColumnName="LUONG_LAM_THEM_TIEN_CONG_NGAY_THUONG" />
+          <ScalarProperty Name="LUONG_LAM_THEM_CONG_NGAY_NGHI" ColumnName="LUONG_LAM_THEM_CONG_NGAY_NGHI" />
+          <ScalarProperty Name="LUONG_LAM_THEM_TIEN_CONG_NGAY_NGHI" ColumnName="LUONG_LAM_THEM_TIEN_CONG_NGAY_NGHI" />
+          <ScalarProperty Name="LUONG_LAM_THEM_CONG_NGAY_LE" ColumnName="LUONG_LAM_THEM_CONG_NGAY_LE" />
+          <ScalarProperty Name="LUONG_LAM_THEM_TIEN_CONG_NGAY_LE" ColumnName="LUONG_LAM_THEM_TIEN_CONG_NGAY_LE" />
+          <ScalarProperty Name="TONG_TIEN_CONG" ColumnName="TONG_TIEN_CONG" />
+          <ScalarProperty Name="TAM_UNG" ColumnName="TAM_UNG" />
+          <ScalarProperty Name="GIO_DI_TRE" ColumnName="GIO_DI_TRE" />
+          <ScalarProperty Name="PHAT_DI_TRE" ColumnName="PHAT_DI_TRE" />
+          <ScalarProperty Name="CONG_DOAN" ColumnName="CONG_DOAN" />
+          <ScalarProperty Name="LUONG_LAO_CONG" ColumnName="LUONG_LAO_CONG" />
+          <ScalarProperty Name="THUC_LINH" ColumnName="THUC_LINH" />
+          <ScalarProperty Name="THANG_LINH_LUONG" ColumnName="THANG_LINH_LUONG" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LIST_CONTROLLERS">
+      <EntityTypeMapping TypeName="SYSTEM_DATABASEModel.LIST_CONTROLLERS">
+        <MappingFragment StoreEntitySet="LIST_CONTROLLERS">
+          <ScalarProperty Name="CONTROLLER_ID" ColumnName="CONTROLLER_ID" />
+          <ScalarProperty Name="CONTROLLER_NAME" ColumnName="CONTROLLER_NAME" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LIST_PERMISSIONS">
+      <EntityTypeMapping TypeName="SYSTEM_DATABASEModel.LIST_PERMISSIONS">
+        <MappingFragment StoreEntitySet="LIST_PERMISSIONS">
+          <ScalarProperty Name="PERMISSION_ID" ColumnName="PERMISSION_ID" />
+          <ScalarProperty Name="PERMISSION_NAME" ColumnName="PERMISSION_NAME" />
+          <ScalarProperty Name="DESCRIPTION" ColumnName="DESCRIPTION" />
+          <ScalarProperty Name="CONTROLLER_ID" ColumnName="CONTROLLER_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="USER_PERMISSION">
+      <EntityTypeMapping TypeName="SYSTEM_DATABASEModel.USER_PERMISSION">
+        <MappingFragment StoreEntitySet="USER_PERMISSION">
+          <ScalarProperty Name="PERMISSION_ID" ColumnName="PERMISSION_ID" />
+          <ScalarProperty Name="USER_ID" ColumnName="USER_ID" />
+          <ScalarProperty Name="DESCRIPTION" ColumnName="DESCRIPTION" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="USERS">
+      <EntityTypeMapping TypeName="SYSTEM_DATABASEModel.USER">
+        <MappingFragment StoreEntitySet="USERS">
+          <ScalarProperty Name="USER_ID" ColumnName="USER_ID" />
+          <ScalarProperty Name="USERNAME" ColumnName="USERNAME" />
+          <ScalarProperty Name="PASSWORD" ColumnName="PASSWORD" />
+          <ScalarProperty Name="FULLNAME" ColumnName="FULLNAME" />
+          <ScalarProperty Name="EMAIL" ColumnName="EMAIL" />
+          <ScalarProperty Name="AVATAR" ColumnName="AVATAR" />
+          <ScalarProperty Name="IS_ADMIN" ColumnName="IS_ADMIN" />
+          <ScalarProperty Name="ALLOWED" ColumnName="ALLOWED" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GHI_CHU_CONG_VIEC">
+      <EntityTypeMapping TypeName="SYSTEM_DATABASEModel.GHI_CHU_CONG_VIEC">
+        <MappingFragment StoreEntitySet="GHI_CHU_CONG_VIEC">
+          <ScalarProperty Name="DATE_DONE" ColumnName="DATE_DONE" />
+          <ScalarProperty Name="IS_DONE" ColumnName="IS_DONE" />
+          <ScalarProperty Name="NOTED_INFO" ColumnName="NOTED_INFO" />
+          <ScalarProperty Name="NOTED_NAME" ColumnName="NOTED_NAME" />
+          <ScalarProperty Name="DATE_NOTED" ColumnName="DATE_NOTED" />
+          <ScalarProperty Name="USER_ID" ColumnName="USER_ID" />
+          <ScalarProperty Name="NOTED_ID" ColumnName="NOTED_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

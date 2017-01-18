@@ -1,0 +1,57 @@
+﻿@model IEnumerable<SYSTEM_MANAGEMENT.Models.USER>
+
+@{
+    ViewBag.Title = "Người dùng";
+}
+
+<h1 style="font-family:'Times New Roman'; font-weight:bold; color:blue">TÀI KHOẢN NGƯỜI DÙNG</h1>
+
+<p>
+   <span style="text-decoration:underline; color: dodgerblue;">@Html.ActionLink("Create New", "Create")</span> 
+</p>
+<table class="table" border="1">
+    <tr style="background-color:deepskyblue; color:white; font-family:'Times New Roman'; font-size:14px">
+        <th >Username</th>
+        <th>Password</th>
+        <th>Họ và tên</th>
+        <th>Email</th>
+        <th>Avatar</th>
+        <th>Là quản trị</th>
+        <th>Hoạt động</th>        
+        <th> Tác vụ</th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr style="font-family:'Times New Roman'; font-size:14px">
+        <td>
+            @Html.DisplayFor(modelItem => item.USERNAME)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PASSWORD)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FULLNAME)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EMAIL)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AVATAR)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IS_ADMIN)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ALLOWED)
+        </td>
+        <td>
+            <a href="/USERs/Edit/@item.USER_ID"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a> &nbsp;&nbsp;
+            <a href="/USERs/Details/@item.USER_ID"><i class="fa fa-info-circle" aria-hidden="true"></i></a> &nbsp;&nbsp;
+            <a href="/USERs/Delete/@item.USER_ID"><i class="fa fa-trash-o" aria-hidden="true"></i></a> &nbsp;&nbsp;
+            <a href="/USER_PERMISSIONS/Index/@item.USER_ID"><i class="fa fa-cog" aria-hidden="true"></i></a> &nbsp;&nbsp;
+            <a href="/USER_METAS/Index/@item.USER_ID"><i class="fa fa-user-plus" aria-hidden="true"></i></a> &nbsp;&nbsp;
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,14 @@
+﻿
+@{
+    ViewBag.Title = "Import bảng lương";
+}
+
+<h2>Index</h2>
+@using (Html.BeginForm("Index", "ImportBangLuong", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    <input type="file" name="file" style="width:400px " />
+    <br />
+    <input type="submit" value="Save" />
+    <p style="color:blue">@ViewBag.Message</p>
+}
+

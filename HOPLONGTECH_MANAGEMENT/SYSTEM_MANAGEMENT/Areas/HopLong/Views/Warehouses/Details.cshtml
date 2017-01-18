@@ -1,0 +1,34 @@
+﻿@model SYSTEM_MANAGEMENT.Models.Warehouse
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Warehouse</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.TEN_KHO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TEN_KHO)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MO_TA)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MO_TA)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.MA_KHO }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

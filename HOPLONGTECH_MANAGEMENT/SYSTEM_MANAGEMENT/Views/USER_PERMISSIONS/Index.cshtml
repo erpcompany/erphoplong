@@ -1,0 +1,54 @@
+﻿@{
+    ViewBag.Title = "Phân quyền cho người dùng";
+}
+
+<h2 style="padding-top:15px; font-family:'Times New Roman'; ">
+    <a href="/USERs/Index" style="color:blue"> Danh mục nhân viên</a>
+    &gt;&gt; Phân quyền cho nhân viên
+    <b style="color:blue"> @ViewBag.userpermission</b>
+</h2>
+<hr />
+<div id="msg"></div>
+<div class="col-xs-4 col-md-4">
+    <h4 style="font-family:'Times New Roman'; font-size:24px; font-weight:bold">Danh sách nghiệp vụ</h4>
+    <!--Controllers_InfoController-->
+    @Html.DropDownList("LIST_CONTROLLERS", (IEnumerable<SelectListItem>)ViewBag.items, new { size = 28, onchange = "getPermissions('/USER_PERMISSIONS/getPermissions/'+this.value, '" + Session["USER_PERMISSIONS"] + "');" })
+</div>
+<div class="col-xs-4 col-md-4">
+    <h4 style="font-family:'Times New Roman'; font-size:24px; font-weight:bold">Danh sách quyền hạn</h4>
+    <div id="listAction"></div>
+</div>
+<script>
+    function getPermissions(action, USER_PERMISSIONS)
+    {
+        $.ajax({
+            method: "GET",
+            url: action,
+            data: { userTemp: USER_PERMISSIONS },
+            success: function (data) {
+                //xoa du lieu cua div id="listAction"
+                $('#listAction').html('');
+                //ham foreach = $.each
+                $.each(data, function (index, value) {
+                    if (value.IS_GRANTED)
+                        $('#listAction').append("<input type = 'CheckBox' checked  onchange = 'updatePermission(" + "\"/USER_PERMISSIONS/updatePermission/\"+this.value,\"@Session["USER_PERMISSIONS"]\")' value = '" + value.PERMISSION_ID + "'>" + value.DESCRIPTION + "</br> ");
+                    else
+                        $('#listAction').append("<input type = 'CheckBox' onchange = 'updatePermission(" + "\"/USER_PERMISSIONS/updatePermission/\"+this.value,\"@Session["USER_PERMISSIONS"]\")' value = '" + value.PERMISSION_ID + "'>" + value.DESCRIPTION + "</br> ");
+                });
+            }
+        })
+    }
+    function updatePermission(action, USER_PERMISSIONS) {
+        $.ajax({
+            method: "GET",
+            url: action,
+            data: { userTemp: USER_PERMISSIONS },
+            success: function (data) {
+                $("#msg").html(data);
+            }
+        })
+    }
+
+</script>
+
+

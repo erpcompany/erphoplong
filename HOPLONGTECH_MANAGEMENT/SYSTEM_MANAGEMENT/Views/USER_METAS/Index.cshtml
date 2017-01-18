@@ -1,0 +1,107 @@
+﻿@model IEnumerable<SYSTEM_MANAGEMENT.Models.USER_METAS>
+
+@{
+    ViewBag.Title = "Thông tin nhân viên";
+}
+@{ 
+    var user_meta = Model.SingleOrDefault();
+}
+<html>
+<head>
+
+    <style>
+        #profile-image1 {
+         cursor: pointer;  
+         width: 100px;
+         height: 100px;
+	     border:2px solid #03b1ce ;
+        }
+	     .tital{ 
+             font-size:16px; font-weight:500;
+	     }
+	     .bot-border{ 
+             border-bottom:1px #f8f8f8 solid;  margin:5px 0  5px 0
+	     }	
+         .text_font{
+             font-size:16px;
+             font-family:'Times New Roman';
+         }
+    </style>
+</head>
+<body>
+   
+        <div class="container">
+            <div class="row">
+                <div class="col-md-7 ">
+                    
+                        <div class="panel panel-default">
+                            <div class="panel-heading" style="text-align:center">  <h4>Thông tin của @Session["FULLNAME"]</h4></div>
+                            <div class="panel-body" style="height:auto;">
+
+                                <div class="box box-info" style="height:auto;">
+
+                                    <div class="box-body">
+                                        <div class="col-sm-6">
+                                            <div align="center">
+                                                <img alt="User Pic" src="/Content/images/@Session["AVATAR"]" id="profile-image1" class="img-circle img-responsive">
+
+                                                <input id="profile-image-upload" class="hidden" type="file">
+
+                                                <!--Upload Image Js And Css-->
+                                            </div>
+
+                                            <br>
+
+                                            <!-- /input-group -->
+                                        </div>
+
+                                        <div class="col-sm-6">
+                                            <h4 style="color:#00b1b1;">@Session["FULLNAME"] </h4></span>
+                                            <span><p>@user_meta.DEPARTMENT.DEPARTMENT_NAME </p></span>
+                                        </div>
+                                        <div class="clearfix"></div>
+                                        <hr style="margin:5px 0 5px 0;">
+
+
+                                        <div class="col-sm-5 col-xs-6 tital text_font">Họ và Tên :</div><div class="col-sm-7 col-xs-6 ">@user_meta.USER.FULLNAME</div>
+                                        <div class="clearfix"></div>
+                                        <div class="bot-border"></div>
+                                        <div class="col-sm-5 col-xs-6 tital text_font">Ngày sinh:</div><div class="col-sm-7"> @user_meta.BIRTHDAY.ToString("dd/MM/yyyy")</div>
+                                        <div class="clearfix"></div>
+                                        <div class="bot-border"></div>
+                                        <div class="col-sm-5 col-xs-6 tital text_font">Giới tính:</div><div class="col-sm-7"> @user_meta.SEX</div>
+                                        <div class="clearfix"></div>
+                                        <div class="bot-border"></div>
+                                        <div class="col-sm-5 col-xs-6 tital text_font">Số điện thoại:</div><div class="col-sm-7">@user_meta.NUMBER_PHONE</div>
+                                        <div class="clearfix"></div>
+                                        <div class="bot-border"></div>
+                                        <div class="col-sm-5 col-xs-6 tital text_font">Email:</div><div class="col-sm-7">@user_meta.USER.EMAIL</div>
+                                        <div class="clearfix"></div>
+                                        <div class="bot-border"></div>
+                                        <div class="col-sm-5 col-xs-6 tital text_font">Ngày vào công ty:</div><div class="col-sm-7">@user_meta.START_TIME.ToString("dd/MM/yyyy")</div>
+                                        <div class="clearfix"></div>
+                                        <div class="bot-border"></div>
+                                        <div class="col-sm-5 col-xs-6 tital text_font">Thâm niên:</div><div class="col-sm-7">@user_meta.SENIORITY</div>
+                                        <div class="clearfix"></div>
+                                        <div class="bot-border"></div>
+                                        <div class="col-sm-5 col-xs-6 tital text_font">Quê quán:</div><div class="col-sm-7">@user_meta.NATIVE_LAND</div>
+                                        <div class="clearfix"></div>
+                                        <div class="bot-border"></div>
+                                        <div class="col-sm-5 col-xs-6 tital text_font">Trình độ học vấn:</div><div class="col-sm-7">@user_meta.LITERACY</div>
+
+                                        <!-- /.box-body -->
+                                    </div>
+                                    <!-- /.box -->
+                                </div>
+
+
+                            </div>
+                        </div>
+                    
+                </div>
+
+            </div>
+        </div>
+    
+</body>
+</html>

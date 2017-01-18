@@ -1,0 +1,68 @@
+﻿@model IEnumerable<SYSTEM_MANAGEMENT.Models.GHI_CHU_CONG_VIEC>
+
+@{
+    ViewBag.Title = "Ghi chú công việc";
+}
+<div class="col-lg-12"><h1>Danh sách ghi chú của @Session["FULLNAME"]</h1></div>
+@foreach (var item in Model)
+{
+    
+<!-- <div class="container" id="tourpackages-carousel">-->
+ <!--<div class="row"> -->   
+       
+    
+
+    <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+            <div class="thumbnail" style="height:220px">
+                <div class="caption" >
+                    <div class='col-lg-12'>
+                        @Html.DisplayFor(modelItem => item.USER.FULLNAME)
+                    </div>
+                    <div class='col-lg-12 well well-add-card'>
+                        <h4>@Html.DisplayFor(modelItem => item.NOTED_NAME)</h4>
+                    </div>
+                    <div class='col-lg-12'>
+                        <p>Ngày tạo: @Html.DisplayFor(modelItem => item.DATE_NOTED)</p>
+                        <p class"text-muted">
+                           Ngày hoàn thành: @Html.DisplayFor(modelItem => item.DATE_DONE)
+                        </p>
+                    </div>
+                    <button type="button" class="btn btn-primary btn-xs btn-update btn-add-card"><a href="/GHI_CHU_CONG_VIEC/Edit/@item.NOTED_ID" style="color:white">Update</a></button>
+                    <button type="button" class="btn btn-primary btn-xs btn-update btn-add-card"><a href="/GHI_CHU_CONG_VIEC/Details/@item.NOTED_ID" style="color:white">Details</a></button>
+                    <button type="button" id="markdone" class="btn btn-success btn-xs btn-update btn-add-card">Mark done</button>
+                    @if (item.IS_DONE == 0)
+                    {
+                        <span class='glyphicon glyphicon-exclamation-sign text-danger pull-right icon-style'></span>
+                    }
+                    else
+                    {
+                        <span id="done" class='glyphicon glyphicon-exclamation-sign text-success pull-right icon-style'></span>
+                    }
+                    
+                </div>
+            </div>
+        </div>
+
+   
+    <!--</div> End row -->
+
+   
+<!--</div> End container -->
+
+<script>
+    $(function () {
+        var url = "/GHI_CHU_CONG_VIEC/MarkDone";
+        var noteId = @Html.DisplayFor(modelItem => item.NOTED_ID);
+        $.get(url, {NOTED_ID: noteId}, function(data){
+            $("markdone").html(data);
+           
+        })
+    })
+
+</script>
+
+}
+
+
+
+

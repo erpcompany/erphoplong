@@ -1,0 +1,114 @@
+﻿@model SYSTEM_MANAGEMENT.Models.BANG_CHAM_CONG
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>BANG_CHAM_CONG</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.NGAY_CHUAN)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NGAY_CHUAN)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.GIO_DI_MUON)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GIO_DI_MUON)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.GIO_VE_SOM)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GIO_VE_SOM)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TANG_CA_NGAY_THUONG)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TANG_CA_NGAY_THUONG)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TANG_CA_NGAY_LE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TANG_CA_NGAY_LE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SO_LAN_QUEN_CHAM)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SO_LAN_QUEN_CHAM)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SO_NGAY_NGHI)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SO_NGAY_NGHI)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CONG_THUC_TE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CONG_THUC_TE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UNG_LUONG)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UNG_LUONG)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.GHI_CHU)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GHI_CHU)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.THANG_CHAM_CONG)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.THANG_CHAM_CONG)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.USER.USERNAME)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.USER.USERNAME)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.CHAM_CONG_ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -1,0 +1,936 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="SYSTEM_DATABASEModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="BANG_CHAM_CONG">
+    <Key>
+      <PropertyRef Name="CHAM_CONG_ID" />
+    </Key>
+    <Property Name="CHAM_CONG_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="USER_ID" Type="int" Nullable="false" />
+    <Property Name="NGAY_CHUAN" Type="nvarchar" MaxLength="256" />
+    <Property Name="GIO_DI_MUON" Type="nvarchar" MaxLength="256" />
+    <Property Name="GIO_VE_SOM" Type="nvarchar" MaxLength="256" />
+    <Property Name="TANG_CA_NGAY_THUONG" Type="nvarchar" MaxLength="256" />
+    <Property Name="TANG_CA_NGAY_LE" Type="nvarchar" MaxLength="256" />
+    <Property Name="SO_LAN_QUEN_CHAM" Type="nvarchar" MaxLength="256" />
+    <Property Name="SO_NGAY_NGHI" Type="nvarchar" MaxLength="256" />
+    <Property Name="CONG_THUC_TE" Type="nvarchar" MaxLength="256" />
+    <Property Name="UNG_LUONG" Type="nvarchar" MaxLength="256" />
+    <Property Name="GHI_CHU" Type="nvarchar" MaxLength="256" />
+    <Property Name="THANG_CHAM_CONG" Type="nvarchar" MaxLength="256" />
+  </EntityType>
+  <EntityType Name="BANG_LUONG">
+    <Key>
+      <PropertyRef Name="LUONG_ID" />
+    </Key>
+    <Property Name="LUONG_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="USER_ID" Type="int" Nullable="false" />
+    <Property Name="LUONG_CO_BAN" Type="nvarchar" MaxLength="256" />
+    <Property Name="LUONG_BAO_HIEM" Type="nvarchar" MaxLength="256" />
+    <Property Name="PHU_CAP_AN_TRUA" Type="nvarchar" MaxLength="256" />
+    <Property Name="PHU_CAP_DI_LAI_DIEN_THOAI" Type="nvarchar" MaxLength="256" />
+    <Property Name="PHU_CAP_THUONG_DOANH_SO" Type="nvarchar" MaxLength="256" />
+    <Property Name="PHU_CAP_TRACH_NHIEM" Type="nvarchar" MaxLength="256" />
+    <Property Name="CONG_CO_BAN" Type="nvarchar" MaxLength="256" />
+    <Property Name="CONG_CO_BAN_NGAY" Type="nvarchar" MaxLength="256" />
+    <Property Name="CONG_CO_BAN_GIO" Type="nvarchar" MaxLength="256" />
+    <Property Name="BAO_HIEM_CONG_TY" Type="nvarchar" MaxLength="256" />
+    <Property Name="BAO_HIEM_NHAN_VIEN" Type="nvarchar" MaxLength="256" />
+    <Property Name="LUONG_THUC_TE_CONG_LAM_THUC" Type="nvarchar" MaxLength="256" />
+    <Property Name="LUONG_THUC_TE_SO_TIEN" Type="nvarchar" MaxLength="256" />
+    <Property Name="LUONG_LAM_THEM_CONG_NGAY_THUONG" Type="nvarchar" MaxLength="256" />
+    <Property Name="LUONG_LAM_THEM_TIEN_CONG_NGAY_THUONG" Type="nvarchar" MaxLength="256" />
+    <Property Name="LUONG_LAM_THEM_CONG_NGAY_NGHI" Type="nvarchar" MaxLength="256" />
+    <Property Name="LUONG_LAM_THEM_TIEN_CONG_NGAY_NGHI" Type="nvarchar" MaxLength="256" />
+    <Property Name="LUONG_LAM_THEM_CONG_NGAY_LE" Type="nvarchar" MaxLength="256" />
+    <Property Name="LUONG_LAM_THEM_TIEN_CONG_NGAY_LE" Type="nvarchar" MaxLength="256" />
+    <Property Name="TONG_TIEN_CONG" Type="nvarchar" MaxLength="256" />
+    <Property Name="TAM_UNG" Type="nvarchar" MaxLength="256" />
+    <Property Name="GIO_DI_TRE" Type="nvarchar" MaxLength="256" />
+    <Property Name="PHAT_DI_TRE" Type="nvarchar" MaxLength="256" />
+    <Property Name="CONG_DOAN" Type="nvarchar" MaxLength="256" />
+    <Property Name="LUONG_LAO_CONG" Type="nvarchar" MaxLength="256" />
+    <Property Name="THUC_LINH" Type="nvarchar" MaxLength="256" />
+    <Property Name="THANG_LINH_LUONG" Type="nvarchar" MaxLength="256" />
+  </EntityType>
+  <EntityType Name="CUSTOMER_ACCOUNTS">
+    <Key>
+      <PropertyRef Name="ID_TAI_KHOAN_KH" />
+    </Key>
+    <Property Name="ID_TAI_KHOAN_KH" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MA_KHACH_HANG" Type="varchar" MaxLength="64" Nullable="false" />
+    <Property Name="SO_TAI_KHOAN" Type="nvarchar" MaxLength="64" />
+    <Property Name="TEN_NGAN_HANG" Type="nvarchar" MaxLength="256" />
+    <Property Name="CHI_NHANH" Type="nvarchar" MaxLength="256" />
+    <Property Name="TINH_TP" Type="nvarchar" MaxLength="64" />
+  </EntityType>
+  <EntityType Name="CUSTOMER_CONTACTS">
+    <Key>
+      <PropertyRef Name="ID_LIEN_HE_KH" />
+    </Key>
+    <Property Name="ID_LIEN_HE_KH" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MA_KHACH_HANG" Type="varchar" MaxLength="64" Nullable="false" />
+    <Property Name="NGUOI_LIEN_HE" Type="nvarchar" MaxLength="64" />
+    <Property Name="NGAY_SINH" Type="date" />
+    <Property Name="GIOI_TINH" Type="nvarchar" MaxLength="5" />
+    <Property Name="CHUC_VU" Type="nvarchar" MaxLength="64" />
+    <Property Name="SO_DIEN_THOAI" Type="nvarchar" MaxLength="64" />
+    <Property Name="EMAIL" Type="nvarchar" MaxLength="64" />
+    <Property Name="FACEBOOK" Type="nvarchar" MaxLength="64" />
+    <Property Name="SKYPE" Type="nvarchar" MaxLength="64" />
+    <Property Name="GHI_CHU" Type="nvarchar" MaxLength="64" />
+  </EntityType>
+  <EntityType Name="CUSTOMER_GROUPS">
+    <Key>
+      <PropertyRef Name="MA_NHOM_KHACH" />
+    </Key>
+    <Property Name="MA_NHOM_KHACH" Type="varchar" MaxLength="64" Nullable="false" />
+    <Property Name="TEN_NHOM_KHACH" Type="nvarchar" MaxLength="256" Nullable="false" />
+    <Property Name="MO_TA" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="CUSTOMERS">
+    <Key>
+      <PropertyRef Name="MA_KHACH_HANG" />
+    </Key>
+    <Property Name="MA_KHACH_HANG" Type="varchar" MaxLength="64" Nullable="false" />
+    <Property Name="TEN_KHACH_HANG" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="DIA_CHI_CONG_TY" Type="nvarchar(max)" />
+    <Property Name="DIA_CHI_XUAT_HOA_DON" Type="nvarchar(max)" />
+    <Property Name="MA_NHOM_KHACH" Type="varchar" MaxLength="64" Nullable="false" />
+    <Property Name="MST" Type="varchar" MaxLength="25" />
+    <Property Name="DIEN_THOAI" Type="varchar" MaxLength="64" />
+    <Property Name="FAX" Type="varchar" MaxLength="64" />
+    <Property Name="EMAIL" Type="varchar" MaxLength="128" />
+    <Property Name="WEBSITE" Type="varchar" MaxLength="128" />
+    <Property Name="USER_ID" Type="int" Nullable="false" />
+    <Property Name="MO_TA" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="DEPARTMENTS">
+    <Key>
+      <PropertyRef Name="DEPARTMENT_ID" />
+    </Key>
+    <Property Name="DEPARTMENT_ID" Type="varchar" MaxLength="64" Nullable="false" />
+    <Property Name="DEPARTMENT_NAME" Type="nvarchar" MaxLength="256" Nullable="false" />
+    <Property Name="MANAGER" Type="int" Nullable="false" />
+    <Property Name="NOTED" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="GHI_CHU_CONG_VIEC">
+    <Key>
+      <PropertyRef Name="NOTED_ID" />
+    </Key>
+    <Property Name="NOTED_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="USER_ID" Type="int" Nullable="false" />
+    <Property Name="DATE_NOTED" Type="date" />
+    <Property Name="NOTED_NAME" Type="nvarchar" MaxLength="256" />
+    <Property Name="NOTED_INFO" Type="nvarchar(max)" />
+    <Property Name="IS_DONE" Type="tinyint" />
+    <Property Name="DATE_DONE" Type="date" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'SYSTEM_DATABASE.dbo.HOLD_PRODUCT_DETAILS' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="HOLD_PRODUCT_DETAILS">
+    <Key>
+      <PropertyRef Name="ID_GIU_HANG" />
+      <PropertyRef Name="NHAN_VIEN_GIU" />
+      <PropertyRef Name="MA_KHACH_HANG" />
+    </Key>
+    <Property Name="ID_GIU_HANG" Type="int" Nullable="false" />
+    <Property Name="NHAN_VIEN_GIU" Type="int" Nullable="false" />
+    <Property Name="MA_KHACH_HANG" Type="varchar" MaxLength="64" Nullable="false" />
+    <Property Name="SL_GIU" Type="int" />
+    <Property Name="LOAI_GIU" Type="nvarchar" MaxLength="15" />
+    <Property Name="TRANG_THAI" Type="varchar" MaxLength="10" />
+    <Property Name="MA_PHIEU_XUAT_KHO" Type="varchar" MaxLength="64" />
+    <Property Name="MA_KHACH_XUAT_KHO" Type="varchar" MaxLength="64" />
+    <Property Name="SL_XUAT_KHO" Type="int" />
+    <Property Name="GHI_CHU" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="HOLD_PRODUCTS">
+    <Key>
+      <PropertyRef Name="ID_GIU_HANG" />
+    </Key>
+    <Property Name="ID_GIU_HANG" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MA_HANG_HT" Type="varchar" MaxLength="128" Nullable="false" />
+    <Property Name="NGAY_GIU" Type="date" />
+    <Property Name="TONG_SO_GIU" Type="int" />
+    <Property Name="SL_GIU_DA_XUAT" Type="int" />
+    <Property Name="SL_GIU_CHUA_XU_LY" Type="int" />
+    <Property Name="TRANG_THAI" Type="varchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="LIST_CONTROLLERS">
+    <Key>
+      <PropertyRef Name="CONTROLLER_ID" />
+    </Key>
+    <Property Name="CONTROLLER_ID" Type="varchar" MaxLength="64" Nullable="false" />
+    <Property Name="CONTROLLER_NAME" Type="nvarchar" MaxLength="256" Nullable="false" />
+  </EntityType>
+  <EntityType Name="LIST_PERMISSIONS">
+    <Key>
+      <PropertyRef Name="PERMISSION_ID" />
+    </Key>
+    <Property Name="PERMISSION_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PERMISSION_NAME" Type="varchar" MaxLength="256" Nullable="false" />
+    <Property Name="DESCRIPTION" Type="nvarchar" MaxLength="256" />
+    <Property Name="CONTROLLER_ID" Type="varchar" MaxLength="64" Nullable="false" />
+  </EntityType>
+  <EntityType Name="MANAGE_SALES_AND_CUSTOMERS">
+    <Key>
+      <PropertyRef Name="ID_QUAN_LY" />
+    </Key>
+    <Property Name="ID_QUAN_LY" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MA_KHACH_HANG" Type="varchar" MaxLength="64" Nullable="false" />
+    <Property Name="NHAN_VIEN_PHU_TRACH" Type="int" Nullable="false" />
+    <Property Name="NGAY_BAT_DAU_PHU_TRACH" Type="date" />
+    <Property Name="NGAY_NGUNG_PHU_TRACH" Type="date" />
+    <Property Name="LY_DO_NGUNG_PHU_TRACH" Type="nvarchar(max)" />
+    <Property Name="GHI_CHU" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="PAYMENT_TERMS">
+    <Key>
+      <PropertyRef Name="MA_DIEU_KHOAN" />
+    </Key>
+    <Property Name="MA_DIEU_KHOAN" Type="varchar" MaxLength="64" Nullable="false" />
+    <Property Name="TEN_DIEU_KHOAN" Type="nvarchar" MaxLength="64" />
+    <Property Name="NOI_DUNG_DIEU_KHOAN" Type="nvarchar(max)" />
+    <Property Name="GHI_CHU" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="PRODUCT_CATEGORIES">
+    <Key>
+      <PropertyRef Name="MA_NHOM_HANG" />
+    </Key>
+    <Property Name="MA_NHOM_HANG" Type="varchar" MaxLength="128" Nullable="false" />
+    <Property Name="TEN_NHOM_HANG" Type="nvarchar(max)" />
+    <Property Name="MO_TA" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="PRODUCT_CATEGORY_DETAILS">
+    <Key>
+      <PropertyRef Name="MA_CHI_TIET_NHOM_HANG" />
+    </Key>
+    <Property Name="MA_CHI_TIET_NHOM_HANG" Type="varchar" MaxLength="128" Nullable="false" />
+    <Property Name="MA_NHOM_HANG" Type="varchar" MaxLength="128" Nullable="false" />
+    <Property Name="MO_TA" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="PRODUCT_META">
+    <Key>
+      <PropertyRef Name="MA_HANG_HT" />
+    </Key>
+    <Property Name="MA_HANG_HT" Type="varchar" MaxLength="128" Nullable="false" />
+    <Property Name="SL_1LOT" Type="int" />
+    <Property Name="SL_1THUNG" Type="int" />
+    <Property Name="SL_1PALLET" Type="int" />
+    <Property Name="THE_TICH_BOX" Type="varchar" MaxLength="64" />
+  </EntityType>
+  <EntityType Name="PRODUCTS">
+    <Key>
+      <PropertyRef Name="MA_HANG_HT" />
+    </Key>
+    <Property Name="MA_HANG_HT" Type="varchar" MaxLength="128" Nullable="false" />
+    <Property Name="MA_HANG_NHAP" Type="varchar" MaxLength="128" Nullable="false" />
+    <Property Name="TEN_HANG" Type="nvarchar(max)" />
+    <Property Name="MA_CHI_TIET_NHOM_HANG" Type="varchar" MaxLength="128" Nullable="false" />
+    <Property Name="SERI" Type="varchar" MaxLength="64" />
+    <Property Name="DON_VI_TINH" Type="nvarchar" MaxLength="64" />
+    <Property Name="NGUON_GOC" Type="nvarchar" MaxLength="128" />
+    <Property Name="MODEL_DAC_BIET" Type="tinyint" />
+    <Property Name="THOI_HAN_BAO_HANG" Type="int" />
+    <Property Name="MA_KHO" Type="varchar" MaxLength="128" Nullable="false" />
+    <Property Name="DIEN_GIAI_KHI_MUA" Type="nvarchar(max)" />
+    <Property Name="DIEN_GIAI_KHI_BAN" Type="nvarchar(max)" />
+    <Property Name="DAC_TINH" Type="nvarchar(max)" />
+    <Property Name="SL_TON_KHO" Type="int" Nullable="false" />
+    <Property Name="SL_DANG_GIU" Type="int" Nullable="false" />
+    <Property Name="SL_CO_THE_DUNG" Type="int" Nullable="false" />
+    <Property Name="DON_GIA_MUA_CO_DINH" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="DON_GIA_MUA_GAN_NHAT" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="HINH_ANH" Type="image" />
+    <Property Name="GHI_CHU" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="PURCHASE_ORDER">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NGAY_ORDER" Type="date" />
+    <Property Name="THOI_GIAN_YEU_CAU_CUA_KINH_DOANH" Type="nvarchar" MaxLength="64" />
+    <Property Name="MA_HANG_HT" Type="varchar" MaxLength="128" Nullable="false" />
+    <Property Name="TINH_TRANG" Type="varchar" MaxLength="10" />
+    <Property Name="GIA_BAN" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="GIA_NHAP" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="CHENH_LECH" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="MA_NHOM_HANG" Type="varchar" MaxLength="128" Nullable="false" />
+    <Property Name="SL_NHAP" Type="int" />
+    <Property Name="SL_THUC_NHAN" Type="int" />
+    <Property Name="NGAY_HANG_VE" Type="date" />
+    <Property Name="KINH_DOANH_BAN" Type="int" Nullable="false" />
+    <Property Name="GHI_CHU" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="SUPPLIER_ACCOUNTS">
+    <Key>
+      <PropertyRef Name="ID_TAI_KHOAN_NCC" />
+    </Key>
+    <Property Name="ID_TAI_KHOAN_NCC" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MA_NCC" Type="varchar" MaxLength="64" Nullable="false" />
+    <Property Name="SO_TAI_KHOAN" Type="nvarchar" MaxLength="64" />
+    <Property Name="TEN_NGAN_HANG" Type="nvarchar" MaxLength="256" />
+    <Property Name="CHI_NHANH" Type="nvarchar" MaxLength="256" />
+    <Property Name="TINH_TP" Type="nvarchar" MaxLength="64" />
+  </EntityType>
+  <EntityType Name="SUPPLIER_CONTACTS">
+    <Key>
+      <PropertyRef Name="ID_LIEN_HE_NCC" />
+    </Key>
+    <Property Name="ID_LIEN_HE_NCC" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MA_NCC" Type="varchar" MaxLength="64" Nullable="false" />
+    <Property Name="NGUOI_LIEN_HE" Type="nvarchar" MaxLength="64" />
+    <Property Name="NGAY_SINH" Type="date" />
+    <Property Name="GIOI_TINH" Type="nvarchar" MaxLength="5" />
+    <Property Name="CHUC_VU" Type="nvarchar" MaxLength="64" />
+    <Property Name="SO_DIEN_THOAI" Type="nvarchar" MaxLength="64" />
+    <Property Name="EMAIL" Type="nvarchar" MaxLength="64" />
+    <Property Name="FACEBOOK" Type="nvarchar" MaxLength="64" />
+    <Property Name="SKYPE" Type="nvarchar" MaxLength="64" />
+    <Property Name="GHI_CHU" Type="nvarchar" MaxLength="64" />
+  </EntityType>
+  <EntityType Name="SUPPLIERS">
+    <Key>
+      <PropertyRef Name="MA_NCC" />
+    </Key>
+    <Property Name="MA_NCC" Type="varchar" MaxLength="64" Nullable="false" />
+    <Property Name="TEN_NCC" Type="nvarchar" MaxLength="256" />
+    <Property Name="DIA_CHI" Type="nvarchar" MaxLength="256" />
+    <Property Name="SDT" Type="varchar" MaxLength="20" />
+    <Property Name="EMAIL" Type="varchar" MaxLength="20" />
+    <Property Name="FAX" Type="varchar" MaxLength="25" />
+    <Property Name="MST" Type="varchar" MaxLength="25" />
+    <Property Name="MA_NHOM_HANG" Type="varchar" MaxLength="128" Nullable="false" />
+    <Property Name="WEBSITE" Type="varchar" MaxLength="128" />
+    <Property Name="USER_ID" Type="int" Nullable="false" />
+    <Property Name="MO_TA" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="TRANSFER_WAREHOUSE_PRODUCTS">
+    <Key>
+      <PropertyRef Name="ID_KY_GUI" />
+    </Key>
+    <Property Name="ID_KY_GUI" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MA_HANG_HT" Type="varchar" MaxLength="128" Nullable="false" />
+    <Property Name="NGAY_KY_GUI" Type="date" />
+    <Property Name="KHO_NGUON" Type="varchar" MaxLength="128" Nullable="false" />
+    <Property Name="SL_KY_GUI" Type="int" />
+    <Property Name="KHO_DICH" Type="varchar" MaxLength="128" Nullable="false" />
+    <Property Name="GHI_CHU" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="USER_METAS">
+    <Key>
+      <PropertyRef Name="USER_ID" />
+      <PropertyRef Name="DEPARTMENT_ID" />
+    </Key>
+    <Property Name="USER_ID" Type="int" Nullable="false" />
+    <Property Name="DEPARTMENT_ID" Type="varchar" MaxLength="64" Nullable="false" />
+    <Property Name="SEX" Type="nvarchar" MaxLength="5" />
+    <Property Name="BIRTHDAY" Type="date" Nullable="false" />
+    <Property Name="START_TIME" Type="date" Nullable="false" />
+    <Property Name="NUMBER_PHONE" Type="varchar" MaxLength="64" />
+    <Property Name="SENIORITY" Type="nvarchar" MaxLength="64" />
+    <Property Name="NATIVE_LAND" Type="nvarchar" MaxLength="256" />
+    <Property Name="LITERACY" Type="nvarchar" MaxLength="256" />
+  </EntityType>
+  <EntityType Name="USER_PERMISSION">
+    <Key>
+      <PropertyRef Name="PERMISSION_ID" />
+      <PropertyRef Name="USER_ID" />
+    </Key>
+    <Property Name="PERMISSION_ID" Type="int" Nullable="false" />
+    <Property Name="USER_ID" Type="int" Nullable="false" />
+    <Property Name="DESCRIPTION" Type="nvarchar" MaxLength="256" />
+  </EntityType>
+  <EntityType Name="USERS">
+    <Key>
+      <PropertyRef Name="USER_ID" />
+    </Key>
+    <Property Name="USER_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="USERNAME" Type="varchar" MaxLength="64" Nullable="false" />
+    <Property Name="PASSWORD" Type="varchar" MaxLength="256" Nullable="false" />
+    <Property Name="FULLNAME" Type="nvarchar" MaxLength="64" Nullable="false" />
+    <Property Name="EMAIL" Type="varchar" MaxLength="256" />
+    <Property Name="AVATAR" Type="varchar" MaxLength="256" />
+    <Property Name="IS_ADMIN" Type="tinyint" />
+    <Property Name="ALLOWED" Type="tinyint" />
+  </EntityType>
+  <EntityType Name="WAREHOUSES">
+    <Key>
+      <PropertyRef Name="MA_KHO" />
+    </Key>
+    <Property Name="MA_KHO" Type="varchar" MaxLength="128" Nullable="false" />
+    <Property Name="TEN_KHO" Type="nvarchar(max)" />
+    <Property Name="MO_TA" Type="nvarchar(max)" />
+  </EntityType>
+  <Association Name="FK__BANG_CHAM__USER___1ED998B2">
+    <End Role="USERS" Type="Self.USERS" Multiplicity="1" />
+    <End Role="BANG_CHAM_CONG" Type="Self.BANG_CHAM_CONG" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="USERS">
+        <PropertyRef Name="USER_ID" />
+      </Principal>
+      <Dependent Role="BANG_CHAM_CONG">
+        <PropertyRef Name="USER_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__BANG_LUON__USER___1BFD2C07">
+    <End Role="USERS" Type="Self.USERS" Multiplicity="1" />
+    <End Role="BANG_LUONG" Type="Self.BANG_LUONG" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="USERS">
+        <PropertyRef Name="USER_ID" />
+      </Principal>
+      <Dependent Role="BANG_LUONG">
+        <PropertyRef Name="USER_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__CUSTOMER___MA_KH__17F790F9">
+    <End Role="CUSTOMERS" Type="Self.CUSTOMERS" Multiplicity="1" />
+    <End Role="CUSTOMER_CONTACTS" Type="Self.CUSTOMER_CONTACTS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CUSTOMERS">
+        <PropertyRef Name="MA_KHACH_HANG" />
+      </Principal>
+      <Dependent Role="CUSTOMER_CONTACTS">
+        <PropertyRef Name="MA_KHACH_HANG" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__CUSTOMER___MA_KH__1BC821DD">
+    <End Role="CUSTOMERS" Type="Self.CUSTOMERS" Multiplicity="1" />
+    <End Role="CUSTOMER_ACCOUNTS" Type="Self.CUSTOMER_ACCOUNTS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CUSTOMERS">
+        <PropertyRef Name="MA_KHACH_HANG" />
+      </Principal>
+      <Dependent Role="CUSTOMER_ACCOUNTS">
+        <PropertyRef Name="MA_KHACH_HANG" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__CUSTOMERS__MA_NH__10566F31">
+    <End Role="CUSTOMER_GROUPS" Type="Self.CUSTOMER_GROUPS" Multiplicity="1" />
+    <End Role="CUSTOMERS" Type="Self.CUSTOMERS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CUSTOMER_GROUPS">
+        <PropertyRef Name="MA_NHOM_KHACH" />
+      </Principal>
+      <Dependent Role="CUSTOMERS">
+        <PropertyRef Name="MA_NHOM_KHACH" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__CUSTOMERS__USER___114A936A">
+    <End Role="USERS" Type="Self.USERS" Multiplicity="1" />
+    <End Role="CUSTOMERS" Type="Self.CUSTOMERS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="USERS">
+        <PropertyRef Name="USER_ID" />
+      </Principal>
+      <Dependent Role="CUSTOMERS">
+        <PropertyRef Name="USER_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__DEPARTMEN__MANAG__6FE99F9F">
+    <End Role="USERS" Type="Self.USERS" Multiplicity="1" />
+    <End Role="DEPARTMENTS" Type="Self.DEPARTMENTS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="USERS">
+        <PropertyRef Name="USER_ID" />
+      </Principal>
+      <Dependent Role="DEPARTMENTS">
+        <PropertyRef Name="MANAGER" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__GHI_CHU_C__USER___49C3F6B7">
+    <End Role="USERS" Type="Self.USERS" Multiplicity="1" />
+    <End Role="GHI_CHU_CONG_VIEC" Type="Self.GHI_CHU_CONG_VIEC" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="USERS">
+        <PropertyRef Name="USER_ID" />
+      </Principal>
+      <Dependent Role="GHI_CHU_CONG_VIEC">
+        <PropertyRef Name="USER_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__HOLD_PROD__ID_GI__208CD6FA">
+    <End Role="HOLD_PRODUCTS" Type="Self.HOLD_PRODUCTS" Multiplicity="1" />
+    <End Role="HOLD_PRODUCT_DETAILS" Type="Self.HOLD_PRODUCT_DETAILS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HOLD_PRODUCTS">
+        <PropertyRef Name="ID_GIU_HANG" />
+      </Principal>
+      <Dependent Role="HOLD_PRODUCT_DETAILS">
+        <PropertyRef Name="ID_GIU_HANG" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__HOLD_PROD__MA_HA__1EA48E88">
+    <End Role="PRODUCTS" Type="Self.PRODUCTS" Multiplicity="1" />
+    <End Role="HOLD_PRODUCTS" Type="Self.HOLD_PRODUCTS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PRODUCTS">
+        <PropertyRef Name="MA_HANG_HT" />
+      </Principal>
+      <Dependent Role="HOLD_PRODUCTS">
+        <PropertyRef Name="MA_HANG_HT" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__HOLD_PROD__MA_KH__22751F6C">
+    <End Role="CUSTOMERS" Type="Self.CUSTOMERS" Multiplicity="1" />
+    <End Role="HOLD_PRODUCT_DETAILS" Type="Self.HOLD_PRODUCT_DETAILS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CUSTOMERS">
+        <PropertyRef Name="MA_KHACH_HANG" />
+      </Principal>
+      <Dependent Role="HOLD_PRODUCT_DETAILS">
+        <PropertyRef Name="MA_KHACH_HANG" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__HOLD_PROD__NHAN___2180FB33">
+    <End Role="USERS" Type="Self.USERS" Multiplicity="1" />
+    <End Role="HOLD_PRODUCT_DETAILS" Type="Self.HOLD_PRODUCT_DETAILS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="USERS">
+        <PropertyRef Name="USER_ID" />
+      </Principal>
+      <Dependent Role="HOLD_PRODUCT_DETAILS">
+        <PropertyRef Name="NHAN_VIEN_GIU" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__MANAGE_SA__MA_KH__14270015">
+    <End Role="CUSTOMERS" Type="Self.CUSTOMERS" Multiplicity="1" />
+    <End Role="MANAGE_SALES_AND_CUSTOMERS" Type="Self.MANAGE_SALES_AND_CUSTOMERS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CUSTOMERS">
+        <PropertyRef Name="MA_KHACH_HANG" />
+      </Principal>
+      <Dependent Role="MANAGE_SALES_AND_CUSTOMERS">
+        <PropertyRef Name="MA_KHACH_HANG" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__MANAGE_SA__NHAN___151B244E">
+    <End Role="USERS" Type="Self.USERS" Multiplicity="1" />
+    <End Role="MANAGE_SALES_AND_CUSTOMERS" Type="Self.MANAGE_SALES_AND_CUSTOMERS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="USERS">
+        <PropertyRef Name="USER_ID" />
+      </Principal>
+      <Dependent Role="MANAGE_SALES_AND_CUSTOMERS">
+        <PropertyRef Name="NHAN_VIEN_PHU_TRACH" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__PRODUCT_C__MA_NH__7F2BE32F">
+    <End Role="PRODUCT_CATEGORIES" Type="Self.PRODUCT_CATEGORIES" Multiplicity="1" />
+    <End Role="PRODUCT_CATEGORY_DETAILS" Type="Self.PRODUCT_CATEGORY_DETAILS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PRODUCT_CATEGORIES">
+        <PropertyRef Name="MA_NHOM_HANG" />
+      </Principal>
+      <Dependent Role="PRODUCT_CATEGORY_DETAILS">
+        <PropertyRef Name="MA_NHOM_HANG" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__PRODUCT_M__MA_HA__0B91BA14">
+    <End Role="PRODUCTS" Type="Self.PRODUCTS" Multiplicity="1" />
+    <End Role="PRODUCT_META" Type="Self.PRODUCT_META" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="PRODUCTS">
+        <PropertyRef Name="MA_HANG_HT" />
+      </Principal>
+      <Dependent Role="PRODUCT_META">
+        <PropertyRef Name="MA_HANG_HT" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__PRODUCTS__MA_CHI__04E4BC85">
+    <End Role="PRODUCT_CATEGORY_DETAILS" Type="Self.PRODUCT_CATEGORY_DETAILS" Multiplicity="1" />
+    <End Role="PRODUCTS" Type="Self.PRODUCTS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PRODUCT_CATEGORY_DETAILS">
+        <PropertyRef Name="MA_CHI_TIET_NHOM_HANG" />
+      </Principal>
+      <Dependent Role="PRODUCTS">
+        <PropertyRef Name="MA_CHI_TIET_NHOM_HANG" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__PRODUCTS__MA_KHO__05D8E0BE">
+    <End Role="WAREHOUSES" Type="Self.WAREHOUSES" Multiplicity="1" />
+    <End Role="PRODUCTS" Type="Self.PRODUCTS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="WAREHOUSES">
+        <PropertyRef Name="MA_KHO" />
+      </Principal>
+      <Dependent Role="PRODUCTS">
+        <PropertyRef Name="MA_KHO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__PURCHASE___KINH___3864608B">
+    <End Role="USERS" Type="Self.USERS" Multiplicity="1" />
+    <End Role="PURCHASE_ORDER" Type="Self.PURCHASE_ORDER" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="USERS">
+        <PropertyRef Name="USER_ID" />
+      </Principal>
+      <Dependent Role="PURCHASE_ORDER">
+        <PropertyRef Name="KINH_DOANH_BAN" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__PURCHASE___MA_HA__367C1819">
+    <End Role="PRODUCTS" Type="Self.PRODUCTS" Multiplicity="1" />
+    <End Role="PURCHASE_ORDER" Type="Self.PURCHASE_ORDER" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PRODUCTS">
+        <PropertyRef Name="MA_HANG_HT" />
+      </Principal>
+      <Dependent Role="PURCHASE_ORDER">
+        <PropertyRef Name="MA_HANG_HT" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__PURCHASE___MA_NH__37703C52">
+    <End Role="PRODUCT_CATEGORIES" Type="Self.PRODUCT_CATEGORIES" Multiplicity="1" />
+    <End Role="PURCHASE_ORDER" Type="Self.PURCHASE_ORDER" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PRODUCT_CATEGORIES">
+        <PropertyRef Name="MA_NHOM_HANG" />
+      </Principal>
+      <Dependent Role="PURCHASE_ORDER">
+        <PropertyRef Name="MA_NHOM_HANG" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__SUPPLIER___MA_NC__2DE6D218">
+    <End Role="SUPPLIERS" Type="Self.SUPPLIERS" Multiplicity="1" />
+    <End Role="SUPPLIER_CONTACTS" Type="Self.SUPPLIER_CONTACTS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SUPPLIERS">
+        <PropertyRef Name="MA_NCC" />
+      </Principal>
+      <Dependent Role="SUPPLIER_CONTACTS">
+        <PropertyRef Name="MA_NCC" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__SUPPLIER___MA_NC__31B762FC">
+    <End Role="SUPPLIERS" Type="Self.SUPPLIERS" Multiplicity="1" />
+    <End Role="SUPPLIER_ACCOUNTS" Type="Self.SUPPLIER_ACCOUNTS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SUPPLIERS">
+        <PropertyRef Name="MA_NCC" />
+      </Principal>
+      <Dependent Role="SUPPLIER_ACCOUNTS">
+        <PropertyRef Name="MA_NCC" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__SUPPLIERS__MA_NH__2A164134">
+    <End Role="PRODUCT_CATEGORIES" Type="Self.PRODUCT_CATEGORIES" Multiplicity="1" />
+    <End Role="SUPPLIERS" Type="Self.SUPPLIERS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PRODUCT_CATEGORIES">
+        <PropertyRef Name="MA_NHOM_HANG" />
+      </Principal>
+      <Dependent Role="SUPPLIERS">
+        <PropertyRef Name="MA_NHOM_HANG" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__SUPPLIERS__USER___2B0A656D">
+    <End Role="USERS" Type="Self.USERS" Multiplicity="1" />
+    <End Role="SUPPLIERS" Type="Self.SUPPLIERS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="USERS">
+        <PropertyRef Name="USER_ID" />
+      </Principal>
+      <Dependent Role="SUPPLIERS">
+        <PropertyRef Name="USER_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__TRANSFER___KHO_D__2739D489">
+    <End Role="WAREHOUSES" Type="Self.WAREHOUSES" Multiplicity="1" />
+    <End Role="TRANSFER_WAREHOUSE_PRODUCTS" Type="Self.TRANSFER_WAREHOUSE_PRODUCTS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="WAREHOUSES">
+        <PropertyRef Name="MA_KHO" />
+      </Principal>
+      <Dependent Role="TRANSFER_WAREHOUSE_PRODUCTS">
+        <PropertyRef Name="KHO_DICH" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__TRANSFER___KHO_N__2645B050">
+    <End Role="WAREHOUSES" Type="Self.WAREHOUSES" Multiplicity="1" />
+    <End Role="TRANSFER_WAREHOUSE_PRODUCTS" Type="Self.TRANSFER_WAREHOUSE_PRODUCTS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="WAREHOUSES">
+        <PropertyRef Name="MA_KHO" />
+      </Principal>
+      <Dependent Role="TRANSFER_WAREHOUSE_PRODUCTS">
+        <PropertyRef Name="KHO_NGUON" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__TRANSFER___MA_HA__25518C17">
+    <End Role="PRODUCTS" Type="Self.PRODUCTS" Multiplicity="1" />
+    <End Role="TRANSFER_WAREHOUSE_PRODUCTS" Type="Self.TRANSFER_WAREHOUSE_PRODUCTS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PRODUCTS">
+        <PropertyRef Name="MA_HANG_HT" />
+      </Principal>
+      <Dependent Role="TRANSFER_WAREHOUSE_PRODUCTS">
+        <PropertyRef Name="MA_HANG_HT" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__USER_META__DEPAR__72C60C4A">
+    <End Role="DEPARTMENTS" Type="Self.DEPARTMENTS" Multiplicity="1" />
+    <End Role="USER_METAS" Type="Self.USER_METAS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DEPARTMENTS">
+        <PropertyRef Name="DEPARTMENT_ID" />
+      </Principal>
+      <Dependent Role="USER_METAS">
+        <PropertyRef Name="DEPARTMENT_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__USER_META__USER___71D1E811">
+    <End Role="USERS" Type="Self.USERS" Multiplicity="1" />
+    <End Role="USER_METAS" Type="Self.USER_METAS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="USERS">
+        <PropertyRef Name="USER_ID" />
+      </Principal>
+      <Dependent Role="USER_METAS">
+        <PropertyRef Name="USER_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__USER_PERM__PERMI__2B3F6F97">
+    <End Role="LIST_PERMISSIONS" Type="Self.LIST_PERMISSIONS" Multiplicity="1" />
+    <End Role="USER_PERMISSION" Type="Self.USER_PERMISSION" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LIST_PERMISSIONS">
+        <PropertyRef Name="PERMISSION_ID" />
+      </Principal>
+      <Dependent Role="USER_PERMISSION">
+        <PropertyRef Name="PERMISSION_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__USER_PERM__USER___2C3393D0">
+    <End Role="USERS" Type="Self.USERS" Multiplicity="1" />
+    <End Role="USER_PERMISSION" Type="Self.USER_PERMISSION" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="USERS">
+        <PropertyRef Name="USER_ID" />
+      </Principal>
+      <Dependent Role="USER_PERMISSION">
+        <PropertyRef Name="USER_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_LIST_PERMISSIONS_LIST_CONTROLLERS">
+    <End Role="LIST_CONTROLLERS" Type="Self.LIST_CONTROLLERS" Multiplicity="1" />
+    <End Role="LIST_PERMISSIONS" Type="Self.LIST_PERMISSIONS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LIST_CONTROLLERS">
+        <PropertyRef Name="CONTROLLER_ID" />
+      </Principal>
+      <Dependent Role="LIST_PERMISSIONS">
+        <PropertyRef Name="CONTROLLER_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="SYSTEM_DATABASEModelStoreContainer">
+    <EntitySet Name="BANG_CHAM_CONG" EntityType="Self.BANG_CHAM_CONG" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="BANG_LUONG" EntityType="Self.BANG_LUONG" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CUSTOMER_ACCOUNTS" EntityType="Self.CUSTOMER_ACCOUNTS" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CUSTOMER_CONTACTS" EntityType="Self.CUSTOMER_CONTACTS" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CUSTOMER_GROUPS" EntityType="Self.CUSTOMER_GROUPS" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CUSTOMERS" EntityType="Self.CUSTOMERS" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DEPARTMENTS" EntityType="Self.DEPARTMENTS" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="GHI_CHU_CONG_VIEC" EntityType="Self.GHI_CHU_CONG_VIEC" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="HOLD_PRODUCTS" EntityType="Self.HOLD_PRODUCTS" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="LIST_CONTROLLERS" EntityType="Self.LIST_CONTROLLERS" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="LIST_PERMISSIONS" EntityType="Self.LIST_PERMISSIONS" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MANAGE_SALES_AND_CUSTOMERS" EntityType="Self.MANAGE_SALES_AND_CUSTOMERS" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PAYMENT_TERMS" EntityType="Self.PAYMENT_TERMS" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PRODUCT_CATEGORIES" EntityType="Self.PRODUCT_CATEGORIES" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PRODUCT_CATEGORY_DETAILS" EntityType="Self.PRODUCT_CATEGORY_DETAILS" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PRODUCT_META" EntityType="Self.PRODUCT_META" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PRODUCTS" EntityType="Self.PRODUCTS" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PURCHASE_ORDER" EntityType="Self.PURCHASE_ORDER" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SUPPLIER_ACCOUNTS" EntityType="Self.SUPPLIER_ACCOUNTS" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SUPPLIER_CONTACTS" EntityType="Self.SUPPLIER_CONTACTS" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SUPPLIERS" EntityType="Self.SUPPLIERS" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TRANSFER_WAREHOUSE_PRODUCTS" EntityType="Self.TRANSFER_WAREHOUSE_PRODUCTS" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="USER_METAS" EntityType="Self.USER_METAS" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="USER_PERMISSION" EntityType="Self.USER_PERMISSION" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="USERS" EntityType="Self.USERS" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="WAREHOUSES" EntityType="Self.WAREHOUSES" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="HOLD_PRODUCT_DETAILS" EntityType="Self.HOLD_PRODUCT_DETAILS" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [HOLD_PRODUCT_DETAILS].[ID_GIU_HANG] AS [ID_GIU_HANG], 
+    [HOLD_PRODUCT_DETAILS].[NHAN_VIEN_GIU] AS [NHAN_VIEN_GIU], 
+    [HOLD_PRODUCT_DETAILS].[MA_KHACH_HANG] AS [MA_KHACH_HANG], 
+    [HOLD_PRODUCT_DETAILS].[SL_GIU] AS [SL_GIU], 
+    [HOLD_PRODUCT_DETAILS].[LOAI_GIU] AS [LOAI_GIU], 
+    [HOLD_PRODUCT_DETAILS].[TRANG_THAI] AS [TRANG_THAI], 
+    [HOLD_PRODUCT_DETAILS].[MA_PHIEU_XUAT_KHO] AS [MA_PHIEU_XUAT_KHO], 
+    [HOLD_PRODUCT_DETAILS].[MA_KHACH_XUAT_KHO] AS [MA_KHACH_XUAT_KHO], 
+    [HOLD_PRODUCT_DETAILS].[SL_XUAT_KHO] AS [SL_XUAT_KHO], 
+    [HOLD_PRODUCT_DETAILS].[GHI_CHU] AS [GHI_CHU]
+    FROM [dbo].[HOLD_PRODUCT_DETAILS] AS [HOLD_PRODUCT_DETAILS]</DefiningQuery>
+    </EntitySet>
+    <AssociationSet Name="FK__BANG_CHAM__USER___1ED998B2" Association="Self.FK__BANG_CHAM__USER___1ED998B2">
+      <End Role="USERS" EntitySet="USERS" />
+      <End Role="BANG_CHAM_CONG" EntitySet="BANG_CHAM_CONG" />
+    </AssociationSet>
+    <AssociationSet Name="FK__BANG_LUON__USER___1BFD2C07" Association="Self.FK__BANG_LUON__USER___1BFD2C07">
+      <End Role="USERS" EntitySet="USERS" />
+      <End Role="BANG_LUONG" EntitySet="BANG_LUONG" />
+    </AssociationSet>
+    <AssociationSet Name="FK__CUSTOMER___MA_KH__17F790F9" Association="Self.FK__CUSTOMER___MA_KH__17F790F9">
+      <End Role="CUSTOMERS" EntitySet="CUSTOMERS" />
+      <End Role="CUSTOMER_CONTACTS" EntitySet="CUSTOMER_CONTACTS" />
+    </AssociationSet>
+    <AssociationSet Name="FK__CUSTOMER___MA_KH__1BC821DD" Association="Self.FK__CUSTOMER___MA_KH__1BC821DD">
+      <End Role="CUSTOMERS" EntitySet="CUSTOMERS" />
+      <End Role="CUSTOMER_ACCOUNTS" EntitySet="CUSTOMER_ACCOUNTS" />
+    </AssociationSet>
+    <AssociationSet Name="FK__CUSTOMERS__MA_NH__10566F31" Association="Self.FK__CUSTOMERS__MA_NH__10566F31">
+      <End Role="CUSTOMER_GROUPS" EntitySet="CUSTOMER_GROUPS" />
+      <End Role="CUSTOMERS" EntitySet="CUSTOMERS" />
+    </AssociationSet>
+    <AssociationSet Name="FK__CUSTOMERS__USER___114A936A" Association="Self.FK__CUSTOMERS__USER___114A936A">
+      <End Role="USERS" EntitySet="USERS" />
+      <End Role="CUSTOMERS" EntitySet="CUSTOMERS" />
+    </AssociationSet>
+    <AssociationSet Name="FK__DEPARTMEN__MANAG__6FE99F9F" Association="Self.FK__DEPARTMEN__MANAG__6FE99F9F">
+      <End Role="USERS" EntitySet="USERS" />
+      <End Role="DEPARTMENTS" EntitySet="DEPARTMENTS" />
+    </AssociationSet>
+    <AssociationSet Name="FK__GHI_CHU_C__USER___49C3F6B7" Association="Self.FK__GHI_CHU_C__USER___49C3F6B7">
+      <End Role="USERS" EntitySet="USERS" />
+      <End Role="GHI_CHU_CONG_VIEC" EntitySet="GHI_CHU_CONG_VIEC" />
+    </AssociationSet>
+    <AssociationSet Name="FK__HOLD_PROD__ID_GI__208CD6FA" Association="Self.FK__HOLD_PROD__ID_GI__208CD6FA">
+      <End Role="HOLD_PRODUCTS" EntitySet="HOLD_PRODUCTS" />
+      <End Role="HOLD_PRODUCT_DETAILS" EntitySet="HOLD_PRODUCT_DETAILS" />
+    </AssociationSet>
+    <AssociationSet Name="FK__HOLD_PROD__MA_HA__1EA48E88" Association="Self.FK__HOLD_PROD__MA_HA__1EA48E88">
+      <End Role="PRODUCTS" EntitySet="PRODUCTS" />
+      <End Role="HOLD_PRODUCTS" EntitySet="HOLD_PRODUCTS" />
+    </AssociationSet>
+    <AssociationSet Name="FK__HOLD_PROD__MA_KH__22751F6C" Association="Self.FK__HOLD_PROD__MA_KH__22751F6C">
+      <End Role="CUSTOMERS" EntitySet="CUSTOMERS" />
+      <End Role="HOLD_PRODUCT_DETAILS" EntitySet="HOLD_PRODUCT_DETAILS" />
+    </AssociationSet>
+    <AssociationSet Name="FK__HOLD_PROD__NHAN___2180FB33" Association="Self.FK__HOLD_PROD__NHAN___2180FB33">
+      <End Role="USERS" EntitySet="USERS" />
+      <End Role="HOLD_PRODUCT_DETAILS" EntitySet="HOLD_PRODUCT_DETAILS" />
+    </AssociationSet>
+    <AssociationSet Name="FK__MANAGE_SA__MA_KH__14270015" Association="Self.FK__MANAGE_SA__MA_KH__14270015">
+      <End Role="CUSTOMERS" EntitySet="CUSTOMERS" />
+      <End Role="MANAGE_SALES_AND_CUSTOMERS" EntitySet="MANAGE_SALES_AND_CUSTOMERS" />
+    </AssociationSet>
+    <AssociationSet Name="FK__MANAGE_SA__NHAN___151B244E" Association="Self.FK__MANAGE_SA__NHAN___151B244E">
+      <End Role="USERS" EntitySet="USERS" />
+      <End Role="MANAGE_SALES_AND_CUSTOMERS" EntitySet="MANAGE_SALES_AND_CUSTOMERS" />
+    </AssociationSet>
+    <AssociationSet Name="FK__PRODUCT_C__MA_NH__7F2BE32F" Association="Self.FK__PRODUCT_C__MA_NH__7F2BE32F">
+      <End Role="PRODUCT_CATEGORIES" EntitySet="PRODUCT_CATEGORIES" />
+      <End Role="PRODUCT_CATEGORY_DETAILS" EntitySet="PRODUCT_CATEGORY_DETAILS" />
+    </AssociationSet>
+    <AssociationSet Name="FK__PRODUCT_M__MA_HA__0B91BA14" Association="Self.FK__PRODUCT_M__MA_HA__0B91BA14">
+      <End Role="PRODUCTS" EntitySet="PRODUCTS" />
+      <End Role="PRODUCT_META" EntitySet="PRODUCT_META" />
+    </AssociationSet>
+    <AssociationSet Name="FK__PRODUCTS__MA_CHI__04E4BC85" Association="Self.FK__PRODUCTS__MA_CHI__04E4BC85">
+      <End Role="PRODUCT_CATEGORY_DETAILS" EntitySet="PRODUCT_CATEGORY_DETAILS" />
+      <End Role="PRODUCTS" EntitySet="PRODUCTS" />
+    </AssociationSet>
+    <AssociationSet Name="FK__PRODUCTS__MA_KHO__05D8E0BE" Association="Self.FK__PRODUCTS__MA_KHO__05D8E0BE">
+      <End Role="WAREHOUSES" EntitySet="WAREHOUSES" />
+      <End Role="PRODUCTS" EntitySet="PRODUCTS" />
+    </AssociationSet>
+    <AssociationSet Name="FK__PURCHASE___KINH___3864608B" Association="Self.FK__PURCHASE___KINH___3864608B">
+      <End Role="USERS" EntitySet="USERS" />
+      <End Role="PURCHASE_ORDER" EntitySet="PURCHASE_ORDER" />
+    </AssociationSet>
+    <AssociationSet Name="FK__PURCHASE___MA_HA__367C1819" Association="Self.FK__PURCHASE___MA_HA__367C1819">
+      <End Role="PRODUCTS" EntitySet="PRODUCTS" />
+      <End Role="PURCHASE_ORDER" EntitySet="PURCHASE_ORDER" />
+    </AssociationSet>
+    <AssociationSet Name="FK__PURCHASE___MA_NH__37703C52" Association="Self.FK__PURCHASE___MA_NH__37703C52">
+      <End Role="PRODUCT_CATEGORIES" EntitySet="PRODUCT_CATEGORIES" />
+      <End Role="PURCHASE_ORDER" EntitySet="PURCHASE_ORDER" />
+    </AssociationSet>
+    <AssociationSet Name="FK__SUPPLIER___MA_NC__2DE6D218" Association="Self.FK__SUPPLIER___MA_NC__2DE6D218">
+      <End Role="SUPPLIERS" EntitySet="SUPPLIERS" />
+      <End Role="SUPPLIER_CONTACTS" EntitySet="SUPPLIER_CONTACTS" />
+    </AssociationSet>
+    <AssociationSet Name="FK__SUPPLIER___MA_NC__31B762FC" Association="Self.FK__SUPPLIER___MA_NC__31B762FC">
+      <End Role="SUPPLIERS" EntitySet="SUPPLIERS" />
+      <End Role="SUPPLIER_ACCOUNTS" EntitySet="SUPPLIER_ACCOUNTS" />
+    </AssociationSet>
+    <AssociationSet Name="FK__SUPPLIERS__MA_NH__2A164134" Association="Self.FK__SUPPLIERS__MA_NH__2A164134">
+      <End Role="PRODUCT_CATEGORIES" EntitySet="PRODUCT_CATEGORIES" />
+      <End Role="SUPPLIERS" EntitySet="SUPPLIERS" />
+    </AssociationSet>
+    <AssociationSet Name="FK__SUPPLIERS__USER___2B0A656D" Association="Self.FK__SUPPLIERS__USER___2B0A656D">
+      <End Role="USERS" EntitySet="USERS" />
+      <End Role="SUPPLIERS" EntitySet="SUPPLIERS" />
+    </AssociationSet>
+    <AssociationSet Name="FK__TRANSFER___KHO_D__2739D489" Association="Self.FK__TRANSFER___KHO_D__2739D489">
+      <End Role="WAREHOUSES" EntitySet="WAREHOUSES" />
+      <End Role="TRANSFER_WAREHOUSE_PRODUCTS" EntitySet="TRANSFER_WAREHOUSE_PRODUCTS" />
+    </AssociationSet>
+    <AssociationSet Name="FK__TRANSFER___KHO_N__2645B050" Association="Self.FK__TRANSFER___KHO_N__2645B050">
+      <End Role="WAREHOUSES" EntitySet="WAREHOUSES" />
+      <End Role="TRANSFER_WAREHOUSE_PRODUCTS" EntitySet="TRANSFER_WAREHOUSE_PRODUCTS" />
+    </AssociationSet>
+    <AssociationSet Name="FK__TRANSFER___MA_HA__25518C17" Association="Self.FK__TRANSFER___MA_HA__25518C17">
+      <End Role="PRODUCTS" EntitySet="PRODUCTS" />
+      <End Role="TRANSFER_WAREHOUSE_PRODUCTS" EntitySet="TRANSFER_WAREHOUSE_PRODUCTS" />
+    </AssociationSet>
+    <AssociationSet Name="FK__USER_META__DEPAR__72C60C4A" Association="Self.FK__USER_META__DEPAR__72C60C4A">
+      <End Role="DEPARTMENTS" EntitySet="DEPARTMENTS" />
+      <End Role="USER_METAS" EntitySet="USER_METAS" />
+    </AssociationSet>
+    <AssociationSet Name="FK__USER_META__USER___71D1E811" Association="Self.FK__USER_META__USER___71D1E811">
+      <End Role="USERS" EntitySet="USERS" />
+      <End Role="USER_METAS" EntitySet="USER_METAS" />
+    </AssociationSet>
+    <AssociationSet Name="FK__USER_PERM__PERMI__2B3F6F97" Association="Self.FK__USER_PERM__PERMI__2B3F6F97">
+      <End Role="LIST_PERMISSIONS" EntitySet="LIST_PERMISSIONS" />
+      <End Role="USER_PERMISSION" EntitySet="USER_PERMISSION" />
+    </AssociationSet>
+    <AssociationSet Name="FK__USER_PERM__USER___2C3393D0" Association="Self.FK__USER_PERM__USER___2C3393D0">
+      <End Role="USERS" EntitySet="USERS" />
+      <End Role="USER_PERMISSION" EntitySet="USER_PERMISSION" />
+    </AssociationSet>
+    <AssociationSet Name="FK_LIST_PERMISSIONS_LIST_CONTROLLERS" Association="Self.FK_LIST_PERMISSIONS_LIST_CONTROLLERS">
+      <End Role="LIST_CONTROLLERS" EntitySet="LIST_CONTROLLERS" />
+      <End Role="LIST_PERMISSIONS" EntitySet="LIST_PERMISSIONS" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

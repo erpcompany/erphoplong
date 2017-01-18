@@ -1,0 +1,80 @@
+﻿@model IEnumerable<SYSTEM_MANAGEMENT.Models.USER_METAS>
+
+@{
+    ViewBag.Title = "Danh sách nhân viên";
+}
+
+<style>
+    .text-font{
+        text-align:center;
+    }
+</style>
+
+<h2>Danh sách nhân viên  </h2>
+
+<p>
+    
+</p>
+<table class="table" border="1">
+    <tr style="background-color:cornflowerblue; color: white; ">
+        <th class="text-font" >
+            Họ và tên
+        </th>
+       
+        <th class="text-font" >
+            Giới tính
+        </th>
+        <th class="text-font" >
+            Ngày sinh
+        </th>
+        <th class="text-font" >
+            Ngày vào công ty
+        </th>
+        <th class="text-font" >
+            Số điện thoại
+        </th>
+        <th class="text-font" >
+            Thâm niên
+        </th>
+        <th class="text-font" >
+            Quê quán
+        </th>
+        <th class="text-font" >
+            Học vấn
+        </th>
+        
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td >
+            @item.USER.FULLNAME
+        </td>
+       
+        <td style="text-align:center">
+            @item.SEX
+        </td>
+        <td style="text-align:center">
+            @item.BIRTHDAY.ToString("dd/MM/yyyy")
+        </td>
+        <td style="text-align:center">
+            @item.START_TIME.ToString("dd/MM/yyyy")
+        </td>
+        <td style="text-align:center">
+            @item.NUMBER_PHONE
+        </td>
+        <td >
+            @item.SENIORITY
+        </td>
+        <td style="text-align:center">
+            @item.NATIVE_LAND
+        </td>
+        <td style="text-align:center">
+            @item.LITERACY
+        </td>
+        
+       
+    </tr>
+}
+
+</table>

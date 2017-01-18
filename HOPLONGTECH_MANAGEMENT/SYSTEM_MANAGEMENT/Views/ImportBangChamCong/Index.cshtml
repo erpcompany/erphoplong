@@ -1,0 +1,17 @@
+﻿
+@{
+    ViewBag.Title = " Import Bảng chấm công";
+}
+
+    <h1 style="font-family: 'Times New Roman'; color:darkblue">Nhập khẩu bảng chấm công</h1>
+    <br />
+    @using (Html.BeginForm("Index", "ImportBangChamCong", FormMethod.Post, new { enctype = "multipart/form-data" }))
+    {
+        <input type="file" name="file"/>
+        <br />
+        <input type="submit" value="Lưu dữ liệu" />
+        <p style="color:blue">@ViewBag.Message</p>
+        <p style="color:red">@ViewBag.Error</p>
+    }
+
+

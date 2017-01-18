@@ -1,0 +1,42 @@
+﻿@model SYSTEM_MANAGEMENT.Models.DEPARTMENT
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>DEPARTMENT</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.DEPARTMENT_NAME)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DEPARTMENT_NAME)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NOTED)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NOTED)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.USER.USERNAME)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.USER.USERNAME)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.DEPARTMENT_ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

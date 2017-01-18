@@ -1,0 +1,248 @@
+﻿@model SYSTEM_MANAGEMENT.Models.BANG_LUONG
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>BANG_LUONG</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.LUONG_CO_BAN)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LUONG_CO_BAN)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LUONG_BAO_HIEM)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LUONG_BAO_HIEM)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PHU_CAP_AN_TRUA)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PHU_CAP_AN_TRUA)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PHU_CAP_DI_LAI_DIEN_THOAI)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PHU_CAP_DI_LAI_DIEN_THOAI)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PHU_CAP_THUONG_DOANH_SO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PHU_CAP_THUONG_DOANH_SO)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PHU_CAP_TRACH_NHIEM)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PHU_CAP_TRACH_NHIEM)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CONG_CO_BAN)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CONG_CO_BAN)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CONG_CO_BAN_NGAY)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CONG_CO_BAN_NGAY)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CONG_CO_BAN_GIO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CONG_CO_BAN_GIO)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BAO_HIEM_CONG_TY)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BAO_HIEM_CONG_TY)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BAO_HIEM_NHAN_VIEN)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BAO_HIEM_NHAN_VIEN)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LUONG_THUC_TE_CONG_LAM_THUC)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LUONG_THUC_TE_CONG_LAM_THUC)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LUONG_THUC_TE_SO_TIEN)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LUONG_THUC_TE_SO_TIEN)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LUONG_LAM_THEM_CONG_NGAY_THUONG)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LUONG_LAM_THEM_CONG_NGAY_THUONG)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LUONG_LAM_THEM_TIEN_CONG_NGAY_THUONG)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LUONG_LAM_THEM_TIEN_CONG_NGAY_THUONG)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LUONG_LAM_THEM_CONG_NGAY_NGHI)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LUONG_LAM_THEM_CONG_NGAY_NGHI)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LUONG_LAM_THEM_TIEN_CONG_NGAY_NGHI)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LUONG_LAM_THEM_TIEN_CONG_NGAY_NGHI)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LUONG_LAM_THEM_CONG_NGAY_LE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LUONG_LAM_THEM_CONG_NGAY_LE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LUONG_LAM_THEM_TIEN_CONG_NGAY_LE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LUONG_LAM_THEM_TIEN_CONG_NGAY_LE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TONG_TIEN_CONG)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TONG_TIEN_CONG)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TAM_UNG)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TAM_UNG)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.GIO_DI_TRE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GIO_DI_TRE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PHAT_DI_TRE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PHAT_DI_TRE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CONG_DOAN)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CONG_DOAN)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LUONG_LAO_CONG)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LUONG_LAO_CONG)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.THUC_LINH)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.THUC_LINH)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.THANG_LINH_LUONG)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.THANG_LINH_LUONG)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.USER.USERNAME)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.USER.USERNAME)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

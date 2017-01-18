@@ -1,0 +1,99 @@
+﻿
+@{
+    Layout = null;
+}
+
+
+<html>
+<head>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!-- Meta, title, CSS, favicons, etc. -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Latest compiled and minified CSS -->
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+</head>
+
+<body style="background-image: url('/Content/images/login.jpg');">
+    <div class="container">
+        <div id="loginbox" style="margin-top:50px; top: 100px;" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+            
+            <div class="panel panel-info">
+                <div class="panel-heading">
+                    <div class="panel-title">HopLong System</div>
+                    
+                </div>
+                <div style="padding-top:30px" class="panel-body">
+                    <div style="display:none" id="login-alert" class="alert alert-danger col-sm-12"></div>
+                    <p style="color:red">@ViewBag.error</p>
+                    <table>
+                        <tr>
+                            <td width="25%"><img src="~/Content/images/logo.png" alt="hoplongtech" height="150" width="100%" style="float:left; padding-right:10px;" /></td>
+                            <td width="75%">
+                                <div style="width:auto; padding-left:15px; padding-right:20px; font-family:'Times New Roman'">
+
+                                    Welcome to HopLongTech System. Please login to enter your work area!
+                                    <form action="/Home/Login" id="loginform" class="form-horizontal" role="form" method="post" style="margin-top:10px;">
+
+                                        <div style="margin-bottom: 25px; width: auto;" class="input-group">
+                                            <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                                            <input id="login-username" type="text" class="form-control" name="username" value="" placeholder="username">
+                                        </div>
+
+                                        <div style="margin-bottom: 25px; width: auto;" class="input-group">
+                                            <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                                            <input id="login-password" type="password" class="form-control" name="password" placeholder="password">
+                                        </div>
+
+                                        <center>
+                                            <div style="margin-top:10px; " class="form-group">
+                                                <!-- Button -->
+                                                <div class="col-sm-12 controls">
+                                                    <input type="submit" class="btn btn-success" value="Đăng nhập" />
+                                                    <!--<a id="btn-login" class="btn btn-success">Đăng nhập  </a>-->
+                                                </div>
+                                            </div>
+                                        </center>
+
+
+                                    </form>
+
+                                </div>
+
+                            </td>
+                        </tr>
+                    </table>
+                    
+                                   
+                    
+                    
+                    <div class="form-group">
+                        <div class="col-md-12 control">
+                            <div style="border-top: 1px solid#888; padding-top:15px; font-size:85%">
+                                Liên hệ với Administrator trong trường hợp bạn quên mật khẩu
+
+                            </div>
+                        </div>
+                    </div>
+
+                    
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+    
+</body>
+</html>
+
+
+

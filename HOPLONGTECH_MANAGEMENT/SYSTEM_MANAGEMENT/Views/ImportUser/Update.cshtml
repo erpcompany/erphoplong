@@ -1,0 +1,17 @@
+﻿
+@{
+    ViewBag.Title = "Update Users";
+}
+
+<h1 style="font-family: 'Times New Roman'; color:darkblue">Cập nhật danh sách người dùng</h1>
+<br />
+@using (Html.BeginForm("Update", "ImportUser", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    <input type="file" name="file" />
+    <br />
+    <input type="submit" value="Lưu dữ liệu" />
+        <p style="color:blue">@ViewBag.Message</p>
+        <p style="color:red">@ViewBag.Error</p>
+}
+
+

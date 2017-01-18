@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="c276a546f3b542aa91467b952f19b3b5" Name="Diagram1">
+        <EntityTypeShape EntityType="SYSTEM_DATABASEModel.BANG_CHAM_CONG" Width="1.5" PointX="3" PointY="18.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="SYSTEM_DATABASEModel.BANG_LUONG" Width="1.5" PointX="3" PointY="23.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="SYSTEM_DATABASEModel.CUSTOMER_ACCOUNTS" Width="1.5" PointX="8.25" PointY="27.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="SYSTEM_DATABASEModel.CUSTOMER_CONTACTS" Width="1.5" PointX="8.25" PointY="33.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="SYSTEM_DATABASEModel.CUSTOMER_GROUPS" Width="1.5" PointX="3.75" PointY="12.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="SYSTEM_DATABASEModel.CUSTOMER" Width="1.5" PointX="6" PointY="25.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="SYSTEM_DATABASEModel.DEPARTMENT" Width="1.5" PointX="3" PointY="37.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="SYSTEM_DATABASEModel.GHI_CHU_CONG_VIEC" Width="1.5" PointX="3" PointY="40.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SYSTEM_DATABASEModel.HOLD_PRODUCTS" Width="1.5" PointX="9" PointY="7" IsExpanded="true" />
+        <EntityTypeShape EntityType="SYSTEM_DATABASEModel.LIST_CONTROLLERS" Width="1.5" PointX="3.5" PointY="44.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="SYSTEM_DATABASEModel.LIST_PERMISSIONS" Width="1.5" PointX="5.75" PointY="44.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="SYSTEM_DATABASEModel.MANAGE_SALES_AND_CUSTOMERS" Width="1.5" PointX="11.25" PointY="26" IsExpanded="true" />
+        <EntityTypeShape EntityType="SYSTEM_DATABASEModel.PAYMENT_TERMS" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SYSTEM_DATABASEModel.PRODUCT_CATEGORIES" Width="1.5" PointX="3.75" PointY="15.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="SYSTEM_DATABASEModel.PRODUCT_CATEGORY_DETAILS" Width="1.5" PointX="4.5" PointY="6" IsExpanded="true" />
+        <EntityTypeShape EntityType="SYSTEM_DATABASEModel.PRODUCT_META" Width="1.5" PointX="9" PointY="11.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="SYSTEM_DATABASEModel.PRODUCT" Width="1.5" PointX="6.75" PointY="5.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="SYSTEM_DATABASEModel.PURCHASE_ORDER" Width="1.5" PointX="3" PointY="31.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="SYSTEM_DATABASEModel.SUPPLIER_ACCOUNTS" Width="1.5" PointX="8.25" PointY="19.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="SYSTEM_DATABASEModel.SUPPLIER_CONTACTS" Width="1.5" PointX="8.25" PointY="22.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="SYSTEM_DATABASEModel.SUPPLIER" Width="1.5" PointX="6" PointY="20.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="SYSTEM_DATABASEModel.TRANSFER_WAREHOUSE_PRODUCTS" Width="1.5" PointX="12" PointY="7" IsExpanded="true" />
+        <EntityTypeShape EntityType="SYSTEM_DATABASEModel.USER_METAS" Width="1.5" PointX="5.25" PointY="31" IsExpanded="true" />
+        <EntityTypeShape EntityType="SYSTEM_DATABASEModel.USER_PERMISSION" Width="1.5" PointX="8" PointY="30.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="SYSTEM_DATABASEModel.USER" Width="1.5" PointX="0.75" PointY="25.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="SYSTEM_DATABASEModel.Warehouse" Width="1.5" PointX="4.5" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SYSTEM_DATABASEModel.HOLD_PRODUCT_DETAILS" Width="1.5" PointX="11.25" PointY="21.625" IsExpanded="true" />
+        <AssociationConnector Association="SYSTEM_DATABASEModel.FK__BANG_CHAM__USER___1ED998B2" ManuallyRouted="false" />
+        <AssociationConnector Association="SYSTEM_DATABASEModel.FK__BANG_LUON__USER___1BFD2C07" ManuallyRouted="false" />
+        <AssociationConnector Association="SYSTEM_DATABASEModel.FK__CUSTOMER___MA_KH__1BC821DD" ManuallyRouted="false" />
+        <AssociationConnector Association="SYSTEM_DATABASEModel.FK__CUSTOMER___MA_KH__17F790F9" ManuallyRouted="false" />
+        <AssociationConnector Association="SYSTEM_DATABASEModel.FK__CUSTOMERS__MA_NH__10566F31" ManuallyRouted="false" />
+        <AssociationConnector Association="SYSTEM_DATABASEModel.FK__CUSTOMERS__USER___114A936A" ManuallyRouted="false" />
+        <AssociationConnector Association="SYSTEM_DATABASEModel.FK__HOLD_PROD__MA_KH__22751F6C" ManuallyRouted="false" />
+        <AssociationConnector Association="SYSTEM_DATABASEModel.FK__MANAGE_SA__MA_KH__14270015" ManuallyRouted="false" />
+        <AssociationConnector Association="SYSTEM_DATABASEModel.FK__DEPARTMEN__MANAG__6FE99F9F" ManuallyRouted="false" />
+        <AssociationConnector Association="SYSTEM_DATABASEModel.FK__USER_META__DEPAR__72C60C4A" ManuallyRouted="false" />
+        <AssociationConnector Association="SYSTEM_DATABASEModel.FK__GHI_CHU_C__USER___49C3F6B7" ManuallyRouted="false" />
+        <AssociationConnector Association="SYSTEM_DATABASEModel.FK__HOLD_PROD__ID_GI__208CD6FA" ManuallyRouted="false" />
+        <AssociationConnector Association="SYSTEM_DATABASEModel.FK__HOLD_PROD__MA_HA__1EA48E88" ManuallyRouted="false" />
+        <AssociationConnector Association="SYSTEM_DATABASEModel.FK_LIST_PERMISSIONS_LIST_CONTROLLERS" ManuallyRouted="false" />
+        <AssociationConnector Association="SYSTEM_DATABASEModel.FK__USER_PERM__PERMI__2B3F6F97" ManuallyRouted="false" />
+        <AssociationConnector Association="SYSTEM_DATABASEModel.FK__MANAGE_SA__NHAN___151B244E" ManuallyRouted="false" />
+        <AssociationConnector Association="SYSTEM_DATABASEModel.FK__PRODUCT_C__MA_NH__7F2BE32F" ManuallyRouted="false" />
+        <AssociationConnector Association="SYSTEM_DATABASEModel.FK__PURCHASE___MA_NH__37703C52" ManuallyRouted="false" />
+        <AssociationConnector Association="SYSTEM_DATABASEModel.FK__SUPPLIERS__MA_NH__2A164134" ManuallyRouted="false" />
+        <AssociationConnector Association="SYSTEM_DATABASEModel.FK__PRODUCTS__MA_CHI__04E4BC85" ManuallyRouted="false" />
+        <AssociationConnector Association="SYSTEM_DATABASEModel.FK__PRODUCT_M__MA_HA__0B91BA14" ManuallyRouted="false" />
+        <AssociationConnector Association="SYSTEM_DATABASEModel.FK__PRODUCTS__MA_KHO__05D8E0BE" ManuallyRouted="false" />
+        <AssociationConnector Association="SYSTEM_DATABASEModel.FK__PURCHASE___MA_HA__367C1819" ManuallyRouted="false" />
+        <AssociationConnector Association="SYSTEM_DATABASEModel.FK__TRANSFER___MA_HA__25518C17" ManuallyRouted="false" />
+        <AssociationConnector Association="SYSTEM_DATABASEModel.FK__PURCHASE___KINH___3864608B" ManuallyRouted="false" />
+        <AssociationConnector Association="SYSTEM_DATABASEModel.FK__SUPPLIER___MA_NC__31B762FC" ManuallyRouted="false" />
+        <AssociationConnector Association="SYSTEM_DATABASEModel.FK__SUPPLIER___MA_NC__2DE6D218" ManuallyRouted="false" />
+        <AssociationConnector Association="SYSTEM_DATABASEModel.FK__SUPPLIERS__USER___2B0A656D" ManuallyRouted="false" />
+        <AssociationConnector Association="SYSTEM_DATABASEModel.FK__TRANSFER___KHO_D__2739D489" ManuallyRouted="false" />
+        <AssociationConnector Association="SYSTEM_DATABASEModel.FK__TRANSFER___KHO_N__2645B050" ManuallyRouted="false" />
+        <AssociationConnector Association="SYSTEM_DATABASEModel.FK__USER_META__USER___71D1E811" ManuallyRouted="false" />
+        <AssociationConnector Association="SYSTEM_DATABASEModel.FK__USER_PERM__USER___2C3393D0" ManuallyRouted="false" />
+        <AssociationConnector Association="SYSTEM_DATABASEModel.FK__HOLD_PROD__NHAN___2180FB33" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

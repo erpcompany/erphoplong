@@ -1,0 +1,42 @@
+﻿@model SYSTEM_MANAGEMENT.Models.LIST_PERMISSIONS
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>LIST_PERMISSIONS</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.PERMISSION_NAME)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PERMISSION_NAME)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DESCRIPTION)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DESCRIPTION)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LIST_CONTROLLERS.CONTROLLER_NAME)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LIST_CONTROLLERS.CONTROLLER_NAME)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.PERMISSION_ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -1,0 +1,42 @@
+﻿@model IEnumerable<SYSTEM_MANAGEMENT.Models.LIST_CONTROLLERS>
+
+@{
+    ViewBag.Title = "Danh sách chức năng";
+}
+
+<h2>Chức Năng Hệ Thống</h2>
+
+<p>
+    @Html.ActionLink("Update", "Update_Controller_Info")
+</p>
+<div>
+    @Html.Raw(TempData["err"])
+</div>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.CONTROLLER_ID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CONTROLLER_NAME)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.CONTROLLER_ID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CONTROLLER_NAME)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.CONTROLLER_ID }) |
+            @Html.ActionLink("Danh sách quyền", "Index","LIST_PERMISSIONS", new { id=item.CONTROLLER_ID }, null) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.CONTROLLER_ID })
+        </td>
+    </tr>
+}
+
+</table>
