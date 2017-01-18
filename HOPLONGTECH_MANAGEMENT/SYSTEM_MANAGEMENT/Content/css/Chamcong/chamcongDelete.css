@@ -1,0 +1,23 @@
+﻿*{
+    margin: 0px;
+    padding: 0px;
+}
+
+.content{
+    border: 2px solid black;
+    margin-bottom: 20px;
+}
+.content h4{
+    text-align:center;
+    font-weight: bold;
+    padding-top: 5px;
+}
+.content hr{
+    border: 0.5px solid black;
+}
+.form-actions .btn-default:hover{
+    background: aqua;
+}
+.form-actions a:hover{
+    color: red;
+}

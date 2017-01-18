@@ -347,7 +347,22 @@
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\css\BangLuong\bangluongDelete.css" />
+    <Content Include="Content\css\BangLuong\bangluongDetails.css" />
+    <Content Include="Content\css\BangLuong\bangluongEdit.css" />
+    <Content Include="Content\css\BangLuong\bangluongIndex.css" />
+    <Content Include="Content\css\Chamcong\chamcongDelete.css" />
+    <Content Include="Content\css\Chamcong\chamcongDetails.css" />
+    <Content Include="Content\css\Chamcong\chamcongEdit.css" />
+    <Content Include="Content\css\Chamcong\chamcongIndex.css" />
+    <Content Include="Content\css\Departments\createDepart.css" />
+    <Content Include="Content\css\Departments\detailDepart.css" />
+    <Content Include="Content\css\Departments\editDepart.css" />
+    <Content Include="Content\css\Departments\indexDepart.css" />
+    <Content Include="Content\css\Departments\userDepart.css" />
     <Content Include="Content\css\detail_note.css" />
+    <Content Include="Content\css\Ghichu\editGhichu.css" />
+    <Content Include="Content\css\Ghichu\indexGhichu.css" />
     <Content Include="Content\images\lamhien.jpg" />
     <Content Include="Content\images\logo.png" />
     <Content Include="favicon.ico" />

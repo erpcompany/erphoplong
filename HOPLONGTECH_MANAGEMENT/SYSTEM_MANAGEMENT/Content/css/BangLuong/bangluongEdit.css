@@ -1,0 +1,41 @@
+﻿*{
+    margin: 0px;
+    padding: 0px;
+}
+.edit{
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+.form-horizontal .control-label {
+    text-align: left;
+    font-weight: normal;
+}
+.form-horizontal .nopadding{
+    padding-top: 0px;
+}
+.form-horizontal .form-group{
+    margin-top: 25px;
+}
+hr{
+    border: 0.5px solid black;
+}
+.form-horizontal {
+    border: 2px solid black;
+    margin-bottom: 10px;
+}
+.form-horizontal h4{
+    text-align: center;
+    font-weight: bold;
+    padding-top: 10px;
+}
+.form-group .btn:hover{
+    background: aqua;
+}
+.form-group .btn{
+    border-radius: 10px;
+    font-weight: bold;
+}
+.backlink a:hover{
+    color: red;
+}

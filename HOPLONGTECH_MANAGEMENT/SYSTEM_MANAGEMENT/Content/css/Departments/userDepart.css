@@ -1,0 +1,22 @@
+﻿*{
+    margin: 0px;
+    padding: 0px;
+}
+.table{
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+.table .title{
+    background-color:cornflowerblue; color: white;
+}
+.table .title th{
+    text-align: center;
+    border: 1px solid black;
+}
+.table  tr td{
+    text-align: center;
+    border: 1px solid black;
+}
+.backlink a:hover{
+    color: red;
+}

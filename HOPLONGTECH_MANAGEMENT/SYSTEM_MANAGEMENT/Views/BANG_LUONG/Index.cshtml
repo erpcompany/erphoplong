@@ -3,66 +3,62 @@
 @{
     ViewBag.Title = "Bảng lương";
 }
-
+<link href="~/Content/css/BangLuong/bangluongIndex.css" type="text/css" rel="stylesheet"/>
 <div class="container">
     <div class="row">
         <div class="panel panel-default">
             <div class="panel-heading">
                 <h4>
-                    Bảng lương của @Session["FULLNAME"]
+                    <b>Bảng lương của @Session["FULLNAME"]</b>
                     
                 </h4>
-                <center>
+                <center class="message">
                     <p>Công ty xin gửi bảng lương đến bạn @Session["FULLNAME"] với các thông tin như bên dưới</p>
                     <p>Cảm ơn bạn đã vất vả làm việc trong tháng vừa qua, rất mong bạn sẽ cùng công ty cố gắng hơn nữa</p>
-                    <p>Mọi vấn đề thắc mắc về bảng lương, bạn hãy phản hồi lại với công ty theo địa chỉ email lhn@hoplongtech.com.vn</p>
+                    <p>Mọi vấn đề thắc mắc về bảng lương, bạn hãy phản hồi lại với công ty theo địa chỉ email <span>lhn@hoplongtech.com.vn</span></p>
                 </center>
-                <p>
-
-                    @Html.ActionLink("Create New", "Create")
-                </p>
             </div>
-            <div style="overflow-x:auto; ">
+            <div class="maintable">
                 <table class="table table-fixed" border="1">
                     <thead>
-                        <tr style=" background:#0099FF ; color:#FFEEF1; font-weight bold">
-                            <th style="text-align: center;white-space: nowrap" rowspan="2" valign="center">THÁNG</th>
-                            <th style="text-align: center; white-space: nowrap" rowspan="2" valign="center">HỌ VÀ TÊN</th>
-                            <th style="text-align: center;white-space: nowrap" rowspan="2" valign="center">LƯƠNG CƠ BẢN</th>
-                            <th style="text-align: center;white-space: nowrap" rowspan="2" valign="center">LƯƠNG BẢO HIỂM</th>
-                            <th style="text-align: center;" colspan="4" valign="center">PHỤ CẤP</th>
-                            <th style="text-align: center;white-space: nowrap" rowspan="2" valign="center">CÔNG CƠ BẢN </th>
-                            <th style="text-align: center; white-space: nowrap" colspan="2" valign="center">LƯƠNG CƠ BẢN</th>
-                            <th style="text-align: center;" colspan="2" valign="center">BẢO HIỂM</th>
-                            <th style="text-align: center;" colspan="2" valign="center">LƯƠNG THỰC TẾ</th>
-                            <th style="text-align: center;" colspan="6" valign="center">LƯƠNG LÀM THÊM</th>
-                            <th style="text-align: center;white-space: nowrap" rowspan="2" valign="center">TỔNG THU NHẬP</th>
-                            <th style="text-align: center;white-space: nowrap" rowspan="2" valign="center">TẠM ỨNG</th>
-                            <th style="text-align: center;" colspan="2" valign="center">PHẠT ĐI TRỄ</th>
-                            <th style="text-align: center;white-space: nowrap" rowspan="2" valign="center">QUỸ CÔNG ĐOÀN</th>
-                            <th style="text-align: center;white-space: nowrap" rowspan="2" valign="center">LƯƠNG LAO CÔNG</th>
-                            <th style="text-align: center;white-space: nowrap" rowspan="2" valign="center">THỰC LĨNH</th>
-                            <th style="text-align: center;" rowspan="2" valign="center"></th>
+                        <tr>
+                            <th rowspan="2" class="fix">THÁNG</th>
+                            <th rowspan="2" class="fix">HỌ VÀ TÊN</th>
+                            <th rowspan="2" class="fix">LƯƠNG CƠ BẢN</th>
+                            <th rowspan="2" class="fix">LƯƠNG BẢO HIỂM</th>
+                            <th colspan="4">PHỤ CẤP</th>
+                            <th rowspan="2" class="fix">CÔNG CƠ BẢN </th>
+                            <th colspan="2">LƯƠNG CƠ BẢN</th>
+                            <th colspan="2">BẢO HIỂM</th>
+                            <th colspan="2">LƯƠNG THỰC TẾ</th>
+                            <th colspan="6">LƯƠNG LÀM THÊM</th>
+                            <th rowspan="2" class="fix">TỔNG THU NHẬP</th>
+                            <th rowspan="2" class="fix">TẠM ỨNG</th>
+                            <th colspan="2">PHẠT ĐI TRỄ</th>
+                            <th rowspan="2" class="fix">QUỸ CÔNG ĐOÀN</th>
+                            <th rowspan="2" class="fix">LƯƠNG LAO CÔNG</th>
+                            <th rowspan="2" class="fix">THỰC LĨNH</th>
+                            <th rowspan="2" class="fix"><em class="fa fa-cog"></em></th>
                         </tr>
                         <tr style=" background:#0099FF ; color:#FFEEF1; font-weight bold">
-                            <th style="text-align: center;white-space: nowrap" valign="center">Ăn trưa</th>
-                            <th style="text-align: center;white-space: nowrap" valign="center">Đi lại/điện thoại</th>
-                            <th style="text-align: center;white-space: nowrap" valign="center">Thưởng doanh số</th>
-                            <th style="text-align: center;white-space: nowrap" valign="center">Trách nhiệm</th>
-                            <th style="text-align: center;white-space: nowrap" valign="center">Ngày</th>
-                            <th style="text-align: center;white-space: nowrap" valign="center">Giờ</th>
-                            <th style="text-align: center;white-space: nowrap" valign="center">Công ty đóng</th>
-                            <th style="text-align: center;white-space: nowrap" valign="center">Nhân viên đóng</th>
-                            <th style="text-align: center;white-space: nowrap" valign="center">Công đi làm thực</th>
-                            <th style="text-align: center;white-space: nowrap" valign="center">Số tiền</th>
-                            <th style="text-align: center;white-space: nowrap" valign="center">Công ngày thường</th>
-                            <th style="text-align: center;white-space: nowrap" valign="center">Số tiền</th>
-                            <th style="text-align: center;white-space: nowrap" valign="center">Công ngày nghỉ</th>
-                            <th style="text-align: center;white-space: nowrap" valign="center">Số tiền</th>
-                            <th style="text-align: center;white-space: nowrap " valign="center">Công ngày lễ</th>
-                            <th style="text-align: center;white-space: nowrap" valign="center">Số tiền</th>
-                            <th style="text-align: center;white-space: nowrap" valign="center">Số giờ</th>
-                            <th style="text-align: center;white-space: nowrap" valign="center">Số tiền</th>
+                            <th>Ăn trưa</th>
+                            <th>Đi lại/điện thoại</th>
+                            <th>Thưởng doanh số</th>
+                            <th>Trách nhiệm</th>
+                            <th>Ngày</th>
+                            <th>Giờ</th>
+                            <th>Công ty đóng</th>
+                            <th>Nhân viên đóng</th>
+                            <th>Công đi làm thực</th>
+                            <th>Số tiền</th>
+                            <th>Công ngày thường</th>
+                            <th>Số tiền</th>
+                            <th>Công ngày nghỉ</th>
+                            <th>Số tiền</th>
+                            <th>Công ngày lễ</th>
+                            <th>Số tiền</th>
+                            <th>Số giờ</th>
+                            <th>Số tiền</th>                           
                         </tr>
                     </thead>
                     <tbody>
@@ -73,92 +69,90 @@
                                 <td>
                                     @Html.DisplayFor(modelItem => item.THANG_LINH_LUONG)
                                 </td>
-                                <td style="white-space: nowrap">
+                                <td>
                                     @Html.DisplayFor(modelItem => item.USER.FULLNAME)
                                 </td>
-                                <td style="text-align: center;white-space: nowrap">
+                                <td>
                                     @Html.DisplayFor(modelItem => item.LUONG_CO_BAN)
                                 </td>
-                                <td style="text-align: center;white-space: nowrap">
+                                <td>
                                     @Html.DisplayFor(modelItem => item.LUONG_BAO_HIEM)
                                 </td>
-                                <td style="text-align: center;white-space: nowrap">
+                                <td>
                                     @Html.DisplayFor(modelItem => item.PHU_CAP_AN_TRUA)
                                 </td>
-                                <td style="text-align: center;white-space: nowrap">
+                                <td>
                                     @Html.DisplayFor(modelItem => item.PHU_CAP_DI_LAI_DIEN_THOAI)
                                 </td>
-                                <td style="text-align: center;white-space: nowrap">
+                                <td>
                                     @Html.DisplayFor(modelItem => item.PHU_CAP_THUONG_DOANH_SO)
                                 </td>
-                                <td style="text-align: center;white-space: nowrap">
+                                <td>
                                     @Html.DisplayFor(modelItem => item.PHU_CAP_TRACH_NHIEM)
                                 </td>
-                                <td style="text-align: center;white-space: nowrap">
+                                <td>
                                     @Html.DisplayFor(modelItem => item.CONG_CO_BAN)
                                 </td>
-                                <td style="text-align: center;white-space: nowrap">
+                                <td>
                                     @Html.DisplayFor(modelItem => item.CONG_CO_BAN_NGAY)
                                 </td>
-                                <td style="text-align: center;white-space: nowrap">
+                                <td>
                                     @Html.DisplayFor(modelItem => item.CONG_CO_BAN_GIO)
                                 </td>
-                                <td style="text-align: center;white-space: nowrap">
+                                <td>
                                     @Html.DisplayFor(modelItem => item.BAO_HIEM_CONG_TY)
                                 </td>
-                                <td style="text-align: center;white-space: nowrap">
+                                <td>
                                     @Html.DisplayFor(modelItem => item.BAO_HIEM_NHAN_VIEN)
                                 </td>
-                                <td style="text-align: center;white-space: nowrap">
+                                <td>
                                     @Html.DisplayFor(modelItem => item.LUONG_THUC_TE_CONG_LAM_THUC)
                                 </td>
-                                <td style="text-align: center;white-space: nowrap">
+                                <td>
                                     @Html.DisplayFor(modelItem => item.LUONG_THUC_TE_SO_TIEN)
                                 </td>
-                                <td style="text-align: center;white-space: nowrap">
+                                <td>
                                     @Html.DisplayFor(modelItem => item.LUONG_LAM_THEM_CONG_NGAY_THUONG)
                                 </td>
-                                <td style="text-align: center;white-space: nowrap">
+                                <td>
                                     @Html.DisplayFor(modelItem => item.LUONG_LAM_THEM_TIEN_CONG_NGAY_THUONG)
                                 </td>
-                                <td style="text-align: center;white-space: nowrap">
+                                <td>
                                     @Html.DisplayFor(modelItem => item.LUONG_LAM_THEM_CONG_NGAY_NGHI)
                                 </td>
-                                <td style="text-align: center;white-space: nowrap">
+                                <td>
                                     @Html.DisplayFor(modelItem => item.LUONG_LAM_THEM_TIEN_CONG_NGAY_NGHI)
                                 </td>
-                                <td style="text-align: center;white-space: nowrap">
+                                <td>
                                     @Html.DisplayFor(modelItem => item.LUONG_LAM_THEM_CONG_NGAY_LE)
                                 </td>
-                                <td style="text-align: center;white-space: nowrap">
+                                <td>
                                     @Html.DisplayFor(modelItem => item.LUONG_LAM_THEM_TIEN_CONG_NGAY_LE)
                                 </td>
-                                <td style="text-align: center;white-space: nowrap">
+                                <td>
                                     @Html.DisplayFor(modelItem => item.TONG_TIEN_CONG)
                                 </td>
-                                <td style="text-align: center;white-space: nowrap">
+                                <td>
                                     @Html.DisplayFor(modelItem => item.TAM_UNG)
                                 </td>
-                                <td style="text-align: center;white-space: nowrap">
+                                <td>
                                     @Html.DisplayFor(modelItem => item.GIO_DI_TRE)
                                 </td>
-                                <td style="text-align: center;white-space: nowrap">
+                                <td>
                                     @Html.DisplayFor(modelItem => item.PHAT_DI_TRE)
                                 </td>
-                                <td style="text-align: center;white-space: nowrap">
+                                <td>
                                     @Html.DisplayFor(modelItem => item.CONG_DOAN)
                                 </td>
-                                <td style="text-align: center;white-space: nowrap">
+                                <td>
                                     @Html.DisplayFor(modelItem => item.LUONG_LAO_CONG)
                                 </td>
-                                <td style="text-align: center;white-space: nowrap">
+                                <td>
                                     @Html.DisplayFor(modelItem => item.THUC_LINH)
                                 </td>
 
-                                <td style="text-align: center;white-space: nowrap">
-                                    @Html.ActionLink("Edit", "Edit", new { id = item.LUONG_ID }) |
-                                    @Html.ActionLink("Details", "Details", new { id = item.LUONG_ID }) |
-                                    @Html.ActionLink("Delete", "Delete", new { id = item.LUONG_ID })
+                                <td>
+                                    <a href="/BANG_LUONG/Edit/@item.LUONG_ID"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a> &nbsp;&nbsp;&nbsp;
                                 </td>
                             </tr>
                         }

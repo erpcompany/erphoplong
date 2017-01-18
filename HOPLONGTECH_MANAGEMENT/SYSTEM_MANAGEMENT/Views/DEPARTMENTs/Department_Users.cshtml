@@ -3,43 +3,34 @@
 @{
     ViewBag.Title = "Danh sách nhân viên";
 }
+<link href="~/Content/css/Departments/userDepart.css" type="text/css" rel="stylesheet"/>
+<h2>DANH SÁCH NHÂN VIÊN</h2>
 
-<style>
-    .text-font{
-        text-align:center;
-    }
-</style>
-
-<h2>Danh sách nhân viên  </h2>
-
-<p>
-    
-</p>
 <table class="table" border="1">
-    <tr style="background-color:cornflowerblue; color: white; ">
-        <th class="text-font" >
+    <tr class="title">
+        <th>
             Họ và tên
         </th>
        
-        <th class="text-font" >
+        <th>
             Giới tính
         </th>
-        <th class="text-font" >
+        <th>
             Ngày sinh
         </th>
-        <th class="text-font" >
+        <th>
             Ngày vào công ty
         </th>
-        <th class="text-font" >
+        <th>
             Số điện thoại
         </th>
-        <th class="text-font" >
+        <th>
             Thâm niên
         </th>
-        <th class="text-font" >
+        <th>
             Quê quán
         </th>
-        <th class="text-font" >
+        <th>
             Học vấn
         </th>
         
@@ -47,34 +38,37 @@
 
 @foreach (var item in Model) {
     <tr>
-        <td >
+        <td>
             @item.USER.FULLNAME
         </td>
        
-        <td style="text-align:center">
+        <td>
             @item.SEX
         </td>
-        <td style="text-align:center">
+        <td>
             @item.BIRTHDAY.ToString("dd/MM/yyyy")
         </td>
-        <td style="text-align:center">
+        <td>
             @item.START_TIME.ToString("dd/MM/yyyy")
         </td>
-        <td style="text-align:center">
+        <td>
             @item.NUMBER_PHONE
         </td>
         <td >
             @item.SENIORITY
         </td>
-        <td style="text-align:center">
+        <td>
             @item.NATIVE_LAND
         </td>
-        <td style="text-align:center">
+        <td>
             @item.LITERACY
         </td>
         
        
     </tr>
 }
-
 </table>
+<div class="backlink">
+    @Html.ActionLink("Trở về danh sách phòng ban", "Index")
+</div>
+

@@ -1,0 +1,17 @@
+﻿*{
+    margin: 0px;
+    padding: 0px;
+}
+.create a{
+    color: blue;
+}
+.table .title {
+    background-color: cornflowerblue;
+    color: white;
+}
+.table .title  th{
+    text-align: center;
+}
+.table tr td{
+    text-align: center;
+}

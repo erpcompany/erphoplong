@@ -1,0 +1,10 @@
+﻿*{
+    margin: 0px;
+    padding: 0px;
+}
+.form-horizontal{
+    margin: 50px 0px;
+}
+.link a:hover{
+    color: red;
+}

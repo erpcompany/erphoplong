@@ -1,0 +1,46 @@
+﻿*{
+    margin: 0px;
+    padding: 0px;
+}
+.message{
+    color: #FF5E00;
+    font-size: 16px;
+}
+.message span{
+    color: blue;
+}
+.maintable{
+    overflow-x: auto;
+}
+.maintable .table{
+    border: 1px solid black;
+}
+.maintable .table thead tr{
+    background:#0099FF ; 
+    color:#FFEEF1; 
+    font-weight bold;
+}
+.maintable .table thead .fix{
+    padding-top: 25px;
+    vertical-align: top;
+}
+.maintable .table thead tr th{
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: center;
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+.maintable .table tbody td{
+    text-align: center;
+    white-space: nowrap;
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+.maintable .table tbody td a:hover{
+    color: blue;
+    font-weight: bold;
+}
+tr .fa-pencil-square-o{
+    margin-left: 20px;
+}
