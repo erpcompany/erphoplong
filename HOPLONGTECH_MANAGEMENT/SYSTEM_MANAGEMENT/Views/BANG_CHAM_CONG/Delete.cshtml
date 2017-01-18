@@ -3,16 +3,16 @@
 @{
     ViewBag.Title = "Delete";
 }
-<link href="~/Content/css/Chamcong/chamcongDelete.css" rel="stylesheet" type="text/css"/>
-<h1>Xóa</h1>
 
-<h3>Bạn có chắc rằng muốn xóa?</h3>
-<div class="content">
-    <h4>Bảng chấm công</h4>
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>BANG_CHAM_CONG</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            <p>NGÀY CHUẨN:</p>
+            @Html.DisplayNameFor(model => model.NGAY_CHUAN)
         </dt>
 
         <dd>
@@ -20,7 +20,7 @@
         </dd>
 
         <dt>
-            <p>GIỜ ĐI MUỘN:</p>
+            @Html.DisplayNameFor(model => model.GIO_DI_MUON)
         </dt>
 
         <dd>
@@ -28,7 +28,7 @@
         </dd>
 
         <dt>
-            <p>GIỜ VỀ SỚM:</p>
+            @Html.DisplayNameFor(model => model.GIO_VE_SOM)
         </dt>
 
         <dd>
@@ -36,7 +36,7 @@
         </dd>
 
         <dt>
-            <p>TĂNG CA:</p>
+            @Html.DisplayNameFor(model => model.TANG_CA_NGAY_THUONG)
         </dt>
 
         <dd>
@@ -44,7 +44,7 @@
         </dd>
 
         <dt>
-            <p>TĂNG CA NGÀY LỄ:</p>
+            @Html.DisplayNameFor(model => model.TANG_CA_NGAY_LE)
         </dt>
 
         <dd>
@@ -52,7 +52,7 @@
         </dd>
 
         <dt>
-            <p>SỐ LẦN QUÊN CHẤM:</p>
+            @Html.DisplayNameFor(model => model.SO_LAN_QUEN_CHAM)
         </dt>
 
         <dd>
@@ -60,7 +60,7 @@
         </dd>
 
         <dt>
-            <p>SỐ NGÀY NGHỈ:</p>
+            @Html.DisplayNameFor(model => model.SO_NGAY_NGHI)
         </dt>
 
         <dd>
@@ -68,7 +68,7 @@
         </dd>
 
         <dt>
-            <p>CÔNG THỰC TẾ:</p>
+            @Html.DisplayNameFor(model => model.CONG_THUC_TE)
         </dt>
 
         <dd>
@@ -76,7 +76,7 @@
         </dd>
 
         <dt>
-            <p>ỨNG LƯƠNG:</p>
+            @Html.DisplayNameFor(model => model.UNG_LUONG)
         </dt>
 
         <dd>
@@ -84,7 +84,7 @@
         </dd>
 
         <dt>
-            <p>GHI CHÚ:</p>
+            @Html.DisplayNameFor(model => model.GHI_CHU)
         </dt>
 
         <dd>
@@ -92,7 +92,7 @@
         </dd>
 
         <dt>
-            <p>THÁNG CHẤM CÔNG:</p>
+            @Html.DisplayNameFor(model => model.THANG_CHAM_CONG)
         </dt>
 
         <dd>
@@ -100,22 +100,21 @@
         </dd>
 
         <dt>
-            <p>USERNAME:</p>
+            @Html.DisplayNameFor(model => model.USER.USERNAME)
         </dt>
 
         <dd>
             @Html.DisplayFor(model => model.USER.USERNAME)
         </dd>
 
-    </dl>   
-</div>
+    </dl>
 
-    @using (Html.BeginForm())
-    {
+    @using (Html.BeginForm()) {
         @Html.AntiForgeryToken()
 
         <div class="form-actions no-color">
-            <input type="submit" value="Xóa" class="btn btn-default" /> |
-            @Html.ActionLink("Quay Về Trang Chủ", "Index")
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
         </div>
     }
+</div>

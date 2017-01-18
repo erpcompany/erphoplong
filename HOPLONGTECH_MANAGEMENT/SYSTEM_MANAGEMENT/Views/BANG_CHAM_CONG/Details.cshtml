@@ -3,15 +3,15 @@
 @{
     ViewBag.Title = "Details";
 }
-<link href="~/Content/css/Chamcong/chamcongDetails.css" rel="stylesheet" type="text/css"/>
-<h2>CHI TIẾT</h2>
 
-<div class="content">
-    <h4>BẢNG CHẤM CÔNG</h4>
+<h2>Details</h2>
+
+<div>
+    <h4>BANG_CHAM_CONG</h4>
     <hr />
-    <dl class="dl-horizontal">      
+    <dl class="dl-horizontal">
         <dt>
-            <p>NGÀY CHUẨN:</p>
+            @Html.DisplayNameFor(model => model.NGAY_CHUAN)
         </dt>
 
         <dd>
@@ -19,7 +19,7 @@
         </dd>
 
         <dt>
-            <p>GIỜ ĐI MUỘN:</p>
+            @Html.DisplayNameFor(model => model.GIO_DI_MUON)
         </dt>
 
         <dd>
@@ -27,7 +27,7 @@
         </dd>
 
         <dt>
-            <p>GIỜ VỀ SỚM:</p>
+            @Html.DisplayNameFor(model => model.GIO_VE_SOM)
         </dt>
 
         <dd>
@@ -35,7 +35,7 @@
         </dd>
 
         <dt>
-            <p>TĂNG CA:</p>
+            @Html.DisplayNameFor(model => model.TANG_CA_NGAY_THUONG)
         </dt>
 
         <dd>
@@ -43,7 +43,7 @@
         </dd>
 
         <dt>
-            <p>TĂNG CA NGÀY LỄ:</p>
+            @Html.DisplayNameFor(model => model.TANG_CA_NGAY_LE)
         </dt>
 
         <dd>
@@ -51,7 +51,7 @@
         </dd>
 
         <dt>
-            <p>SỐ LẦN QUÊN CHẤM:</p>
+            @Html.DisplayNameFor(model => model.SO_LAN_QUEN_CHAM)
         </dt>
 
         <dd>
@@ -59,7 +59,7 @@
         </dd>
 
         <dt>
-            <p>SỐ NGÀY NGHỈ:</p>
+            @Html.DisplayNameFor(model => model.SO_NGAY_NGHI)
         </dt>
 
         <dd>
@@ -67,7 +67,7 @@
         </dd>
 
         <dt>
-            <p>CÔNG THỰC TẾ:</p>
+            @Html.DisplayNameFor(model => model.CONG_THUC_TE)
         </dt>
 
         <dd>
@@ -75,7 +75,7 @@
         </dd>
 
         <dt>
-            <p>ỨNG LƯƠNG:</p>
+            @Html.DisplayNameFor(model => model.UNG_LUONG)
         </dt>
 
         <dd>
@@ -83,7 +83,7 @@
         </dd>
 
         <dt>
-            <p  class="note">GHI CHÚ:</p>
+            @Html.DisplayNameFor(model => model.GHI_CHU)
         </dt>
 
         <dd>
@@ -91,7 +91,7 @@
         </dd>
 
         <dt>
-            <p>THÁNG CHẤM CÔNG:</p>
+            @Html.DisplayNameFor(model => model.THANG_CHAM_CONG)
         </dt>
 
         <dd>
@@ -99,7 +99,7 @@
         </dd>
 
         <dt>
-            <p>USERNAME:</p>
+            @Html.DisplayNameFor(model => model.USER.USERNAME)
         </dt>
 
         <dd>
@@ -108,7 +108,7 @@
 
     </dl>
 </div>
-<div class="link">
-    @Html.ActionLink("Chỉnh Sửa", "Edit", new { id = Model.CHAM_CONG_ID }) |
-    @Html.ActionLink("Trở về bảng chấm công", "Index")
-</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.CHAM_CONG_ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

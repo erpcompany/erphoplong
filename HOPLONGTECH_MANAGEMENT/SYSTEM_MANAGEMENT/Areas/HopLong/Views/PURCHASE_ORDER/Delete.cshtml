@@ -1,0 +1,128 @@
+﻿@model SYSTEM_MANAGEMENT.Models.PURCHASE_ORDER
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>PURCHASE_ORDER</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.NGAY_ORDER)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NGAY_ORDER)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.THOI_GIAN_YEU_CAU_CUA_KINH_DOANH)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.THOI_GIAN_YEU_CAU_CUA_KINH_DOANH)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TINH_TRANG)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TINH_TRANG)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.GIA_BAN)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GIA_BAN)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.GIA_NHAP)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GIA_NHAP)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CHENH_LECH)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CHENH_LECH)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SL_NHAP)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SL_NHAP)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SL_THUC_NHAN)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SL_THUC_NHAN)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NGAY_HANG_VE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NGAY_HANG_VE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.GHI_CHU)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GHI_CHU)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PRODUCT_CATEGORIES.TEN_NHOM_HANG)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PRODUCT_CATEGORIES.TEN_NHOM_HANG)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PRODUCT.MA_HANG_NHAP)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PRODUCT.MA_HANG_NHAP)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.USER.USERNAME)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.USER.USERNAME)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>
