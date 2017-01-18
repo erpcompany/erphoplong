@@ -1,0 +1,104 @@
+﻿@model SYSTEM_MANAGEMENT.Models.SUPPLIER_CONTACTS
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>SUPPLIER_CONTACTS</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.NGUOI_LIEN_HE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NGUOI_LIEN_HE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NGAY_SINH)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NGAY_SINH)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.GIOI_TINH)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GIOI_TINH)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CHUC_VU)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CHUC_VU)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SO_DIEN_THOAI)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SO_DIEN_THOAI)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EMAIL)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EMAIL)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FACEBOOK)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FACEBOOK)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SKYPE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SKYPE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.GHI_CHU)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GHI_CHU)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SUPPLIER.TEN_NCC)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SUPPLIER.TEN_NCC)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

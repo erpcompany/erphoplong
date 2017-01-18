@@ -19,6 +19,11 @@ namespace SYSTEM_MANAGEMENT.Areas.HopLong.Controllers
         {
             return View(db.WAREHOUSES.ToList());
         }
+        public ActionResult Sanphamkho(String Id)
+        {
+            var query = db.PRODUCTS.Where(d => d.MA_KHO == Id);
+            return View(query.ToList());
+        }
 
         // GET: HopLong/Warehouses/Details/5
         public ActionResult Details(string id)

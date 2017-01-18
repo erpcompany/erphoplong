@@ -1,0 +1,147 @@
+﻿@model IEnumerable<SYSTEM_MANAGEMENT.Models.PRODUCT>
+
+@{
+    ViewBag.Title = "Sanphamkho";
+}
+
+<h2>Sanphamkho</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.MA_HANG_NHAP)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TEN_HANG)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SERI)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DON_VI_TINH)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NGUON_GOC)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MODEL_DAC_BIET)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.THOI_HAN_BAO_HANG)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DIEN_GIAI_KHI_MUA)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DIEN_GIAI_KHI_BAN)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DAC_TINH)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SL_TON_KHO)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SL_DANG_GIU)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SL_CO_THE_DUNG)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DON_GIA_MUA_CO_DINH)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DON_GIA_MUA_GAN_NHAT)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.HINH_ANH)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.GHI_CHU)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PRODUCT_CATEGORY_DETAILS.MA_NHOM_HANG)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PRODUCT_META.THE_TICH_BOX)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Warehouse.TEN_KHO)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.MA_HANG_NHAP)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TEN_HANG)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SERI)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DON_VI_TINH)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NGUON_GOC)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MODEL_DAC_BIET)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.THOI_HAN_BAO_HANG)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DIEN_GIAI_KHI_MUA)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DIEN_GIAI_KHI_BAN)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DAC_TINH)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SL_TON_KHO)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SL_DANG_GIU)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SL_CO_THE_DUNG)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DON_GIA_MUA_CO_DINH)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DON_GIA_MUA_GAN_NHAT)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.HINH_ANH)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.GHI_CHU)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PRODUCT_CATEGORY_DETAILS.MA_NHOM_HANG)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PRODUCT_META.THE_TICH_BOX)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Warehouse.TEN_KHO)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.MA_HANG_HT }) |
+            @Html.ActionLink("Details", "Details", new { id=item.MA_HANG_HT }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.MA_HANG_HT })
+        </td>
+    </tr>
+}
+
+</table>
