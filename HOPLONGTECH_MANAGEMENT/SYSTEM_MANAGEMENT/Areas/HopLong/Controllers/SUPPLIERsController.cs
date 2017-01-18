@@ -10,112 +10,116 @@ using SYSTEM_MANAGEMENT.Models;
 
 namespace SYSTEM_MANAGEMENT.Areas.HopLong.Controllers
 {
-    public class WarehousesController : Controller
+    public class SUPPLIERsController : Controller
     {
         private SYSTEM_DATABASEEntities db = new SYSTEM_DATABASEEntities();
 
-        // GET: HopLong/Warehouses
+        // GET: HopLong/SUPPLIERs
         public ActionResult Index()
         {
-            return View(db.WAREHOUSES.ToList());
-        }
-        public ActionResult Sanphamkho(String Id)
-        {
-            var query = db.PRODUCTS.Where(d => d.MA_KHO == Id);
-            return View(query.ToList());
+            var sUPPLIERS = db.SUPPLIERS.Include(s => s.PRODUCT_CATEGORIES).Include(s => s.USER);
+            return View(sUPPLIERS.ToList());
         }
 
-        // GET: HopLong/Warehouses/Details/5
+        // GET: HopLong/SUPPLIERs/Details/5
         public ActionResult Details(string id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Warehouse warehouse = db.WAREHOUSES.Find(id);
-            if (warehouse == null)
+            SUPPLIER sUPPLIER = db.SUPPLIERS.Find(id);
+            if (sUPPLIER == null)
             {
                 return HttpNotFound();
             }
-            return View(warehouse);
+            return View(sUPPLIER);
         }
 
-        // GET: HopLong/Warehouses/Create
+        // GET: HopLong/SUPPLIERs/Create
         public ActionResult Create()
         {
+            ViewBag.MA_NHOM_HANG = new SelectList(db.PRODUCT_CATEGORIES, "MA_NHOM_HANG", "TEN_NHOM_HANG");
+            ViewBag.USER_ID = new SelectList(db.USERS, "USER_ID", "USERNAME");
             return View();
         }
 
-        // POST: HopLong/Warehouses/Create
+        // POST: HopLong/SUPPLIERs/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "MA_KHO,TEN_KHO,MO_TA")] Warehouse warehouse)
+        public ActionResult Create([Bind(Include = "MA_NCC,TEN_NCC,DIA_CHI,SDT,EMAIL,FAX,MST,MA_NHOM_HANG,WEBSITE,USER_ID,MO_TA")] SUPPLIER sUPPLIER)
         {
             if (ModelState.IsValid)
             {
-                db.WAREHOUSES.Add(warehouse);
+                db.SUPPLIERS.Add(sUPPLIER);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            return View(warehouse);
+            ViewBag.MA_NHOM_HANG = new SelectList(db.PRODUCT_CATEGORIES, "MA_NHOM_HANG", "TEN_NHOM_HANG", sUPPLIER.MA_NHOM_HANG);
+            ViewBag.USER_ID = new SelectList(db.USERS, "USER_ID", "USERNAME", sUPPLIER.USER_ID);
+            return View(sUPPLIER);
         }
 
-        // GET: HopLong/Warehouses/Edit/5
+        // GET: HopLong/SUPPLIERs/Edit/5
         public ActionResult Edit(string id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Warehouse warehouse = db.WAREHOUSES.Find(id);
-            if (warehouse == null)
+            SUPPLIER sUPPLIER = db.SUPPLIERS.Find(id);
+            if (sUPPLIER == null)
             {
                 return HttpNotFound();
             }
-            return View(warehouse);
+            ViewBag.MA_NHOM_HANG = new SelectList(db.PRODUCT_CATEGORIES, "MA_NHOM_HANG", "TEN_NHOM_HANG", sUPPLIER.MA_NHOM_HANG);
+            ViewBag.USER_ID = new SelectList(db.USERS, "USER_ID", "USERNAME", sUPPLIER.USER_ID);
+            return View(sUPPLIER);
         }
 
-        // POST: HopLong/Warehouses/Edit/5
+        // POST: HopLong/SUPPLIERs/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "MA_KHO,TEN_KHO,MO_TA")] Warehouse warehouse)
+        public ActionResult Edit([Bind(Include = "MA_NCC,TEN_NCC,DIA_CHI,SDT,EMAIL,FAX,MST,MA_NHOM_HANG,WEBSITE,USER_ID,MO_TA")] SUPPLIER sUPPLIER)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(warehouse).State = EntityState.Modified;
+                db.Entry(sUPPLIER).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(warehouse);
+            ViewBag.MA_NHOM_HANG = new SelectList(db.PRODUCT_CATEGORIES, "MA_NHOM_HANG", "TEN_NHOM_HANG", sUPPLIER.MA_NHOM_HANG);
+            ViewBag.USER_ID = new SelectList(db.USERS, "USER_ID", "USERNAME", sUPPLIER.USER_ID);
+            return View(sUPPLIER);
         }
 
-        // GET: HopLong/Warehouses/Delete/5
+        // GET: HopLong/SUPPLIERs/Delete/5
         public ActionResult Delete(string id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Warehouse warehouse = db.WAREHOUSES.Find(id);
-            if (warehouse == null)
+            SUPPLIER sUPPLIER = db.SUPPLIERS.Find(id);
+            if (sUPPLIER == null)
             {
                 return HttpNotFound();
             }
-            return View(warehouse);
+            return View(sUPPLIER);
         }
 
-        // POST: HopLong/Warehouses/Delete/5
+        // POST: HopLong/SUPPLIERs/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(string id)
         {
-            Warehouse warehouse = db.WAREHOUSES.Find(id);
-            db.WAREHOUSES.Remove(warehouse);
+            SUPPLIER sUPPLIER = db.SUPPLIERS.Find(id);
+            db.SUPPLIERS.Remove(sUPPLIER);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

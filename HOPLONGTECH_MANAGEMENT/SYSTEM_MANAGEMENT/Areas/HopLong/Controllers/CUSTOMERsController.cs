@@ -10,112 +10,116 @@ using SYSTEM_MANAGEMENT.Models;
 
 namespace SYSTEM_MANAGEMENT.Areas.HopLong.Controllers
 {
-    public class WarehousesController : Controller
+    public class CUSTOMERsController : Controller
     {
         private SYSTEM_DATABASEEntities db = new SYSTEM_DATABASEEntities();
 
-        // GET: HopLong/Warehouses
+        // GET: HopLong/CUSTOMERs
         public ActionResult Index()
         {
-            return View(db.WAREHOUSES.ToList());
-        }
-        public ActionResult Sanphamkho(String Id)
-        {
-            var query = db.PRODUCTS.Where(d => d.MA_KHO == Id);
-            return View(query.ToList());
+            var cUSTOMERS = db.CUSTOMERS.Include(c => c.CUSTOMER_GROUPS).Include(c => c.USER);
+            return View(cUSTOMERS.ToList());
         }
 
-        // GET: HopLong/Warehouses/Details/5
+        // GET: HopLong/CUSTOMERs/Details/5
         public ActionResult Details(string id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Warehouse warehouse = db.WAREHOUSES.Find(id);
-            if (warehouse == null)
+            CUSTOMER cUSTOMER = db.CUSTOMERS.Find(id);
+            if (cUSTOMER == null)
             {
                 return HttpNotFound();
             }
-            return View(warehouse);
+            return View(cUSTOMER);
         }
 
-        // GET: HopLong/Warehouses/Create
+        // GET: HopLong/CUSTOMERs/Create
         public ActionResult Create()
         {
+            ViewBag.MA_NHOM_KHACH = new SelectList(db.CUSTOMER_GROUPS, "MA_NHOM_KHACH", "TEN_NHOM_KHACH");
+            ViewBag.USER_ID = new SelectList(db.USERS, "USER_ID", "USERNAME");
             return View();
         }
 
-        // POST: HopLong/Warehouses/Create
+        // POST: HopLong/CUSTOMERs/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "MA_KHO,TEN_KHO,MO_TA")] Warehouse warehouse)
+        public ActionResult Create([Bind(Include = "MA_KHACH_HANG,TEN_KHACH_HANG,DIA_CHI_CONG_TY,DIA_CHI_XUAT_HOA_DON,MA_NHOM_KHACH,MST,DIEN_THOAI,FAX,EMAIL,WEBSITE,USER_ID,MO_TA")] CUSTOMER cUSTOMER)
         {
             if (ModelState.IsValid)
             {
-                db.WAREHOUSES.Add(warehouse);
+                db.CUSTOMERS.Add(cUSTOMER);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            return View(warehouse);
+            ViewBag.MA_NHOM_KHACH = new SelectList(db.CUSTOMER_GROUPS, "MA_NHOM_KHACH", "TEN_NHOM_KHACH", cUSTOMER.MA_NHOM_KHACH);
+            ViewBag.USER_ID = new SelectList(db.USERS, "USER_ID", "USERNAME", cUSTOMER.USER_ID);
+            return View(cUSTOMER);
         }
 
-        // GET: HopLong/Warehouses/Edit/5
+        // GET: HopLong/CUSTOMERs/Edit/5
         public ActionResult Edit(string id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Warehouse warehouse = db.WAREHOUSES.Find(id);
-            if (warehouse == null)
+            CUSTOMER cUSTOMER = db.CUSTOMERS.Find(id);
+            if (cUSTOMER == null)
             {
                 return HttpNotFound();
             }
-            return View(warehouse);
+            ViewBag.MA_NHOM_KHACH = new SelectList(db.CUSTOMER_GROUPS, "MA_NHOM_KHACH", "TEN_NHOM_KHACH", cUSTOMER.MA_NHOM_KHACH);
+            ViewBag.USER_ID = new SelectList(db.USERS, "USER_ID", "USERNAME", cUSTOMER.USER_ID);
+            return View(cUSTOMER);
         }
 
-        // POST: HopLong/Warehouses/Edit/5
+        // POST: HopLong/CUSTOMERs/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "MA_KHO,TEN_KHO,MO_TA")] Warehouse warehouse)
+        public ActionResult Edit([Bind(Include = "MA_KHACH_HANG,TEN_KHACH_HANG,DIA_CHI_CONG_TY,DIA_CHI_XUAT_HOA_DON,MA_NHOM_KHACH,MST,DIEN_THOAI,FAX,EMAIL,WEBSITE,USER_ID,MO_TA")] CUSTOMER cUSTOMER)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(warehouse).State = EntityState.Modified;
+                db.Entry(cUSTOMER).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(warehouse);
+            ViewBag.MA_NHOM_KHACH = new SelectList(db.CUSTOMER_GROUPS, "MA_NHOM_KHACH", "TEN_NHOM_KHACH", cUSTOMER.MA_NHOM_KHACH);
+            ViewBag.USER_ID = new SelectList(db.USERS, "USER_ID", "USERNAME", cUSTOMER.USER_ID);
+            return View(cUSTOMER);
         }
 
-        // GET: HopLong/Warehouses/Delete/5
+        // GET: HopLong/CUSTOMERs/Delete/5
         public ActionResult Delete(string id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Warehouse warehouse = db.WAREHOUSES.Find(id);
-            if (warehouse == null)
+            CUSTOMER cUSTOMER = db.CUSTOMERS.Find(id);
+            if (cUSTOMER == null)
             {
                 return HttpNotFound();
             }
-            return View(warehouse);
+            return View(cUSTOMER);
         }
 
-        // POST: HopLong/Warehouses/Delete/5
+        // POST: HopLong/CUSTOMERs/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(string id)
         {
-            Warehouse warehouse = db.WAREHOUSES.Find(id);
-            db.WAREHOUSES.Remove(warehouse);
+            CUSTOMER cUSTOMER = db.CUSTOMERS.Find(id);
+            db.CUSTOMERS.Remove(cUSTOMER);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

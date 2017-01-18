@@ -1,0 +1,58 @@
+﻿@model SYSTEM_MANAGEMENT.Models.CUSTOMER_ACCOUNTS
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>CUSTOMER_ACCOUNTS</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.SO_TAI_KHOAN)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SO_TAI_KHOAN)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TEN_NGAN_HANG)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TEN_NGAN_HANG)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CHI_NHANH)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CHI_NHANH)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TINH_TP)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TINH_TP)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CUSTOMER.TEN_KHACH_HANG)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CUSTOMER.TEN_KHACH_HANG)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID_TAI_KHOAN_KH }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

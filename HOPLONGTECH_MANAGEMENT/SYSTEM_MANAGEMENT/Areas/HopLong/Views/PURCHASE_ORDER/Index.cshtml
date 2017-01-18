@@ -1,0 +1,105 @@
+﻿@model IEnumerable<SYSTEM_MANAGEMENT.Models.PURCHASE_ORDER>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.NGAY_ORDER)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.THOI_GIAN_YEU_CAU_CUA_KINH_DOANH)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TINH_TRANG)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.GIA_BAN)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.GIA_NHAP)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CHENH_LECH)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SL_NHAP)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SL_THUC_NHAN)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NGAY_HANG_VE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.GHI_CHU)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PRODUCT_CATEGORIES.TEN_NHOM_HANG)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PRODUCT.MA_HANG_NHAP)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.USER.USERNAME)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.NGAY_ORDER)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.THOI_GIAN_YEU_CAU_CUA_KINH_DOANH)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TINH_TRANG)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.GIA_BAN)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.GIA_NHAP)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CHENH_LECH)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SL_NHAP)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SL_THUC_NHAN)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NGAY_HANG_VE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.GHI_CHU)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PRODUCT_CATEGORIES.TEN_NHOM_HANG)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PRODUCT.MA_HANG_NHAP)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.USER.USERNAME)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ID })
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,98 @@
+﻿@model SYSTEM_MANAGEMENT.Models.SUPPLIER
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>SUPPLIER</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.TEN_NCC)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TEN_NCC)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DIA_CHI)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DIA_CHI)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SDT)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SDT)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EMAIL)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EMAIL)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FAX)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FAX)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MST)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MST)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.WEBSITE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.WEBSITE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MO_TA)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MO_TA)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PRODUCT_CATEGORIES.TEN_NHOM_HANG)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PRODUCT_CATEGORIES.TEN_NHOM_HANG)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.USER.USERNAME)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.USER.USERNAME)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.MA_NCC }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

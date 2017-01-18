@@ -10,112 +10,107 @@ using SYSTEM_MANAGEMENT.Models;
 
 namespace SYSTEM_MANAGEMENT.Areas.HopLong.Controllers
 {
-    public class WarehousesController : Controller
+    public class CUSTOMER_GROUPSController : Controller
     {
         private SYSTEM_DATABASEEntities db = new SYSTEM_DATABASEEntities();
 
-        // GET: HopLong/Warehouses
+        // GET: HopLong/CUSTOMER_GROUPS
         public ActionResult Index()
         {
-            return View(db.WAREHOUSES.ToList());
-        }
-        public ActionResult Sanphamkho(String Id)
-        {
-            var query = db.PRODUCTS.Where(d => d.MA_KHO == Id);
-            return View(query.ToList());
+            return View(db.CUSTOMER_GROUPS.ToList());
         }
 
-        // GET: HopLong/Warehouses/Details/5
+        // GET: HopLong/CUSTOMER_GROUPS/Details/5
         public ActionResult Details(string id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Warehouse warehouse = db.WAREHOUSES.Find(id);
-            if (warehouse == null)
+            CUSTOMER_GROUPS cUSTOMER_GROUPS = db.CUSTOMER_GROUPS.Find(id);
+            if (cUSTOMER_GROUPS == null)
             {
                 return HttpNotFound();
             }
-            return View(warehouse);
+            return View(cUSTOMER_GROUPS);
         }
 
-        // GET: HopLong/Warehouses/Create
+        // GET: HopLong/CUSTOMER_GROUPS/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: HopLong/Warehouses/Create
+        // POST: HopLong/CUSTOMER_GROUPS/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "MA_KHO,TEN_KHO,MO_TA")] Warehouse warehouse)
+        public ActionResult Create([Bind(Include = "MA_NHOM_KHACH,TEN_NHOM_KHACH,MO_TA")] CUSTOMER_GROUPS cUSTOMER_GROUPS)
         {
             if (ModelState.IsValid)
             {
-                db.WAREHOUSES.Add(warehouse);
+                db.CUSTOMER_GROUPS.Add(cUSTOMER_GROUPS);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            return View(warehouse);
+            return View(cUSTOMER_GROUPS);
         }
 
-        // GET: HopLong/Warehouses/Edit/5
+        // GET: HopLong/CUSTOMER_GROUPS/Edit/5
         public ActionResult Edit(string id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Warehouse warehouse = db.WAREHOUSES.Find(id);
-            if (warehouse == null)
+            CUSTOMER_GROUPS cUSTOMER_GROUPS = db.CUSTOMER_GROUPS.Find(id);
+            if (cUSTOMER_GROUPS == null)
             {
                 return HttpNotFound();
             }
-            return View(warehouse);
+            return View(cUSTOMER_GROUPS);
         }
 
-        // POST: HopLong/Warehouses/Edit/5
+        // POST: HopLong/CUSTOMER_GROUPS/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "MA_KHO,TEN_KHO,MO_TA")] Warehouse warehouse)
+        public ActionResult Edit([Bind(Include = "MA_NHOM_KHACH,TEN_NHOM_KHACH,MO_TA")] CUSTOMER_GROUPS cUSTOMER_GROUPS)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(warehouse).State = EntityState.Modified;
+                db.Entry(cUSTOMER_GROUPS).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(warehouse);
+            return View(cUSTOMER_GROUPS);
         }
 
-        // GET: HopLong/Warehouses/Delete/5
+        // GET: HopLong/CUSTOMER_GROUPS/Delete/5
         public ActionResult Delete(string id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Warehouse warehouse = db.WAREHOUSES.Find(id);
-            if (warehouse == null)
+            CUSTOMER_GROUPS cUSTOMER_GROUPS = db.CUSTOMER_GROUPS.Find(id);
+            if (cUSTOMER_GROUPS == null)
             {
                 return HttpNotFound();
             }
-            return View(warehouse);
+            return View(cUSTOMER_GROUPS);
         }
 
-        // POST: HopLong/Warehouses/Delete/5
+        // POST: HopLong/CUSTOMER_GROUPS/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(string id)
         {
-            Warehouse warehouse = db.WAREHOUSES.Find(id);
-            db.WAREHOUSES.Remove(warehouse);
+            CUSTOMER_GROUPS cUSTOMER_GROUPS = db.CUSTOMER_GROUPS.Find(id);
+            db.CUSTOMER_GROUPS.Remove(cUSTOMER_GROUPS);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

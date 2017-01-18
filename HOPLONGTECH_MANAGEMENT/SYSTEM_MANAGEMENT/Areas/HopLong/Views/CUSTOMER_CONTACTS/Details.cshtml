@@ -1,0 +1,98 @@
+﻿@model SYSTEM_MANAGEMENT.Models.CUSTOMER_CONTACTS
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>CUSTOMER_CONTACTS</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.NGUOI_LIEN_HE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NGUOI_LIEN_HE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NGAY_SINH)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NGAY_SINH)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.GIOI_TINH)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GIOI_TINH)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CHUC_VU)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CHUC_VU)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SO_DIEN_THOAI)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SO_DIEN_THOAI)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EMAIL)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EMAIL)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FACEBOOK)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FACEBOOK)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SKYPE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SKYPE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.GHI_CHU)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GHI_CHU)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CUSTOMER.TEN_KHACH_HANG)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CUSTOMER.TEN_KHACH_HANG)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID_LIEN_HE_KH }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
