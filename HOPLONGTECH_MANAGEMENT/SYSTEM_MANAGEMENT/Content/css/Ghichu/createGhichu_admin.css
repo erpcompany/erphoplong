@@ -1,0 +1,32 @@
+﻿*{
+    margin: 0px;
+    padding: 0px;
+}
+.form-horizontal{
+    border: 2px solid black;
+}
+.form-horizontal h2{
+    color: blue; 
+    font-family:'Times New Roman';
+     font-weight:bold;
+     text-align: center;
+}
+hr{
+    border: 1px solid black;
+}
+#submit{
+    background: url(../../images/create_icon.png) no-repeat ;
+    background-size: 100%;
+    margin-top: 5px;
+    border: none;
+    height: 30px;
+    width: 30px;
+}
+.border{
+    border-top: 2px solid black;
+    color:blue;
+    height: 30px;
+}
+.form-group a img{
+    height: 30px;
+}

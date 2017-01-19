@@ -12,6 +12,10 @@
 .table .title  th{
     text-align: center;
 }
+
 .table tr td{
     text-align: center;
+}
+.fa{
+    font-size: 25px;
 }

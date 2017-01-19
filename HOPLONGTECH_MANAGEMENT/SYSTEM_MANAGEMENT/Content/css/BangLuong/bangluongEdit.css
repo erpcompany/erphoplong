@@ -29,13 +29,22 @@ hr{
     font-weight: bold;
     padding-top: 10px;
 }
-.form-group .btn:hover{
-    background: aqua;
-}
-.form-group .btn{
-    border-radius: 10px;
-    font-weight: bold;
-}
+
+
 .backlink a:hover{
     color: red;
+}
+.form-group:last-child{
+    border-top: 2px solid black;
+    padding-top: 15px;
+}
+.form-group a img{
+    height: 30px;
+    float: left;
+}
+#submit{
+    background: url(../../images/1484757847_ic_system_update_tv_48px.png) no-repeat ;
+    background-size: 100%;
+    border: none;
+    float: right;
 }

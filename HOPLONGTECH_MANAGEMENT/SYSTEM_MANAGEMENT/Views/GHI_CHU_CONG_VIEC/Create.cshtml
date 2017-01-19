@@ -9,7 +9,7 @@
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-
+<link href="~/Content/css/Ghichu/createGhichu_admin.css" rel="stylesheet" type="text/css"/>
     <div class="container">
         <div class="row">
             <div class="col-md-12">
@@ -21,7 +21,7 @@
                                 <div class="panel-body">
 
                                     <div class="form-horizontal">
-                                        <h2 style="color: blue; font-family:'Times New Roman'; font-weight:bold">Tạo ghi chú mới</h2>
+                                        <h2>Tạo ghi chú mới</h2>
                                         <hr />
                                         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
                                         @if (Convert.ToInt32(@Session["IS_AMIN"]) == 1)
@@ -87,15 +87,15 @@
                                             </div>
                                         </div>
 
-                                        <div class="form-group" style="color:blue">
-                                            <div class="col-md-offset-2 col-md-10">
-                                                <input type="submit" value="Create" class="btn btn-default" />
+                                        <div class="form-group border">
+                                            <div class="col-md-offset-0 col-md-2">
+                                                <a href="/GHI_CHU_CONG_VIEC/Index/@Session["USER_ID"]"><img src="~/Content/images/back_icon.png" /></a>
                                             </div>
+                                            <div class="col-md-offset-4 col-md-1">
+                                                <input type="submit" id="submit" value="" class="btn btn-default" />
+                                            </div>                                        
                                         </div>
                                         <p></p>
-                                        <div style="float: right; color: blue">
-                                            @Html.ActionLink("Quay lại", "/Index/" + @Session["USER_ID"])
-                                        </div>
                                     </div>
                                     </div>
                                 </div>

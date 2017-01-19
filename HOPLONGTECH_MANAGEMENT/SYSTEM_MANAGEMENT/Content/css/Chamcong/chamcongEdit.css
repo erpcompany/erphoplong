@@ -26,3 +26,19 @@ hr{
 .form-horizontal .control-label{
     text-align: left;
 }
+.form-group:last-child{
+    border-top: 4px solid #007ACC;
+    padding-top: 0px;
+    height: 30px;
+}
+.form-group a img{
+    height: 30px;
+    float: left;
+}
+#submit{
+    background: url(../../images/1484757847_ic_system_update_tv_48px.png) no-repeat ;
+    background-size: 100%;
+    border: none;
+    float: right;
+    margin-top: 5px;
+}

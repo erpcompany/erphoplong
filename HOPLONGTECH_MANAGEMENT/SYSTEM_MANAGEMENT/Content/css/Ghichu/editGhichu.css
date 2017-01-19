@@ -15,9 +15,11 @@
 .content .form-horizontal{
     border: 4px solid #007ACC;
     margin-bottom: 30px;
+    border-radius: 10px;
 }
 .content .form-horizontal hr{
     border: 2px solid #007AAC;
+    
 }
 button, .buttons, .btn, .modal-footer .btn+.btn {
     background-color: aqua;
@@ -31,4 +33,10 @@ button, .buttons, .btn, .modal-footer .btn+.btn {
 #submit{
     background: url(../../images/1484757847_ic_system_update_tv_48px.png) no-repeat ;
     background-size: 100%;
+    margin-top: 5px;
+}
+.form-group:last-child{
+    border-top: 4px solid #007ACC;
+    padding-top: 0px;
+    height: 30px;
 }

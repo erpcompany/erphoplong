@@ -4,7 +4,33 @@
 }
 .form-horizontal{
     margin: 50px 0px;
+    border: 2px solid black;
+    padding-top: 15px;
+    width: 80%;
+    margin: auto;
 }
 .link a:hover{
     color: red;
+}
+.h2{
+    text-align: center;
+}
+.form-group:last-child{
+    border-top: 2px solid black;
+    height: 30px;
+}
+.form-group a img{
+    height: 30px;
+    float: left;
+    padding-top: 5px;
+}
+.fa{
+    font-size: 25px;
+    padding-top: 7px;
+    font-weight: bold;
+}
+.form-group a,.fa{
+    display: inline-block;
+    float: left;
+    margin-right: 10px;
 }

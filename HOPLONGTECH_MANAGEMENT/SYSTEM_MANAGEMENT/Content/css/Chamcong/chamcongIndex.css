@@ -65,3 +65,6 @@ th{
 .table-bordered>tbody>tr>td{
     border: 1px solid black;
 }
+.fa{
+    font-size: 25px;
+}

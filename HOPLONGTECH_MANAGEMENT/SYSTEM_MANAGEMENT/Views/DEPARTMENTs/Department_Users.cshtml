@@ -4,7 +4,7 @@
     ViewBag.Title = "Danh sách nhân viên";
 }
 <link href="~/Content/css/Departments/userDepart.css" type="text/css" rel="stylesheet"/>
-<h2>DANH SÁCH NHÂN VIÊN</h2>
+<h2 class="h2">DANH SÁCH NHÂN VIÊN</h2>
 
 <table class="table" border="1">
     <tr class="title">
@@ -68,7 +68,7 @@
     </tr>
 }
 </table>
-<div class="backlink">
-    @Html.ActionLink("Trở về danh sách phòng ban", "Index")
+<div class="col-md-offset-0 col-md-1">
+    <a href="/DEPARTMENTs/Index/@Session["USER_ID"]"><img src="~/Content/images/back_icon.png" /></a>
 </div>
 

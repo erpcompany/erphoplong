@@ -7,6 +7,7 @@
     <head>
         <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet">
         <link href="~/Content/css/detail_note.css" rel="stylesheet" />
+        <link href="~/Content/css/Ghichu/detailsGhichu.css" type="text/css" rel="stylesheet"/>
     </head>
     <body>
         <div class="container">
@@ -14,10 +15,14 @@
                 <div class="col-md-6 col-md-offset-3">
                     <div class="panel panel-default coupon">
                         <div class="panel-heading" id="head">
-                            <div class="panel-title" id="title" style="font-family:'Times New Roman'; font-size: 28px; color:blue">
-                                <span style="font-size:10px;">
-                                    @Html.ActionLink("Sửa ghi chú", "Edit", new { id = Model.NOTED_ID }) |
-                                    @Html.ActionLink("Danh sách ghi chú", "/Index/" + @Session["USER_ID"])
+                            <div class="panel-title" id="title">
+                                <span class="col-md-2">
+                                    <div class="col-md-offset-0 col-md-1 edit">
+                                        <a href="/GHI_CHU_CONG_VIEC/Edit/@Session["USER_ID"]"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a> &nbsp;&nbsp;&nbsp;
+                                    </div> 
+                                    <div class="col-md-offset-0 col-md-1 back">
+                                        <a href="/GHI_CHU_CONG_VIEC/Index/@Session["USER_ID"]"><img src="~/Content/images/back_icon.png" /></a>
+                                    </div>
                                 </span>
                                 <b>@Html.DisplayFor(model => model.NOTED_NAME)</b>
                                 
