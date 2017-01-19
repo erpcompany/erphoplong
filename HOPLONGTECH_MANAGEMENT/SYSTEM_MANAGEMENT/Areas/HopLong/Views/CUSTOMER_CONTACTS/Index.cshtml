@@ -3,45 +3,47 @@
 @{
     ViewBag.Title = "Index";
 }
-
-<h2>Index</h2>
+<link href="~/Areas/HopLong/Style/CustomerContact/index.css" rel="stylesheet"/>
+<h2>LIÊN HỆ KHÁCH HÀNG</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    <a href="/HopLong/CUSTOMER_CONTACTS/Create"><img src="~/Content/images/create_icon.png" /></a> &nbsp;&nbsp;&nbsp;
 </p>
-<table class="table">
+<table class="table" id="customer">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.NGUOI_LIEN_HE)
+            NGƯỜI LIÊN HỆ
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.NGAY_SINH)
+            NGÀY SINH
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.GIOI_TINH)
+            GIỚI TÍNH
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.CHUC_VU)
+            CHỨC VỤ
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.SO_DIEN_THOAI)
+            SỐ ĐIỆN THOẠI
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.EMAIL)
+            E-MAIL
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.FACEBOOK)
+            FACEBOOK
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.SKYPE)
+            SKYPE
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.GHI_CHU)
+            GHI CHÚ
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.CUSTOMER.TEN_KHACH_HANG)
+            TÊN KHÁCH HÀNG
         </th>
-        <th></th>
+        <th>
+            <em class="fa fa-cog"></em>
+        </th>
     </tr>
 
 @foreach (var item in Model) {

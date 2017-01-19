@@ -3,37 +3,40 @@
 @{
     ViewBag.Title = "Index";
 }
-
-<h2>Index</h2>
+<link href="~/Areas/HopLong/Style/CustomerGroup/index.css" rel="stylesheet" />
+<h2 class="h2">NHÓM KHÁCH HÀNG</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    <a href="/HopLong/CUSTOMER_GROUPS/Create"><img src="~/Content/images/create_icon.png" /></a> &nbsp;&nbsp;&nbsp;
 </p>
-<table class="table">
+<table class="table" id="customer">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.TEN_NHOM_KHACH)
+            TÊN NHÓM KHÁCH
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.MO_TA)
+            MÔ TẢ
         </th>
-        <th></th>
+        <th>
+            <em class="fa fa-cog"></em>
+        </th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.TEN_NHOM_KHACH)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.MO_TA)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.MA_NHOM_KHACH }) |
-            @Html.ActionLink("Details", "Details", new { id=item.MA_NHOM_KHACH }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.MA_NHOM_KHACH })
-        </td>
-    </tr>
-}
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.TEN_NHOM_KHACH)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MO_TA)
+            </td>
+            <td>
+                <a href="/CUSTOMER_GROUPS/Edit"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a> &nbsp;&nbsp;&nbsp;
+                <a href="/CUSTOMER_GROUPS/Details"><i class="fa fa-info-circle" aria-hidden="true"></i></a> &nbsp;&nbsp;&nbsp;
+                <a href="/CUSTOMER_GROUPS/Delete"><i class="fa fa-trash-o " onclick="return confirm('Bạn có chắc muốn xóa không?')" aria-hidden="true"></i></a> &nbsp;&nbsp;&nbsp;
+            </td>
+        </tr>
+    }
 
 </table>

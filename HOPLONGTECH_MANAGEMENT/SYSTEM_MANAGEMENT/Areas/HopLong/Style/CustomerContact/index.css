@@ -9,6 +9,7 @@
     text-align: center;
     color: white;
     background: #4285F4;
+    padding-top: 10px;
 }
 #customer tr td{
     border: 1px solid black;
@@ -23,7 +24,4 @@
 }
 a img{
     height: 30px;
-}
-.fa{
-    font-size: 25px;
 }
