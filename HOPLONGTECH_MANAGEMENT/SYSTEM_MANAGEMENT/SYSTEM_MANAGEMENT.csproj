@@ -455,6 +455,7 @@
     <Content Include="Areas\HopLong\Views\PURCHASE_ORDER\Edit.cshtml" />
     <Content Include="Areas\HopLong\Views\PURCHASE_ORDER\Index.cshtml" />
     <Content Include="Areas\HopLong\Views\Warehouses\Sanphamkho.cshtml" />
+    <Content Include="Areas\HopLong\Views\SUPPLIERs\Suppliers.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
