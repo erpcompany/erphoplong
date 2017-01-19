@@ -245,8 +245,17 @@
     <Compile Include="Models\BANG_LUONG.cs">
       <DependentUpon>database.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\BORROWING_PRODUCTS.cs">
+      <DependentUpon>database.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\BussinessModel\AuthorizeBussiness.cs" />
     <Compile Include="Models\BussinessModel\ReflectionController.cs" />
+    <Compile Include="Models\COMPANY.cs">
+      <DependentUpon>database.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\COMPANY_CATEGORIES.cs">
+      <DependentUpon>database.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\CUSTOMER.cs">
       <DependentUpon>database.tt</DependentUpon>
     </Compile>
@@ -314,6 +323,9 @@
       <DependentUpon>database.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\PURCHASE_ORDER.cs">
+      <DependentUpon>database.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\RETURNING_PRODUCTS.cs">
       <DependentUpon>database.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\SUPPLIER.cs">
@@ -393,13 +405,6 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <EntityDeploy Include="Models\database.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>database.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <Content Include="Models\database.edmx.diagram">
-      <DependentUpon>database.edmx</DependentUpon>
-    </Content>
     <Content Include="Areas\HopLong\Views\web.config" />
     <Content Include="Areas\HopLong\Views\_ViewStart.cshtml" />
     <Content Include="Areas\HopLong\Views\Shared\_Layout.cshtml" />
@@ -424,6 +429,13 @@
     <Content Include="Areas\HopLong\Views\Warehouses\Details.cshtml" />
     <Content Include="Areas\HopLong\Views\Warehouses\Edit.cshtml" />
     <Content Include="Areas\HopLong\Views\Warehouses\Index.cshtml" />
+    <EntityDeploy Include="Models\database.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>database.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\database.edmx.diagram">
+      <DependentUpon>database.edmx</DependentUpon>
+    </Content>
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />

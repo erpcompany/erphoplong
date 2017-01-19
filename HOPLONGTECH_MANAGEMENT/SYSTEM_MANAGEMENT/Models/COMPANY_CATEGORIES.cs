@@ -12,26 +12,19 @@ namespace SYSTEM_MANAGEMENT.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class HOLD_PRODUCTS
+    public partial class COMPANY_CATEGORIES
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public HOLD_PRODUCTS()
+        public COMPANY_CATEGORIES()
         {
-            this.HOLD_PRODUCT_DETAILS = new HashSet<HOLD_PRODUCT_DETAILS>();
+            this.COMPANYS = new HashSet<COMPANY>();
         }
     
-        public int ID_GIU_HANG { get; set; }
-        public string MA_HANG_HT { get; set; }
-        public Nullable<System.DateTime> NGAY_GIU { get; set; }
-        public Nullable<int> TONG_SO_GIU { get; set; }
-        public Nullable<int> SL_GIU_DA_XUAT { get; set; }
-        public Nullable<int> SL_GIU_CHUA_XU_LY { get; set; }
-        public string TRANG_THAI { get; set; }
-        public string MA_KHO { get; set; }
+        public string COMPANY_CATEGORY_ID { get; set; }
+        public string COMPANY_CATEGORY_NAME { get; set; }
+        public string NOTED { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<HOLD_PRODUCT_DETAILS> HOLD_PRODUCT_DETAILS { get; set; }
-        public virtual PRODUCT PRODUCT { get; set; }
-        public virtual Warehouse Warehouse { get; set; }
+        public virtual ICollection<COMPANY> COMPANYS { get; set; }
     }
 }

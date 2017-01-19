@@ -1,26 +1,29 @@
 ﻿@model IEnumerable<SYSTEM_MANAGEMENT.Models.DEPARTMENT>
 
 @{
-    ViewBag.Title = "Danh sách phòng ban";
+    ViewBag.Title = "Index";
 }
-<link href="~/Content/css/Departments/indexDepart.css" rel="stylesheet" type="text/css"/>
-<h2>PHÒNG BAN</h2>
 
-<p class="create">
-    @Html.ActionLink("Tạo mới", "Create")
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
 </p>
-<table class="table" border="1">
-    <tr class="title">
+<table class="table">
+    <tr>
         <th>
-            Tên Phòng ban
+            @Html.DisplayNameFor(model => model.DEPARTMENT_NAME)
         </th>
         <th>
-            Trưởng phòng
+            @Html.DisplayNameFor(model => model.NOTED)
         </th>
         <th>
-            Ghi chú
+            @Html.DisplayNameFor(model => model.COMPANY.COMPANY_NAME)
         </th>
-        <th> Chức năng</th>
+        <th>
+            @Html.DisplayNameFor(model => model.USER.USERNAME)
+        </th>
+        <th></th>
     </tr>
 
 @foreach (var item in Model) {
@@ -29,16 +32,18 @@
             @Html.DisplayFor(modelItem => item.DEPARTMENT_NAME)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.USER.FULLNAME)
-        </td>
-        <td>            
             @Html.DisplayFor(modelItem => item.NOTED)
         </td>
         <td>
-            <a href="/DEPARTMENTs/Edit/@item.DEPARTMENT_ID"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a> &nbsp;&nbsp;&nbsp;
-            <a href="/DEPARTMENTs/Details/@item.DEPARTMENT_ID"><i class="fa fa-info-circle" aria-hidden="true"></i></a> &nbsp;&nbsp;&nbsp;
-            <a href="/DEPARTMENTs/Delete/@item.DEPARTMENT_ID"><i class="fa fa-trash-o " onclick="return confirm('Bạn có chắc muốn xóa không?')" aria-hidden="true"></i></a> &nbsp;&nbsp;&nbsp;
-            <a href="/DEPARTMENTs/Department_Users/@item.DEPARTMENT_ID"><i class="fa fa-list" aria-hidden="true"></i></a> &nbsp;&nbsp;&nbsp;          
+            @Html.DisplayFor(modelItem => item.COMPANY.COMPANY_NAME)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.USER.USERNAME)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.DEPARTMENT_ID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.DEPARTMENT_ID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.DEPARTMENT_ID })
         </td>
     </tr>
 }

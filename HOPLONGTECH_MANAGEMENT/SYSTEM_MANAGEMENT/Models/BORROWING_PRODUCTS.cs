@@ -12,26 +12,25 @@ namespace SYSTEM_MANAGEMENT.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class HOLD_PRODUCTS
+    public partial class BORROWING_PRODUCTS
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public HOLD_PRODUCTS()
+        public BORROWING_PRODUCTS()
         {
-            this.HOLD_PRODUCT_DETAILS = new HashSet<HOLD_PRODUCT_DETAILS>();
+            this.RETURNING_PRODUCTS = new HashSet<RETURNING_PRODUCTS>();
         }
     
-        public int ID_GIU_HANG { get; set; }
+        public int ID_HANG_MUON { get; set; }
         public string MA_HANG_HT { get; set; }
-        public Nullable<System.DateTime> NGAY_GIU { get; set; }
-        public Nullable<int> TONG_SO_GIU { get; set; }
-        public Nullable<int> SL_GIU_DA_XUAT { get; set; }
-        public Nullable<int> SL_GIU_CHUA_XU_LY { get; set; }
+        public string KHO_MUON { get; set; }
+        public System.DateTime NGAY_MUON { get; set; }
+        public int SL_MUON { get; set; }
+        public string MA_PHIEU_XUAT_KHO { get; set; }
         public string TRANG_THAI { get; set; }
-        public string MA_KHO { get; set; }
+        public string GHI_CHU { get; set; }
     
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<HOLD_PRODUCT_DETAILS> HOLD_PRODUCT_DETAILS { get; set; }
         public virtual PRODUCT PRODUCT { get; set; }
-        public virtual Warehouse Warehouse { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<RETURNING_PRODUCTS> RETURNING_PRODUCTS { get; set; }
     }
 }

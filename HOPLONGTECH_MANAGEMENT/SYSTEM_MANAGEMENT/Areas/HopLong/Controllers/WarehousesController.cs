@@ -17,7 +17,8 @@ namespace SYSTEM_MANAGEMENT.Areas.HopLong.Controllers
         // GET: HopLong/Warehouses
         public ActionResult Index()
         {
-            return View(db.WAREHOUSES.ToList());
+            var wAREHOUSES = db.WAREHOUSES.Include(w => w.COMPANY);
+            return View(wAREHOUSES.ToList());
         }
 
         // GET: HopLong/Warehouses/Details/5
@@ -38,6 +39,7 @@ namespace SYSTEM_MANAGEMENT.Areas.HopLong.Controllers
         // GET: HopLong/Warehouses/Create
         public ActionResult Create()
         {
+            ViewBag.COMPANY_ID = new SelectList(db.COMPANYS, "COMPANY_ID", "COMPANY_NAME");
             return View();
         }
 
@@ -46,7 +48,7 @@ namespace SYSTEM_MANAGEMENT.Areas.HopLong.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "MA_KHO,TEN_KHO,MO_TA")] Warehouse warehouse)
+        public ActionResult Create([Bind(Include = "MA_KHO,TEN_KHO,MO_TA,COMPANY_ID")] Warehouse warehouse)
         {
             if (ModelState.IsValid)
             {
@@ -55,6 +57,7 @@ namespace SYSTEM_MANAGEMENT.Areas.HopLong.Controllers
                 return RedirectToAction("Index");
             }
 
+            ViewBag.COMPANY_ID = new SelectList(db.COMPANYS, "COMPANY_ID", "COMPANY_NAME", warehouse.COMPANY_ID);
             return View(warehouse);
         }
 
@@ -70,6 +73,7 @@ namespace SYSTEM_MANAGEMENT.Areas.HopLong.Controllers
             {
                 return HttpNotFound();
             }
+            ViewBag.COMPANY_ID = new SelectList(db.COMPANYS, "COMPANY_ID", "COMPANY_NAME", warehouse.COMPANY_ID);
             return View(warehouse);
         }
 
@@ -78,7 +82,7 @@ namespace SYSTEM_MANAGEMENT.Areas.HopLong.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "MA_KHO,TEN_KHO,MO_TA")] Warehouse warehouse)
+        public ActionResult Edit([Bind(Include = "MA_KHO,TEN_KHO,MO_TA,COMPANY_ID")] Warehouse warehouse)
         {
             if (ModelState.IsValid)
             {
@@ -86,6 +90,7 @@ namespace SYSTEM_MANAGEMENT.Areas.HopLong.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
+            ViewBag.COMPANY_ID = new SelectList(db.COMPANYS, "COMPANY_ID", "COMPANY_NAME", warehouse.COMPANY_ID);
             return View(warehouse);
         }
 

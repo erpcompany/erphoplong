@@ -143,6 +143,14 @@
         </div>
 
         <div class="form-group">
+            @Html.LabelFor(model => model.SL_THUC_TE_CO_THE_DUNG, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.SL_THUC_TE_CO_THE_DUNG, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.SL_THUC_TE_CO_THE_DUNG, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
             @Html.LabelFor(model => model.DON_GIA_MUA_CO_DINH, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.DON_GIA_MUA_CO_DINH, new { htmlAttributes = new { @class = "form-control" } })

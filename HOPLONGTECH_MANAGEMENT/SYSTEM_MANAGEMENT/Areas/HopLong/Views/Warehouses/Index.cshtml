@@ -17,6 +17,9 @@
         <th>
             @Html.DisplayNameFor(model => model.MO_TA)
         </th>
+        <th>
+            @Html.DisplayNameFor(model => model.COMPANY.COMPANY_NAME)
+        </th>
         <th></th>
     </tr>
 
@@ -27,6 +30,9 @@
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.MO_TA)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.COMPANY.COMPANY_NAME)
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.MA_KHO }) |

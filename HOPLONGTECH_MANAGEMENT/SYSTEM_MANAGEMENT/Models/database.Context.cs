@@ -27,6 +27,9 @@ namespace SYSTEM_MANAGEMENT.Models
     
         public virtual DbSet<BANG_CHAM_CONG> BANG_CHAM_CONG { get; set; }
         public virtual DbSet<BANG_LUONG> BANG_LUONG { get; set; }
+        public virtual DbSet<BORROWING_PRODUCTS> BORROWING_PRODUCTS { get; set; }
+        public virtual DbSet<COMPANY_CATEGORIES> COMPANY_CATEGORIES { get; set; }
+        public virtual DbSet<COMPANY> COMPANYS { get; set; }
         public virtual DbSet<CUSTOMER_ACCOUNTS> CUSTOMER_ACCOUNTS { get; set; }
         public virtual DbSet<CUSTOMER_CONTACTS> CUSTOMER_CONTACTS { get; set; }
         public virtual DbSet<CUSTOMER_GROUPS> CUSTOMER_GROUPS { get; set; }
@@ -43,6 +46,7 @@ namespace SYSTEM_MANAGEMENT.Models
         public virtual DbSet<PRODUCT_META> PRODUCT_META { get; set; }
         public virtual DbSet<PRODUCT> PRODUCTS { get; set; }
         public virtual DbSet<PURCHASE_ORDER> PURCHASE_ORDER { get; set; }
+        public virtual DbSet<RETURNING_PRODUCTS> RETURNING_PRODUCTS { get; set; }
         public virtual DbSet<SUPPLIER_ACCOUNTS> SUPPLIER_ACCOUNTS { get; set; }
         public virtual DbSet<SUPPLIER_CONTACTS> SUPPLIER_CONTACTS { get; set; }
         public virtual DbSet<SUPPLIER> SUPPLIERS { get; set; }
