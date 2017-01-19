@@ -5,6 +5,8 @@
 .form-horizontal{
     margin-top: 40px;
     margin-bottom: 20px;
+    border: 2px solid black;
+    padding-top: 15px;
 }
 .form-group .btn-default:hover{
     background: aqua;
@@ -12,4 +14,30 @@
 
 .backlink a:hover{
     color: red;
+}
+h3{
+    text-align: center;
+}
+
+.form-group a img{
+    height: 30px;
+    float: left;
+}
+#submit{
+    background: url(../../images/1484757847_ic_system_update_tv_48px.png) no-repeat ;
+    background-size: 100%;
+    border: none;
+    float: left;
+}
+.thumbnail{
+    height: auto;
+    width: 50%;
+    margin: auto;
+}
+.text{
+    padding-top: 10px;
+}
+.form-group{
+    margin-top: 5px;
+    height: 30px;
 }

@@ -34,10 +34,10 @@
         <td>            
             @Html.DisplayFor(modelItem => item.NOTED)
         </td>
-        <td style="text-align:center; font-size: 38;">
+        <td>
             <a href="/DEPARTMENTs/Edit/@item.DEPARTMENT_ID"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a> &nbsp;&nbsp;&nbsp;
             <a href="/DEPARTMENTs/Details/@item.DEPARTMENT_ID"><i class="fa fa-info-circle" aria-hidden="true"></i></a> &nbsp;&nbsp;&nbsp;
-            <a href="/DEPARTMENTs/Delete/@item.DEPARTMENT_ID"><i class="fa fa-trash-o " onclick="return confirm("Bạn có chắc muốn xóa không?")" aria-hidden="true"></i></a> &nbsp;&nbsp;&nbsp;
+            <a href="/DEPARTMENTs/Delete/@item.DEPARTMENT_ID"><i class="fa fa-trash-o " onclick="return confirm('Bạn có chắc muốn xóa không?')" aria-hidden="true"></i></a> &nbsp;&nbsp;&nbsp;
             <a href="/DEPARTMENTs/Department_Users/@item.DEPARTMENT_ID"><i class="fa fa-list" aria-hidden="true"></i></a> &nbsp;&nbsp;&nbsp;          
         </td>
     </tr>

@@ -20,3 +20,10 @@
 .backlink a:hover{
     color: red;
 }
+.h2{
+     text-align: center;
+ }
+img{
+    height: 30px;
+    float: left;
+}

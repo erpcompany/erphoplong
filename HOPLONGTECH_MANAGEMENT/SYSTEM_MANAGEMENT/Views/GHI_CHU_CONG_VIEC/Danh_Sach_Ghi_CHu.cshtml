@@ -3,6 +3,7 @@
 @{
     ViewBag.Title = "Ghi chú";
 }
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 
 
 <!--<div class="container" id="tourpackages-carousel">
@@ -12,12 +13,12 @@
         @foreach (var item in Model)
         {
             <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
-                <div class="thumbnail" style="height:220px">
+                <div class="thumbnail">
                     <div class="caption">
                         <div class='col-lg-12'>
-                            @Html.DisplayFor(modelItem => item.USER.FULLNAME)
-                            <span class="glyphicon glyphicon-trash pull-right text-primary"><a href="/GHI_CHU_CONG_VIEC/Delete/@item.NOTED_ID"></a></span>
-                        </div>
+    @Html.DisplayFor(modelItem => item.USER.FULLNAME)
+    <a href="/GHI_CHU_CONG_VIEC/Delete/@item.NOTED_ID"><span class="glyphicon glyphicon-trash pull-right text-primary"></span></a>
+                    </div>
                         <div class='col-lg-12 well well-add-card'>
                             <h4>@Html.DisplayFor(modelItem => item.NOTED_NAME)</h4>
                         </div>

@@ -1,0 +1,21 @@
+﻿*{
+    margin: 0px;
+    padding: 0px;
+}
+#title{
+    font-family:'Times New Roman';
+     font-size: 28px; 
+     color:blue;
+}
+.panel-title span{
+    font-size: 10px;
+}
+.fa{
+    font-size: 25px;
+    padding-top: 10px;
+}
+.back,.edit{
+    display: inline-block;
+    float: left;
+    margin-right: 10px;
+}

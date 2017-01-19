@@ -361,10 +361,16 @@
     <Content Include="Content\css\Departments\indexDepart.css" />
     <Content Include="Content\css\Departments\userDepart.css" />
     <Content Include="Content\css\detail_note.css" />
+    <Content Include="Content\css\Ghichu\createGhichu_admin.css" />
+    <Content Include="Content\css\Ghichu\deleteGhichu.css" />
+    <Content Include="Content\css\Ghichu\detailsGhichu.css" />
     <Content Include="Content\css\Ghichu\editGhichu.css" />
     <Content Include="Content\css\Ghichu\indexGhichu.css" />
+    <Content Include="Content\css\Ghichu\indexGhichu_admin.css" />
     <Content Include="Content\images\1484757847_ic_system_update_tv_48px.png" />
+    <Content Include="Content\images\create_icon.png" />
     <Content Include="Content\images\back_icon.png" />
+    <Content Include="Content\images\delete_icon.png" />
     <Content Include="Content\images\lamhien.jpg" />
     <Content Include="Content\images\logo.png" />
     <Content Include="Content\js\editghichu.js" />
@@ -510,6 +516,7 @@
     <Folder Include="App_Data\" />
     <Folder Include="Areas\HopLong\Models\" />
     <Folder Include="Content\build\" />
+    <Folder Include="Content\jquery-ui-1.12.1.custom\" />
     <Folder Include="vendors\" />
   </ItemGroup>
   <ItemGroup>
