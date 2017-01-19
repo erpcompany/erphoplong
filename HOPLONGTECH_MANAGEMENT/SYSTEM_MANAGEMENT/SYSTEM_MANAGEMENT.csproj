@@ -363,8 +363,11 @@
     <Content Include="Content\css\detail_note.css" />
     <Content Include="Content\css\Ghichu\editGhichu.css" />
     <Content Include="Content\css\Ghichu\indexGhichu.css" />
+    <Content Include="Content\images\1484757847_ic_system_update_tv_48px.png" />
+    <Content Include="Content\images\back_icon.png" />
     <Content Include="Content\images\lamhien.jpg" />
     <Content Include="Content\images\logo.png" />
+    <Content Include="Content\js\editghichu.js" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -507,7 +510,6 @@
     <Folder Include="App_Data\" />
     <Folder Include="Areas\HopLong\Models\" />
     <Folder Include="Content\build\" />
-    <Folder Include="Content\js\" />
     <Folder Include="vendors\" />
   </ItemGroup>
   <ItemGroup>

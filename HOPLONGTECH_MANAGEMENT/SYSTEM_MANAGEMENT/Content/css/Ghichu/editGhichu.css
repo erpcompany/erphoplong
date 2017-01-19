@@ -20,7 +20,15 @@
     border: 2px solid #007AAC;
 }
 button, .buttons, .btn, .modal-footer .btn+.btn {
-    background-color:blue;
-    color:white; 
+    background-color: aqua;
+    color:black; 
+    font-weight: bold;
     font-family:'Times New Roman';
+}
+.form-group a img{
+    height: 30px;
+}
+#submit{
+    background: url(../../images/1484757847_ic_system_update_tv_48px.png) no-repeat ;
+    background-size: 100%;
 }
