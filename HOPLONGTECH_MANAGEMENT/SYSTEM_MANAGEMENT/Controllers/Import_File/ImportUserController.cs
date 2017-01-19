@@ -23,6 +23,7 @@ namespace SYSTEM_MANAGEMENT.Controllers.Import_File
         {
             return View();
         }
+        #region "Import user"
         [HttpPost]
         public ActionResult Index(HttpPostedFileBase file)
         {
@@ -114,8 +115,10 @@ namespace SYSTEM_MANAGEMENT.Controllers.Import_File
                         db.SaveChanges();
                         so_dong_thanh_cong++;
                     }
+
                     
                 }
+                
             }
             catch (Exception Ex)
             {
@@ -128,7 +131,9 @@ namespace SYSTEM_MANAGEMENT.Controllers.Import_File
 
             return View();
         }
+        #endregion
 
+        #region "Update user"
         public ActionResult Update()
         {
             return View();
@@ -242,7 +247,9 @@ namespace SYSTEM_MANAGEMENT.Controllers.Import_File
 
             return View();
         }
+        #endregion
 
+        #region "Update user metas"
         public ActionResult Update_UserMetas()
         {
             return View();
@@ -362,7 +369,9 @@ namespace SYSTEM_MANAGEMENT.Controllers.Import_File
 
             return View();
         }
+        #endregion
 
+        #region" Import user metas"
         public ActionResult Import_UserMetas()
         {
             return View();
@@ -480,5 +489,6 @@ namespace SYSTEM_MANAGEMENT.Controllers.Import_File
 
             return View();
         }
+        #endregion
     }
 }
