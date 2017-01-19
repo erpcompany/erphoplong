@@ -10,121 +10,112 @@ using SYSTEM_MANAGEMENT.Models;
 
 namespace SYSTEM_MANAGEMENT.Controllers
 {
-    public class DEPARTMENTsController : Controller
+    public class COMPANY_CATEGORIESController : Controller
     {
         private SYSTEM_DATABASEEntities db = new SYSTEM_DATABASEEntities();
 
-        // GET: DEPARTMENTs
+        // GET: COMPANY_CATEGORIES
         public ActionResult Index()
         {
-            var dEPARTMENTS = db.DEPARTMENTS.Include(d => d.COMPANY).Include(d => d.USER);
-            return View(dEPARTMENTS.ToList());
+            return View(db.COMPANY_CATEGORIES.ToList());
         }
-        public ActionResult Department_Users(String Id)
+        public ActionResult Company_user (String Id)
         {
-            var Users_Meta = db.USER_METAS.Where(p=> p.DEPARTMENT_ID==Id);
-            return View(Users_Meta.ToList());
+            var Company_Category = db.COMPANYS.Where(d=> d.COMPANY_CATEGORY_ID==Id);
+            return View(Company_Category.ToList());
         }
 
-        // GET: DEPARTMENTs/Details/5
+        // GET: COMPANY_CATEGORIES/Details/5
         public ActionResult Details(string id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            DEPARTMENT dEPARTMENT = db.DEPARTMENTS.Find(id);
-            if (dEPARTMENT == null)
+            COMPANY_CATEGORIES cOMPANY_CATEGORIES = db.COMPANY_CATEGORIES.Find(id);
+            if (cOMPANY_CATEGORIES == null)
             {
                 return HttpNotFound();
             }
-            return View(dEPARTMENT);
+            return View(cOMPANY_CATEGORIES);
         }
 
-        // GET: DEPARTMENTs/Create
+        // GET: COMPANY_CATEGORIES/Create
         public ActionResult Create()
         {
-            ViewBag.COMPANY_ID = new SelectList(db.COMPANYS, "COMPANY_ID", "COMPANY_NAME");
-            ViewBag.MANAGER = new SelectList(db.USERS, "USER_ID", "USERNAME");
             return View();
         }
 
-        // POST: DEPARTMENTs/Create
+        // POST: COMPANY_CATEGORIES/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "DEPARTMENT_ID,DEPARTMENT_NAME,MANAGER,NOTED,COMPANY_ID")] DEPARTMENT dEPARTMENT)
+        public ActionResult Create([Bind(Include = "COMPANY_CATEGORY_ID,COMPANY_CATEGORY_NAME,NOTED")] COMPANY_CATEGORIES cOMPANY_CATEGORIES)
         {
             if (ModelState.IsValid)
             {
-                db.DEPARTMENTS.Add(dEPARTMENT);
+                db.COMPANY_CATEGORIES.Add(cOMPANY_CATEGORIES);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            ViewBag.COMPANY_ID = new SelectList(db.COMPANYS, "COMPANY_ID", "COMPANY_NAME", dEPARTMENT.COMPANY_ID);
-            ViewBag.MANAGER = new SelectList(db.USERS, "USER_ID", "USERNAME", dEPARTMENT.MANAGER);
-            return View(dEPARTMENT);
+            return View(cOMPANY_CATEGORIES);
         }
 
-        // GET: DEPARTMENTs/Edit/5
+        // GET: COMPANY_CATEGORIES/Edit/5
         public ActionResult Edit(string id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            DEPARTMENT dEPARTMENT = db.DEPARTMENTS.Find(id);
-            if (dEPARTMENT == null)
+            COMPANY_CATEGORIES cOMPANY_CATEGORIES = db.COMPANY_CATEGORIES.Find(id);
+            if (cOMPANY_CATEGORIES == null)
             {
                 return HttpNotFound();
             }
-            ViewBag.COMPANY_ID = new SelectList(db.COMPANYS, "COMPANY_ID", "COMPANY_NAME", dEPARTMENT.COMPANY_ID);
-            ViewBag.MANAGER = new SelectList(db.USERS, "USER_ID", "USERNAME", dEPARTMENT.MANAGER);
-            return View(dEPARTMENT);
+            return View(cOMPANY_CATEGORIES);
         }
 
-        // POST: DEPARTMENTs/Edit/5
+        // POST: COMPANY_CATEGORIES/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "DEPARTMENT_ID,DEPARTMENT_NAME,MANAGER,NOTED,COMPANY_ID")] DEPARTMENT dEPARTMENT)
+        public ActionResult Edit([Bind(Include = "COMPANY_CATEGORY_ID,COMPANY_CATEGORY_NAME,NOTED")] COMPANY_CATEGORIES cOMPANY_CATEGORIES)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(dEPARTMENT).State = EntityState.Modified;
+                db.Entry(cOMPANY_CATEGORIES).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.COMPANY_ID = new SelectList(db.COMPANYS, "COMPANY_ID", "COMPANY_NAME", dEPARTMENT.COMPANY_ID);
-            ViewBag.MANAGER = new SelectList(db.USERS, "USER_ID", "USERNAME", dEPARTMENT.MANAGER);
-            return View(dEPARTMENT);
+            return View(cOMPANY_CATEGORIES);
         }
 
-        // GET: DEPARTMENTs/Delete/5
+        // GET: COMPANY_CATEGORIES/Delete/5
         public ActionResult Delete(string id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            DEPARTMENT dEPARTMENT = db.DEPARTMENTS.Find(id);
-            if (dEPARTMENT == null)
+            COMPANY_CATEGORIES cOMPANY_CATEGORIES = db.COMPANY_CATEGORIES.Find(id);
+            if (cOMPANY_CATEGORIES == null)
             {
                 return HttpNotFound();
             }
-            return View(dEPARTMENT);
+            return View(cOMPANY_CATEGORIES);
         }
 
-        // POST: DEPARTMENTs/Delete/5
+        // POST: COMPANY_CATEGORIES/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(string id)
         {
-            DEPARTMENT dEPARTMENT = db.DEPARTMENTS.Find(id);
-            db.DEPARTMENTS.Remove(dEPARTMENT);
+            COMPANY_CATEGORIES cOMPANY_CATEGORIES = db.COMPANY_CATEGORIES.Find(id);
+            db.COMPANY_CATEGORIES.Remove(cOMPANY_CATEGORIES);
             db.SaveChanges();
             return RedirectToAction("Index");
         }
