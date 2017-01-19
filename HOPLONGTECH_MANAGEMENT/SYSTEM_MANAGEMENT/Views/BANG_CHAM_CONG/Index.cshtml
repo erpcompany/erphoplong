@@ -3,130 +3,132 @@
 @{
     ViewBag.Title = "Bảng chấm công";
 }
-<div class="container">
-   
-    <div class="creatediv1 marginTop30">
+<head>    
+    <link href="~/Content/css/Chamcong/chamcongIndex.css" type="text/css" rel="stylesheet"/>
+</head>
+<body>
+    <div class="container">
 
-        <div class="row margin-top-50">
-            <div class="col-md-12">
-                <div class="panel panel-primary filterable">
-                    <div class="panel-heading">
-                        <h3 class="panel-title">Bảng chấm công của @Session["FULLNAME"]</h3>                        
-                    </div>
-                    <p></p>
-                    <center>
-                        <p>Công ty xin gửi bảng chấm công đến bạn @Session["FULLNAME"] với các thông tin như bên dưới</p>
-                        <p>Cảm ơn bạn đã vất vả làm việc trong tháng vừa qua, rất mong bạn sẽ cùng công ty cố gắng hơn nữa</p>
-                        <p>Mọi vấn đề thắc mắc về bảng chấm công, bạn hãy phản hồi lại với công ty theo thông tin sau:</p>
-                        <p style="color:blue">Email: Dung@hoplongtech.com.vn hoặc Skype: nguyen.dung1993</p>
-                    </center>
+        <div class="creatediv1 marginTop30">
 
-                    <div style="padding-top:10px; padding-bottom:10px; font-weight:bold; color: blue; text-decoration:underline;">
-                        @Html.ActionLink("Create New", "Create")
-                    </div>
-                    <div style="overflow-x:auto; ">
-                        <table class="span12" border="1">
-                            <div class="bg tablescroll">
-                                <table class="table table-bordered table-striped">
-                                    <tr class="filters">
-                                        <th style="text-align: center;white-space: nowrap" valign="center">
-                                            Tháng
-                                        </th>
-                                        <th style="text-align: center;white-space: nowrap" valign="center">
-                                            Người dùng
-                                        </th>
-                                        <th style="text-align: center;white-space: nowrap" valign="center">
-                                            Ngày chuẩn
-                                        </th>
-                                        <th style="text-align: center;white-space: nowrap" valign="center">
-                                            Giờ đi muộn
-                                        </th>
-                                        <th style="text-align: center;white-space: nowrap" valign="center">
-                                            Giờ về sớm
-                                        </th>
-                                        <th style="text-align: center;white-space: nowrap" valign="center">
-                                            Tăng ca ngày thường
-                                        </th>
-                                        <th style="text-align: center;white-space: nowrap" valign="center">
-                                            Tăng ca ngày lễ
-                                        </th>
-                                        <th style="text-align: center;white-space: nowrap" valign="center">
-                                            Số lần quên chấm
-                                        </th>
-                                        <th style="text-align: center;white-space: nowrap" valign="center">
-                                            Số ngày nghỉ
-                                        </th>
-                                        <th style="text-align: center;white-space: nowrap" valign="center">
-                                            Công thực tế
-                                        </th>
-                                        <th style="text-align: center;white-space: nowrap" valign="center">
-                                            Ứng lương
-                                        </th>
-                                        <th style="text-align: center;white-space: nowrap" valign="center">
-                                            Ghi chú
-                                        </th>
-                                        
-                                        <th style="text-align: center;white-space: nowrap" valign="center">
-                                            <em class="fa fa-cog"></em>
-                                        </th>
-                                    </tr>
+            <div class="row margin-top-50">
+                <div class="col-md-12">
+                    <div class="panel panel-primary filterable">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">Bảng chấm công của @Session["FULLNAME"]</h3>
+                        </div>
+                        <p></p>
+                        <center class="center">
+                            <p>Công ty xin gửi bảng chấm công đến bạn @Session["FULLNAME"] với các thông tin như bên dưới</p>
+                            <p>Cảm ơn bạn đã vất vả làm việc trong tháng vừa qua, rất mong bạn sẽ cùng công ty cố gắng hơn nữa</p>
+                            <p>Mọi vấn đề thắc mắc về bảng chấm công, bạn hãy phản hồi lại với công ty theo thông tin sau:</p>
+                            <span>Email: Dung@hoplongtech.com.vn hoặc Skype: nguyen.dung1993</span>
+                        </center>
 
-                                    @foreach (var item in Model)
-                                    {
-                                        <tr>
-                                            <td>
-                                                @Html.DisplayFor(modelItem => item.THANG_CHAM_CONG)
-                                            </td>
-                                            <td style="text-align: center;white-space: nowrap" valign="center">
-                                                @Html.DisplayFor(modelItem => item.USER.FULLNAME)
-                                            </td>
-                                            <td>
-                                                @Html.DisplayFor(modelItem => item.NGAY_CHUAN)
-                                            </td>
-                                            <td>
-                                                @Html.DisplayFor(modelItem => item.GIO_DI_MUON)
-                                            </td>
-                                            <td>
-                                                @Html.DisplayFor(modelItem => item.GIO_VE_SOM)
-                                            </td>
-                                            <td>
-                                                @Html.DisplayFor(modelItem => item.TANG_CA_NGAY_THUONG)
-                                            </td>
-                                            <td>
-                                                @Html.DisplayFor(modelItem => item.TANG_CA_NGAY_LE)
-                                            </td>
-                                            <td>
-                                                @Html.DisplayFor(modelItem => item.SO_LAN_QUEN_CHAM)
-                                            </td>
-                                            <td>
-                                                @Html.DisplayFor(modelItem => item.SO_NGAY_NGHI)
-                                            </td>
-                                            <td>
-                                                @Html.DisplayFor(modelItem => item.CONG_THUC_TE)
-                                            </td>
-                                            <td>
-                                                @Html.DisplayFor(modelItem => item.UNG_LUONG)
-                                            </td>
-                                            <td>
-                                                @Html.DisplayFor(modelItem => item.GHI_CHU)
-                                            </td>
-                                            
+                        <div class="creat-link" >
+                            
+                        </div>
+                        <div class="main">
+                            <table class="span12" border="1">
+                                <div class="bg tablescroll">
+                                    <table class="table table-bordered table-striped">
+                                        <tr class="filters">
+                                            <th>
+                                                Tháng
+                                            </th>
+                                            <th>
+                                                Người dùng
+                                            </th>
+                                            <th>
+                                                Ngày chuẩn
+                                            </th>
+                                            <th>
+                                                Giờ đi muộn
+                                            </th>
+                                            <th>
+                                                Giờ về sớm
+                                            </th>
+                                            <th>
+                                                Tăng ca ngày thường
+                                            </th>
+                                            <th>
+                                                Tăng ca ngày lễ
+                                            </th>
+                                            <th>
+                                                Số lần quên chấm
+                                            </th>
+                                            <th>
+                                                Số ngày nghỉ
+                                            </th>
+                                            <th>
+                                                Công thực tế
+                                            </th>
+                                            <th>
+                                                Ứng lương
+                                            </th>
+                                            <th class="note">
+                                                Ghi chú
+                                            </th>
 
-                                            <td style="text-align: center;white-space: nowrap" valign="center">
-                                                @Html.ActionLink("Edit", "Edit", new { id = item.CHAM_CONG_ID })
-                                                @Html.ActionLink("Detail", "Details", new { id = item.CHAM_CONG_ID })
-                                                @Html.ActionLink("Delete", "Delete", new { id = item.CHAM_CONG_ID })
-
-                                            </td>
+                                            <th>
+                                                <em class="fa fa-cog"></em>
+                                            </th>
                                         </tr>
-                                    }
-                                </table>
-                            </div>
-                        </table>
-                    </div>
-                 </div>
-            </div>
-        </div>
 
+                                        @foreach (var item in Model)
+                                        {
+                                            <tr>
+                                                <td>
+                                                    @Html.DisplayFor(modelItem => item.THANG_CHAM_CONG)
+                                                </td>
+                                                <td>
+                                                    @Html.DisplayFor(modelItem => item.USER.FULLNAME)
+                                                </td>
+                                                <td>
+                                                    @Html.DisplayFor(modelItem => item.NGAY_CHUAN)
+                                                </td>
+                                                <td>
+                                                    @Html.DisplayFor(modelItem => item.GIO_DI_MUON)
+                                                </td>
+                                                <td>
+                                                    @Html.DisplayFor(modelItem => item.GIO_VE_SOM)
+                                                </td>
+                                                <td>
+                                                    @Html.DisplayFor(modelItem => item.TANG_CA_NGAY_THUONG)
+                                                </td>
+                                                <td>
+                                                    @Html.DisplayFor(modelItem => item.TANG_CA_NGAY_LE)
+                                                </td>
+                                                <td>
+                                                    @Html.DisplayFor(modelItem => item.SO_LAN_QUEN_CHAM)
+                                                </td>
+                                                <td>
+                                                    @Html.DisplayFor(modelItem => item.SO_NGAY_NGHI)
+                                                </td>
+                                                <td>
+                                                    @Html.DisplayFor(modelItem => item.CONG_THUC_TE)
+                                                </td>
+                                                <td>
+                                                    @Html.DisplayFor(modelItem => item.UNG_LUONG)
+                                                </td>
+                                                <td>
+                                                    @Html.DisplayFor(modelItem => item.GHI_CHU)
+                                                </td>
+
+
+                                                <td>             
+                                                    <a href="/BANG_CHAM_CONG/Edit/@item.CHAM_CONG_ID"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a> &nbsp;&nbsp;&nbsp;
+                                                </td>
+                                            </tr>
+                                        }
+                                    </table>
+                                </div>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
     </div>
-</div>
+</body>

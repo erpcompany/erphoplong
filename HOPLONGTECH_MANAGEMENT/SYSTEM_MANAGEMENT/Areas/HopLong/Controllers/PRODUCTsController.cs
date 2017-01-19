@@ -17,9 +17,9 @@ namespace SYSTEM_MANAGEMENT.Areas.HopLong.Controllers
         private SYSTEM_DATABASEEntities db = new SYSTEM_DATABASEEntities();
 
         // GET: HopLong/PRODUCTs
-        public ActionResult Index(string id)
+        public ActionResult Index()
         {
-            var pRODUCTS = db.PRODUCTS.Where(p=>p.MA_CHI_TIET_NHOM_HANG == id);
+            var pRODUCTS = db.PRODUCTS.Include(p => p.PRODUCT_CATEGORY_DETAILS).Include(p => p.PRODUCT_META).Include(p => p.Warehouse);
             return View(pRODUCTS.ToList());
         }
 
