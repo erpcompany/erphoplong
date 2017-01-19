@@ -3,34 +3,48 @@
 @{
     ViewBag.Title = "Details";
 }
-<link href="~/Content/css/Departments/detailDepart.css" type="text/css" rel="stylesheet"/>
-<h2 class="h2">CHI TIẾT PHÒNG BAN</h2>
 
-<div class="form-horizontal">
-    <div class="form-group">
-        <div class="col-md-4"></div>
-        @Html.LabelFor(model => model.DEPARTMENT_NAME, "TÊN PHÒNG BAN", htmlAttributes: new { @class = "control-label col-md-2" })
-        <div class="col-md-2">
-            @Html.EditorFor(model => model.DEPARTMENT_NAME, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
-        </div>
-    </div>
-    <div class="form-group">
-        <div class="col-md-4"></div>
-        @Html.LabelFor(model => model.NOTED, "GHI CHÚ", htmlAttributes: new { @class = "control-label col-md-2"})
-        <div class="col-md-2">
-            @Html.EditorFor(model => model.NOTED, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly"} })
-        </div>
-    </div>
-    <div class="form-group">
-        <div class="col-md-4"></div>
-        @Html.LabelFor(model => model.USER.USERNAME, "USERNAME", htmlAttributes: new { @class = "control-label col-md-2"})
-        <div class="col-md-2">
-            @Html.EditorFor(model => model.USER.USERNAME, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
-        </div>
-    </div>
-    <div class="form-group">
-        <div class="col-md-offset-0 col-md-3">
-            <a href="/DEPARTMENTs/Index/@Session["USER_ID"]"><img src="~/Content/images/back_icon.png" /></a>
-            <a href="/DEPARTMENTs/Edit/@Session["USER_ID"]"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a> &nbsp;&nbsp;&nbsp;
-        </div>
+<h2>Details</h2>
+
+<div>
+    <h4>DEPARTMENT</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.DEPARTMENT_NAME)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DEPARTMENT_NAME)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NOTED)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NOTED)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.COMPANY.COMPANY_NAME)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.COMPANY.COMPANY_NAME)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.USER.USERNAME)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.USER.USERNAME)
+        </dd>
+
+    </dl>
 </div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.DEPARTMENT_ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

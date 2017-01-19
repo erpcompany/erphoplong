@@ -17,6 +17,7 @@ namespace SYSTEM_MANAGEMENT.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public PRODUCT()
         {
+            this.BORROWING_PRODUCTS = new HashSet<BORROWING_PRODUCTS>();
             this.HOLD_PRODUCTS = new HashSet<HOLD_PRODUCTS>();
             this.PURCHASE_ORDER = new HashSet<PURCHASE_ORDER>();
             this.TRANSFER_WAREHOUSE_PRODUCTS = new HashSet<TRANSFER_WAREHOUSE_PRODUCTS>();
@@ -35,14 +36,17 @@ namespace SYSTEM_MANAGEMENT.Models
         public string DIEN_GIAI_KHI_MUA { get; set; }
         public string DIEN_GIAI_KHI_BAN { get; set; }
         public string DAC_TINH { get; set; }
-        public int SL_TON_KHO { get; set; }
-        public int SL_DANG_GIU { get; set; }
-        public int SL_CO_THE_DUNG { get; set; }
+        public Nullable<int> SL_TON_KHO { get; set; }
+        public Nullable<int> SL_DANG_GIU { get; set; }
+        public Nullable<int> SL_CO_THE_DUNG { get; set; }
+        public Nullable<int> SL_THUC_TE_CO_THE_DUNG { get; set; }
         public Nullable<decimal> DON_GIA_MUA_CO_DINH { get; set; }
         public Nullable<decimal> DON_GIA_MUA_GAN_NHAT { get; set; }
         public byte[] HINH_ANH { get; set; }
         public string GHI_CHU { get; set; }
     
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<BORROWING_PRODUCTS> BORROWING_PRODUCTS { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<HOLD_PRODUCTS> HOLD_PRODUCTS { get; set; }
         public virtual PRODUCT_CATEGORY_DETAILS PRODUCT_CATEGORY_DETAILS { get; set; }

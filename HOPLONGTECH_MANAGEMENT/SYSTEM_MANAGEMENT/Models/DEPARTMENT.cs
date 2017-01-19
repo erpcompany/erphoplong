@@ -24,7 +24,9 @@ namespace SYSTEM_MANAGEMENT.Models
         public string DEPARTMENT_NAME { get; set; }
         public int MANAGER { get; set; }
         public string NOTED { get; set; }
+        public string COMPANY_ID { get; set; }
     
+        public virtual COMPANY COMPANY { get; set; }
         public virtual USER USER { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<USER_METAS> USER_METAS { get; set; }

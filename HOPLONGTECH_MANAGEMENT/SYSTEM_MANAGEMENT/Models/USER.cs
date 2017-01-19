@@ -19,6 +19,7 @@ namespace SYSTEM_MANAGEMENT.Models
         {
             this.BANG_CHAM_CONG = new HashSet<BANG_CHAM_CONG>();
             this.BANG_LUONG = new HashSet<BANG_LUONG>();
+            this.COMPANYS = new HashSet<COMPANY>();
             this.CUSTOMERS = new HashSet<CUSTOMER>();
             this.DEPARTMENTS = new HashSet<DEPARTMENT>();
             this.GHI_CHU_CONG_VIEC = new HashSet<GHI_CHU_CONG_VIEC>();
@@ -43,6 +44,8 @@ namespace SYSTEM_MANAGEMENT.Models
         public virtual ICollection<BANG_CHAM_CONG> BANG_CHAM_CONG { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<BANG_LUONG> BANG_LUONG { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<COMPANY> COMPANYS { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<CUSTOMER> CUSTOMERS { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

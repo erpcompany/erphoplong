@@ -57,6 +57,38 @@
           <Property Name="THUC_LINH" Type="nvarchar" MaxLength="256" />
           <Property Name="THANG_LINH_LUONG" Type="nvarchar" MaxLength="256" />
         </EntityType>
+        <EntityType Name="BORROWING_PRODUCTS">
+          <Key>
+            <PropertyRef Name="ID_HANG_MUON" />
+          </Key>
+          <Property Name="ID_HANG_MUON" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="MA_HANG_HT" Type="varchar" MaxLength="128" Nullable="false" />
+          <Property Name="KHO_MUON" Type="varchar" MaxLength="128" Nullable="false" />
+          <Property Name="NGAY_MUON" Type="date" Nullable="false" />
+          <Property Name="SL_MUON" Type="int" Nullable="false" />
+          <Property Name="MA_PHIEU_XUAT_KHO" Type="varchar" MaxLength="64" />
+          <Property Name="TRANG_THAI" Type="varchar" MaxLength="128" Nullable="false" />
+          <Property Name="GHI_CHU" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="COMPANY_CATEGORIES">
+          <Key>
+            <PropertyRef Name="COMPANY_CATEGORY_ID" />
+          </Key>
+          <Property Name="COMPANY_CATEGORY_ID" Type="varchar" MaxLength="64" Nullable="false" />
+          <Property Name="COMPANY_CATEGORY_NAME" Type="nvarchar" MaxLength="512" Nullable="false" />
+          <Property Name="NOTED" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="COMPANYS">
+          <Key>
+            <PropertyRef Name="COMPANY_ID" />
+          </Key>
+          <Property Name="COMPANY_ID" Type="varchar" MaxLength="64" Nullable="false" />
+          <Property Name="COMPANY_NAME" Type="nvarchar" MaxLength="512" Nullable="false" />
+          <Property Name="PARENT_COMPANY" Type="varchar" MaxLength="64" Nullable="false" />
+          <Property Name="MANAGER" Type="int" Nullable="false" />
+          <Property Name="COMPANY_CATEGORY_ID" Type="varchar" MaxLength="64" Nullable="false" />
+          <Property Name="NOTED" Type="nvarchar(max)" />
+        </EntityType>
         <EntityType Name="CUSTOMER_ACCOUNTS">
           <Key>
             <PropertyRef Name="ID_TAI_KHOAN_KH" />
@@ -117,6 +149,7 @@
           <Property Name="DEPARTMENT_NAME" Type="nvarchar" MaxLength="256" Nullable="false" />
           <Property Name="MANAGER" Type="int" Nullable="false" />
           <Property Name="NOTED" Type="nvarchar(max)" />
+          <Property Name="COMPANY_ID" Type="varchar" MaxLength="64" Nullable="false" />
         </EntityType>
         <EntityType Name="GHI_CHU_CONG_VIEC">
           <Key>
@@ -160,6 +193,7 @@ warning 6002: The table/view 'SYSTEM_DATABASE.dbo.HOLD_PRODUCT_DETAILS' does not
           <Property Name="SL_GIU_DA_XUAT" Type="int" />
           <Property Name="SL_GIU_CHUA_XU_LY" Type="int" />
           <Property Name="TRANG_THAI" Type="varchar" MaxLength="10" />
+          <Property Name="MA_KHO" Type="varchar" MaxLength="128" Nullable="false" />
         </EntityType>
         <EntityType Name="LIST_CONTROLLERS">
           <Key>
@@ -241,9 +275,10 @@ warning 6002: The table/view 'SYSTEM_DATABASE.dbo.HOLD_PRODUCT_DETAILS' does not
           <Property Name="DIEN_GIAI_KHI_MUA" Type="nvarchar(max)" />
           <Property Name="DIEN_GIAI_KHI_BAN" Type="nvarchar(max)" />
           <Property Name="DAC_TINH" Type="nvarchar(max)" />
-          <Property Name="SL_TON_KHO" Type="int" Nullable="false" />
-          <Property Name="SL_DANG_GIU" Type="int" Nullable="false" />
-          <Property Name="SL_CO_THE_DUNG" Type="int" Nullable="false" />
+          <Property Name="SL_TON_KHO" Type="int" />
+          <Property Name="SL_DANG_GIU" Type="int" />
+          <Property Name="SL_CO_THE_DUNG" Type="int" />
+          <Property Name="SL_THUC_TE_CO_THE_DUNG" Type="int" />
           <Property Name="DON_GIA_MUA_CO_DINH" Type="decimal" Precision="18" Scale="0" />
           <Property Name="DON_GIA_MUA_GAN_NHAT" Type="decimal" Precision="18" Scale="0" />
           <Property Name="HINH_ANH" Type="image" />
@@ -266,6 +301,17 @@ warning 6002: The table/view 'SYSTEM_DATABASE.dbo.HOLD_PRODUCT_DETAILS' does not
           <Property Name="SL_THUC_NHAN" Type="int" />
           <Property Name="NGAY_HANG_VE" Type="date" />
           <Property Name="KINH_DOANH_BAN" Type="int" Nullable="false" />
+          <Property Name="GHI_CHU" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="RETURNING_PRODUCTS">
+          <Key>
+            <PropertyRef Name="ID_HANG_TRA" />
+          </Key>
+          <Property Name="ID_HANG_TRA" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ID_HANG_MUON" Type="int" Nullable="false" />
+          <Property Name="NGAY_TRA" Type="date" Nullable="false" />
+          <Property Name="SL_TRA" Type="int" Nullable="false" />
+          <Property Name="KHO_TRA" Type="varchar" MaxLength="128" />
           <Property Name="GHI_CHU" Type="nvarchar(max)" />
         </EntityType>
         <EntityType Name="SUPPLIER_ACCOUNTS">
@@ -321,6 +367,7 @@ warning 6002: The table/view 'SYSTEM_DATABASE.dbo.HOLD_PRODUCT_DETAILS' does not
           <Property Name="KHO_NGUON" Type="varchar" MaxLength="128" Nullable="false" />
           <Property Name="SL_KY_GUI" Type="int" />
           <Property Name="KHO_DICH" Type="varchar" MaxLength="128" Nullable="false" />
+          <Property Name="TRANG_THAI" Type="varchar" MaxLength="128" Nullable="false" />
           <Property Name="GHI_CHU" Type="nvarchar(max)" />
         </EntityType>
         <EntityType Name="USER_METAS">
@@ -367,6 +414,7 @@ warning 6002: The table/view 'SYSTEM_DATABASE.dbo.HOLD_PRODUCT_DETAILS' does not
           <Property Name="MA_KHO" Type="varchar" MaxLength="128" Nullable="false" />
           <Property Name="TEN_KHO" Type="nvarchar(max)" />
           <Property Name="MO_TA" Type="nvarchar(max)" />
+          <Property Name="COMPANY_ID" Type="varchar" MaxLength="64" Nullable="false" />
         </EntityType>
         <Association Name="FK__BANG_CHAM__USER___1ED998B2">
           <End Role="USERS" Type="Self.USERS" Multiplicity="1" />
@@ -389,6 +437,54 @@ warning 6002: The table/view 'SYSTEM_DATABASE.dbo.HOLD_PRODUCT_DETAILS' does not
             </Principal>
             <Dependent Role="BANG_LUONG">
               <PropertyRef Name="USER_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__BORROWING__MA_HA__6BE40491">
+          <End Role="PRODUCTS" Type="Self.PRODUCTS" Multiplicity="1" />
+          <End Role="BORROWING_PRODUCTS" Type="Self.BORROWING_PRODUCTS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PRODUCTS">
+              <PropertyRef Name="MA_HANG_HT" />
+            </Principal>
+            <Dependent Role="BORROWING_PRODUCTS">
+              <PropertyRef Name="MA_HANG_HT" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__COMPANYS__COMPAN__41EDCAC5">
+          <End Role="COMPANY_CATEGORIES" Type="Self.COMPANY_CATEGORIES" Multiplicity="1" />
+          <End Role="COMPANYS" Type="Self.COMPANYS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="COMPANY_CATEGORIES">
+              <PropertyRef Name="COMPANY_CATEGORY_ID" />
+            </Principal>
+            <Dependent Role="COMPANYS">
+              <PropertyRef Name="COMPANY_CATEGORY_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__COMPANYS__MANAGE__40F9A68C">
+          <End Role="USERS" Type="Self.USERS" Multiplicity="1" />
+          <End Role="COMPANYS" Type="Self.COMPANYS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="USERS">
+              <PropertyRef Name="USER_ID" />
+            </Principal>
+            <Dependent Role="COMPANYS">
+              <PropertyRef Name="MANAGER" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__COMPANYS__PARENT__40058253">
+          <End Role="COMPANYS" Type="Self.COMPANYS" Multiplicity="1" />
+          <End Role="COMPANYS1" Type="Self.COMPANYS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="COMPANYS">
+              <PropertyRef Name="COMPANY_ID" />
+            </Principal>
+            <Dependent Role="COMPANYS1">
+              <PropertyRef Name="PARENT_COMPANY" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -437,6 +533,18 @@ warning 6002: The table/view 'SYSTEM_DATABASE.dbo.HOLD_PRODUCT_DETAILS' does not
             </Principal>
             <Dependent Role="CUSTOMERS">
               <PropertyRef Name="USER_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__DEPARTMEN__COMPA__42E1EEFE">
+          <End Role="COMPANYS" Type="Self.COMPANYS" Multiplicity="1" />
+          <End Role="DEPARTMENTS" Type="Self.DEPARTMENTS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="COMPANYS">
+              <PropertyRef Name="COMPANY_ID" />
+            </Principal>
+            <Dependent Role="DEPARTMENTS">
+              <PropertyRef Name="COMPANY_ID" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -497,6 +605,18 @@ warning 6002: The table/view 'SYSTEM_DATABASE.dbo.HOLD_PRODUCT_DETAILS' does not
             </Principal>
             <Dependent Role="HOLD_PRODUCT_DETAILS">
               <PropertyRef Name="MA_KHACH_HANG" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__HOLD_PROD__MA_KH__6442E2C9">
+          <End Role="WAREHOUSES" Type="Self.WAREHOUSES" Multiplicity="1" />
+          <End Role="HOLD_PRODUCTS" Type="Self.HOLD_PRODUCTS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="WAREHOUSES">
+              <PropertyRef Name="MA_KHO" />
+            </Principal>
+            <Dependent Role="HOLD_PRODUCTS">
+              <PropertyRef Name="MA_KHO" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -617,6 +737,30 @@ warning 6002: The table/view 'SYSTEM_DATABASE.dbo.HOLD_PRODUCT_DETAILS' does not
             </Principal>
             <Dependent Role="PURCHASE_ORDER">
               <PropertyRef Name="MA_NHOM_HANG" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__RETURNING__ID_HA__6EC0713C">
+          <End Role="BORROWING_PRODUCTS" Type="Self.BORROWING_PRODUCTS" Multiplicity="1" />
+          <End Role="RETURNING_PRODUCTS" Type="Self.RETURNING_PRODUCTS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="BORROWING_PRODUCTS">
+              <PropertyRef Name="ID_HANG_MUON" />
+            </Principal>
+            <Dependent Role="RETURNING_PRODUCTS">
+              <PropertyRef Name="ID_HANG_MUON" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__RETURNING__KHO_T__6FB49575">
+          <End Role="WAREHOUSES" Type="Self.WAREHOUSES" Multiplicity="0..1" />
+          <End Role="RETURNING_PRODUCTS" Type="Self.RETURNING_PRODUCTS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="WAREHOUSES">
+              <PropertyRef Name="MA_KHO" />
+            </Principal>
+            <Dependent Role="RETURNING_PRODUCTS">
+              <PropertyRef Name="KHO_TRA" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -752,6 +896,18 @@ warning 6002: The table/view 'SYSTEM_DATABASE.dbo.HOLD_PRODUCT_DETAILS' does not
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK__WAREHOUSE__COMPA__58D1301D">
+          <End Role="COMPANYS" Type="Self.COMPANYS" Multiplicity="1" />
+          <End Role="WAREHOUSES" Type="Self.WAREHOUSES" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="COMPANYS">
+              <PropertyRef Name="COMPANY_ID" />
+            </Principal>
+            <Dependent Role="WAREHOUSES">
+              <PropertyRef Name="COMPANY_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_LIST_PERMISSIONS_LIST_CONTROLLERS">
           <End Role="LIST_CONTROLLERS" Type="Self.LIST_CONTROLLERS" Multiplicity="1" />
           <End Role="LIST_PERMISSIONS" Type="Self.LIST_PERMISSIONS" Multiplicity="*" />
@@ -767,6 +923,9 @@ warning 6002: The table/view 'SYSTEM_DATABASE.dbo.HOLD_PRODUCT_DETAILS' does not
         <EntityContainer Name="SYSTEM_DATABASEModelStoreContainer">
           <EntitySet Name="BANG_CHAM_CONG" EntityType="Self.BANG_CHAM_CONG" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="BANG_LUONG" EntityType="Self.BANG_LUONG" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="BORROWING_PRODUCTS" EntityType="Self.BORROWING_PRODUCTS" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="COMPANY_CATEGORIES" EntityType="Self.COMPANY_CATEGORIES" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="COMPANYS" EntityType="Self.COMPANYS" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="CUSTOMER_ACCOUNTS" EntityType="Self.CUSTOMER_ACCOUNTS" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="CUSTOMER_CONTACTS" EntityType="Self.CUSTOMER_CONTACTS" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="CUSTOMER_GROUPS" EntityType="Self.CUSTOMER_GROUPS" Schema="dbo" store:Type="Tables" />
@@ -783,6 +942,7 @@ warning 6002: The table/view 'SYSTEM_DATABASE.dbo.HOLD_PRODUCT_DETAILS' does not
           <EntitySet Name="PRODUCT_META" EntityType="Self.PRODUCT_META" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="PRODUCTS" EntityType="Self.PRODUCTS" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="PURCHASE_ORDER" EntityType="Self.PURCHASE_ORDER" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="RETURNING_PRODUCTS" EntityType="Self.RETURNING_PRODUCTS" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="SUPPLIER_ACCOUNTS" EntityType="Self.SUPPLIER_ACCOUNTS" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="SUPPLIER_CONTACTS" EntityType="Self.SUPPLIER_CONTACTS" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="SUPPLIERS" EntityType="Self.SUPPLIERS" Schema="dbo" store:Type="Tables" />
@@ -813,6 +973,22 @@ warning 6002: The table/view 'SYSTEM_DATABASE.dbo.HOLD_PRODUCT_DETAILS' does not
             <End Role="USERS" EntitySet="USERS" />
             <End Role="BANG_LUONG" EntitySet="BANG_LUONG" />
           </AssociationSet>
+          <AssociationSet Name="FK__BORROWING__MA_HA__6BE40491" Association="Self.FK__BORROWING__MA_HA__6BE40491">
+            <End Role="PRODUCTS" EntitySet="PRODUCTS" />
+            <End Role="BORROWING_PRODUCTS" EntitySet="BORROWING_PRODUCTS" />
+          </AssociationSet>
+          <AssociationSet Name="FK__COMPANYS__COMPAN__41EDCAC5" Association="Self.FK__COMPANYS__COMPAN__41EDCAC5">
+            <End Role="COMPANY_CATEGORIES" EntitySet="COMPANY_CATEGORIES" />
+            <End Role="COMPANYS" EntitySet="COMPANYS" />
+          </AssociationSet>
+          <AssociationSet Name="FK__COMPANYS__MANAGE__40F9A68C" Association="Self.FK__COMPANYS__MANAGE__40F9A68C">
+            <End Role="USERS" EntitySet="USERS" />
+            <End Role="COMPANYS" EntitySet="COMPANYS" />
+          </AssociationSet>
+          <AssociationSet Name="FK__COMPANYS__PARENT__40058253" Association="Self.FK__COMPANYS__PARENT__40058253">
+            <End Role="COMPANYS" EntitySet="COMPANYS" />
+            <End Role="COMPANYS1" EntitySet="COMPANYS" />
+          </AssociationSet>
           <AssociationSet Name="FK__CUSTOMER___MA_KH__17F790F9" Association="Self.FK__CUSTOMER___MA_KH__17F790F9">
             <End Role="CUSTOMERS" EntitySet="CUSTOMERS" />
             <End Role="CUSTOMER_CONTACTS" EntitySet="CUSTOMER_CONTACTS" />
@@ -828,6 +1004,10 @@ warning 6002: The table/view 'SYSTEM_DATABASE.dbo.HOLD_PRODUCT_DETAILS' does not
           <AssociationSet Name="FK__CUSTOMERS__USER___114A936A" Association="Self.FK__CUSTOMERS__USER___114A936A">
             <End Role="USERS" EntitySet="USERS" />
             <End Role="CUSTOMERS" EntitySet="CUSTOMERS" />
+          </AssociationSet>
+          <AssociationSet Name="FK__DEPARTMEN__COMPA__42E1EEFE" Association="Self.FK__DEPARTMEN__COMPA__42E1EEFE">
+            <End Role="COMPANYS" EntitySet="COMPANYS" />
+            <End Role="DEPARTMENTS" EntitySet="DEPARTMENTS" />
           </AssociationSet>
           <AssociationSet Name="FK__DEPARTMEN__MANAG__6FE99F9F" Association="Self.FK__DEPARTMEN__MANAG__6FE99F9F">
             <End Role="USERS" EntitySet="USERS" />
@@ -848,6 +1028,10 @@ warning 6002: The table/view 'SYSTEM_DATABASE.dbo.HOLD_PRODUCT_DETAILS' does not
           <AssociationSet Name="FK__HOLD_PROD__MA_KH__22751F6C" Association="Self.FK__HOLD_PROD__MA_KH__22751F6C">
             <End Role="CUSTOMERS" EntitySet="CUSTOMERS" />
             <End Role="HOLD_PRODUCT_DETAILS" EntitySet="HOLD_PRODUCT_DETAILS" />
+          </AssociationSet>
+          <AssociationSet Name="FK__HOLD_PROD__MA_KH__6442E2C9" Association="Self.FK__HOLD_PROD__MA_KH__6442E2C9">
+            <End Role="WAREHOUSES" EntitySet="WAREHOUSES" />
+            <End Role="HOLD_PRODUCTS" EntitySet="HOLD_PRODUCTS" />
           </AssociationSet>
           <AssociationSet Name="FK__HOLD_PROD__NHAN___2180FB33" Association="Self.FK__HOLD_PROD__NHAN___2180FB33">
             <End Role="USERS" EntitySet="USERS" />
@@ -888,6 +1072,14 @@ warning 6002: The table/view 'SYSTEM_DATABASE.dbo.HOLD_PRODUCT_DETAILS' does not
           <AssociationSet Name="FK__PURCHASE___MA_NH__37703C52" Association="Self.FK__PURCHASE___MA_NH__37703C52">
             <End Role="PRODUCT_CATEGORIES" EntitySet="PRODUCT_CATEGORIES" />
             <End Role="PURCHASE_ORDER" EntitySet="PURCHASE_ORDER" />
+          </AssociationSet>
+          <AssociationSet Name="FK__RETURNING__ID_HA__6EC0713C" Association="Self.FK__RETURNING__ID_HA__6EC0713C">
+            <End Role="BORROWING_PRODUCTS" EntitySet="BORROWING_PRODUCTS" />
+            <End Role="RETURNING_PRODUCTS" EntitySet="RETURNING_PRODUCTS" />
+          </AssociationSet>
+          <AssociationSet Name="FK__RETURNING__KHO_T__6FB49575" Association="Self.FK__RETURNING__KHO_T__6FB49575">
+            <End Role="WAREHOUSES" EntitySet="WAREHOUSES" />
+            <End Role="RETURNING_PRODUCTS" EntitySet="RETURNING_PRODUCTS" />
           </AssociationSet>
           <AssociationSet Name="FK__SUPPLIER___MA_NC__2DE6D218" Association="Self.FK__SUPPLIER___MA_NC__2DE6D218">
             <End Role="SUPPLIERS" EntitySet="SUPPLIERS" />
@@ -932,6 +1124,10 @@ warning 6002: The table/view 'SYSTEM_DATABASE.dbo.HOLD_PRODUCT_DETAILS' does not
           <AssociationSet Name="FK__USER_PERM__USER___2C3393D0" Association="Self.FK__USER_PERM__USER___2C3393D0">
             <End Role="USERS" EntitySet="USERS" />
             <End Role="USER_PERMISSION" EntitySet="USER_PERMISSION" />
+          </AssociationSet>
+          <AssociationSet Name="FK__WAREHOUSE__COMPA__58D1301D" Association="Self.FK__WAREHOUSE__COMPA__58D1301D">
+            <End Role="COMPANYS" EntitySet="COMPANYS" />
+            <End Role="WAREHOUSES" EntitySet="WAREHOUSES" />
           </AssociationSet>
           <AssociationSet Name="FK_LIST_PERMISSIONS_LIST_CONTROLLERS" Association="Self.FK_LIST_PERMISSIONS_LIST_CONTROLLERS">
             <End Role="LIST_CONTROLLERS" EntitySet="LIST_CONTROLLERS" />
@@ -996,6 +1192,47 @@ warning 6002: The table/view 'SYSTEM_DATABASE.dbo.HOLD_PRODUCT_DETAILS' does not
           <Property Name="THUC_LINH" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
           <Property Name="THANG_LINH_LUONG" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="USER" Relationship="Self.FK__BANG_LUON__USER___1BFD2C07" FromRole="BANG_LUONG" ToRole="USERS" />
+        </EntityType>
+        <EntityType Name="BORROWING_PRODUCTS">
+          <Key>
+            <PropertyRef Name="ID_HANG_MUON" />
+          </Key>
+          <Property Name="ID_HANG_MUON" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="MA_HANG_HT" Type="String" MaxLength="128" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="KHO_MUON" Type="String" MaxLength="128" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="NGAY_MUON" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="SL_MUON" Type="Int32" Nullable="false" />
+          <Property Name="MA_PHIEU_XUAT_KHO" Type="String" MaxLength="64" FixedLength="false" Unicode="false" />
+          <Property Name="TRANG_THAI" Type="String" MaxLength="128" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="GHI_CHU" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="PRODUCT" Relationship="Self.FK__BORROWING__MA_HA__6BE40491" FromRole="BORROWING_PRODUCTS" ToRole="PRODUCTS" />
+          <NavigationProperty Name="RETURNING_PRODUCTS" Relationship="Self.FK__RETURNING__ID_HA__6EC0713C" FromRole="BORROWING_PRODUCTS" ToRole="RETURNING_PRODUCTS" />
+        </EntityType>
+        <EntityType Name="COMPANY_CATEGORIES">
+          <Key>
+            <PropertyRef Name="COMPANY_CATEGORY_ID" />
+          </Key>
+          <Property Name="COMPANY_CATEGORY_ID" Type="String" MaxLength="64" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="COMPANY_CATEGORY_NAME" Type="String" MaxLength="512" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="NOTED" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="COMPANYS" Relationship="Self.FK__COMPANYS__COMPAN__41EDCAC5" FromRole="COMPANY_CATEGORIES" ToRole="COMPANYS" />
+        </EntityType>
+        <EntityType Name="COMPANY">
+          <Key>
+            <PropertyRef Name="COMPANY_ID" />
+          </Key>
+          <Property Name="COMPANY_ID" Type="String" MaxLength="64" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="COMPANY_NAME" Type="String" MaxLength="512" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="PARENT_COMPANY" Type="String" MaxLength="64" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="MANAGER" Type="Int32" Nullable="false" />
+          <Property Name="COMPANY_CATEGORY_ID" Type="String" MaxLength="64" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="NOTED" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="COMPANY_CATEGORIES" Relationship="Self.FK__COMPANYS__COMPAN__41EDCAC5" FromRole="COMPANYS" ToRole="COMPANY_CATEGORIES" />
+          <NavigationProperty Name="USER" Relationship="Self.FK__COMPANYS__MANAGE__40F9A68C" FromRole="COMPANYS" ToRole="USERS" />
+          <NavigationProperty Name="COMPANYS1" Relationship="Self.FK__COMPANYS__PARENT__40058253" FromRole="COMPANYS" ToRole="COMPANYS1" />
+          <NavigationProperty Name="COMPANY1" Relationship="Self.FK__COMPANYS__PARENT__40058253" FromRole="COMPANYS1" ToRole="COMPANYS" />
+          <NavigationProperty Name="DEPARTMENTS" Relationship="Self.FK__DEPARTMEN__COMPA__42E1EEFE" FromRole="COMPANYS" ToRole="DEPARTMENTS" />
+          <NavigationProperty Name="WAREHOUSES" Relationship="Self.FK__WAREHOUSE__COMPA__58D1301D" FromRole="COMPANYS" ToRole="WAREHOUSES" />
         </EntityType>
         <EntityType Name="CUSTOMER_ACCOUNTS">
           <Key>
@@ -1066,6 +1303,8 @@ warning 6002: The table/view 'SYSTEM_DATABASE.dbo.HOLD_PRODUCT_DETAILS' does not
           <Property Name="DEPARTMENT_NAME" Type="String" MaxLength="256" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="MANAGER" Type="Int32" Nullable="false" />
           <Property Name="NOTED" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="COMPANY_ID" Type="String" MaxLength="64" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="COMPANY" Relationship="Self.FK__DEPARTMEN__COMPA__42E1EEFE" FromRole="DEPARTMENTS" ToRole="COMPANYS" />
           <NavigationProperty Name="USER" Relationship="Self.FK__DEPARTMEN__MANAG__6FE99F9F" FromRole="DEPARTMENTS" ToRole="USERS" />
           <NavigationProperty Name="USER_METAS" Relationship="Self.FK__USER_META__DEPAR__72C60C4A" FromRole="DEPARTMENTS" ToRole="USER_METAS" />
         </EntityType>
@@ -1093,8 +1332,10 @@ warning 6002: The table/view 'SYSTEM_DATABASE.dbo.HOLD_PRODUCT_DETAILS' does not
           <Property Name="SL_GIU_DA_XUAT" Type="Int32" />
           <Property Name="SL_GIU_CHUA_XU_LY" Type="Int32" />
           <Property Name="TRANG_THAI" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="MA_KHO" Type="String" MaxLength="128" FixedLength="false" Unicode="false" Nullable="false" />
           <NavigationProperty Name="HOLD_PRODUCT_DETAILS" Relationship="Self.FK__HOLD_PROD__ID_GI__208CD6FA" FromRole="HOLD_PRODUCTS" ToRole="HOLD_PRODUCT_DETAILS" />
           <NavigationProperty Name="PRODUCT" Relationship="Self.FK__HOLD_PROD__MA_HA__1EA48E88" FromRole="HOLD_PRODUCTS" ToRole="PRODUCTS" />
+          <NavigationProperty Name="Warehouse" Relationship="Self.FK__HOLD_PROD__MA_KH__6442E2C9" FromRole="HOLD_PRODUCTS" ToRole="WAREHOUSES" />
         </EntityType>
         <EntityType Name="LIST_CONTROLLERS">
           <Key>
@@ -1187,13 +1428,15 @@ warning 6002: The table/view 'SYSTEM_DATABASE.dbo.HOLD_PRODUCT_DETAILS' does not
           <Property Name="DIEN_GIAI_KHI_MUA" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="DIEN_GIAI_KHI_BAN" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="DAC_TINH" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="SL_TON_KHO" Type="Int32" Nullable="false" />
-          <Property Name="SL_DANG_GIU" Type="Int32" Nullable="false" />
-          <Property Name="SL_CO_THE_DUNG" Type="Int32" Nullable="false" />
+          <Property Name="SL_TON_KHO" Type="Int32" />
+          <Property Name="SL_DANG_GIU" Type="Int32" />
+          <Property Name="SL_CO_THE_DUNG" Type="Int32" />
+          <Property Name="SL_THUC_TE_CO_THE_DUNG" Type="Int32" />
           <Property Name="DON_GIA_MUA_CO_DINH" Type="Decimal" Precision="18" Scale="0" />
           <Property Name="DON_GIA_MUA_GAN_NHAT" Type="Decimal" Precision="18" Scale="0" />
           <Property Name="HINH_ANH" Type="Binary" MaxLength="Max" FixedLength="false" />
           <Property Name="GHI_CHU" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="BORROWING_PRODUCTS" Relationship="Self.FK__BORROWING__MA_HA__6BE40491" FromRole="PRODUCTS" ToRole="BORROWING_PRODUCTS" />
           <NavigationProperty Name="HOLD_PRODUCTS" Relationship="Self.FK__HOLD_PROD__MA_HA__1EA48E88" FromRole="PRODUCTS" ToRole="HOLD_PRODUCTS" />
           <NavigationProperty Name="PRODUCT_CATEGORY_DETAILS" Relationship="Self.FK__PRODUCTS__MA_CHI__04E4BC85" FromRole="PRODUCTS" ToRole="PRODUCT_CATEGORY_DETAILS" />
           <NavigationProperty Name="PRODUCT_META" Relationship="Self.FK__PRODUCT_M__MA_HA__0B91BA14" FromRole="PRODUCTS" ToRole="PRODUCT_META" />
@@ -1222,6 +1465,19 @@ warning 6002: The table/view 'SYSTEM_DATABASE.dbo.HOLD_PRODUCT_DETAILS' does not
           <NavigationProperty Name="PRODUCT_CATEGORIES" Relationship="Self.FK__PURCHASE___MA_NH__37703C52" FromRole="PURCHASE_ORDER" ToRole="PRODUCT_CATEGORIES" />
           <NavigationProperty Name="PRODUCT" Relationship="Self.FK__PURCHASE___MA_HA__367C1819" FromRole="PURCHASE_ORDER" ToRole="PRODUCTS" />
           <NavigationProperty Name="USER" Relationship="Self.FK__PURCHASE___KINH___3864608B" FromRole="PURCHASE_ORDER" ToRole="USERS" />
+        </EntityType>
+        <EntityType Name="RETURNING_PRODUCTS">
+          <Key>
+            <PropertyRef Name="ID_HANG_TRA" />
+          </Key>
+          <Property Name="ID_HANG_TRA" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ID_HANG_MUON" Type="Int32" Nullable="false" />
+          <Property Name="NGAY_TRA" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="SL_TRA" Type="Int32" Nullable="false" />
+          <Property Name="KHO_TRA" Type="String" MaxLength="128" FixedLength="false" Unicode="false" />
+          <Property Name="GHI_CHU" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="BORROWING_PRODUCTS" Relationship="Self.FK__RETURNING__ID_HA__6EC0713C" FromRole="RETURNING_PRODUCTS" ToRole="BORROWING_PRODUCTS" />
+          <NavigationProperty Name="Warehouse" Relationship="Self.FK__RETURNING__KHO_T__6FB49575" FromRole="RETURNING_PRODUCTS" ToRole="WAREHOUSES" />
         </EntityType>
         <EntityType Name="SUPPLIER_ACCOUNTS">
           <Key>
@@ -1282,6 +1538,7 @@ warning 6002: The table/view 'SYSTEM_DATABASE.dbo.HOLD_PRODUCT_DETAILS' does not
           <Property Name="KHO_NGUON" Type="String" MaxLength="128" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="SL_KY_GUI" Type="Int32" />
           <Property Name="KHO_DICH" Type="String" MaxLength="128" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="TRANG_THAI" Type="String" MaxLength="128" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="GHI_CHU" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="PRODUCT" Relationship="Self.FK__TRANSFER___MA_HA__25518C17" FromRole="TRANSFER_WAREHOUSE_PRODUCTS" ToRole="PRODUCTS" />
           <NavigationProperty Name="Warehouse" Relationship="Self.FK__TRANSFER___KHO_D__2739D489" FromRole="TRANSFER_WAREHOUSE_PRODUCTS" ToRole="WAREHOUSES" />
@@ -1329,6 +1586,7 @@ warning 6002: The table/view 'SYSTEM_DATABASE.dbo.HOLD_PRODUCT_DETAILS' does not
           <Property Name="ALLOWED" Type="Byte" />
           <NavigationProperty Name="BANG_CHAM_CONG" Relationship="Self.FK__BANG_CHAM__USER___1ED998B2" FromRole="USERS" ToRole="BANG_CHAM_CONG" />
           <NavigationProperty Name="BANG_LUONG" Relationship="Self.FK__BANG_LUON__USER___1BFD2C07" FromRole="USERS" ToRole="BANG_LUONG" />
+          <NavigationProperty Name="COMPANYS" Relationship="Self.FK__COMPANYS__MANAGE__40F9A68C" FromRole="USERS" ToRole="COMPANYS" />
           <NavigationProperty Name="CUSTOMERS" Relationship="Self.FK__CUSTOMERS__USER___114A936A" FromRole="USERS" ToRole="CUSTOMERS" />
           <NavigationProperty Name="DEPARTMENTS" Relationship="Self.FK__DEPARTMEN__MANAG__6FE99F9F" FromRole="USERS" ToRole="DEPARTMENTS" />
           <NavigationProperty Name="GHI_CHU_CONG_VIEC" Relationship="Self.FK__GHI_CHU_C__USER___49C3F6B7" FromRole="USERS" ToRole="GHI_CHU_CONG_VIEC" />
@@ -1346,7 +1604,11 @@ warning 6002: The table/view 'SYSTEM_DATABASE.dbo.HOLD_PRODUCT_DETAILS' does not
           <Property Name="MA_KHO" Type="String" MaxLength="128" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="TEN_KHO" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="MO_TA" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="COMPANY_ID" Type="String" MaxLength="64" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="COMPANY" Relationship="Self.FK__WAREHOUSE__COMPA__58D1301D" FromRole="WAREHOUSES" ToRole="COMPANYS" />
+          <NavigationProperty Name="HOLD_PRODUCTS" Relationship="Self.FK__HOLD_PROD__MA_KH__6442E2C9" FromRole="WAREHOUSES" ToRole="HOLD_PRODUCTS" />
           <NavigationProperty Name="PRODUCTS" Relationship="Self.FK__PRODUCTS__MA_KHO__05D8E0BE" FromRole="WAREHOUSES" ToRole="PRODUCTS" />
+          <NavigationProperty Name="RETURNING_PRODUCTS" Relationship="Self.FK__RETURNING__KHO_T__6FB49575" FromRole="WAREHOUSES" ToRole="RETURNING_PRODUCTS" />
           <NavigationProperty Name="TRANSFER_WAREHOUSE_PRODUCTS" Relationship="Self.FK__TRANSFER___KHO_D__2739D489" FromRole="WAREHOUSES" ToRole="TRANSFER_WAREHOUSE_PRODUCTS" />
           <NavigationProperty Name="TRANSFER_WAREHOUSE_PRODUCTS1" Relationship="Self.FK__TRANSFER___KHO_N__2645B050" FromRole="WAREHOUSES" ToRole="TRANSFER_WAREHOUSE_PRODUCTS" />
         </EntityType>
@@ -1391,6 +1653,90 @@ warning 6002: The table/view 'SYSTEM_DATABASE.dbo.HOLD_PRODUCT_DETAILS' does not
             </Principal>
             <Dependent Role="BANG_LUONG">
               <PropertyRef Name="USER_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__BORROWING__MA_HA__6BE40491">
+          <End Role="PRODUCTS" Type="Self.PRODUCT" Multiplicity="1" />
+          <End Role="BORROWING_PRODUCTS" Type="Self.BORROWING_PRODUCTS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PRODUCTS">
+              <PropertyRef Name="MA_HANG_HT" />
+            </Principal>
+            <Dependent Role="BORROWING_PRODUCTS">
+              <PropertyRef Name="MA_HANG_HT" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__RETURNING__ID_HA__6EC0713C">
+          <End Role="BORROWING_PRODUCTS" Type="Self.BORROWING_PRODUCTS" Multiplicity="1" />
+          <End Role="RETURNING_PRODUCTS" Type="Self.RETURNING_PRODUCTS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="BORROWING_PRODUCTS">
+              <PropertyRef Name="ID_HANG_MUON" />
+            </Principal>
+            <Dependent Role="RETURNING_PRODUCTS">
+              <PropertyRef Name="ID_HANG_MUON" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__COMPANYS__COMPAN__41EDCAC5">
+          <End Role="COMPANY_CATEGORIES" Type="Self.COMPANY_CATEGORIES" Multiplicity="1" />
+          <End Role="COMPANYS" Type="Self.COMPANY" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="COMPANY_CATEGORIES">
+              <PropertyRef Name="COMPANY_CATEGORY_ID" />
+            </Principal>
+            <Dependent Role="COMPANYS">
+              <PropertyRef Name="COMPANY_CATEGORY_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__COMPANYS__MANAGE__40F9A68C">
+          <End Role="USERS" Type="Self.USER" Multiplicity="1" />
+          <End Role="COMPANYS" Type="Self.COMPANY" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="USERS">
+              <PropertyRef Name="USER_ID" />
+            </Principal>
+            <Dependent Role="COMPANYS">
+              <PropertyRef Name="MANAGER" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__COMPANYS__PARENT__40058253">
+          <End Role="COMPANYS" Type="Self.COMPANY" Multiplicity="1" />
+          <End Role="COMPANYS1" Type="Self.COMPANY" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="COMPANYS">
+              <PropertyRef Name="COMPANY_ID" />
+            </Principal>
+            <Dependent Role="COMPANYS1">
+              <PropertyRef Name="PARENT_COMPANY" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__DEPARTMEN__COMPA__42E1EEFE">
+          <End Role="COMPANYS" Type="Self.COMPANY" Multiplicity="1" />
+          <End Role="DEPARTMENTS" Type="Self.DEPARTMENT" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="COMPANYS">
+              <PropertyRef Name="COMPANY_ID" />
+            </Principal>
+            <Dependent Role="DEPARTMENTS">
+              <PropertyRef Name="COMPANY_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__WAREHOUSE__COMPA__58D1301D">
+          <End Role="COMPANYS" Type="Self.COMPANY" Multiplicity="1" />
+          <End Role="WAREHOUSES" Type="Self.Warehouse" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="COMPANYS">
+              <PropertyRef Name="COMPANY_ID" />
+            </Principal>
+            <Dependent Role="WAREHOUSES">
+              <PropertyRef Name="COMPANY_ID" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -1523,6 +1869,18 @@ warning 6002: The table/view 'SYSTEM_DATABASE.dbo.HOLD_PRODUCT_DETAILS' does not
             </Principal>
             <Dependent Role="HOLD_PRODUCTS">
               <PropertyRef Name="MA_HANG_HT" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__HOLD_PROD__MA_KH__6442E2C9">
+          <End Role="WAREHOUSES" Type="Self.Warehouse" Multiplicity="1" />
+          <End Role="HOLD_PRODUCTS" Type="Self.HOLD_PRODUCTS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="WAREHOUSES">
+              <PropertyRef Name="MA_KHO" />
+            </Principal>
+            <Dependent Role="HOLD_PRODUCTS">
+              <PropertyRef Name="MA_KHO" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -1670,6 +2028,18 @@ warning 6002: The table/view 'SYSTEM_DATABASE.dbo.HOLD_PRODUCT_DETAILS' does not
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK__RETURNING__KHO_T__6FB49575">
+          <End Role="WAREHOUSES" Type="Self.Warehouse" Multiplicity="0..1" />
+          <End Role="RETURNING_PRODUCTS" Type="Self.RETURNING_PRODUCTS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="WAREHOUSES">
+              <PropertyRef Name="MA_KHO" />
+            </Principal>
+            <Dependent Role="RETURNING_PRODUCTS">
+              <PropertyRef Name="KHO_TRA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK__SUPPLIER___MA_NC__31B762FC">
           <End Role="SUPPLIERS" Type="Self.SUPPLIER" Multiplicity="1" />
           <End Role="SUPPLIER_ACCOUNTS" Type="Self.SUPPLIER_ACCOUNTS" Multiplicity="*" />
@@ -1769,6 +2139,9 @@ warning 6002: The table/view 'SYSTEM_DATABASE.dbo.HOLD_PRODUCT_DETAILS' does not
         <EntityContainer Name="SYSTEM_DATABASEEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="BANG_CHAM_CONG" EntityType="Self.BANG_CHAM_CONG" />
           <EntitySet Name="BANG_LUONG" EntityType="Self.BANG_LUONG" />
+          <EntitySet Name="BORROWING_PRODUCTS" EntityType="Self.BORROWING_PRODUCTS" />
+          <EntitySet Name="COMPANY_CATEGORIES" EntityType="Self.COMPANY_CATEGORIES" />
+          <EntitySet Name="COMPANYS" EntityType="Self.COMPANY" />
           <EntitySet Name="CUSTOMER_ACCOUNTS" EntityType="Self.CUSTOMER_ACCOUNTS" />
           <EntitySet Name="CUSTOMER_CONTACTS" EntityType="Self.CUSTOMER_CONTACTS" />
           <EntitySet Name="CUSTOMER_GROUPS" EntityType="Self.CUSTOMER_GROUPS" />
@@ -1785,6 +2158,7 @@ warning 6002: The table/view 'SYSTEM_DATABASE.dbo.HOLD_PRODUCT_DETAILS' does not
           <EntitySet Name="PRODUCT_META" EntityType="Self.PRODUCT_META" />
           <EntitySet Name="PRODUCTS" EntityType="Self.PRODUCT" />
           <EntitySet Name="PURCHASE_ORDER" EntityType="Self.PURCHASE_ORDER" />
+          <EntitySet Name="RETURNING_PRODUCTS" EntityType="Self.RETURNING_PRODUCTS" />
           <EntitySet Name="SUPPLIER_ACCOUNTS" EntityType="Self.SUPPLIER_ACCOUNTS" />
           <EntitySet Name="SUPPLIER_CONTACTS" EntityType="Self.SUPPLIER_CONTACTS" />
           <EntitySet Name="SUPPLIERS" EntityType="Self.SUPPLIER" />
@@ -1801,6 +2175,34 @@ warning 6002: The table/view 'SYSTEM_DATABASE.dbo.HOLD_PRODUCT_DETAILS' does not
           <AssociationSet Name="FK__BANG_LUON__USER___1BFD2C07" Association="Self.FK__BANG_LUON__USER___1BFD2C07">
             <End Role="USERS" EntitySet="USERS" />
             <End Role="BANG_LUONG" EntitySet="BANG_LUONG" />
+          </AssociationSet>
+          <AssociationSet Name="FK__BORROWING__MA_HA__6BE40491" Association="Self.FK__BORROWING__MA_HA__6BE40491">
+            <End Role="PRODUCTS" EntitySet="PRODUCTS" />
+            <End Role="BORROWING_PRODUCTS" EntitySet="BORROWING_PRODUCTS" />
+          </AssociationSet>
+          <AssociationSet Name="FK__RETURNING__ID_HA__6EC0713C" Association="Self.FK__RETURNING__ID_HA__6EC0713C">
+            <End Role="BORROWING_PRODUCTS" EntitySet="BORROWING_PRODUCTS" />
+            <End Role="RETURNING_PRODUCTS" EntitySet="RETURNING_PRODUCTS" />
+          </AssociationSet>
+          <AssociationSet Name="FK__COMPANYS__COMPAN__41EDCAC5" Association="Self.FK__COMPANYS__COMPAN__41EDCAC5">
+            <End Role="COMPANY_CATEGORIES" EntitySet="COMPANY_CATEGORIES" />
+            <End Role="COMPANYS" EntitySet="COMPANYS" />
+          </AssociationSet>
+          <AssociationSet Name="FK__COMPANYS__MANAGE__40F9A68C" Association="Self.FK__COMPANYS__MANAGE__40F9A68C">
+            <End Role="USERS" EntitySet="USERS" />
+            <End Role="COMPANYS" EntitySet="COMPANYS" />
+          </AssociationSet>
+          <AssociationSet Name="FK__COMPANYS__PARENT__40058253" Association="Self.FK__COMPANYS__PARENT__40058253">
+            <End Role="COMPANYS" EntitySet="COMPANYS" />
+            <End Role="COMPANYS1" EntitySet="COMPANYS" />
+          </AssociationSet>
+          <AssociationSet Name="FK__DEPARTMEN__COMPA__42E1EEFE" Association="Self.FK__DEPARTMEN__COMPA__42E1EEFE">
+            <End Role="COMPANYS" EntitySet="COMPANYS" />
+            <End Role="DEPARTMENTS" EntitySet="DEPARTMENTS" />
+          </AssociationSet>
+          <AssociationSet Name="FK__WAREHOUSE__COMPA__58D1301D" Association="Self.FK__WAREHOUSE__COMPA__58D1301D">
+            <End Role="COMPANYS" EntitySet="COMPANYS" />
+            <End Role="WAREHOUSES" EntitySet="WAREHOUSES" />
           </AssociationSet>
           <AssociationSet Name="FK__CUSTOMER___MA_KH__1BC821DD" Association="Self.FK__CUSTOMER___MA_KH__1BC821DD">
             <End Role="CUSTOMERS" EntitySet="CUSTOMERS" />
@@ -1844,6 +2246,10 @@ warning 6002: The table/view 'SYSTEM_DATABASE.dbo.HOLD_PRODUCT_DETAILS' does not
           </AssociationSet>
           <AssociationSet Name="FK__HOLD_PROD__MA_HA__1EA48E88" Association="Self.FK__HOLD_PROD__MA_HA__1EA48E88">
             <End Role="PRODUCTS" EntitySet="PRODUCTS" />
+            <End Role="HOLD_PRODUCTS" EntitySet="HOLD_PRODUCTS" />
+          </AssociationSet>
+          <AssociationSet Name="FK__HOLD_PROD__MA_KH__6442E2C9" Association="Self.FK__HOLD_PROD__MA_KH__6442E2C9">
+            <End Role="WAREHOUSES" EntitySet="WAREHOUSES" />
             <End Role="HOLD_PRODUCTS" EntitySet="HOLD_PRODUCTS" />
           </AssociationSet>
           <AssociationSet Name="FK_LIST_PERMISSIONS_LIST_CONTROLLERS" Association="Self.FK_LIST_PERMISSIONS_LIST_CONTROLLERS">
@@ -1893,6 +2299,10 @@ warning 6002: The table/view 'SYSTEM_DATABASE.dbo.HOLD_PRODUCT_DETAILS' does not
           <AssociationSet Name="FK__PURCHASE___KINH___3864608B" Association="Self.FK__PURCHASE___KINH___3864608B">
             <End Role="USERS" EntitySet="USERS" />
             <End Role="PURCHASE_ORDER" EntitySet="PURCHASE_ORDER" />
+          </AssociationSet>
+          <AssociationSet Name="FK__RETURNING__KHO_T__6FB49575" Association="Self.FK__RETURNING__KHO_T__6FB49575">
+            <End Role="WAREHOUSES" EntitySet="WAREHOUSES" />
+            <End Role="RETURNING_PRODUCTS" EntitySet="RETURNING_PRODUCTS" />
           </AssociationSet>
           <AssociationSet Name="FK__SUPPLIER___MA_NC__31B762FC" Association="Self.FK__SUPPLIER___MA_NC__31B762FC">
             <End Role="SUPPLIERS" EntitySet="SUPPLIERS" />
@@ -1987,6 +2397,41 @@ warning 6002: The table/view 'SYSTEM_DATABASE.dbo.HOLD_PRODUCT_DETAILS' does not
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="BORROWING_PRODUCTS">
+            <EntityTypeMapping TypeName="SYSTEM_DATABASEModel.BORROWING_PRODUCTS">
+              <MappingFragment StoreEntitySet="BORROWING_PRODUCTS">
+                <ScalarProperty Name="ID_HANG_MUON" ColumnName="ID_HANG_MUON" />
+                <ScalarProperty Name="MA_HANG_HT" ColumnName="MA_HANG_HT" />
+                <ScalarProperty Name="KHO_MUON" ColumnName="KHO_MUON" />
+                <ScalarProperty Name="NGAY_MUON" ColumnName="NGAY_MUON" />
+                <ScalarProperty Name="SL_MUON" ColumnName="SL_MUON" />
+                <ScalarProperty Name="MA_PHIEU_XUAT_KHO" ColumnName="MA_PHIEU_XUAT_KHO" />
+                <ScalarProperty Name="TRANG_THAI" ColumnName="TRANG_THAI" />
+                <ScalarProperty Name="GHI_CHU" ColumnName="GHI_CHU" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="COMPANY_CATEGORIES">
+            <EntityTypeMapping TypeName="SYSTEM_DATABASEModel.COMPANY_CATEGORIES">
+              <MappingFragment StoreEntitySet="COMPANY_CATEGORIES">
+                <ScalarProperty Name="COMPANY_CATEGORY_ID" ColumnName="COMPANY_CATEGORY_ID" />
+                <ScalarProperty Name="COMPANY_CATEGORY_NAME" ColumnName="COMPANY_CATEGORY_NAME" />
+                <ScalarProperty Name="NOTED" ColumnName="NOTED" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="COMPANYS">
+            <EntityTypeMapping TypeName="SYSTEM_DATABASEModel.COMPANY">
+              <MappingFragment StoreEntitySet="COMPANYS">
+                <ScalarProperty Name="COMPANY_ID" ColumnName="COMPANY_ID" />
+                <ScalarProperty Name="COMPANY_NAME" ColumnName="COMPANY_NAME" />
+                <ScalarProperty Name="PARENT_COMPANY" ColumnName="PARENT_COMPANY" />
+                <ScalarProperty Name="MANAGER" ColumnName="MANAGER" />
+                <ScalarProperty Name="COMPANY_CATEGORY_ID" ColumnName="COMPANY_CATEGORY_ID" />
+                <ScalarProperty Name="NOTED" ColumnName="NOTED" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="CUSTOMER_ACCOUNTS">
             <EntityTypeMapping TypeName="SYSTEM_DATABASEModel.CUSTOMER_ACCOUNTS">
               <MappingFragment StoreEntitySet="CUSTOMER_ACCOUNTS">
@@ -2050,6 +2495,7 @@ warning 6002: The table/view 'SYSTEM_DATABASE.dbo.HOLD_PRODUCT_DETAILS' does not
                 <ScalarProperty Name="DEPARTMENT_NAME" ColumnName="DEPARTMENT_NAME" />
                 <ScalarProperty Name="MANAGER" ColumnName="MANAGER" />
                 <ScalarProperty Name="NOTED" ColumnName="NOTED" />
+                <ScalarProperty Name="COMPANY_ID" ColumnName="COMPANY_ID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -2076,6 +2522,7 @@ warning 6002: The table/view 'SYSTEM_DATABASE.dbo.HOLD_PRODUCT_DETAILS' does not
                 <ScalarProperty Name="SL_GIU_DA_XUAT" ColumnName="SL_GIU_DA_XUAT" />
                 <ScalarProperty Name="SL_GIU_CHUA_XU_LY" ColumnName="SL_GIU_CHUA_XU_LY" />
                 <ScalarProperty Name="TRANG_THAI" ColumnName="TRANG_THAI" />
+                <ScalarProperty Name="MA_KHO" ColumnName="MA_KHO" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -2168,6 +2615,7 @@ warning 6002: The table/view 'SYSTEM_DATABASE.dbo.HOLD_PRODUCT_DETAILS' does not
                 <ScalarProperty Name="SL_TON_KHO" ColumnName="SL_TON_KHO" />
                 <ScalarProperty Name="SL_DANG_GIU" ColumnName="SL_DANG_GIU" />
                 <ScalarProperty Name="SL_CO_THE_DUNG" ColumnName="SL_CO_THE_DUNG" />
+                <ScalarProperty Name="SL_THUC_TE_CO_THE_DUNG" ColumnName="SL_THUC_TE_CO_THE_DUNG" />
                 <ScalarProperty Name="DON_GIA_MUA_CO_DINH" ColumnName="DON_GIA_MUA_CO_DINH" />
                 <ScalarProperty Name="DON_GIA_MUA_GAN_NHAT" ColumnName="DON_GIA_MUA_GAN_NHAT" />
                 <ScalarProperty Name="HINH_ANH" ColumnName="HINH_ANH" />
@@ -2191,6 +2639,18 @@ warning 6002: The table/view 'SYSTEM_DATABASE.dbo.HOLD_PRODUCT_DETAILS' does not
                 <ScalarProperty Name="SL_THUC_NHAN" ColumnName="SL_THUC_NHAN" />
                 <ScalarProperty Name="NGAY_HANG_VE" ColumnName="NGAY_HANG_VE" />
                 <ScalarProperty Name="KINH_DOANH_BAN" ColumnName="KINH_DOANH_BAN" />
+                <ScalarProperty Name="GHI_CHU" ColumnName="GHI_CHU" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RETURNING_PRODUCTS">
+            <EntityTypeMapping TypeName="SYSTEM_DATABASEModel.RETURNING_PRODUCTS">
+              <MappingFragment StoreEntitySet="RETURNING_PRODUCTS">
+                <ScalarProperty Name="ID_HANG_TRA" ColumnName="ID_HANG_TRA" />
+                <ScalarProperty Name="ID_HANG_MUON" ColumnName="ID_HANG_MUON" />
+                <ScalarProperty Name="NGAY_TRA" ColumnName="NGAY_TRA" />
+                <ScalarProperty Name="SL_TRA" ColumnName="SL_TRA" />
+                <ScalarProperty Name="KHO_TRA" ColumnName="KHO_TRA" />
                 <ScalarProperty Name="GHI_CHU" ColumnName="GHI_CHU" />
               </MappingFragment>
             </EntityTypeMapping>
@@ -2250,6 +2710,7 @@ warning 6002: The table/view 'SYSTEM_DATABASE.dbo.HOLD_PRODUCT_DETAILS' does not
                 <ScalarProperty Name="KHO_NGUON" ColumnName="KHO_NGUON" />
                 <ScalarProperty Name="SL_KY_GUI" ColumnName="SL_KY_GUI" />
                 <ScalarProperty Name="KHO_DICH" ColumnName="KHO_DICH" />
+                <ScalarProperty Name="TRANG_THAI" ColumnName="TRANG_THAI" />
                 <ScalarProperty Name="GHI_CHU" ColumnName="GHI_CHU" />
               </MappingFragment>
             </EntityTypeMapping>
@@ -2298,6 +2759,7 @@ warning 6002: The table/view 'SYSTEM_DATABASE.dbo.HOLD_PRODUCT_DETAILS' does not
                 <ScalarProperty Name="MA_KHO" ColumnName="MA_KHO" />
                 <ScalarProperty Name="TEN_KHO" ColumnName="TEN_KHO" />
                 <ScalarProperty Name="MO_TA" ColumnName="MO_TA" />
+                <ScalarProperty Name="COMPANY_ID" ColumnName="COMPANY_ID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

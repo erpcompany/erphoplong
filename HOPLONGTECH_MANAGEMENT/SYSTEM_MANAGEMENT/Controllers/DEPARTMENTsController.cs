@@ -7,33 +7,18 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using SYSTEM_MANAGEMENT.Models;
-using SYSTEM_MANAGEMENT.Models.BussinessModel;
 
 namespace SYSTEM_MANAGEMENT.Controllers
 {
-    [AuthorizeBussiness]
     public class DEPARTMENTsController : Controller
     {
-        
         private SYSTEM_DATABASEEntities db = new SYSTEM_DATABASEEntities();
 
         // GET: DEPARTMENTs
         public ActionResult Index()
         {
-            var dEPARTMENTS = db.DEPARTMENTS.Include(d => d.USER);
+            var dEPARTMENTS = db.DEPARTMENTS.Include(d => d.COMPANY).Include(d => d.USER);
             return View(dEPARTMENTS.ToList());
-        }
-        public ActionResult Department_Users(string id)
-        {
-
-            var users = (from u in db.USER_METAS
-                         where u.DEPARTMENT_ID == id
-                         select u).ToList();
-            if (users == null)
-            {
-                return HttpNotFound();
-            }
-            return View(users);
         }
 
         // GET: DEPARTMENTs/Details/5
@@ -54,6 +39,7 @@ namespace SYSTEM_MANAGEMENT.Controllers
         // GET: DEPARTMENTs/Create
         public ActionResult Create()
         {
+            ViewBag.COMPANY_ID = new SelectList(db.COMPANYS, "COMPANY_ID", "COMPANY_NAME");
             ViewBag.MANAGER = new SelectList(db.USERS, "USER_ID", "USERNAME");
             return View();
         }
@@ -63,7 +49,7 @@ namespace SYSTEM_MANAGEMENT.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "DEPARTMENT_ID,DEPARTMENT_NAME,MANAGER,NOTED")] DEPARTMENT dEPARTMENT)
+        public ActionResult Create([Bind(Include = "DEPARTMENT_ID,DEPARTMENT_NAME,MANAGER,NOTED,COMPANY_ID")] DEPARTMENT dEPARTMENT)
         {
             if (ModelState.IsValid)
             {
@@ -72,6 +58,7 @@ namespace SYSTEM_MANAGEMENT.Controllers
                 return RedirectToAction("Index");
             }
 
+            ViewBag.COMPANY_ID = new SelectList(db.COMPANYS, "COMPANY_ID", "COMPANY_NAME", dEPARTMENT.COMPANY_ID);
             ViewBag.MANAGER = new SelectList(db.USERS, "USER_ID", "USERNAME", dEPARTMENT.MANAGER);
             return View(dEPARTMENT);
         }
@@ -88,6 +75,7 @@ namespace SYSTEM_MANAGEMENT.Controllers
             {
                 return HttpNotFound();
             }
+            ViewBag.COMPANY_ID = new SelectList(db.COMPANYS, "COMPANY_ID", "COMPANY_NAME", dEPARTMENT.COMPANY_ID);
             ViewBag.MANAGER = new SelectList(db.USERS, "USER_ID", "USERNAME", dEPARTMENT.MANAGER);
             return View(dEPARTMENT);
         }
@@ -97,7 +85,7 @@ namespace SYSTEM_MANAGEMENT.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "DEPARTMENT_ID,DEPARTMENT_NAME,MANAGER,NOTED")] DEPARTMENT dEPARTMENT)
+        public ActionResult Edit([Bind(Include = "DEPARTMENT_ID,DEPARTMENT_NAME,MANAGER,NOTED,COMPANY_ID")] DEPARTMENT dEPARTMENT)
         {
             if (ModelState.IsValid)
             {
@@ -105,6 +93,7 @@ namespace SYSTEM_MANAGEMENT.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
+            ViewBag.COMPANY_ID = new SelectList(db.COMPANYS, "COMPANY_ID", "COMPANY_NAME", dEPARTMENT.COMPANY_ID);
             ViewBag.MANAGER = new SelectList(db.USERS, "USER_ID", "USERNAME", dEPARTMENT.MANAGER);
             return View(dEPARTMENT);
         }

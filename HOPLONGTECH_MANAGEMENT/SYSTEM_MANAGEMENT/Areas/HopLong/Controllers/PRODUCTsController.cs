@@ -7,11 +7,9 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using SYSTEM_MANAGEMENT.Models;
-using SYSTEM_MANAGEMENT.Models.BussinessModel;
 
 namespace SYSTEM_MANAGEMENT.Areas.HopLong.Controllers
 {
-    [AuthorizeBussiness]
     public class PRODUCTsController : Controller
     {
         private SYSTEM_DATABASEEntities db = new SYSTEM_DATABASEEntities();
@@ -41,7 +39,7 @@ namespace SYSTEM_MANAGEMENT.Areas.HopLong.Controllers
         // GET: HopLong/PRODUCTs/Create
         public ActionResult Create()
         {
-            ViewBag.MA_CHI_TIET_NHOM_HANG = new SelectList(db.PRODUCT_CATEGORY_DETAILS, "MA_CHI_TIET_NHOM_HANG", "MA_CHI_TIET_NHOM_HANG");
+            ViewBag.MA_CHI_TIET_NHOM_HANG = new SelectList(db.PRODUCT_CATEGORY_DETAILS, "MA_CHI_TIET_NHOM_HANG", "MA_NHOM_HANG");
             ViewBag.MA_HANG_HT = new SelectList(db.PRODUCT_META, "MA_HANG_HT", "THE_TICH_BOX");
             ViewBag.MA_KHO = new SelectList(db.WAREHOUSES, "MA_KHO", "TEN_KHO");
             return View();
@@ -52,7 +50,7 @@ namespace SYSTEM_MANAGEMENT.Areas.HopLong.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "MA_HANG_HT,MA_HANG_NHAP,TEN_HANG,MA_CHI_TIET_NHOM_HANG,SERI,DON_VI_TINH,NGUON_GOC,MODEL_DAC_BIET,THOI_HAN_BAO_HANG,MA_KHO,DIEN_GIAI_KHI_MUA,DIEN_GIAI_KHI_BAN,DAC_TINH,SL_TON_KHO,SL_DANG_GIU,SL_CO_THE_DUNG,DON_GIA_MUA_CO_DINH,DON_GIA_MUA_GAN_NHAT,HINH_ANH,GHI_CHU")] PRODUCT pRODUCT)
+        public ActionResult Create([Bind(Include = "MA_HANG_HT,MA_HANG_NHAP,TEN_HANG,MA_CHI_TIET_NHOM_HANG,SERI,DON_VI_TINH,NGUON_GOC,MODEL_DAC_BIET,THOI_HAN_BAO_HANG,MA_KHO,DIEN_GIAI_KHI_MUA,DIEN_GIAI_KHI_BAN,DAC_TINH,SL_TON_KHO,SL_DANG_GIU,SL_CO_THE_DUNG,SL_THUC_TE_CO_THE_DUNG,DON_GIA_MUA_CO_DINH,DON_GIA_MUA_GAN_NHAT,HINH_ANH,GHI_CHU")] PRODUCT pRODUCT)
         {
             if (ModelState.IsValid)
             {
@@ -90,7 +88,7 @@ namespace SYSTEM_MANAGEMENT.Areas.HopLong.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "MA_HANG_HT,MA_HANG_NHAP,TEN_HANG,MA_CHI_TIET_NHOM_HANG,SERI,DON_VI_TINH,NGUON_GOC,MODEL_DAC_BIET,THOI_HAN_BAO_HANG,MA_KHO,DIEN_GIAI_KHI_MUA,DIEN_GIAI_KHI_BAN,DAC_TINH,SL_TON_KHO,SL_DANG_GIU,SL_CO_THE_DUNG,DON_GIA_MUA_CO_DINH,DON_GIA_MUA_GAN_NHAT,HINH_ANH,GHI_CHU")] PRODUCT pRODUCT)
+        public ActionResult Edit([Bind(Include = "MA_HANG_HT,MA_HANG_NHAP,TEN_HANG,MA_CHI_TIET_NHOM_HANG,SERI,DON_VI_TINH,NGUON_GOC,MODEL_DAC_BIET,THOI_HAN_BAO_HANG,MA_KHO,DIEN_GIAI_KHI_MUA,DIEN_GIAI_KHI_BAN,DAC_TINH,SL_TON_KHO,SL_DANG_GIU,SL_CO_THE_DUNG,SL_THUC_TE_CO_THE_DUNG,DON_GIA_MUA_CO_DINH,DON_GIA_MUA_GAN_NHAT,HINH_ANH,GHI_CHU")] PRODUCT pRODUCT)
         {
             if (ModelState.IsValid)
             {

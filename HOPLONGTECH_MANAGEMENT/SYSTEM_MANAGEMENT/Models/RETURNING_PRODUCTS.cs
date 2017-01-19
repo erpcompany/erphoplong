@@ -12,19 +12,16 @@ namespace SYSTEM_MANAGEMENT.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class TRANSFER_WAREHOUSE_PRODUCTS
+    public partial class RETURNING_PRODUCTS
     {
-        public int ID_KY_GUI { get; set; }
-        public string MA_HANG_HT { get; set; }
-        public Nullable<System.DateTime> NGAY_KY_GUI { get; set; }
-        public string KHO_NGUON { get; set; }
-        public Nullable<int> SL_KY_GUI { get; set; }
-        public string KHO_DICH { get; set; }
-        public string TRANG_THAI { get; set; }
+        public int ID_HANG_TRA { get; set; }
+        public int ID_HANG_MUON { get; set; }
+        public System.DateTime NGAY_TRA { get; set; }
+        public int SL_TRA { get; set; }
+        public string KHO_TRA { get; set; }
         public string GHI_CHU { get; set; }
     
-        public virtual PRODUCT PRODUCT { get; set; }
+        public virtual BORROWING_PRODUCTS BORROWING_PRODUCTS { get; set; }
         public virtual Warehouse Warehouse { get; set; }
-        public virtual Warehouse Warehouse1 { get; set; }
     }
 }
