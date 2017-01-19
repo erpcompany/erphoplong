@@ -3,7 +3,7 @@
 @{
     ViewBag.Title = "Index";
 }
-
+<link href="~/Areas/HopLong/Style/CustomerAccount/index.css" rel="stylesheet"/>
 <h2>Index</h2>
 
 <p>
@@ -12,21 +12,23 @@
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.SO_TAI_KHOAN)
+            SỐ TÀI KHOẢN
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.TEN_NGAN_HANG)
+            TÊN NGÂN HÀNG
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.CHI_NHANH)
+            CHI NHÁNH
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.TINH_TP)
+            TỈNH/THÀNH PHỐ
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.CUSTOMER.TEN_KHACH_HANG)
+            TÊN KHÁCH HÀNG
         </th>
-        <th></th>
+        <th>
+            <em class="fa fa-cog"></em>
+        </th>
     </tr>
 
 @foreach (var item in Model) {

@@ -1,0 +1,10 @@
+﻿*{
+    margin: 0px;
+    padding: 0px;
+}
+.table td,tr,th{
+    border: 1px solid #4285F4;
+    border-top: 1px solid #4285F4 !important;
+    border-collapse: collapse;
+    text-align: center;
+}
