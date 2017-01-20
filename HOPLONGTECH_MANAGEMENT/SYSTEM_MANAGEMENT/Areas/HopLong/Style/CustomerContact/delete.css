@@ -1,0 +1,34 @@
+﻿*{
+    margin: 0px;
+    padding: 0px;
+}
+.h2{
+    text-align: center;
+}
+.form-horizontal{
+    border: 10px solid #4285F4;
+    border-radius: 20px;
+    padding-top: 10px;
+    width: 600px;
+    margin: auto
+}
+.form-group:last-child{
+    border-top: 10px solid #4285F4;
+    height: 40px;
+}
+.form-group a img{
+    height: 35px;
+    float: left;
+}
+#submit{
+    background: url(../../../../Content/images/delete_icon.png) no-repeat ;
+    background-size: 100%;
+    border: none;
+    float: right;
+    height: 35px;
+    width: 35px;
+}
+.fa{
+    font-size: 35px;
+    margin-top: 3px;
+}
