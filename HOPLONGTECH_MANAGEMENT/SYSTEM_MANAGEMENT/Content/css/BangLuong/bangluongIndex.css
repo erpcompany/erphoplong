@@ -27,7 +27,6 @@
 .maintable .table thead tr th{
     text-align: center;
     white-space: nowrap;
-    vertical-align: center;
     border: 1px solid black;
     border-collapse: collapse;
 }

@@ -61,6 +61,8 @@ th{
 }
 .table-bordered>tbody>tr>th{
     border: 1px solid black;
+    background:  #4285F4;
+    color: white;
 }
 .table-bordered>tbody>tr>td{
     border: 1px solid black;

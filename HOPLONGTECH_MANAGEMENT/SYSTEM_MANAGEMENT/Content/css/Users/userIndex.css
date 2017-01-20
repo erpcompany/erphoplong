@@ -1,0 +1,90 @@
+﻿*{
+    margin: 0px;
+    padding: 0px;
+}
+.h1{
+    text-align: center;
+}
+a{
+    text-decoration: none;
+}
+.center p{
+    font-weight: bold;
+    font-size: 15px;
+    color: #FF5E00;
+}
+.center span{
+    color: blue;
+}
+.creat-link{
+    padding-top:10px; 
+    padding-bottom:10px;    
+}
+.creat-link a{
+    font-weight:bold; 
+    color: blue; 
+}
+
+.main{
+    overflow-x: auto;
+}
+.main th{
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: center;
+    font-weight: bold;
+    font-size: 15px;
+}
+.main .note{
+    color: red;
+}
+.main td{
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: center;
+}
+.main td p{
+    display: inline-block;
+}
+.main td .details{
+    padding: 0px 4px 0px 4px;
+    border-left: 2px solid black;
+    border-right: 2px solid black;
+}
+.main td p a:hover{
+    color: blue;
+    font-weight: bold;
+}
+.main td .fa{
+    margin-left: 20px;
+}
+th{
+    color: black;
+}
+.table-bordered>tbody>tr>th{
+    border: 1px solid black;
+    background:  #4285F4;
+    color: white;
+}
+.table-bordered>tbody>tr>td{
+    border: 1px solid black;
+    vertical-align: middle;
+}
+.fa{
+    font-size: 25px;
+}
+a img{
+    height: 30px;
+}
+.panel-primary{
+    border: none;
+}
+.main td img{
+    height: 50px;
+    width: 50px;
+}
+.main td .image{
+    width: 25px;
+    height: 25px;
+    margin-bottom: 10px;
+}

@@ -3,85 +3,108 @@
 @{
     ViewBag.Title = "Index";
 }
-
-<h2>Index</h2>
+<link href="~/Areas/HopLong/Style/CustomerContact/index.css" rel="stylesheet"/>
+<h2>LIÊN HỆ KHÁCH HÀNG</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    <a href="/HopLong/CUSTOMER_CONTACTS/Create"><img src="~/Content/images/create_icon.png" /></a> &nbsp;&nbsp;&nbsp;
 </p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.NGUOI_LIEN_HE)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.NGAY_SINH)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.GIOI_TINH)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.CHUC_VU)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.SO_DIEN_THOAI)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.EMAIL)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.FACEBOOK)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.SKYPE)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.GHI_CHU)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.CUSTOMER.TEN_KHACH_HANG)
-        </th>
-        <th></th>
-    </tr>
+<body>
+    <div class="container">
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.NGUOI_LIEN_HE)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.NGAY_SINH)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.GIOI_TINH)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.CHUC_VU)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.SO_DIEN_THOAI)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.EMAIL)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.FACEBOOK)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.SKYPE)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.GHI_CHU)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.CUSTOMER.TEN_KHACH_HANG)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.ID_LIEN_HE_KH }) |
-            @Html.ActionLink("Details", "Details", new { id=item.ID_LIEN_HE_KH }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.ID_LIEN_HE_KH })
-        </td>
-    </tr>
-}
+        <div class="creatediv1 marginTop30">
 
-</table>
+            <div class="row margin-top-50">
+                <div class="col-md-12">
+                    <div class="panel panel-primary filterable">
+                        <div class="main">
+                            <table class="span12" border="1">
+                                <div class="bg tablescroll">
+                                    <table class="table table-bordered table-striped">
+                                        <tr class="filters">
+                                            <th>
+                                                NGƯỜI LIÊN HỆ
+                                            </th>
+                                            <th>
+                                                NGÀY SINH
+                                            </th>
+                                            <th>
+                                                GIỚI TÍNH
+                                            </th>
+                                            <th>
+                                                CHỨC VỤ
+                                            </th>
+                                            <th>
+                                                SỐ ĐIỆN THOẠI
+                                            </th>
+                                            <th>
+                                                E-MAIL
+                                            </th>
+                                            <th>
+                                                FACEBOOK
+                                            </th>
+                                            <th>
+                                                SKYPE
+                                            </th>
+                                            <th>
+                                                GHI CHÚ
+                                            </th>
+                                            <th>
+                                                TÊN KHÁCH HÀNG
+                                            </th>
+                                            <th>
+                                                <em class="fa fa-cog"></em>
+                                            </th>
+                                        </tr>
+
+                                        @foreach (var item in Model)
+                                        {
+                                            <tr>
+                                                <td>
+                                                    @Html.DisplayFor(modelItem => item.NGUOI_LIEN_HE)
+                                                </td>
+                                                <td>
+                                                    @Html.DisplayFor(modelItem => item.NGAY_SINH)
+                                                </td>
+                                                <td>
+                                                    @Html.DisplayFor(modelItem => item.GIOI_TINH)
+                                                </td>
+                                                <td>
+                                                    @Html.DisplayFor(modelItem => item.CHUC_VU)
+                                                </td>
+                                                <td>
+                                                    @Html.DisplayFor(modelItem => item.SO_DIEN_THOAI)
+                                                </td>
+                                                <td>
+                                                    @Html.DisplayFor(modelItem => item.EMAIL)
+                                                </td>
+                                                <td>
+                                                    @Html.DisplayFor(modelItem => item.FACEBOOK)
+                                                </td>
+                                                <td>
+                                                    @Html.DisplayFor(modelItem => item.SKYPE)
+                                                </td>
+                                                <td>
+                                                    @Html.DisplayFor(modelItem => item.GHI_CHU)
+                                                </td>
+                                                <td>
+                                                    @Html.DisplayFor(modelItem => item.CUSTOMER.TEN_KHACH_HANG)
+                                                </td>
+                                                <td>
+                                                    <a href="/HopLong/CUSTOMER_CONTACTS/Edit/@item.ID_LIEN_HE_KH"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a> &nbsp;&nbsp;&nbsp;
+                                                    <a href="/HopLong/CUSTOMER_CONTACTS/Details/@item.ID_LIEN_HE_KH"><i class="fa fa-info-circle" aria-hidden="true"></i></a> &nbsp;&nbsp;&nbsp;
+                                                    <a href="/HopLong/CUSTOMER_CONTACTS/Delete/@item.ID_LIEN_HE_KH  "><i class="fa fa-trash-o " onclick="return confirm('Bạn có chắc muốn xóa không?')" aria-hidden="true"></i></a> &nbsp;&nbsp;&nbsp;
+                                                </td>
+                                            </tr>
+                                        }
+                                    </table>
+                                </div>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</body>

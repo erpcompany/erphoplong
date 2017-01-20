@@ -1,0 +1,9 @@
+﻿.kinhdoanh{
+    padding-left: 30px;
+}
+.kinhdoanh li::before{
+    content: '☼';
+}
+.kinhdoanh li a{
+    display: inline-block;
+}

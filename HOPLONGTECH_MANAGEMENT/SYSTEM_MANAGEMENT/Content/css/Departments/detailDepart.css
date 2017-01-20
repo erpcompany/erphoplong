@@ -2,35 +2,26 @@
     margin: 0px;
     padding: 0px;
 }
-.form-horizontal{
-    margin: 50px 0px;
-    border: 2px solid black;
-    padding-top: 15px;
-    width: 80%;
-    margin: auto;
-}
-.link a:hover{
-    color: red;
-}
 .h2{
     text-align: center;
 }
+.form-horizontal{
+    border: 10px solid #4285F4;
+    border-radius: 20px;
+    padding-top: 10px;
+    width: 800px;
+    margin: auto
+}
 .form-group:last-child{
-    border-top: 2px solid black;
-    height: 30px;
+    border-top: 10px solid #4285F4;
+    height: 40px;
 }
 .form-group a img{
-    height: 30px;
+    height: 35px;
     float: left;
-    padding-top: 5px;
 }
+
 .fa{
-    font-size: 25px;
-    padding-top: 7px;
-    font-weight: bold;
-}
-.form-group a,.fa{
-    display: inline-block;
-    float: left;
-    margin-right: 10px;
+    font-size: 35px;
+    margin-top: 3px;
 }
