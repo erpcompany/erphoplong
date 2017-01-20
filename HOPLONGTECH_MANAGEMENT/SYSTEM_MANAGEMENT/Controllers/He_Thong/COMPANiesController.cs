@@ -7,21 +7,29 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using SYSTEM_MANAGEMENT.Models;
+using SYSTEM_MANAGEMENT.Models.BussinessModel;
 
-namespace SYSTEM_MANAGEMENT.Areas.HopLong.Controllers
+namespace SYSTEM_MANAGEMENT.Controllers
 {
+    [AuthorizeBussiness]
     public class COMPANiesController : Controller
     {
         private SYSTEM_DATABASEEntities db = new SYSTEM_DATABASEEntities();
 
-        // GET: HopLong/COMPANies
+        // GET: COMPANies
         public ActionResult Index()
         {
             var cOMPANYS = db.COMPANYS.Include(c => c.COMPANY_CATEGORIES).Include(c => c.USER).Include(c => c.COMPANY1);
             return View(cOMPANYS.ToList());
         }
 
-        // GET: HopLong/COMPANies/Details/5
+        public ActionResult Phong_Ban_Cong_Ty(string id)
+        {
+            var departments = db.DEPARTMENTS.Where(d =>d.COMPANY_ID ==id);
+            return View(departments.ToList());
+        }
+
+        // GET: COMPANies/Details/5
         public ActionResult Details(string id)
         {
             if (id == null)
@@ -36,7 +44,7 @@ namespace SYSTEM_MANAGEMENT.Areas.HopLong.Controllers
             return View(cOMPANY);
         }
 
-        // GET: HopLong/COMPANies/Create
+        // GET: COMPANies/Create
         public ActionResult Create()
         {
             ViewBag.COMPANY_CATEGORY_ID = new SelectList(db.COMPANY_CATEGORIES, "COMPANY_CATEGORY_ID", "COMPANY_CATEGORY_NAME");
@@ -45,7 +53,7 @@ namespace SYSTEM_MANAGEMENT.Areas.HopLong.Controllers
             return View();
         }
 
-        // POST: HopLong/COMPANies/Create
+        // POST: COMPANies/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
@@ -65,7 +73,7 @@ namespace SYSTEM_MANAGEMENT.Areas.HopLong.Controllers
             return View(cOMPANY);
         }
 
-        // GET: HopLong/COMPANies/Edit/5
+        // GET: COMPANies/Edit/5
         public ActionResult Edit(string id)
         {
             if (id == null)
@@ -83,7 +91,7 @@ namespace SYSTEM_MANAGEMENT.Areas.HopLong.Controllers
             return View(cOMPANY);
         }
 
-        // POST: HopLong/COMPANies/Edit/5
+        // POST: COMPANies/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
@@ -102,7 +110,7 @@ namespace SYSTEM_MANAGEMENT.Areas.HopLong.Controllers
             return View(cOMPANY);
         }
 
-        // GET: HopLong/COMPANies/Delete/5
+        // GET: COMPANies/Delete/5
         public ActionResult Delete(string id)
         {
             if (id == null)
@@ -117,7 +125,7 @@ namespace SYSTEM_MANAGEMENT.Areas.HopLong.Controllers
             return View(cOMPANY);
         }
 
-        // POST: HopLong/COMPANies/Delete/5
+        // POST: COMPANies/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(string id)
