@@ -1,0 +1,69 @@
+﻿@model IEnumerable<SYSTEM_MANAGEMENT.Models.TRANSFER_WAREHOUSE_PRODUCTS>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.NGAY_KY_GUI)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SL_KY_GUI)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TRANG_THAI)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.GHI_CHU)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PRODUCT.MA_HANG_NHAP)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Warehouse.TEN_KHO)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Warehouse1.TEN_KHO)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.NGAY_KY_GUI)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SL_KY_GUI)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TRANG_THAI)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.GHI_CHU)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PRODUCT.MA_HANG_NHAP)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Warehouse.TEN_KHO)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Warehouse1.TEN_KHO)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ID_KY_GUI }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ID_KY_GUI }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ID_KY_GUI })
+        </td>
+    </tr>
+}
+
+</table>

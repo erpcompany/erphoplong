@@ -1,0 +1,66 @@
+﻿@model SYSTEM_MANAGEMENT.Models.MANAGE_SALES_AND_CUSTOMERS
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>MANAGE_SALES_AND_CUSTOMERS</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.NGAY_BAT_DAU_PHU_TRACH)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NGAY_BAT_DAU_PHU_TRACH)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NGAY_NGUNG_PHU_TRACH)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NGAY_NGUNG_PHU_TRACH)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LY_DO_NGUNG_PHU_TRACH)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LY_DO_NGUNG_PHU_TRACH)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.GHI_CHU)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GHI_CHU)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CUSTOMER.TEN_KHACH_HANG)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CUSTOMER.TEN_KHACH_HANG)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.USER.USERNAME)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.USER.USERNAME)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID_QUAN_LY }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -1,0 +1,98 @@
+﻿@model SYSTEM_MANAGEMENT.Models.HOLD_PRODUCT_DETAILS
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>HOLD_PRODUCT_DETAILS</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.SL_GIU)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SL_GIU)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LOAI_GIU)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LOAI_GIU)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TRANG_THAI)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TRANG_THAI)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MA_PHIEU_XUAT_KHO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MA_PHIEU_XUAT_KHO)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MA_KHACH_XUAT_KHO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MA_KHACH_XUAT_KHO)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SL_XUAT_KHO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SL_XUAT_KHO)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.GHI_CHU)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GHI_CHU)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CUSTOMER.TEN_KHACH_HANG)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CUSTOMER.TEN_KHACH_HANG)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.HOLD_PRODUCTS.MA_HANG_HT)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HOLD_PRODUCTS.MA_HANG_HT)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.USER.USERNAME)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.USER.USERNAME)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

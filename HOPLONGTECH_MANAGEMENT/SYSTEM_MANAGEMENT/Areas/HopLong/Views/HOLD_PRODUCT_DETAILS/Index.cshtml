@@ -1,0 +1,87 @@
+﻿@model IEnumerable<SYSTEM_MANAGEMENT.Models.HOLD_PRODUCT_DETAILS>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.SL_GIU)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LOAI_GIU)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TRANG_THAI)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MA_PHIEU_XUAT_KHO)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MA_KHACH_XUAT_KHO)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SL_XUAT_KHO)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.GHI_CHU)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CUSTOMER.TEN_KHACH_HANG)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.HOLD_PRODUCTS.MA_HANG_HT)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.USER.USERNAME)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.SL_GIU)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LOAI_GIU)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TRANG_THAI)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MA_PHIEU_XUAT_KHO)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MA_KHACH_XUAT_KHO)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SL_XUAT_KHO)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.GHI_CHU)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CUSTOMER.TEN_KHACH_HANG)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.HOLD_PRODUCTS.MA_HANG_HT)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.USER.USERNAME)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+        </td>
+    </tr>
+}
+
+</table>

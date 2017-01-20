@@ -1,0 +1,58 @@
+﻿@model SYSTEM_MANAGEMENT.Models.COMPANY
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>COMPANY</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.COMPANY_NAME)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.COMPANY_NAME)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NOTED)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NOTED)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.COMPANY_CATEGORIES.COMPANY_CATEGORY_NAME)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.COMPANY_CATEGORIES.COMPANY_CATEGORY_NAME)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.USER.USERNAME)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.USER.USERNAME)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.COMPANY1.COMPANY_NAME)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.COMPANY1.COMPANY_NAME)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.COMPANY_ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
