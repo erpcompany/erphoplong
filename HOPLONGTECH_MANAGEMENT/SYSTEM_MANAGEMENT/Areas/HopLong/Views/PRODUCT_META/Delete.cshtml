@@ -1,0 +1,64 @@
+﻿@model SYSTEM_MANAGEMENT.Models.PRODUCT_META
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>PRODUCT_META</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.SL_1LOT)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SL_1LOT)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SL_1THUNG)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SL_1THUNG)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SL_1PALLET)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SL_1PALLET)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.THE_TICH_BOX)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.THE_TICH_BOX)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PRODUCT.MA_HANG_NHAP)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PRODUCT.MA_HANG_NHAP)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

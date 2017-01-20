@@ -1,0 +1,57 @@
+﻿@model IEnumerable<SYSTEM_MANAGEMENT.Models.PRODUCT_META>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.SL_1LOT)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SL_1THUNG)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SL_1PALLET)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.THE_TICH_BOX)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PRODUCT.MA_HANG_NHAP)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.SL_1LOT)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SL_1THUNG)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SL_1PALLET)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.THE_TICH_BOX)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PRODUCT.MA_HANG_NHAP)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.MA_HANG_HT }) |
+            @Html.ActionLink("Details", "Details", new { id=item.MA_HANG_HT }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.MA_HANG_HT })
+        </td>
+    </tr>
+}
+
+</table>

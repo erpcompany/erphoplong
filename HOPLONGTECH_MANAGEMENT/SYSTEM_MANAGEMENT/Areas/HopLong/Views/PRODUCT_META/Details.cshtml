@@ -1,0 +1,58 @@
+﻿@model SYSTEM_MANAGEMENT.Models.PRODUCT_META
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>PRODUCT_META</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.SL_1LOT)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SL_1LOT)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SL_1THUNG)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SL_1THUNG)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SL_1PALLET)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SL_1PALLET)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.THE_TICH_BOX)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.THE_TICH_BOX)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PRODUCT.MA_HANG_NHAP)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PRODUCT.MA_HANG_NHAP)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.MA_HANG_HT }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

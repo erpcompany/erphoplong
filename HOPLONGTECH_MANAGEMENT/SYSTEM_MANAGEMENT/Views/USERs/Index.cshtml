@@ -7,7 +7,7 @@
 <h1 style="font-family:'Times New Roman'; font-weight:bold; color:blue">TÀI KHOẢN NGƯỜI DÙNG</h1>
 
 <p>
-   <span style="text-decoration:underline; color: dodgerblue;">@Html.ActionLink("Create New", "Create")</span> 
+   <span style="text-decoration:underline; color: dodgerblue;"><a href="/USERs/Create">Tạo User Mới</a></span> 
 </p>
 <table class="table" border="1">
     <tr style="background-color:deepskyblue; color:white; font-family:'Times New Roman'; font-size:14px">
@@ -49,7 +49,8 @@
             <a href="/USERs/Details/@item.USER_ID"><i class="fa fa-info-circle" aria-hidden="true"></i></a> &nbsp;&nbsp;
             <a href="/USERs/Delete/@item.USER_ID"><i class="fa fa-trash-o" aria-hidden="true"></i></a> &nbsp;&nbsp;
             <a href="/USER_PERMISSIONS/Index/@item.USER_ID"><i class="fa fa-cog" aria-hidden="true"></i></a> &nbsp;&nbsp;
-            <a href="/USER_METAS/Index/@item.USER_ID"><i class="fa fa-user-plus" aria-hidden="true"></i></a> &nbsp;&nbsp;
+            <a href="/USER_METAS/Create"><i class="fa fa-user-plus" aria-hidden="true"></i></a> &nbsp;&nbsp;
+            <a href="/USER_METAS/Index/@item.USER_ID"><i class="fa fa-user" aria-hidden="true"></i></a> &nbsp;&nbsp;
         </td>
     </tr>
 }

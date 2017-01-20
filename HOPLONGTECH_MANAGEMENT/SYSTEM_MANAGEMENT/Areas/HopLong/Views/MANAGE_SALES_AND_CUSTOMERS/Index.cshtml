@@ -1,0 +1,63 @@
+﻿@model IEnumerable<SYSTEM_MANAGEMENT.Models.MANAGE_SALES_AND_CUSTOMERS>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.NGAY_BAT_DAU_PHU_TRACH)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NGAY_NGUNG_PHU_TRACH)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LY_DO_NGUNG_PHU_TRACH)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.GHI_CHU)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CUSTOMER.TEN_KHACH_HANG)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.USER.USERNAME)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.NGAY_BAT_DAU_PHU_TRACH)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NGAY_NGUNG_PHU_TRACH)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LY_DO_NGUNG_PHU_TRACH)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.GHI_CHU)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CUSTOMER.TEN_KHACH_HANG)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.USER.USERNAME)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ID_QUAN_LY }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ID_QUAN_LY }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ID_QUAN_LY })
+        </td>
+    </tr>
+}
+
+</table>
