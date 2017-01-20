@@ -2,7 +2,9 @@
     margin: 0px;
     padding: 0px;
 }
-
+.h2{
+    text-align: center;
+}
 a{
     text-decoration: none;
 }
@@ -69,4 +71,7 @@ th{
 }
 .fa{
     font-size: 25px;
+}
+a img{
+    height: 30px;
 }

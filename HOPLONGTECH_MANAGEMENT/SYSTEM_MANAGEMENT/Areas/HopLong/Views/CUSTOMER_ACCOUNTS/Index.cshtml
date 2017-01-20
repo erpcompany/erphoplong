@@ -3,57 +3,78 @@
 @{
     ViewBag.Title = "Index";
 }
-<link href="~/Areas/HopLong/Style/CustomerAccount/index.css" rel="stylesheet"/>
-<h2>Index</h2>
+<link href="~/Areas/HopLong/Style/CustomerAccount/index.css" rel="stylesheet" />
+<h2 class="h2">TÀI KHOẢN KHÁCH HÀNG</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    <a href="/HopLong/CUSTOMER_ACCOUNTS/Create"><img src="~/Content/images/create_icon.png" /></a> &nbsp;&nbsp;&nbsp;
 </p>
-<table class="table">
-    <tr>
-        <th>
-            SỐ TÀI KHOẢN
-        </th>
-        <th>
-            TÊN NGÂN HÀNG
-        </th>
-        <th>
-            CHI NHÁNH
-        </th>
-        <th>
-            TỈNH/THÀNH PHỐ
-        </th>
-        <th>
-            TÊN KHÁCH HÀNG
-        </th>
-        <th>
-            <em class="fa fa-cog"></em>
-        </th>
-    </tr>
+<body>
+    <div class="container">
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.SO_TAI_KHOAN)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.TEN_NGAN_HANG)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.CHI_NHANH)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.TINH_TP)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.CUSTOMER.TEN_KHACH_HANG)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.ID_TAI_KHOAN_KH }) |
-            @Html.ActionLink("Details", "Details", new { id=item.ID_TAI_KHOAN_KH }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.ID_TAI_KHOAN_KH })
-        </td>
-    </tr>
-}
+        <div class="creatediv1 marginTop30">
 
-</table>
+            <div class="row margin-top-50">
+                <div class="col-md-12">
+                    <div class="panel panel-primary filterable">
+                        <div class="main">
+                            <table class="span12" border="1">
+                                <div class="bg tablescroll">
+                                    <table class="table table-bordered table-striped">
+                                        <tr class="filters">
+                                            <th>
+                                                SỐ TÀI KHOẢN
+                                            </th>
+                                            <th>
+                                                TÊN NGÂN HÀNG
+                                            </th>
+                                            <th>
+                                                CHI NHÁNH
+                                            </th>
+                                            <th>
+                                                TỈNH/THÀNH PHỐ
+                                            </th>
+                                            <th>
+                                                TÊN KHÁCH HÀNG
+                                            </th>
+                                            <th>
+                                                <em class="fa fa-cog"></em>
+                                            </th>
+                                        </tr>
+
+                                        @foreach (var item in Model)
+                                        {
+                                            <tr>
+                                                <td>
+                                                    @Html.DisplayFor(modelItem => item.SO_TAI_KHOAN)
+                                                </td>
+                                                <td>
+                                                    @Html.DisplayFor(modelItem => item.TEN_NGAN_HANG)
+                                                </td>
+                                                <td>
+                                                    @Html.DisplayFor(modelItem => item.CHI_NHANH)
+                                                </td>
+                                                <td>
+                                                    @Html.DisplayFor(modelItem => item.TINH_TP)
+                                                </td>
+                                                <td>
+                                                    @Html.DisplayFor(modelItem => item.CUSTOMER.TEN_KHACH_HANG)
+                                                </td>
+                                                <td>
+                                                    <a href="/HopLong/CUSTOMER_ACCOUNTS/Edit/@item.ID_TAI_KHOAN_KH"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a> &nbsp;&nbsp;&nbsp;
+                                                    <a href="/HopLong/CUSTOMER_ACCOUNTS/Details/@item.ID_TAI_KHOAN_KH"><i class="fa fa-info-circle" aria-hidden="true"></i></a> &nbsp;&nbsp;&nbsp;
+                                                    <a href="/HopLong/CUSTOMER_ACCOUNTS/Delete/@item.ID_TAI_KHOAN_KH"><i class="fa fa-trash-o " onclick="return confirm('Bạn có chắc muốn xóa không?')" aria-hidden="true"></i></a> &nbsp;&nbsp;&nbsp;
+                                                </td>
+                                            </tr>
+                                        }
+                                    </table>
+                                </div>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</body>

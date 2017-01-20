@@ -101,12 +101,7 @@ namespace SYSTEM_MANAGEMENT.Controllers.Import_File
                     for (int i = 0; i < ds.Tables[0].Rows.Count; i++)
                     {
                         BANG_LUONG BL = new BANG_LUONG();
-                        String username = ds.Tables[0].Rows[i][0].ToString();
-                        var query = (from u in db.USERS
-                                     where u.USERNAME == username
-                                     select u).FirstOrDefault();
-
-                        BL.USER_ID = query.USER_ID;
+                        BL.USER_ID = Convert.ToInt32(ds.Tables[0].Rows[i][0].ToString());
                         BL.LUONG_CO_BAN = ds.Tables[0].Rows[i][3].ToString();
                         BL.LUONG_BAO_HIEM = ds.Tables[0].Rows[i][4].ToString();
                         BL.PHU_CAP_AN_TRUA = ds.Tables[0].Rows[i][5].ToString();

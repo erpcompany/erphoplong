@@ -3,91 +3,115 @@
 @{
     ViewBag.Title = "Index";
 }
-
-<h2>Index</h2>
+<link href="~/Areas/HopLong/Style/Customers/index.css" rel="stylesheet" />
+<h2 class="h2">KHÁCH HÀNG</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    <a href="/HopLong/CUSTOMERs/Create"><img src="~/Content/images/create_icon.png" /></a> &nbsp;&nbsp;&nbsp;
 </p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.TEN_KHACH_HANG)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.DIA_CHI_CONG_TY)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.DIA_CHI_XUAT_HOA_DON)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.MST)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.DIEN_THOAI)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.FAX)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.EMAIL)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.WEBSITE)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.MO_TA)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.CUSTOMER_GROUPS.TEN_NHOM_KHACH)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.USER.USERNAME)
-        </th>
-        <th></th>
-    </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.TEN_KHACH_HANG)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.DIA_CHI_CONG_TY)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.DIA_CHI_XUAT_HOA_DON)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.MST)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.DIEN_THOAI)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.FAX)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.EMAIL)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.WEBSITE)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.MO_TA)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.CUSTOMER_GROUPS.TEN_NHOM_KHACH)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.USER.USERNAME)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.MA_KHACH_HANG }) |
-            @Html.ActionLink("Details", "Details", new { id=item.MA_KHACH_HANG }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.MA_KHACH_HANG })
-        </td>
-    </tr>
-}
+<body>
+    <div class="container">
 
-</table>
+        <div class="creatediv1 marginTop30">
+
+            <div class="row margin-top-50">
+                <div class="col-md-12">
+                    <div class="panel panel-primary filterable">
+                        <div class="main">
+                            <table class="span12" border="1">
+                                <div class="bg tablescroll">
+                                    <table class="table table-bordered table-striped">
+                                        <tr class="filters">
+                                            <th>
+                                                TÊN KHÁCH HÀNG
+                                            </th>
+                                            <th>
+                                                ĐỊA CHỈ CÔNG TY
+                                            </th>
+                                            <th>
+                                                ĐỊA CHỈ XUẤT HÓA ĐƠN
+                                            </th>
+                                            <th>
+                                                MÃ SỐ THUẾ
+                                            </th>
+                                            <th>
+                                                ĐIỆN THOẠI
+                                            </th>
+                                            <th>
+                                                FAX
+                                            </th>
+                                            <th>
+                                                E-MAIL
+                                            </th>
+                                            <th>
+                                                WEBSITE
+                                            </th>
+                                            <th>
+                                                MÔ TẢ
+                                            </th>
+                                            <th>
+                                                TÊN NHÓM KHÁCH
+                                            </th>
+                                            <th>
+                                                USERNAME
+                                            </th>
+                                            <th>
+                                                <em class="fa fa-cog"></em>
+                                            </th>
+                                        </tr>
+
+                                        @foreach (var item in Model)
+                                        {
+                                            <tr>
+                                                <td>
+                                                    @Html.DisplayFor(modelItem => item.TEN_KHACH_HANG)
+                                                </td>
+                                                <td>
+                                                    @Html.DisplayFor(modelItem => item.DIA_CHI_CONG_TY)
+                                                </td>
+                                                <td>
+                                                    @Html.DisplayFor(modelItem => item.DIA_CHI_XUAT_HOA_DON)
+                                                </td>
+                                                <td>
+                                                    @Html.DisplayFor(modelItem => item.MST)
+                                                </td>
+                                                <td>
+                                                    @Html.DisplayFor(modelItem => item.DIEN_THOAI)
+                                                </td>
+                                                <td>
+                                                    @Html.DisplayFor(modelItem => item.FAX)<p>aaaaaaaaaa</p>
+                                                </td>
+                                                <td>
+                                                    @Html.DisplayFor(modelItem => item.EMAIL)
+                                                </td>
+                                                <td>
+                                                    @Html.DisplayFor(modelItem => item.WEBSITE)
+                                                </td>
+                                                <td>
+                                                    @Html.DisplayFor(modelItem => item.MO_TA)
+                                                </td>
+                                                <td>
+                                                    @Html.DisplayFor(modelItem => item.CUSTOMER_GROUPS.TEN_NHOM_KHACH)
+                                                </td>
+                                                <td>
+                                                    @Html.DisplayFor(modelItem => item.USER.USERNAME)
+                                                </td>
+                                                <td>
+                                                    <a href="/HopLong/CUSTOMERs/Edit/@item.MA_KHACH_HANG"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a> &nbsp;&nbsp;&nbsp;
+                                                    <a href="/HopLong/CUSTOMERs/Details/@item.MA_KHACH_HANG"><i class="fa fa-info-circle" aria-hidden="true"></i></a> &nbsp;&nbsp;&nbsp;
+                                                    <a href="/HopLong/CUSTOMERs/Delete/@item.MA_KHACH_HANG"><i class="fa fa-trash-o " onclick="return confirm('Bạn có chắc muốn xóa không?')" aria-hidden="true"></i></a> &nbsp;&nbsp;&nbsp;
+                                                </td>
+                                            </tr>
+                                        }
+                                    </table>
+                                </div>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</body>

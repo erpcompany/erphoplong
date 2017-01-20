@@ -3,37 +3,61 @@
 @{
     ViewBag.Title = "Index";
 }
-
-<h2>Index</h2>
+<link href="~/Areas/HopLong/Style/CustomerGroup/index.css" rel="stylesheet" />
+<h2 class="h2">NHÓM KHÁCH HÀNG</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    <a href="/HopLong/CUSTOMER_GROUPS/Create"><img src="~/Content/images/create_icon.png" /></a> &nbsp;&nbsp;&nbsp;
 </p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.TEN_NHOM_KHACH)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.MO_TA)
-        </th>
-        <th></th>
-    </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.TEN_NHOM_KHACH)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.MO_TA)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.MA_NHOM_KHACH }) |
-            @Html.ActionLink("Details", "Details", new { id=item.MA_NHOM_KHACH }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.MA_NHOM_KHACH })
-        </td>
-    </tr>
-}
+<body>
+    <div class="container">
 
-</table>
+        <div class="creatediv1 marginTop30">
+
+            <div class="row margin-top-50">
+                <div class="col-md-12">
+                    <div class="panel panel-primary filterable">
+                        <div class="main">
+                            <table class="span12" border="1">
+                                <div class="bg tablescroll">
+                                    <table class="table table-bordered table-striped">
+                                        <tr class="filters">
+                                            <th>
+                                                TÊN NHÓM KHÁCH
+                                            </th>
+                                            <th>
+                                                MÔ TẢ
+                                            </th>
+                                            <th>
+                                                <em class="fa fa-cog"></em>
+                                            </th>
+                                        </tr>
+
+                                        @foreach (var item in Model)
+                                        {
+                                            <tr>
+                                                <td>
+                                                    @Html.DisplayFor(modelItem => item.TEN_NHOM_KHACH)
+                                                </td>
+                                                <td>
+                                                    @Html.DisplayFor(modelItem => item.MO_TA)
+                                                </td>
+                                                <td>
+                                                    <a href="/HopLong/CUSTOMER_GROUPS/Edit/@item.MA_NHOM_KHACH"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a> &nbsp;&nbsp;&nbsp;
+                                                    <a href="/HopLong/CUSTOMER_GROUPS/Details/@item.MA_NHOM_KHACH"><i class="fa fa-info-circle" aria-hidden="true"></i></a> &nbsp;&nbsp;&nbsp;
+                                                    <a href="/HopLong/CUSTOMER_GROUPS/Delete/@item.MA_NHOM_KHACH"><i class="fa fa-trash-o " onclick="return confirm('Bạn có chắc muốn xóa không?')" aria-hidden="true"></i></a> &nbsp;&nbsp;&nbsp;
+                                                </td>
+                                            </tr>
+                                        }
+                                    </table>
+                                </div>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</body>
