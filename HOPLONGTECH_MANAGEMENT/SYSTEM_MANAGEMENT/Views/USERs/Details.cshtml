@@ -3,72 +3,68 @@
 @{
     ViewBag.Title = "Details";
 }
+<link href="~/Content/css/Users/userDetails.css" rel="stylesheet"/>
+<h2 class="h2">CHI TIẾT NGƯỜI DÙNG</h2>
 
-<h2>Details</h2>
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
 
-<div>
-    <h4>USER</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.USERNAME)
-        </dt>
+    <div class="form-horizontal">
 
-        <dd>
-            @Html.DisplayFor(model => model.USERNAME)
-        </dd>
+        <div class="form-group">
+            @Html.LabelFor(model => model.USERNAME, "TÊN PHÒNG BAN", htmlAttributes: new { @class = "control-label col-md-4" })
+            <div class="col-md-4">
+                @Html.EditorFor(model => model.USERNAME, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
 
-        <dt>
-            @Html.DisplayNameFor(model => model.PASSWORD)
-        </dt>
+            </div>
+        </div>
 
-        <dd>
-            @Html.DisplayFor(model => model.PASSWORD)
-        </dd>
+        <div class="form-group">
+            @Html.LabelFor(model => model.PASSWORD, "MẬT KHẨU", htmlAttributes: new { @class = "control-label col-md-4" })
+            <div class="col-md-4">
+                @Html.EditorFor(model => model.PASSWORD, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
 
-        <dt>
-            @Html.DisplayNameFor(model => model.FULLNAME)
-        </dt>
+            </div>
+        </div>
 
-        <dd>
-            @Html.DisplayFor(model => model.FULLNAME)
-        </dd>
+        <div class="form-group">
+            @Html.LabelFor(model => model.FULLNAME, "TÊN ĐẦY ĐỦ", htmlAttributes: new { @class = "control-label col-md-4" })
+            <div class="col-md-4">
+                @Html.EditorFor(model => model.FULLNAME, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
 
-        <dt>
-            @Html.DisplayNameFor(model => model.EMAIL)
-        </dt>
+            </div>
+        </div>
 
-        <dd>
-            @Html.DisplayFor(model => model.EMAIL)
-        </dd>
+        <div class="form-group">
+            @Html.LabelFor(model => model.EMAIL, "E-MAIL", htmlAttributes: new { @class = "control-label col-md-4" })
+            <div class="col-md-4">
+                @Html.EditorFor(model => model.EMAIL, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+            </div>
+        </div>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.AVATAR)
-        </dt>
+        <div class="form-group">
+            @Html.LabelFor(model => model.IS_ADMIN, "LÀ QUẢN TRỊ VIÊN", htmlAttributes: new { @class = "control-label col-md-4" })
+            <div class="col-md-4">
+                @Html.EditorFor(model => model.IS_ADMIN, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+            </div>
+        </div>
 
-        <dd>
-            @Html.DisplayFor(model => model.AVATAR)
-        </dd>
+        <div class="form-group">
+            @Html.LabelFor(model => model.ALLOWED, "ALLOWED", htmlAttributes: new { @class = "control-label col-md-4" })
+            <div class="col-md-4">
+                @Html.EditorFor(model => model.ALLOWED, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+            </div>
+        </div>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.IS_ADMIN)
-        </dt>
+        <div class="form-group">
+            <div class="col-md-offset-0 col-md-1">
+                <a href="/USERs/Index"><img src="~/Content/images/back_icon.png" /></a>
+            </div>
+            <div class="col-md-offset-4 col-md-1">
+                <a href="/USERs/Edit/@Model.USER_ID"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a> &nbsp;&nbsp;&nbsp;
+            </div>
+        </div>
 
-        <dd>
-            @Html.DisplayFor(model => model.IS_ADMIN)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.ALLOWED)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.ALLOWED)
-        </dd>
-
-    </dl>
-</div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.USER_ID }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
+    </div>
+}

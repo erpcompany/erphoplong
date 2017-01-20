@@ -3,78 +3,77 @@
 @{
     ViewBag.Title = "Delete";
 }
+<link href="~/Content/css/Users/userDelete.css" rel="stylesheet"/>
+<h2 class="h2">XÓA NGƯỜI DÙNG</h2>
 
-<h2>Delete</h2>
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
 
-<h3>Are you sure you want to delete this?</h3>
-<div>
-    <h4>USER</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.USERNAME)
-        </dt>
+    <div class="form-horizontal">
 
-        <dd>
-            @Html.DisplayFor(model => model.USERNAME)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.PASSWORD)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.PASSWORD)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.FULLNAME)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.FULLNAME)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.EMAIL)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.EMAIL)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.AVATAR)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.AVATAR)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.IS_ADMIN)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.IS_ADMIN)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.ALLOWED)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.ALLOWED)
-        </dd>
-
-    </dl>
-
-    @using (Html.BeginForm()) {
-        @Html.AntiForgeryToken()
-
-        <div class="form-actions no-color">
-            <input type="submit" value="Delete" class="btn btn-default" /> |
-            @Html.ActionLink("Back to List", "Index")
+        <div class="form-group">
+            <div class="col-md-1"></div>
+            @Html.LabelFor(model => model.USERNAME, "USERNAME", htmlAttributes: new { @class = "control-label col-md-4" })
+            <div class="col-md-4">
+                @Html.EditorFor(model => model.USERNAME, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+            </div>
         </div>
-    }
-</div>
+
+        <div class="form-group">
+            <div class="col-md-1"></div>
+            @Html.LabelFor(model => model.PASSWORD, "MẬT KHẨU", htmlAttributes: new { @class = "control-label col-md-4" })
+            <div class="col-md-4">
+                @Html.EditorFor(model => model.PASSWORD, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-1"></div>
+            @Html.LabelFor(model => model.FULLNAME, "TÊN ĐẦY ĐỦ", htmlAttributes: new { @class = "control-label col-md-4" })
+            <div class="col-md-4">
+                @Html.EditorFor(model => model.FULLNAME, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-1"></div>
+            @Html.LabelFor(model => model.EMAIL, "E-MAIL", htmlAttributes: new { @class = "control-label col-md-4" })
+            <div class="col-md-4">
+                @Html.EditorFor(model => model.EMAIL, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-1"></div>
+            @Html.LabelFor(model => model.IS_ADMIN, "LÀ QUẢN TRỊ VIÊN", htmlAttributes: new { @class = "control-label col-md-4" })
+            <div class="col-md-4">
+                @Html.EditorFor(model => model.IS_ADMIN, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-1"></div>
+            @Html.LabelFor(model => model.ALLOWED, "ALLOWED", htmlAttributes: new { @class = "control-label col-md-4" })
+            <div class="col-md-4">
+                @Html.EditorFor(model => model.ALLOWED, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-0 col-md-1">
+                <a href="/USERs/Index"><img src="~/Content/images/back_icon.png" /></a>
+            </div>
+            <div class="col-md-offset-4 col-md-1">
+                <input type="submit" id="submit" onclick="return confrim('Bạn có chắc muốn xóa không?')" value="" class="btn btn-default" />
+            </div>
+        </div>
+
+    </div>
+}
+
