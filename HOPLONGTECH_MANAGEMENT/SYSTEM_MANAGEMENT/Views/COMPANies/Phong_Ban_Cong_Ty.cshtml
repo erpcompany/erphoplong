@@ -1,0 +1,52 @@
+﻿@model IEnumerable<SYSTEM_MANAGEMENT.Models.DEPARTMENT>
+
+@{
+    ViewBag.Title = "Phong_Ban_Cong_Ty";
+}
+
+<h2>Phong_Ban_Cong_Ty</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table" border="1">
+    <tr>
+        <th>
+            Tên phòng ban
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NOTED)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.COMPANY.COMPANY_NAME)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.USER.USERNAME)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.DEPARTMENT_NAME)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NOTED)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.COMPANY.COMPANY_NAME)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.USER.USERNAME)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.DEPARTMENT_ID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.DEPARTMENT_ID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.DEPARTMENT_ID }) | 
+            <a href="/DEPARTMENTs/Department_Users/@item.DEPARTMENT_ID"><i class="fa fa-list" aria-hidden="true"></i></a> &nbsp;&nbsp;&nbsp;
+        </td>
+    </tr>
+}
+
+</table>

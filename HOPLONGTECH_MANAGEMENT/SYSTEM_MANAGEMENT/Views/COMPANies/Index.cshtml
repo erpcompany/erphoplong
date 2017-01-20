@@ -9,22 +9,22 @@
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
-<table class="table">
+<table class="table" border="1">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.COMPANY_NAME)
+            Tên công ty
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.NOTED)
+            Công ty cha
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.COMPANY_CATEGORIES.COMPANY_CATEGORY_NAME)
+            Loại công ty
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.USER.USERNAME)
+           Giám đốc
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.COMPANY1.COMPANY_NAME)
+            Ghi chú
         </th>
         <th></th>
     </tr>
@@ -35,21 +35,23 @@
             @Html.DisplayFor(modelItem => item.COMPANY_NAME)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.NOTED)
+            @Html.DisplayFor(modelItem => item.COMPANY1.COMPANY_NAME)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.COMPANY_CATEGORIES.COMPANY_CATEGORY_NAME)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.USER.USERNAME)
+            @Html.DisplayFor(modelItem => item.USER.FULLNAME)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.COMPANY1.COMPANY_NAME)
+            
+            @Html.DisplayFor(modelItem => item.NOTED)
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.COMPANY_ID }) |
             @Html.ActionLink("Details", "Details", new { id=item.COMPANY_ID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.COMPANY_ID })
+            @Html.ActionLink("Delete", "Delete", new { id=item.COMPANY_ID }) |
+            @Html.ActionLink("Danh sách phòng ban", "Phong_Ban_Cong_Ty", new { id = item.COMPANY_ID })
         </td>
     </tr>
 }

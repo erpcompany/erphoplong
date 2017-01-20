@@ -9,13 +9,13 @@
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
-<table class="table">
+<table class="table" border="1">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.COMPANY_CATEGORY_NAME)
+            Loại công ty
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.NOTED)
+            Ghi chú
         </th>
         <th></th>
     </tr>
@@ -32,7 +32,7 @@
             @Html.ActionLink("Edit", "Edit", new { id=item.COMPANY_CATEGORY_ID }) |
             @Html.ActionLink("Details", "Details", new { id=item.COMPANY_CATEGORY_ID }) |
             @Html.ActionLink("Delete", "Delete", new { id=item.COMPANY_CATEGORY_ID }) |
-            @Html.ActionLink("Danh sách", "Company_user", new { id = item.COMPANY_CATEGORY_ID })
+            @Html.ActionLink("Danh sách công ty", "Company_in_cat", new { id = item.COMPANY_CATEGORY_ID })
         </td>
     </tr>
 }

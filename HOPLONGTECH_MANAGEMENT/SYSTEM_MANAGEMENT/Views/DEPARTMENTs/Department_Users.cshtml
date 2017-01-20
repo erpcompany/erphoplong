@@ -4,7 +4,12 @@
     ViewBag.Title = "Danh sách nhân viên";
 }
 <link href="~/Content/css/Departments/userDepart.css" type="text/css" rel="stylesheet"/>
-<h2 class="h2">DANH SÁCH NHÂN VIÊN</h2>
+
+<h2 style="padding-top:15px; font-family:'Times New Roman'; ">
+    <a href="/DEPARTMENTs/Index" style="color:blue"> Danh sách phòng ban</a>
+    &gt;&gt; Danh sách nhân viên của phòng 
+    <b style="color:blue"> @ViewBag.dpartments</b>
+</h2>
 
 <table class="table" border="1">
     <tr class="title">

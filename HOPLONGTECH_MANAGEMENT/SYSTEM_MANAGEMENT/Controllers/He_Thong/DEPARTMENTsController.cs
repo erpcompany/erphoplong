@@ -7,9 +7,11 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using SYSTEM_MANAGEMENT.Models;
+using SYSTEM_MANAGEMENT.Models.BussinessModel;
 
 namespace SYSTEM_MANAGEMENT.Controllers
 {
+    [AuthorizeBussiness]
     public class DEPARTMENTsController : Controller
     {
         private SYSTEM_DATABASEEntities db = new SYSTEM_DATABASEEntities();
@@ -19,6 +21,17 @@ namespace SYSTEM_MANAGEMENT.Controllers
         {
             var dEPARTMENTS = db.DEPARTMENTS.Include(d => d.COMPANY).Include(d => d.USER);
             return View(dEPARTMENTS.ToList());
+        }
+
+        public ActionResult Department_Users(String id)
+        {
+            //Lấy người dùng
+            //var USER_PERMISSIONS = db.USERS.Find(Session["USER_ID"]);
+            var departments = db.DEPARTMENTS.Find(id);
+            //Lưu tên người dùng ra biến
+            ViewBag.dpartments = departments.DEPARTMENT_ID + "(" + departments.NOTED + ")";
+            var d_users = db.USER_METAS.Where(u => u.DEPARTMENT_ID == id);
+            return View(d_users.ToList());
         }
 
         // GET: DEPARTMENTs/Details/5
