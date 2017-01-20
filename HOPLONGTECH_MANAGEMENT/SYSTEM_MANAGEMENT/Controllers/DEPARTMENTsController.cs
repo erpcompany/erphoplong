@@ -20,11 +20,6 @@ namespace SYSTEM_MANAGEMENT.Controllers
             var dEPARTMENTS = db.DEPARTMENTS.Include(d => d.COMPANY).Include(d => d.USER);
             return View(dEPARTMENTS.ToList());
         }
-        public ActionResult Department_Users(String Id)
-        {
-            var Users_Meta = db.USER_METAS.Where(p=> p.DEPARTMENT_ID==Id);
-            return View(Users_Meta.ToList());
-        }
 
         // GET: DEPARTMENTs/Details/5
         public ActionResult Details(string id)

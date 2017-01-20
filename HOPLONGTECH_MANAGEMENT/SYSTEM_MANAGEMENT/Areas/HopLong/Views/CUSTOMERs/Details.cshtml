@@ -3,104 +3,114 @@
 @{
     ViewBag.Title = "Details";
 }
+<link href="~/Areas/HopLong/Style/Customers/details.css" rel="stylesheet"/>
+<h2 class="h2">CHI TIẾT KHÁCH HÀNG</h2>
 
-<h2>Details</h2>
 
-<div>
-    <h4>CUSTOMER</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.TEN_KHACH_HANG)
-        </dt>
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
 
-        <dd>
-            @Html.DisplayFor(model => model.TEN_KHACH_HANG)
-        </dd>
+    <div class="form-horizontal">
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.HiddenFor(model => model.MA_KHACH_HANG)
 
-        <dt>
-            @Html.DisplayNameFor(model => model.DIA_CHI_CONG_TY)
-        </dt>
+        <div class="form-group">
+            @Html.LabelFor(model => model.TEN_KHACH_HANG, "TÊN KHÁCH HÀNG", htmlAttributes: new { @class = "control-label col-md-5" })
+            <div class="col-md-6">
+                @Html.EditorFor(model => model.TEN_KHACH_HANG, new { htmlAttributes = new { @class = "form-control",@readonly="readonly" } })
+                @Html.ValidationMessageFor(model => model.TEN_KHACH_HANG, "", new { @class = "text-danger" })
+            </div>
+        </div>
 
-        <dd>
-            @Html.DisplayFor(model => model.DIA_CHI_CONG_TY)
-        </dd>
+        <div class="form-group">
+            @Html.LabelFor(model => model.DIA_CHI_CONG_TY, "ĐỊA CHỈ CÔNG TY", htmlAttributes: new { @class = "control-label col-md-5" })
+            <div class="col-md-6">
+                @Html.EditorFor(model => model.DIA_CHI_CONG_TY, new { htmlAttributes = new { @class = "form-control",@readonly="readonly" } })
+                @Html.ValidationMessageFor(model => model.DIA_CHI_CONG_TY, "", new { @class = "text-danger" })
+            </div>
+        </div>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.DIA_CHI_XUAT_HOA_DON)
-        </dt>
+        <div class="form-group">
+            @Html.LabelFor(model => model.DIA_CHI_XUAT_HOA_DON, "ĐỊA CHỈ XUẤT HÓA ĐƠN", htmlAttributes: new { @class = "control-label col-md-5" })
+            <div class="col-md-6">
+                @Html.EditorFor(model => model.DIA_CHI_XUAT_HOA_DON, new { htmlAttributes = new { @class = "form-control",@readonly="readonly" } })
+                @Html.ValidationMessageFor(model => model.DIA_CHI_XUAT_HOA_DON, "", new { @class = "text-danger" })
+            </div>
+        </div>
 
-        <dd>
-            @Html.DisplayFor(model => model.DIA_CHI_XUAT_HOA_DON)
-        </dd>
+        <div class="form-group">
+            @Html.LabelFor(model => model.MST, "MÃ SỐ THUẾ", htmlAttributes: new { @class = "control-label col-md-5" })
+            <div class="col-md-6">
+                @Html.EditorFor(model => model.MST, new { htmlAttributes = new { @class = "form-control",@readonly="readonly" } })
+                @Html.ValidationMessageFor(model => model.MST, "", new { @class = "text-danger" })
+            </div>
+        </div>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.MST)
-        </dt>
+        <div class="form-group">
+            @Html.LabelFor(model => model.DIEN_THOAI, "ĐIỆN THOẠI", htmlAttributes: new { @class = "control-label col-md-5" })
+            <div class="col-md-6">
+                @Html.EditorFor(model => model.DIEN_THOAI, new { htmlAttributes = new { @class = "form-control",@readonly="readonly" } })
+                @Html.ValidationMessageFor(model => model.DIEN_THOAI, "", new { @class = "text-danger" })
+            </div>
+        </div>
 
-        <dd>
-            @Html.DisplayFor(model => model.MST)
-        </dd>
+        <div class="form-group">
+            @Html.LabelFor(model => model.FAX, "FAX", htmlAttributes: new { @class = "control-label col-md-5" })
+            <div class="col-md-6">
+                @Html.EditorFor(model => model.FAX, new { htmlAttributes = new { @class = "form-control",@readonly="readonly" } })
+                @Html.ValidationMessageFor(model => model.FAX, "", new { @class = "text-danger" })
+            </div>
+        </div>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.DIEN_THOAI)
-        </dt>
+        <div class="form-group">
+            @Html.LabelFor(model => model.EMAIL, "E-MAIL", htmlAttributes: new { @class = "control-label col-md-5" })
+            <div class="col-md-6">
+                @Html.EditorFor(model => model.EMAIL, new { htmlAttributes = new { @class = "form-control",@readonly="readonly" } })
+                @Html.ValidationMessageFor(model => model.EMAIL, "", new { @class = "text-danger" })
+            </div>
+        </div>
 
-        <dd>
-            @Html.DisplayFor(model => model.DIEN_THOAI)
-        </dd>
+        <div class="form-group">
+            @Html.LabelFor(model => model.WEBSITE, "WEBSITE", htmlAttributes: new { @class = "control-label col-md-5" })
+            <div class="col-md-6">
+                @Html.EditorFor(model => model.WEBSITE, new { htmlAttributes = new { @class = "form-control",@readonly="readonly" } })
+                @Html.ValidationMessageFor(model => model.WEBSITE, "", new { @class = "text-danger" })
+            </div>
+        </div>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.FAX)
-        </dt>
+        <div class="form-group">
+            @Html.LabelFor(model => model.MO_TA, "MÔ TẢ", htmlAttributes: new { @class = "control-label col-md-5" })
+            <div class="col-md-6">
+                @Html.EditorFor(model => model.MO_TA, new { htmlAttributes = new { @class = "form-control",@readonly="readonly" } })
+                @Html.ValidationMessageFor(model => model.MO_TA, "", new { @class = "text-danger" })
+            </div>
+        </div>
 
-        <dd>
-            @Html.DisplayFor(model => model.FAX)
-        </dd>
+        <div class="form-group">
+            @Html.LabelFor(model => model.CUSTOMER_GROUPS.TEN_NHOM_KHACH, "TÊN NHÓM KHÁCH", htmlAttributes: new { @class = "control-label col-md-5" })
+            <div class="col-md-6">
+                @Html.EditorFor(model => model.CUSTOMER_GROUPS.TEN_NHOM_KHACH, new { htmlAttributes = new { @class = "form-control",@readonly="readonly" } })
+                @Html.ValidationMessageFor(model => model.MO_TA, "", new { @class = "text-danger" })
+            </div>
+        </div>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.EMAIL)
-        </dt>
+        <div class="form-group">
+            @Html.LabelFor(model => model.USER.USERNAME, "USERNAME", htmlAttributes: new { @class = "control-label col-md-5" })
+            <div class="col-md-6">
+                @Html.EditorFor(model => model.USER.USERNAME, new { htmlAttributes = new { @class = "form-control",@readonly="readonly" } })
+                @Html.ValidationMessageFor(model => model.MO_TA, "", new { @class = "text-danger" })
+            </div>
+        </div>
 
-        <dd>
-            @Html.DisplayFor(model => model.EMAIL)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.WEBSITE)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.WEBSITE)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.MO_TA)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.MO_TA)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.CUSTOMER_GROUPS.TEN_NHOM_KHACH)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.CUSTOMER_GROUPS.TEN_NHOM_KHACH)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.USER.USERNAME)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.USER.USERNAME)
-        </dd>
-
-    </dl>
-</div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.MA_KHACH_HANG }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
+        <div class="form-group">
+            <div class="col-md-offset-0 col-md-1">
+                <a href="/HopLong/CUSTOMERs"><img src="~/Content/images/back_icon.png" /></a>
+            </div>
+            <div class="col-md-offset-4 col-md-1">
+                <a href="/HopLong/CUSTOMERs/Edit/@Model.MA_KHACH_HANG"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a> &nbsp;&nbsp;&nbsp;
+            </div>
+        </div>
+        
+    </div>
+}  

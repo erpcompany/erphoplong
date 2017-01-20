@@ -18,11 +18,13 @@
     margin-top: 25px;
 }
 hr{
-    border: 0.5px solid black;
+    border: 4px solid #4285F4;
 }
 .form-horizontal {
-    border: 2px solid black;
-    margin-bottom: 10px;
+    border: 10px solid #4285F4;
+    margin: auto;
+    width: 800px;
+    border-radius: 20px;
 }
 .form-horizontal h4{
     text-align: center;
@@ -35,11 +37,12 @@ hr{
     color: red;
 }
 .form-group:last-child{
-    border-top: 2px solid black;
-    padding-top: 15px;
+    border-top: 10px solid #4285F4;
+    padding-top: 1px;
+    height: 40px;
 }
 .form-group a img{
-    height: 30px;
+    height: 40px;
     float: left;
 }
 #submit{
@@ -47,4 +50,6 @@ hr{
     background-size: 100%;
     border: none;
     float: right;
+    height: 40px;
+    width: 40px;
 }
