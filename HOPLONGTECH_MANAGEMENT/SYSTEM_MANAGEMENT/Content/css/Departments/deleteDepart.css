@@ -9,7 +9,7 @@
     border: 10px solid #4285F4;
     border-radius: 20px;
     padding-top: 10px;
-    width: 800px;
+    width: 600px;
     margin: auto
 }
 .form-group:last-child{
@@ -20,7 +20,14 @@
     height: 35px;
     float: left;
 }
-
+#submit{
+    background: url(../../../../Content/images/delete_icon.png) no-repeat ;
+    background-size: 100%;
+    border: none;
+    float: right;
+    height: 35px;
+    width: 35px;
+}
 .fa{
     font-size: 35px;
     margin-top: 3px;

@@ -2,7 +2,7 @@
     margin: 0px;
     padding: 0px;
 }
-.h2{
+.h1{
     text-align: center;
 }
 a{
@@ -68,6 +68,7 @@ th{
 }
 .table-bordered>tbody>tr>td{
     border: 1px solid black;
+    vertical-align: middle;
 }
 .fa{
     font-size: 25px;
@@ -77,4 +78,13 @@ a img{
 }
 .panel-primary{
     border: none;
+}
+.main td img{
+    height: 50px;
+    width: 50px;
+}
+.main td .image{
+    width: 25px;
+    height: 25px;
+    margin-bottom: 10px;
 }
