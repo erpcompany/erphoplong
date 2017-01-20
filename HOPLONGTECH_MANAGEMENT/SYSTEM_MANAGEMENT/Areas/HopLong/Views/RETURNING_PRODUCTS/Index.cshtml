@@ -1,0 +1,57 @@
+﻿@model IEnumerable<SYSTEM_MANAGEMENT.Models.RETURNING_PRODUCTS>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.NGAY_TRA)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SL_TRA)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.GHI_CHU)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BORROWING_PRODUCTS.MA_HANG_HT)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Warehouse.TEN_KHO)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.NGAY_TRA)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SL_TRA)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.GHI_CHU)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BORROWING_PRODUCTS.MA_HANG_HT)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Warehouse.TEN_KHO)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ID_HANG_TRA }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ID_HANG_TRA }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ID_HANG_TRA })
+        </td>
+    </tr>
+}
+
+</table>

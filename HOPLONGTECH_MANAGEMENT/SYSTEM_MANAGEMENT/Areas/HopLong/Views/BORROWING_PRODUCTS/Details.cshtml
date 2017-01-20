@@ -1,0 +1,74 @@
+﻿@model SYSTEM_MANAGEMENT.Models.BORROWING_PRODUCTS
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>BORROWING_PRODUCTS</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.KHO_MUON)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.KHO_MUON)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NGAY_MUON)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NGAY_MUON)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SL_MUON)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SL_MUON)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MA_PHIEU_XUAT_KHO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MA_PHIEU_XUAT_KHO)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TRANG_THAI)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TRANG_THAI)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.GHI_CHU)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GHI_CHU)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PRODUCT.MA_HANG_NHAP)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PRODUCT.MA_HANG_NHAP)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID_HANG_MUON }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

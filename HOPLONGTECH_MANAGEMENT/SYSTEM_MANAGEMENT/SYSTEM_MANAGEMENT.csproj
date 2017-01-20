@@ -217,6 +217,7 @@
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="Areas\HopLong\Controllers\BORROWING_PRODUCTSController.cs" />
     <Compile Include="Areas\HopLong\Controllers\CUSTOMERsController.cs" />
     <Compile Include="Areas\HopLong\Controllers\CUSTOMER_ACCOUNTSController.cs" />
     <Compile Include="Areas\HopLong\Controllers\CUSTOMER_CONTACTSController.cs" />
@@ -226,6 +227,7 @@
     <Compile Include="Areas\HopLong\Controllers\PRODUCT_CATEGORIESController.cs" />
     <Compile Include="Areas\HopLong\Controllers\PRODUCT_CATEGORY_DETAILSController.cs" />
     <Compile Include="Areas\HopLong\Controllers\PURCHASE_ORDERController.cs" />
+    <Compile Include="Areas\HopLong\Controllers\RETURNING_PRODUCTSController.cs" />
     <Compile Include="Areas\HopLong\Controllers\SUPPLIERsController.cs" />
     <Compile Include="Areas\HopLong\Controllers\SUPPLIER_ACCOUNTSController.cs" />
     <Compile Include="Areas\HopLong\Controllers\SUPPLIER_CONTACTSController.cs" />
@@ -233,6 +235,8 @@
     <Compile Include="Areas\HopLong\HopLongAreaRegistration.cs" />
     <Compile Include="Controllers\BANG_CHAM_CONGController.cs" />
     <Compile Include="Controllers\BANG_LUONGController.cs" />
+    <Compile Include="Controllers\COMPANiesController.cs" />
+    <Compile Include="Controllers\COMPANY_CATEGORIESController.cs" />
     <Compile Include="Controllers\DEPARTMENTsController.cs" />
     <Compile Include="Controllers\GHI_CHU_CONG_VIECController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -491,6 +495,16 @@
     <Content Include="Areas\HopLong\Views\SUPPLIER_CONTACTS\Details.cshtml" />
     <Content Include="Areas\HopLong\Views\SUPPLIER_CONTACTS\Edit.cshtml" />
     <Content Include="Areas\HopLong\Views\SUPPLIER_CONTACTS\Index.cshtml" />
+    <Content Include="Areas\HopLong\Views\BORROWING_PRODUCTS\Create.cshtml" />
+    <Content Include="Areas\HopLong\Views\BORROWING_PRODUCTS\Delete.cshtml" />
+    <Content Include="Areas\HopLong\Views\BORROWING_PRODUCTS\Details.cshtml" />
+    <Content Include="Areas\HopLong\Views\BORROWING_PRODUCTS\Edit.cshtml" />
+    <Content Include="Areas\HopLong\Views\BORROWING_PRODUCTS\Index.cshtml" />
+    <Content Include="Areas\HopLong\Views\RETURNING_PRODUCTS\Create.cshtml" />
+    <Content Include="Areas\HopLong\Views\RETURNING_PRODUCTS\Delete.cshtml" />
+    <Content Include="Areas\HopLong\Views\RETURNING_PRODUCTS\Details.cshtml" />
+    <Content Include="Areas\HopLong\Views\RETURNING_PRODUCTS\Edit.cshtml" />
+    <Content Include="Areas\HopLong\Views\RETURNING_PRODUCTS\Index.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -578,6 +592,17 @@
     <Content Include="Views\DEPARTMENTs\Edit.cshtml" />
     <Content Include="Views\DEPARTMENTs\Index.cshtml" />
     <Content Include="Views\DEPARTMENTs\Department_Users.cshtml" />
+    <Content Include="Views\COMPANies\Create.cshtml" />
+    <Content Include="Views\COMPANies\Delete.cshtml" />
+    <Content Include="Views\COMPANies\Details.cshtml" />
+    <Content Include="Views\COMPANies\Edit.cshtml" />
+    <Content Include="Views\COMPANies\Index.cshtml" />
+    <Content Include="Views\COMPANY_CATEGORIES\Create.cshtml" />
+    <Content Include="Views\COMPANY_CATEGORIES\Delete.cshtml" />
+    <Content Include="Views\COMPANY_CATEGORIES\Details.cshtml" />
+    <Content Include="Views\COMPANY_CATEGORIES\Edit.cshtml" />
+    <Content Include="Views\COMPANY_CATEGORIES\Index.cshtml" />
+    <Content Include="Views\COMPANY_CATEGORIES\Company_user.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
