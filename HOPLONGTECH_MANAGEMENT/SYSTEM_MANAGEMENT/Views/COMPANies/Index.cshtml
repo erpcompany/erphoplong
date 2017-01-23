@@ -3,57 +3,72 @@
 @{
     ViewBag.Title = "Index";
 }
+<link href="~/Content/css/Companies/Comp_Index.css" rel="stylesheet" />
 
-<h2>Index</h2>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table" border="1">
-    <tr>
-        <th>
-            Tên công ty
-        </th>
-        <th>
-            Công ty cha
-        </th>
-        <th>
-            Loại công ty
-        </th>
-        <th>
-           Giám đốc
-        </th>
-        <th>
-            Ghi chú
-        </th>
-        <th></th>
-    </tr>
+<h2 style="text-align: center;">CÔNG TY</h2>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.COMPANY_NAME)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.COMPANY1.COMPANY_NAME)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.COMPANY_CATEGORIES.COMPANY_CATEGORY_NAME)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.USER.FULLNAME)
-        </td>
-        <td>
-            
-            @Html.DisplayFor(modelItem => item.NOTED)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.COMPANY_ID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.COMPANY_ID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.COMPANY_ID }) |
-            @Html.ActionLink("Danh sách phòng ban", "Phong_Ban_Cong_Ty", new { id = item.COMPANY_ID })
-        </td>
-    </tr>
-}
+<a href="~/COMPANies/Create" class="btn create btn-default"><span class="glyphicon icon-create glyphicon-plus"></span>Thêm mới</a>
 
-</table>
+
+<body>
+    <div class="container">
+
+        <div class="creatediv1 marginTop30">
+
+            <div class="row margin-top-50">
+                <div class="col-md-12">
+                    <div class="panel panel-primary filterable">
+                        <div class="main">
+                            <table class="span12" border="1">
+                                <div class="bg tablescroll">
+                                    <table class="table table-bordered table-striped">
+                                        <tr class="filters">
+                                            <th>TÊN CÔNG TY</th>
+                                            <th>CÔNG TY MẸ</th>
+                                            <th>GIÁM ĐỐC</th>
+                                            <th>LOẠI CÔNG TY</th>
+                                            <th>GHI CHÚ</th>
+                                            <th>
+                                                ACTION
+                                            </th>
+                                        </tr>
+
+                                        @foreach (var item in Model)
+                                        {
+                                            <tr>
+                                                <td>
+                                                    <a href="/COMPANies/Phong_Ban_Cong_Ty/@item.COMPANY_ID">@Html.DisplayFor(modelItem => item.COMPANY_NAME)</a>
+                                                </td>
+                                                <td>
+                                                    @Html.DisplayFor(modelItem => item.COMPANY1.COMPANY_NAME)
+
+                                                </td>
+                                                <td>
+                                                    @Html.DisplayFor(modelItem => item.COMPANY_CATEGORIES.COMPANY_CATEGORY_NAME)
+                                                </td>
+                                                <td>
+                                                    @Html.DisplayFor(modelItem => item.USER.FULLNAME)
+                                                </td>
+                                                <td>
+                                                    @Html.DisplayFor(modelItem => item.NOTED)
+                                                </td>
+                                                <td>
+                                                    <a href="/COMPANies/Edit/@item.COMPANY_ID" class="btn btn_icon_edit btn-default"><span class="fa icon fa-pencil-square-o" aria-hidden="true"></span>Sửa</a> &nbsp;&nbsp;
+                                                    <a href="/COMPANies/Details/@item.COMPANY_ID" class="btn btn_icon_details btn-default"><span class="fa icon fa-info-circle" aria-hidden="true"></span>Chi tiết</a> &nbsp;&nbsp;
+                                                    <a href="/COMPANies/Delete/@item.COMPANY_ID" class="btn btn_icon_delete btn-default"><span class="fa icon fa-trash-o" aria-hidden="true"></span>Xóa</a> &nbsp;&nbsp;
+                                                </td>
+                                            </tr>
+                                        }
+                                    </table>
+                                </div>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+</body>

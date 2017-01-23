@@ -1,60 +1,70 @@
 ﻿@model IEnumerable<SYSTEM_MANAGEMENT.Models.COMPANY>
-
-@{
+    @{
     ViewBag.Title = "Company_in_cat";
-}
+    }
+    <link href="~/Content/css/Company_CateGories/Com_In_Cat.css" rel="stylesheet" />
+    <h2 style="text-align: center;">DANH MỤC CÔNG TY</h2>
 
-<h2>Company_in_cat</h2>
+    <a href="~/COMPANY_CATEGORIES/Create" class="btn create btn-default"><span class="glyphicon icon-create glyphicon-plus"></span>Thêm mới</a>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table" border="1">
-    <tr>
-        <th>
-            Tên công ty
-        </th>
-        <th>
-            Công ty mẹ
-        </th>
-        <th>
-            Giám đốc
-            
-        </th>
-        <th>
-            Loại công ty
-        </th>
-        <th>
-            Ghi chú
-        </th>
-        <th></th>
-    </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.COMPANY_NAME)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.COMPANY1.COMPANY_NAME)
-            
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.COMPANY_CATEGORIES.COMPANY_CATEGORY_NAME)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.USER.FULLNAME)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.NOTED)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.COMPANY_ID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.COMPANY_ID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.COMPANY_ID }) |
-            <a href="/COMPANies/Phong_Ban_Cong_Ty/@item.COMPANY_ID"> Danh sách phòng ban</a>
-        </td>
-    </tr>
-}
+    <body>
+        <div class="container">
 
-</table>
+            <div class="creatediv1 marginTop30">
+
+                <div class="row margin-top-50">
+                    <div class="col-md-12">
+                        <div class="panel panel-primary filterable">
+                            <div class="main">
+                                <table class="span12" border="1">
+                                    <div class="bg tablescroll">
+                                        <table class="table table-bordered table-striped">
+                                            <tr class="filters">
+                                                <th>TÊN CÔNG TY</th>
+                                                <th>CÔNG TY MẸ</th>
+                                                <th>GIÁM ĐỐC</th>
+                                                <th>LOẠI CÔNG TY</th>
+                                                <th>GHI CHÚ</th>
+                                                <th>
+                                                    ACTION
+                                                </th>
+                                            </tr>
+
+                                            @foreach (var item in Model)
+                                            {
+                                            <tr>
+                                                <td>
+                                                    @Html.DisplayFor(modelItem => item.COMPANY_NAME)
+                                                </td>
+                                                <td>
+                                                    @Html.DisplayFor(modelItem => item.COMPANY1.COMPANY_NAME)
+
+                                                </td>
+                                                <td>
+                                                    @Html.DisplayFor(modelItem => item.COMPANY_CATEGORIES.COMPANY_CATEGORY_NAME)
+                                                </td>
+                                                <td>
+                                                    @Html.DisplayFor(modelItem => item.USER.FULLNAME)
+                                                </td>
+                                                <td>
+                                                    @Html.DisplayFor(modelItem => item.NOTED)
+                                                </td>
+                                                <td>
+                                                    <a href="/COMPANY_CATEGORIES/Edit/@item.COMPANY_ID"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a> &nbsp;&nbsp;
+                                                    <a href="/COMPANY_CATEGORIES/Details/@item.COMPANY_ID"><i class="fa fa-info-circle" aria-hidden="true"></i></a> &nbsp;&nbsp;
+                                                    <a href="/COMPANY_CATEGORIES/Delete/@item.COMPANY_ID"><i class="fa fa-trash-o" aria-hidden="true"></i></a> &nbsp;&nbsp;
+                                                    <a href="/COMPANies/Phong_Ban_Cong_Ty/@item.COMPANY_ID"> Danh sách phòng ban</a>
+                                            </tr>
+                                            }
+                                        </table>
+                                    </div>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </body>

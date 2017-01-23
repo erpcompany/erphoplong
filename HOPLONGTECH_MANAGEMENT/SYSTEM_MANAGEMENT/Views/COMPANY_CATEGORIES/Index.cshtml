@@ -3,38 +3,57 @@
 @{
     ViewBag.Title = "Index";
 }
+<link href="~/Content/css/Company_CateGories/Com_CateIndex.css" rel="stylesheet"/>
+<h1 class="h1">LOẠI CÔNG TY</h1>
 
-<h2>Index</h2>
+<a href="~/COMPANY_CATEGORIES/Create" class="btn create btn-default"><span class="glyphicon icon-create glyphicon-plus"></span>Thêm mới</a>
+<body>
+    <div class="container">
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table" border="1">
-    <tr>
-        <th>
-            Loại công ty
-        </th>
-        <th>
-            Ghi chú
-        </th>
-        <th></th>
-    </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.COMPANY_CATEGORY_NAME)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.NOTED)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.COMPANY_CATEGORY_ID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.COMPANY_CATEGORY_ID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.COMPANY_CATEGORY_ID }) |
-            @Html.ActionLink("Danh sách công ty", "Company_in_cat", new { id = item.COMPANY_CATEGORY_ID })
-        </td>
-    </tr>
-}
+        <div class="creatediv1 marginTop30">
 
-</table>
+            <div class="row margin-top-50">
+                <div class="col-md-12">
+                    <div class="panel panel-primary filterable">
+                        <div class="main">
+                            <table class="span12" border="1">
+                                <div class="bg tablescroll">
+                                    <table class="table table-bordered table-striped">
+                                        <tr class="filters">
+                                            <th>LOẠI CÔNG TY</th>
+                                            <th>GHI CHÚ</th>
+                                            <th>
+                                                ACTION
+                                            </th>
+                                        </tr>
+
+                                        @foreach (var item in Model)
+                                        {
+                                            <tr>
+                                                <td>
+                                                    @Html.DisplayFor(modelItem => item.COMPANY_CATEGORY_NAME)
+                                                </td>
+                                                <td>
+                                                    @Html.DisplayFor(modelItem => item.NOTED)
+                                                </td>
+                                                <td>
+                                                    <a href="/COMPANY_CATEGORIES/Edit/@item.COMPANY_CATEGORY_ID"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a> &nbsp;&nbsp;
+                                                    <a href="/COMPANY_CATEGORIES/Details/@item.COMPANY_CATEGORY_ID"><i class="fa fa-info-circle" aria-hidden="true"></i></a> &nbsp;&nbsp;
+                                                    <a href="/COMPANY_CATEGORIES/Delete/@item.COMPANY_CATEGORY_ID"><i class="fa fa-trash-o" aria-hidden="true"></i></a> &nbsp;&nbsp;
+                                                    <a href="/COMPANY_CATEGORIES/Company_in_cat/@item.COMPANY_CATEGORY_ID"><i class="fa fa-list-alt" aria-hidden="true"></i></a> &nbsp;&nbsp;  
+                                                </td>               
+                                            </tr>    
+                                        }
+                                    </table>
+                                </div>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+</body>

@@ -24,7 +24,7 @@ form #container_cate{
 }
 .action{
     float: left;
-    width: 65%;
+    width: 80%;
     height: auto;
     margin: auto;
     margin-top: 20px;
@@ -65,6 +65,10 @@ form #container_cate{
 }
 .icon_back{
     padding-right: 5px;
+}
+.btn_icon_create{
+    background: #449D44;
+    color: white;
 }
 .btn_icon_delete{
     background: red;

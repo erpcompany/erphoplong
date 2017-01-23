@@ -30,12 +30,10 @@
     <link href="~/vendors/bootstrap-daterangepicker/daterangepicker.css" rel="stylesheet">
     <!-- Custom Theme Style -->
     <link href="~/Content/build/css/custom.min.css" rel="stylesheet">
-    <link href="~/Content/css/popup.css" rel="stylesheet" />
-    <link href="~/Content/Site.css" rel="stylesheet">
 
     <!-- jQuery -->
     <script src="~/vendors/jquery/dist/jquery.min.js"></script>
-    <!-- Bootstrap -->
+    <!-- Bootstrap  -->
     <script src="~/vendors/bootstrap/dist/js/bootstrap.min.js"></script>
 
 
@@ -43,7 +41,7 @@
 <body class="nav-md">
     <div class="container body">
         <div class="main_container">
-            <div class="col-md-3 left_col">
+            <div class="col-md-3 left_col" id="layout" style="position: fixed;overflow-y:auto;overflow-x: none;max-height: 100%;">
                 <div class="left_col scroll-view">
                     <div class="navbar nav_title" style="border: 0; ">
                         <table>
@@ -82,13 +80,15 @@
                                 <!-- Hệ thống-->
                                 <li>
                                     <a href="/HeThong/Index"><i class="fa fa-home"></i> Hệ thống <span class="fa fa-chevron-down"></span></a>
-                                    <!-- <ul class="nav child_menu">
-                                         <li><a href="/USERs/Index">Người dùng</a></li>
-                                         <li><a href="/DEPARTMENTs/Index">Phòng ban</a></li>
-                                         <li><a href="/LIST_CONTROLLERS/Index">Chức năng</a></li>
-                                         <li><a href="/GHI_CHU_CONG_VIEC/Danh_Sach_Ghi_CHu"> Ghi chú <span class="fa fa-chevron-down"></span></a></li>
-                                         <li><a href="~/COMPANies/Index"> Công ty <span class="fa fa-chevron-down"></span></a></li>
-                                     </ul>-->
+
+                                   <!-- <ul class="nav child_menu">
+                                        <li><a href="/USERs/Index">Người dùng</a></li>
+                                        <li><a href="/DEPARTMENTs/Index">Phòng ban</a></li>
+                                        <li><a href="/LIST_CONTROLLERS/Index">Chức năng</a></li>
+                                        <li><a href="/GHI_CHU_CONG_VIEC/Danh_Sach_Ghi_CHu"> Ghi chú <span class="fa fa-chevron-down"></span></a></li>
+                                        <li><a href="~/COMPANies/Index"> Công ty <span class="fa fa-chevron-down"></span></a></li>
+                                    </ul>-->
+
                                 </li>
                                 <!-- Import file-->
                                 <!--<li>
@@ -297,49 +297,49 @@
             <!-- /footer content -->
         </div>
     </div>
-    <span class="flesh-modal error" id="error-modal"></span>
-    <span class="flesh-modal info" id="info-modal"></span>
-    <!-- FastClick -->
+
     <script src="~/vendors/fastclick/lib/fastclick.js"></script>
-    <!-- NProgress -->
+    <!-- NProgress 
     <script src="~/vendors/nprogress/nprogress.js"></script>
-    <!-- Chart.js -->
+    <!-- Chart.js 
     <script src="~/vendors/Chart.js/dist/Chart.min.js"></script>
-    <!-- gauge.js -->
+    <!-- gauge.js 
     <script src="~/vendors/gauge.js/dist/gauge.min.js"></script>
-    <!-- bootstrap-progressbar -->
+    <!-- bootstrap-progressbar 
     <script src="~/vendors/bootstrap-progressbar/bootstrap-progressbar.min.js"></script>
-    <!-- iCheck -->
+    <!-- iCheck 
     <script src="~/vendors/iCheck/icheck.min.js"></script>
-    <!-- Skycons -->
+    <!-- Skycons 
     <script src="~/vendors/skycons/skycons.js"></script>
-    <!-- Flot -->
+    <!-- Flot 
     <script src="~/vendors/Flot/jquery.flot.js"></script>
     <script src="~/vendors/Flot/jquery.flot.pie.js"></script>
     <script src="~/vendors/Flot/jquery.flot.time.js"></script>
     <script src="~/vendors/Flot/jquery.flot.stack.js"></script>
     <script src="~/vendors/Flot/jquery.flot.resize.js"></script>
-    <!-- Flot plugins -->
+    <!-- Flot plugins 
     <script src="~/vendors/flot.orderbars/js/jquery.flot.orderBars.js"></script>
     <script src="~/vendors/flot-spline/js/jquery.flot.spline.min.js"></script>
     <script src="~/vendors/flot.curvedlines/curvedLines.js"></script>
-    <!-- DateJS -->
+    <!-- DateJS 
     <script src="~/vendors/DateJS/build/date.js"></script>
-    <!-- JQVMap -->
+    <!-- JQVMap 
     <script src="~/vendors/jqvmap/dist/jquery.vmap.js"></script>
     <script src="~/vendors/jqvmap/dist/maps/jquery.vmap.world.js"></script>
     <script src="~/vendors/jqvmap/examples/js/jquery.vmap.sampledata.js"></script>
     <!-- bootstrap-daterangepicker -->
     <script src="~/vendors/moment/min/moment.min.js"></script>
     <script src="~/vendors/bootstrap-daterangepicker/daterangepicker.js"></script>
-    <!-- Custom Theme Scripts -->
+    <!-- Custom Theme Scripts 
     <script src="~/Content/build/js/custom.min.js"></script>
+
     <!-- Flot -->
     <script src="~/Scripts/jquery.bpopup-0.7.0.js"></script>
     <script src="~/Scripts/BaseJS.js"></script>
 
 
     </script>
+
     <script>
         $(document).ready(function () {
             var data1 = [
@@ -414,7 +414,7 @@
         });
     </script>
     <!-- /Flot -->
-    <!-- JQVMap -->
+    <!-- JQVMap 
     <script>
         $(document).ready(function () {
             $('#world-map-gdp').vectorMap({
@@ -432,7 +432,7 @@
         });
     </script>
     <!-- /JQVMap -->
-    <!-- Skycons -->
+    <!-- Skycons 
     <script>
         $(document).ready(function () {
             var icons = new Skycons({
@@ -452,7 +452,7 @@
         });
     </script>
     <!-- /Skycons -->
-    <!-- Doughnut Chart -->
+    <!-- Doughnut Chart 
     <script>
         $(document).ready(function () {
             var options = {
@@ -494,7 +494,7 @@
         });
     </script>
     <!-- /Doughnut Chart -->
-    <!-- bootstrap-daterangepicker -->
+    <!-- bootstrap-daterangepicker
     <script>
         $(document).ready(function () {
 
@@ -567,7 +567,7 @@
         });
     </script>
     <!-- /bootstrap-daterangepicker -->
-    <!-- gauge.js -->
+    <!-- gauge.js 
     <script>
         var opts = {
             lines: 12,
@@ -592,7 +592,7 @@
         gauge.set(3200);
         gauge.setTextField(document.getElementById("gauge-text"));
     </script>
-    <!-- /gauge.js -->
+    <!-- /gauge.js 
 
     <script>
         //Thiết lập thời gian request tới server tránh Timeout
@@ -601,6 +601,6 @@
                 //alert("phiên làm việc vẫn sống");
             });
         }, 180000);
-    </script>
+    </script> -->
 </body>
 </html>

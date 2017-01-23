@@ -3,57 +3,87 @@
 @{
     ViewBag.Title = "Người dùng";
 }
+<head>
+    <link href="~/Content/css/Users/userIndex.css" rel="stylesheet" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    
+</head>
 
-<h1 style="font-family:'Times New Roman'; font-weight:bold; color:blue">TÀI KHOẢN NGƯỜI DÙNG</h1>
+<link href="~/Content/css/Users/userIndex.css" rel="stylesheet" />
 
-<p>
-    <span style="text-decoration:underline; color: dodgerblue;"><a href="/USERs/Create">Tạo User Mới</a></span>
-</p>
-<table class="table" border="1">
-    <tr style="background-color:deepskyblue; color:white; font-family:'Times New Roman'; font-size:14px">
-        <th>Username</th>
-        <th>Password</th>
-        <th>Họ và tên</th>
-        <th>Email</th>
-        <th>Avatar</th>
-        <th>Là quản trị</th>
-        <th>Hoạt động</th>
-        <th> Tác vụ</th>
-    </tr>
+<h1 class="h1">TÀI KHOẢN NGƯỜI DÙNG</h1>
 
-    @foreach (var item in Model)
-    {
-        <tr style="font-family:'Times New Roman'; font-size:14px">
-            <td>
-                @Html.DisplayFor(modelItem => item.USERNAME)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.PASSWORD)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.FULLNAME)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.EMAIL)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.AVATAR)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.IS_ADMIN)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ALLOWED)
-            </td>
-            <td>
-                <a href="/USERs/Edit/@item.USER_ID"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a> &nbsp;&nbsp;
-                <a href="/USERs/Details/@item.USER_ID"><i class="fa fa-info-circle" aria-hidden="true"></i></a> &nbsp;&nbsp;
-                <a href="/USERs/Delete/@item.USER_ID"><i class="fa fa-trash-o" aria-hidden="true"></i></a> &nbsp;&nbsp;
-                <a href="/USER_PERMISSIONS/Index/@item.USER_ID"><i class="fa fa-cog" aria-hidden="true"></i></a> &nbsp;&nbsp;
-                <a href="/USER_METAS/Create"><i class="fa fa-user-plus" aria-hidden="true"></i></a> &nbsp;&nbsp;
-                <a href="/USER_METAS/Index/@item.USER_ID"><i class="fa fa-user" aria-hidden="true"></i></a> &nbsp;&nbsp;
-            </td>
-        </tr>
-    }
+<a href="~/USERs/Create" class="btn create btn-default"><span class="glyphicon icon-create glyphicon-plus"></span>Thêm mới</a>
+<body>
+    <div class="container">
 
-</table>
+        <div class="creatediv1 marginTop30">
+
+            <div class="row margin-top-50">
+                <div class="col-md-12">
+                    <div class="panel panel-primary filterable">
+                        <div class="main">
+                            <table class="span12" border="1">
+                                <div class="bg tablescroll">
+                                    <table class="table table-bordered table-striped">
+                                        <tr class="filters">
+                                            <th>USERNAME</th>
+                                            <th>MẬT KHẨU</th>
+                                            <th>HỌ VÀ TÊN</th>
+                                            <th>E-MAIL</th>
+                                            <th>AVATAR</th>
+                                            <th>LÀ QUẢN TRỊ VIÊN</th>
+                                            <th>HOẠT ĐỘNG</th>
+                                            <th>
+                                                <em class="fa fa-cog"></em>
+                                            </th>
+                                        </tr>
+
+                                        @foreach (var item in Model)
+                                        {
+                                            
+                                            <tr>
+                                                <td>
+                                                    @Html.DisplayFor(modelItem => item.USERNAME)
+                                                </td>
+                                                <td>
+                                                    @Html.DisplayFor(modelItem => item.PASSWORD)
+                                                </td>
+                                                <td>
+                                                    @Html.DisplayFor(modelItem => item.FULLNAME)
+                                                </td>
+                                                <td>
+                                                    @Html.DisplayFor(modelItem => item.EMAIL)
+                                                </td>
+                                                <td>
+                                                    <img src="~/Content/images/@item.AVATAR" />
+                                                </td>
+                                                <td>
+                                                    @Html.DisplayFor(modelItem => item.IS_ADMIN)
+                                                </td>
+                                                <td>
+                                                    @Html.DisplayFor(modelItem => item.ALLOWED)
+                                                </td>
+                                                <td>
+                                                    <a href="/USERs/Edit/@item.USER_ID"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a> &nbsp;&nbsp;
+                                                    <a href="/USERs/Details/@item.USER_ID"><i class="fa fa-info-circle" aria-hidden="true"></i></a> &nbsp;&nbsp;
+                                                    <a href="/USERs/Delete/@item.USER_ID"><i class="fa fa-trash-o" aria-hidden="true"></i></a> &nbsp;&nbsp;
+                                                    <a href="/USER_PERMISSIONS/Index/@item.USER_ID"><i class="fa fa-cog" aria-hidden="true"></i></a> &nbsp;&nbsp;
+                                                    <a href="/USER_METAS/Create"><i class="fa fa-user-plus" aria-hidden="true"></i></a> &nbsp;&nbsp;
+                                                    <a href="/USER_METAS/Index/@item.USER_ID"><i class="fa fa-user" aria-hidden="true"></i></a> &nbsp;&nbsp;
+                                            </tr>                               
+                                        }
+                                    </table>
+                                </div>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</body>
+
+

@@ -3,32 +3,41 @@
 @{
     ViewBag.Title = "Details";
 }
+<link href="~/Content/css/Company_CateGories/Com_CateDetails.css" rel="stylesheet" />
+<h2 style="text-align: center">CHI TIẾT NHÓM CÔNG TY</h2>
 
-<h2>Details</h2>
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    @Html.HiddenFor(model => model.COMPANY_CATEGORY_ID)
 
-<div>
-    <h4>COMPANY_CATEGORIES</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.COMPANY_CATEGORY_NAME)
-        </dt>
+    <div id="container_cate">
+        <div class="editcontent">
+            <div class="row">
+                <div class="col">TÊN NHÓM CÔNG TY</div>
+                <div class="colinput">
+                    @Html.EditorFor(model => model.COMPANY_CATEGORY_NAME, new { htmlAttributes = new { @readonly = "readonly" } })
+                    @Html.ValidationMessageFor(model => model.COMPANY_CATEGORY_NAME, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">GHI CHÚ</div>
+                <div class="colinput">
+                    @Html.EditorFor(model => model.NOTED, new { htmlAttributes = new { @readonly = "readonly" } })
+                    @Html.ValidationMessageFor(model => model.NOTED, "", new { @class = "text-danger" })
+                </div>
+            </div>
+        </div>
+        <div class="action">
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <a href="~/COMPANY_CATEGORIES/Edit/@Model.COMPANY_CATEGORY_ID" class="btn btn_icon_edit btn-default"><span class="fa icon_back fa-pencil-square-o" aria-hidden="true"></span>Chỉnh sửa</a>
+                    <a href="~/COMPANY_CATEGORIES/Index" class="btn btn_icon_back btn-default"><span class="fa icon_back fa-arrow-circle-left"></span>Trở về</a>
+                </div>
+            </div>
 
-        <dd>
-            @Html.DisplayFor(model => model.COMPANY_CATEGORY_NAME)
-        </dd>
+        </div>
+    </div>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.NOTED)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.NOTED)
-        </dd>
-
-    </dl>
-</div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.COMPANY_CATEGORY_ID }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
+}
