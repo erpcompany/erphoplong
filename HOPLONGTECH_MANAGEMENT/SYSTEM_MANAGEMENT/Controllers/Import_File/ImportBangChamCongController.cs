@@ -100,8 +100,14 @@ namespace SYSTEM_MANAGEMENT.Controllers.Import_File
                     so_dong_thanh_cong = 0;
                     for (int i = 0; i < ds.Tables[0].Rows.Count; i++)
                     {
+                        
+                        String username = ds.Tables[0].Rows[i][2].ToString();
+                        var query = (from u in db.USERS
+                                     where u.USERNAME == username
+                                     select u).FirstOrDefault();
+                        int id = query.USER_ID;
                         BANG_CHAM_CONG BCC = new BANG_CHAM_CONG();
-                        BCC.USER_ID = Convert.ToInt32(ds.Tables[0].Rows[i][0].ToString());
+                        BCC.USER_ID = id;
                         BCC.NGAY_CHUAN = ds.Tables[0].Rows[i][3].ToString();
                         BCC.GIO_DI_MUON = ds.Tables[0].Rows[i][4].ToString();
                         BCC.GIO_VE_SOM = ds.Tables[0].Rows[i][5].ToString();
@@ -216,10 +222,14 @@ namespace SYSTEM_MANAGEMENT.Controllers.Import_File
                     so_dong_thanh_cong = 0;
                     for (int i = 0; i < ds.Tables[0].Rows.Count; i++)
                     {
-                        int id = Convert.ToInt32(ds.Tables[0].Rows[i][0].ToString());
+                        String username = ds.Tables[0].Rows[i][2].ToString();
+                        var query1 = (from u in db.USERS
+                                     where u.USERNAME == username
+                                     select u).FirstOrDefault();
+                        int id = query1.USER_ID;
                         string thang = ds.Tables[0].Rows[i][13].ToString();
                         var query = (from u in db.BANG_CHAM_CONG
-                                     where u.USER_ID == id && u.THANG_CHAM_CONG == thang
+                                     where u.USER_ID== id && u.THANG_CHAM_CONG == thang
                                      select u).FirstOrDefault();
                         //BANG_CHAM_CONG BCC = new BANG_CHAM_CONG();
                        // BCC.USER_ID = Convert.ToInt32(ds.Tables[0].Rows[i][0].ToString());
