@@ -2,28 +2,103 @@
     margin: 0px;
     padding: 0px;
 }
-.table{
-    margin-top: 30px;
-    margin-bottom: 30px;
-}
-.table .title{
-    background-color:cornflowerblue; color: white;
-}
-.table .title th{
+.h1{
     text-align: center;
-    border: 1px solid black;
 }
-.table  tr td{
+a{
+    text-decoration: none;
+}
+.center p{
+    font-weight: bold;
+    font-size: 15px;
+    color: #FF5E00;
+}
+.center span{
+    color: blue;
+}
+.creat-link{
+    padding-top:10px; 
+    padding-bottom:10px;    
+}
+.creat-link a{
+    font-weight:bold; 
+    color: blue; 
+}
+
+.main{
+    overflow-x: auto;
+}
+.main th{
     text-align: center;
-    border: 1px solid black;
+    white-space: nowrap;
+    vertical-align: center;
+    font-weight: bold;
+    font-size: 15px;
 }
-.backlink a:hover{
+.main .note{
     color: red;
 }
-.h2{
-     text-align: center;
- }
-img{
+.main td{
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: center;
+}
+.main td p{
+    display: inline-block;
+}
+.main td .details{
+    padding: 0px 4px 0px 4px;
+    border-left: 2px solid black;
+    border-right: 2px solid black;
+}
+.main td p a:hover{
+    color: blue;
+    font-weight: bold;
+}
+.main td .fa{
+    margin-left: 20px;
+}
+th{
+    color: black;
+}
+.table-bordered>tbody>tr>th{
+    border: 1px solid black;
+    background:  #4285F4;
+    color: white;
+}
+.table-bordered>tbody>tr>td{
+    border: 1px solid black;
+    vertical-align: middle;
+}
+a img{
     height: 30px;
-    float: left;
+}
+.panel-primary{
+    border: none;
+}
+.main td img{
+    height: 50px;
+    width: 50px;
+}
+.main td .image{
+    width: 25px;
+    height: 25px;
+    margin-bottom: 10px;
+}
+.icon-create{
+    margin-right: 5px;
+}
+.icon-list{
+    font-size: 25px;
+}
+.create{
+    background: #449D44;
+    color: white;
+}
+.btn_icon_back{
+    background: #ACBAC3;
+    color: white;
+}
+.icon_back{
+    padding-right: 5px;
 }

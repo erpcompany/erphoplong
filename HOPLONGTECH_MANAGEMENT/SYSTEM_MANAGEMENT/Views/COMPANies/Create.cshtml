@@ -3,73 +3,70 @@
 @{
     ViewBag.Title = "Create";
 }
+<link href="~/Content/css/Companies/Comp_Create.css" rel="stylesheet"/>
+<h2 style="text-align:center">TẠO MỚI CÔNG TY</h2>
 
-<h2>Create</h2>
-
-@using (Html.BeginForm()) 
+@using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-    
-    <div class="form-horizontal">
-        <h4>COMPANY</h4>
-        <hr />
-        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-        <div class="form-group">
-            @Html.LabelFor(model => model.COMPANY_ID, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.COMPANY_ID, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.COMPANY_ID, "", new { @class = "text-danger" })
-            </div>
-        </div>
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.COMPANY_NAME, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.COMPANY_NAME, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.COMPANY_NAME, "", new { @class = "text-danger" })
-            </div>
-        </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.PARENT_COMPANY, "PARENT_COMPANY", htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.DropDownList("PARENT_COMPANY", null, htmlAttributes: new { @class = "form-control" })
-                @Html.ValidationMessageFor(model => model.PARENT_COMPANY, "", new { @class = "text-danger" })
+    <div id="container_cate">
+        <div class="editcontent">
+            <div class="row">
+                <div class="col">ID</div>
+                <div class="colinput">
+                    @Html.EditorFor(model => model.COMPANY_CATEGORY_ID)
+                    @Html.ValidationMessageFor(model => model.COMPANY_CATEGORY_ID, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">TÊN CÔNG TY</div>
+                <div class="colinput">
+                    @Html.EditorFor(model => model.COMPANY_NAME)
+                    @Html.ValidationMessageFor(model => model.COMPANY_NAME, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">TÊN CÔNG TY CHA</div>
+                <div class="colinput">
+                    @Html.EditorFor(model => model.PARENT_COMPANY)
+                    @Html.ValidationMessageFor(model => model.PARENT_COMPANY, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">QUẢN LÝ</div>
+                <div class="colinput">
+                    @Html.EditorFor(model => model.MANAGER)
+                    @Html.ValidationMessageFor(model => model.MANAGER, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">LOẠI CÔNG TY</div>
+                <div class="colinput">
+                    @Html.EditorFor(model => model.COMPANY_CATEGORY_ID)
+                    @Html.ValidationMessageFor(model => model.COMPANY_CATEGORY_ID, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">GHI CHÚ</div>
+                <div class="colinput">
+                    @Html.EditorFor(model => model.NOTED)
+                    @Html.ValidationMessageFor(model => model.NOTED, "", new { @class = "text-danger" })
+                </div>
             </div>
         </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.MANAGER, "MANAGER", htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.DropDownList("MANAGER", null, htmlAttributes: new { @class = "form-control" })
-                @Html.ValidationMessageFor(model => model.MANAGER, "", new { @class = "text-danger" })
+        <div class="action">
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <button type="submit" class="btn btn_icon_create btn-success"><span class="fa icon_back fa-plus-circle" aria-hidden="true"></span>Tạo mới</button>
+                    <button type="reset" class="btn btn_icon_delete btn-success"><span class="fa icon_back fa-ban" aria-hidden="true"></span>Hủy bỏ</button>
+                    <a href="~/COMPANies/Index" class="btn btn_icon_back btn-default"><span class="fa icon_back fa-arrow-circle-left"></span>Trở về</a>
+                    
+                </div>
             </div>
         </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.COMPANY_CATEGORY_ID, "COMPANY_CATEGORY_ID", htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.DropDownList("COMPANY_CATEGORY_ID", null, htmlAttributes: new { @class = "form-control" })
-                @Html.ValidationMessageFor(model => model.COMPANY_CATEGORY_ID, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.NOTED, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.NOTED, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.NOTED, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Create" class="btn btn-default" />
-            </div>
-        </div>
+        
     </div>
 }
-
-<div>
-    @Html.ActionLink("Back to List", "Index")
-</div>

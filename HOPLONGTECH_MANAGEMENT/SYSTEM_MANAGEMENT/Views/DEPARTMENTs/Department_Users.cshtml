@@ -4,71 +4,95 @@
     ViewBag.Title = "Danh sách nhân viên";
 }
 <link href="~/Content/css/Departments/userDepart.css" type="text/css" rel="stylesheet"/>
-<h2 class="h2">DANH SÁCH NHÂN VIÊN</h2>
 
-<table class="table" border="1">
-    <tr class="title">
-        <th>
-            Họ và tên
-        </th>
-       
-        <th>
-            Giới tính
-        </th>
-        <th>
-            Ngày sinh
-        </th>
-        <th>
-            Ngày vào công ty
-        </th>
-        <th>
-            Số điện thoại
-        </th>
-        <th>
-            Thâm niên
-        </th>
-        <th>
-            Quê quán
-        </th>
-        <th>
-            Học vấn
-        </th>
-        
-    </tr>
+<h2 style="padding-top:15px; font-family:'Times New Roman'; ">
+    <a href="/DEPARTMENTs/Index" style="color:blue"> Danh sách phòng ban</a>
+    &gt;&gt; Danh sách nhân viên của phòng 
+    <b style="color:blue"> @ViewBag.dpartments</b>
+</h2>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @item.USER.FULLNAME
-        </td>
-       
-        <td>
-            @item.SEX
-        </td>
-        <td>
-            @item.BIRTHDAY.ToString("dd/MM/yyyy")
-        </td>
-        <td>
-            @item.START_TIME.ToString("dd/MM/yyyy")
-        </td>
-        <td>
-            @item.NUMBER_PHONE
-        </td>
-        <td >
-            @item.SENIORITY
-        </td>
-        <td>
-            @item.NATIVE_LAND
-        </td>
-        <td>
-            @item.LITERACY
-        </td>
-        
-       
-    </tr>
-}
-</table>
-<div class="col-md-offset-0 col-md-1">
-    <a href="/DEPARTMENTs/Index/@Session["USER_ID"]"><img src="~/Content/images/back_icon.png" /></a>
-</div>
 
+
+<body>
+    <div class="container">
+
+        <div class="creatediv1 marginTop30">
+
+            <div class="row margin-top-50">
+                <div class="col-md-12">
+                    <div class="panel panel-primary filterable">
+                        <div class="main">
+                            <table class="span12" border="1">
+                                <div class="bg tablescroll">
+                                    <table class="table table-bordered table-striped">
+                                        <tr class="filters">
+                                            <th>
+                                                Họ và tên
+                                            </th>
+
+                                            <th>
+                                                Giới tính
+                                            </th>
+                                            <th>
+                                                Ngày sinh
+                                            </th>
+                                            <th>
+                                                Ngày vào công ty
+                                            </th>
+                                            <th>
+                                                Số điện thoại
+                                            </th>
+                                            <th>
+                                                Thâm niên
+                                            </th>
+                                            <th>
+                                                Quê quán
+                                            </th>
+                                            <th>
+                                                Học vấn
+                                            </th>
+                                        </tr>
+
+                                        @foreach (var item in Model)
+                                        {
+                                            <tr>
+                                                <td>
+                                                    @item.USER.FULLNAME
+                                                </td>
+
+                                                <td>
+                                                    @item.SEX
+                                                </td>
+                                                <td>
+                                                    @item.BIRTHDAY.ToString("dd/MM/yyyy")
+                                                </td>
+                                                <td>
+                                                    @item.START_TIME.ToString("dd/MM/yyyy")
+                                                </td>
+                                                <td>
+                                                    @item.NUMBER_PHONE
+                                                </td>
+                                                <td>
+                                                    @item.SENIORITY
+                                                </td>
+                                                <td>
+                                                    @item.NATIVE_LAND
+                                                </td>
+                                                <td>
+                                                    @item.LITERACY
+                                                </td>
+                                            </tr>
+                                        }
+                                    </table>
+                                </div>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <a href="~/DEPARTMENTs/Index" class="btn btn_icon_back btn-default"><span class="fa icon_back fa-arrow-circle-left"></span>Trở về</a>
+    </div>
+    
+</body>

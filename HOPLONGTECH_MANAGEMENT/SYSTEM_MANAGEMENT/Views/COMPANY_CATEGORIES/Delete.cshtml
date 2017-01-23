@@ -4,37 +4,40 @@
     ViewBag.Title = "Delete";
 }
 
-<h2>Delete</h2>
-
-<h3>Are you sure you want to delete this?</h3>
-<div>
-    <h4>COMPANY_CATEGORIES</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.COMPANY_CATEGORY_NAME)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.COMPANY_CATEGORY_NAME)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.NOTED)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.NOTED)
-        </dd>
-
-    </dl>
-
-    @using (Html.BeginForm()) {
-        @Html.AntiForgeryToken()
-
-        <div class="form-actions no-color">
-            <input type="submit" value="Delete" class="btn btn-default" /> |
-            @Html.ActionLink("Back to List", "Index")
+<link href="~/Content/css/Company_CateGories/Com_CateDelete.css" rel="stylesheet" />
+<h2 style="text-align: center">XÓA NHÓM CÔNG TY</h2>
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    @Html.HiddenFor(model => model.COMPANY_CATEGORY_ID)
+    <div id="container_cate">
+        <div class="editcontent">
+            <div class="row">
+                <div class="col">TÊN NHÓM CÔNG TY</div>
+                <div class="colinput">
+                    @Html.EditorFor(model => model.COMPANY_CATEGORY_NAME, new { htmlAttributes = new { @readonly = "readonly" } })
+                    @Html.ValidationMessageFor(model => model.COMPANY_CATEGORY_NAME, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">GHI CHÚ</div>
+                <div class="colinput">
+                    @Html.EditorFor(model => model.NOTED, new { htmlAttributes = new { @readonly = "readonly" } })
+                    @Html.ValidationMessageFor(model => model.NOTED, "", new { @class = "text-danger" })
+                </div>
+            </div>
         </div>
-    }
-</div>
+        <div class="action">
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <button type="submit" class="btn btn_icon_delete btn-success"><span class="fa icon_back fa-trash-o" aria-hidden="true"></span>Xóa</button>
+                    <a href="~/COMPANY_CATEGORIES/Index" class="btn btn_icon_back btn-default"><span class="fa icon_back fa-arrow-circle-left"></span>Trở về</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+}
+

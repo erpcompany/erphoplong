@@ -7,9 +7,11 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using SYSTEM_MANAGEMENT.Models;
+using SYSTEM_MANAGEMENT.Models.BussinessModel;
 
 namespace SYSTEM_MANAGEMENT.Areas.HopLong.Controllers
 {
+    [AuthorizeBussiness]
     public class PAYMENT_TERMSController : Controller
     {
         private SYSTEM_DATABASEEntities db = new SYSTEM_DATABASEEntities();

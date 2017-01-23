@@ -9,51 +9,46 @@
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-
-    <div class="form-horizontal">
-        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-        @Html.HiddenFor(model => model.DEPARTMENT_ID)
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.DEPARTMENT_NAME, "TÊN KHÁCH HÀNG", htmlAttributes: new { @class = "control-label col-md-4" })
-            <div class="col-md-8">
-                @Html.EditorFor(model => model.DEPARTMENT_NAME, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    @Html.HiddenFor(model => model.DEPARTMENT_ID)
+    <div id="container_cate">
+        <div class="editcontent">
+            <div class="row">
+                <div class="col">TÊN NHÓM CÔNG TY</div>
+                <div class="colinput">
+                    @Html.EditorFor(model => model.DEPARTMENT_NAME, new { htmlAttributes = new { @readonly = "readonly" } })
+                    @Html.ValidationMessageFor(model => model.DEPARTMENT_NAME, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">CÔNG TY CHA</div>
+                <div class="colinput">
+                    @Html.EditorFor(model => model.MANAGER, new { htmlAttributes = new { @readonly = "readonly" } })
+                    @Html.ValidationMessageFor(model => model.MANAGER, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">ID LOẠI CÔNG TY</div>
+                <div class="colinput">
+                    @Html.EditorFor(model => model.NOTED, new { htmlAttributes = new { @readonly = "readonly" } })
+                    @Html.ValidationMessageFor(model => model.NOTED, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">GHI CHÚ</div>
+                <div class="colinput">
+                    @Html.EditorFor(model => model.COMPANY_ID, new { htmlAttributes = new { @readonly = "readonly" } })
+                    @Html.ValidationMessageFor(model => model.COMPANY_ID, "", new { @class = "text-danger" })
+                </div>
             </div>
         </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.NOTED, "ĐỊA CHỈ CÔNG TY", htmlAttributes: new { @class = "control-label col-md-4" })
-            <div class="col-md-8">
-                @Html.EditorFor(model => model.NOTED, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
-                
+        <div class="action">
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <button type="submit" class="btn btn_icon_delete btn-success" onclick="return confirm('Bạn có chắc muốn xóa không?')"><span class="fa icon_back fa-trash-o" aria-hidden="true"></span>Xóa</button>
+                    <a href="~/DEPARTMENTs/Index" class="btn btn_icon_back btn-default"><span class="fa icon_back fa-arrow-circle-left"></span>Trở về</a>
+                </div>
             </div>
         </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.COMPANY.COMPANY_NAME, "ĐỊA CHỈ XUẤT HÓA ĐƠN", htmlAttributes: new { @class = "control-label col-md-4" })
-            <div class="col-md-8">
-                @Html.EditorFor(model => model.COMPANY.COMPANY_NAME, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
-                
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.USER.USERNAME, "MÃ SỐ THUẾ", htmlAttributes: new { @class = "control-label col-md-4" })
-            <div class="col-md-8">
-                @Html.EditorFor(model => model.USER.USERNAME, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
-                
-            </div>
-        </div> 
-
-        <div class="form-group">
-            <div class="col-md-offset-0 col-md-1">
-                <a href="/DEPARTMENTs/Index"><img src="~/Content/images/back_icon.png" /></a>
-            </div>
-            <div class="col-md-offset-4 col-md-1">
-                <input type="submit" id="submit" onclick="return confrim('Bạn có chắc muốn xóa không?')" value="" class="btn btn-default" />
-            </div>
-        </div>
-
     </div>
 }
-

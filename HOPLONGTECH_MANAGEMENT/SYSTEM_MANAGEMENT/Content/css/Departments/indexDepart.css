@@ -78,3 +78,13 @@ a img{
 .panel-primary{
     border: none;
 }
+.icon-create{
+    margin-right: 5px;
+}
+.icon-list{
+    font-size: 25px;
+}
+.create{
+    background: #449D44;
+    color: white;
+}

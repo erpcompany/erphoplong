@@ -7,9 +7,11 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using SYSTEM_MANAGEMENT.Models;
+using SYSTEM_MANAGEMENT.Models.BussinessModel;
 
 namespace SYSTEM_MANAGEMENT.Controllers
 {
+    [AuthorizeBussiness]
     public class COMPANiesController : Controller
     {
         private SYSTEM_DATABASEEntities db = new SYSTEM_DATABASEEntities();
@@ -19,6 +21,12 @@ namespace SYSTEM_MANAGEMENT.Controllers
         {
             var cOMPANYS = db.COMPANYS.Include(c => c.COMPANY_CATEGORIES).Include(c => c.USER).Include(c => c.COMPANY1);
             return View(cOMPANYS.ToList());
+        }
+
+        public ActionResult Phong_Ban_Cong_Ty(string id)
+        {
+            var departments = db.DEPARTMENTS.Where(d =>d.COMPANY_ID ==id);
+            return View(departments.ToList());
         }
 
         // GET: COMPANies/Details/5

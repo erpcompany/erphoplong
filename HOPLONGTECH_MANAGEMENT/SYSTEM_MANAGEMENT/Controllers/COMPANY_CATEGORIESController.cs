@@ -7,9 +7,11 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using SYSTEM_MANAGEMENT.Models;
+using SYSTEM_MANAGEMENT.Models.BussinessModel;
 
 namespace SYSTEM_MANAGEMENT.Controllers
 {
+    [AuthorizeBussiness]
     public class COMPANY_CATEGORIESController : Controller
     {
         private SYSTEM_DATABASEEntities db = new SYSTEM_DATABASEEntities();
@@ -19,10 +21,10 @@ namespace SYSTEM_MANAGEMENT.Controllers
         {
             return View(db.COMPANY_CATEGORIES.ToList());
         }
-        public ActionResult Company_user (String Id)
+        public ActionResult Company_in_cat (String Id)
         {
-            var Company_Category = db.COMPANYS.Where(d=> d.COMPANY_CATEGORY_ID==Id);
-            return View(Company_Category.ToList());
+            var Companys = db.COMPANYS.Where(d=> d.COMPANY_CATEGORY_ID==Id);
+            return View(Companys.ToList());
         }
 
         // GET: COMPANY_CATEGORIES/Details/5
