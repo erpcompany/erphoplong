@@ -4,7 +4,9 @@
 }
 
 <h1 style="font-family: 'Times New Roman'; color:darkblue">Cập nhật bảng chấm công</h1>
+<span><a href="~/Content/file/CHAM_CONG_CHUAN.xlsx"><button> Lấy mẫu file import</button></a></span>
 <br />
+
 @using (Html.BeginForm("Update", "ImportBangChamCong", FormMethod.Post, new { enctype = "multipart/form-data" }))
 {
     <input type="file" name="file" />
