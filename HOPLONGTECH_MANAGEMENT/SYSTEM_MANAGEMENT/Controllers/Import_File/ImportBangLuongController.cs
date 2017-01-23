@@ -100,8 +100,13 @@ namespace SYSTEM_MANAGEMENT.Controllers.Import_File
                     so_dong_thanh_cong = 0;
                     for (int i = 0; i < ds.Tables[0].Rows.Count; i++)
                     {
+                        String username = ds.Tables[0].Rows[i][2].ToString();
+                        var query = (from u in db.USERS
+                                     where u.USERNAME == username
+                                     select u).FirstOrDefault();
+                        int id = query.USER_ID;
                         BANG_LUONG BL = new BANG_LUONG();
-                        BL.USER_ID = Convert.ToInt32(ds.Tables[0].Rows[i][0].ToString());
+                        BL.USER_ID = id;
                         BL.LUONG_CO_BAN = ds.Tables[0].Rows[i][3].ToString();
                         BL.LUONG_BAO_HIEM = ds.Tables[0].Rows[i][4].ToString();
                         BL.PHU_CAP_AN_TRUA = ds.Tables[0].Rows[i][5].ToString();
@@ -233,7 +238,11 @@ namespace SYSTEM_MANAGEMENT.Controllers.Import_File
                     so_dong_thanh_cong = 0;
                     for (int i = 0; i < ds.Tables[0].Rows.Count; i++)
                     {
-                        int id = Convert.ToInt32(ds.Tables[0].Rows[i][0].ToString());
+                        String username = ds.Tables[0].Rows[i][2].ToString();
+                        var query1 = (from u in db.USERS
+                                      where u.USERNAME == username
+                                      select u).FirstOrDefault();
+                        int id = query1.USER_ID;
                         string thang = ds.Tables[0].Rows[i][29].ToString();
                         var query = (from u in db.BANG_LUONG
                                      where u.USER_ID == id && u.THANG_LINH_LUONG == thang
@@ -268,7 +277,7 @@ namespace SYSTEM_MANAGEMENT.Controllers.Import_File
                         query.CONG_DOAN = ds.Tables[0].Rows[i][26].ToString();
                         query.LUONG_LAO_CONG = ds.Tables[0].Rows[i][27].ToString();
                         query.THUC_LINH = ds.Tables[0].Rows[i][28].ToString();
-                        query.THANG_LINH_LUONG = ds.Tables[0].Rows[i][29].ToString();
+                       // query.THANG_LINH_LUONG = ds.Tables[0].Rows[i][29].ToString();
                        // db.BANG_LUONG.Add(BL);
 
                         db.SaveChanges();

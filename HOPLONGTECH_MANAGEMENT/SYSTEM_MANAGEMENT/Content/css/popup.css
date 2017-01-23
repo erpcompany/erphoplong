@@ -1,0 +1,94 @@
+﻿.popup {
+    background-attachment: scroll;
+    background-clip: padding-box !important;
+    background-color: #FFFFFF;
+    /*background-image: url("/Timesheet/content/ui/images/ieborder.png");*/
+    background-origin: padding-box;
+    background-position: 0 0;
+    background-repeat: no-repeat;
+    background-size: auto auto;
+    border: 7px solid transparent !important;
+    border-radius: 4px 4px 4px 4px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+    max-width: 100%;
+    min-width: 500px;
+}
+
+.popup h4{
+    margin:0px !important;
+}
+
+.popup_sla {
+    border-radius: 4px;
+    border: 7px solid rgba(180, 180, 180, 0.75)!important;
+    min-height: 100px;
+    min-width: 300px;
+    max-width: 700px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+    background: #fff;
+    background-clip: padding-box!important;
+    -webkit-background-clip: padding-box!important;
+}
+
+    .popup_sla .popup_content_sla {
+        max-height: 550px;
+        overflow: auto;
+        padding: 16px;
+    }
+
+    .popup_sla .popup_close {
+        background: url("/Timesheet/content/ui/images/ico_close_popup.png") no-repeat right top;
+        width: 12px;
+        height: 12px;
+        position: absolute;
+        top: 7px;
+        right: 6px;
+        left: 480px;
+    }
+
+    .popup_sla .title,
+    .popup h4 {
+        font-size: 12px;
+        color: #44afc6;
+        font-weight: bold;
+        line-height: 24px;
+        background-color: #eef5f6;
+        background: -moz-linear-gradient(center top, #eef5f6 0%, #FFFFFF 60px) repeat scroll 0 0 #FFFFFF;
+        border: 1px solid #b4cfd6;
+        padding: 0 0 0 8px;
+        position: relative;
+    }
+
+.popup .popup_content {
+    padding: 16px;
+    background-color: #FFFFFF;
+}
+
+.popup_sla .popup_close,
+.popup .popup_close {
+    /*background: url("/Timesheet/content/ui/images/ico_close_popup.png") no-repeat right top;*/
+    width: 50px;
+	height: 12px;
+	position: relative;
+	top: 5px;
+	right: 6px;
+	float: right;
+	font-size: 13px;
+}
+
+    .popup .popup_close span {
+        visibility: hidden;
+    }
+
+.popup .popup_tinymce {
+    width: 800px;
+    height: 600px;
+}
+
+.popup .popup_left {
+    float: left;
+}
+
+.popup .popup_right {
+    float: right;
+}
