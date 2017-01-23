@@ -3,7 +3,8 @@
     ViewBag.Title = "Import bảng lương";
 }
 
-<h2>Index</h2>
+<h2>Nhập khẩu bảng lương</h2>
+ <span><a href="~/Content/file/BANG_LUONG_CHUAN.xlsx"><button>Lấy mẫu bảng lương</button></a></span>
 @using (Html.BeginForm("Index", "ImportBangLuong", FormMethod.Post, new { enctype = "multipart/form-data" }))
 {
     <input type="file" name="file" style="width:400px " />

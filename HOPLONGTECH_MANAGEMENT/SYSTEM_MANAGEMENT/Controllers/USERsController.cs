@@ -135,19 +135,30 @@ namespace SYSTEM_MANAGEMENT.Controllers
         [HttpPost]
         public void DoiMatKhau(int? id, string oldPassword, string newPassword)
         {
-            string msg = "";
-            var user = db.USERS.Where(x => x.USER_ID == id).FirstOrDefault();
-            if (user.PASSWORD == oldPassword)
+            try
             {
-                user.PASSWORD = newPassword;
-                msg = " Mật khẩu của bạn đã được thay đổi";
+                string msg = "";
+                var user = db.USERS.Where(x => x.USER_ID == id).FirstOrDefault();
+                if (user.PASSWORD == oldPassword)
+                {
+                    user.PASSWORD = newPassword;
+                    db.SaveChanges();
+                    msg = "<div class='alert alert-success'> Cấp quyền thành công </div>";
+                  //  ViewBag.State = "1"; // Thành công
+                }
+                else
+                {
+                    msg = "<div class='alert alert-success'> Mật khẩu cũ không đúng</div>";
+                    
+                   // ViewBag.State = "0"; // Thất bại
+                }
+
+                
             }
-            else
+            catch (Exception ex)
             {
-                msg = "Mật khẩu cũ không đúng. Bạn có thực sự là "+user.FULLNAME;
+                throw;
             }
-            db.SaveChanges();
-            RedirectToAction("Home/Index");
         }
     }
 }
