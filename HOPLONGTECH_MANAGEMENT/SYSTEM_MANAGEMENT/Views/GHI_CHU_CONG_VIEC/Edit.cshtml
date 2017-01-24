@@ -3,93 +3,62 @@
 @{
     ViewBag.Title = "Cập nhật ghi chú";
 }
-<link href="~/Content/css/Ghichu/editGhichu.css" type="text/css" rel="stylesheet"/>
+<link href="~/Content/css/Ghichu/editGhichu.css" type="text/css" rel="stylesheet" />
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <script src="~/Content/js/editghichu.js" type="text/javascript"></script>
-<div class="container">
-    <div class="row">
-        <div class="col-md-12">
-            <form id="candidatedata" class="form-horizontal" method="POST">        
-                <div class="row">
-                    <div class="col-md-offset-2 col-md-8 content">
-                        <div class="panel">
-                            <div class="panel-body">
-                                @using (Html.BeginForm())
-                                {
-                                    @Html.AntiForgeryToken()
 
-                                    <div class="form-horizontal">
-                                        <h2 class="col-md-offset-4">Cập nhật ghi chú công việc</h2>
-                                        <hr />
-                                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-                                        @Html.HiddenFor(model => model.NOTED_ID)
-                                        @Html.HiddenFor(model => model.USER_ID)
-                                        
-
-                                        <div class="form-group">
-                                            <div class="control-label col-md-2 text">Ngày ghi chú:</div>
-                                            <div class="col-md-10">
-                                                @Html.EditorFor(model => model.DATE_NOTED, new { htmlAttributes = new { @class = "form-control" } })
-                                                @Html.ValidationMessageFor(model => model.DATE_NOTED, "", new { @class = "text-danger" })
-                                            </div>
-                                        </div>
-
-                                        <div class="form-group">
-                                            <div class="control-label col-md-2">Tiêu đề:</div>
-                                            <div class="col-md-10">
-                                                @Html.EditorFor(model => model.NOTED_NAME, new { htmlAttributes = new { @class = "form-control" } })
-                                                @Html.ValidationMessageFor(model => model.NOTED_NAME, "", new { @class = "text-danger" })
-                                            </div>
-                                        </div>
-
-                                        <div class="form-group">
-                                            <div class="control-label col-md-2">Nội dung:</div>
-                                            <div class="col-md-10 a">
-                                                @Html.EditorFor(model => model.NOTED_INFO, new { htmlAttributes = new { @class = "form-control"} })
-                                                @Html.ValidationMessageFor(model => model.NOTED_INFO, "", new { @class = "text-danger" })
-                                            </div>
-                                        </div>
-
-                                        <div class="form-group">
-                                            <div class="control-label col-md-2">Trạng thái:</div>
-                                            <div class="col-md-10 a">
-                                                @Html.EditorFor(model => model.IS_DONE, new { htmlAttributes = new { @class = "form-control" } })
-                                                @Html.ValidationMessageFor(model => model.IS_DONE, "", new { @class = "text-danger" })
-                                            </div>
-                                        </div>
-
-                                        <div class="form-group">
-                                            <div class="control-label col-md-2">Ngày kết thúc:</div>
-                                            <div class="col-md-10 a">
-                                                
-                                                @Html.EditorFor(model => model.DATE_DONE, new { htmlAttributes = new { @class = "form-control" } })
-                                                @Html.ValidationMessageFor(model => model.DATE_DONE, "", new { @class = "text-danger" })
-                                            </div>
-                                        </div>    
-                                        <div class="form-group">
-                                            <div class="col-md-offset-0 col-md-4">
-                                                <a href="/GHI_CHU_CONG_VIEC/Index/@Session["USER_ID"]"><img src="~/Content/images/back_icon.png" /></a>
-                                            </div>
-                                            <div class="col-md-offset-1 col-md-4">
-                                                <input type="submit" id="submit" value="" class="btn btn-orange-md roboto" />
-                                            </div>
-                                        </div>                                  
-                                    </div>
-                                         
-                                }                        
-                            </div>
-                        </div>
-                    </div>
-
+<h2 style="text-align:center">Cập nhật ghi chú</h2>
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    @Html.HiddenFor(model => model.NOTED_ID)
+    @Html.HiddenFor(model => model.USER_ID)
+    <div id="container_cate">
+        <div class="editcontent">
+            <div class="row">
+                <div class="col">NGÀY GHI CHÚ</div>
+                <div class="colinput">
+                    @Html.EditorFor(model => model.DATE_NOTED)
+                    @Html.ValidationMessageFor(model => model.DATE_NOTED, "", new { @class = "text-danger" })
                 </div>
-            </form> <!-- Fint form -->   
+            </div>
+            <div class="row">
+                <div class="col">TÊN GHI CHÚ</div>
+                <div class="colinput">
+                    @Html.EditorFor(model => model.NOTED_NAME)
+                    @Html.ValidationMessageFor(model => model.NOTED_NAME, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">THÔNG TIN GHI CHÚ</div>
+                <div class="colinput">
+                    @Html.EditorFor(model => model.NOTED_INFO)
+                    @Html.ValidationMessageFor(model => model.NOTED_INFO, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">ĐÃ HOÀN THÀNH</div>
+                <div class="colinput">
+                    @Html.EditorFor(model => model.IS_DONE)
+                    @Html.ValidationMessageFor(model => model.IS_DONE, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">NGÀY HOÀN THÀNH</div>
+                <div class="colinput">
+                    @Html.EditorFor(model => model.DATE_DONE)
+                    @Html.ValidationMessageFor(model => model.DATE_DONE, "", new { @class = "text-danger" })
+                </div>
+            </div>
+        </div>
+        <div class="action">
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <button type="submit" class="btn  btn-success"><span class="glyphicon btn_save glyphicon-save"></span>Lưu</button>
+                    <a href="~/GHI_CHU_CONG_VIEC/Danh_Sach_Ghi_Chu" class="btn btn_icon_back btn-default"><span class="fa icon_back fa-arrow-circle-left"></span>Trở về</a>
+                </div>
+            </div>
         </div>
     </div>
-    <!-- Tab panes -->
-</div>
-</div>
-
-
-
-
-
+}

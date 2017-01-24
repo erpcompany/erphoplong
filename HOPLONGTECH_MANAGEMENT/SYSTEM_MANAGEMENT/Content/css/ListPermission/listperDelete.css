@@ -9,7 +9,7 @@ h2{
 form #container_cate{
     width: 50%;
     margin: auto;
-    height: 370px;
+    height: 220px;
     padding-left: 10px;
     margin-bottom: 20px;
     margin-top: 20px;
@@ -24,7 +24,7 @@ form #container_cate{
 }
 .action{
     float: left;
-    width: 80%;
+    width: 65%;
     height: auto;
     margin: auto;
     margin-top: 20px;
@@ -66,14 +66,7 @@ form #container_cate{
 .icon_back{
     padding-right: 5px;
 }
-.btn_icon_create{
-    background: #449D44;
-    color: white;
-}
 .btn_icon_delete{
     background: red;
     color: white;
-}
-.dropdown{
-    margin-top: 5px;
 }

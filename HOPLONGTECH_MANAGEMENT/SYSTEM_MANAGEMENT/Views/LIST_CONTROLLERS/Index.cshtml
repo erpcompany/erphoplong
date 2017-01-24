@@ -3,40 +3,64 @@
 @{
     ViewBag.Title = "Danh sách chức năng";
 }
-
-<h2>Chức Năng Hệ Thống</h2>
+<link href="~/Content/css/List_Controller/listcontrollerIndex.css" rel="stylesheet"/>
+<h2 style="text-align:center">Chức Năng Hệ Thống</h2>
 
 <p>
-    @Html.ActionLink("Update", "Update_Controller_Info")
+    @Html.ActionLink("Cập nhật", "Update_Controller_Info")
 </p>
 <div>
     @Html.Raw(TempData["err"])
 </div>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.CONTROLLER_ID)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.CONTROLLER_NAME)
-        </th>
-        <th></th>
-    </tr>
+<body>
+    <div class="container">
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.CONTROLLER_ID)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.CONTROLLER_NAME)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.CONTROLLER_ID }) |
-            @Html.ActionLink("Danh sách quyền", "Index","LIST_PERMISSIONS", new { id=item.CONTROLLER_ID }, null) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.CONTROLLER_ID })
-        </td>
-    </tr>
-}
+        <div class="creatediv1 marginTop30">
 
-</table>
+            <div class="row margin-top-50">
+                <div class="col-md-12">
+                    <div class="panel panel-primary filterable">
+                        <div class="main">
+                            <table class="span12" border="1">
+                                <div class="bg tablescroll">
+                                    <table class="table table-bordered table-striped">
+                                        <tr class="filters">
+                                            <th>
+                                                ID chức năng
+                                            </th>
+                                            <th>
+                                                Tên chức năng
+                                            </th>
+                                            <th>
+                                                Tác vụ
+                                            </th>
+                                        </tr>
+
+                                        @foreach (var item in Model)
+                                        {
+                                            <tr>
+                                                <td>
+                                                    @Html.DisplayFor(modelItem => item.CONTROLLER_ID)
+                                                </td>
+                                                <td>
+                                                    @Html.DisplayFor(modelItem => item.CONTROLLER_NAME)
+                                                </td>
+                                                <td>
+                                                    <a href="/LIST_CONTROLLERS/Edit/@item.CONTROLLER_ID" class="btn btn_icon_edit btn-default"><span class="fa icon fa-pencil-square-o" aria-hidden="true"></span>Sửa</a> &nbsp;&nbsp;
+                                                    <a href="/LIST_PERMISSIONS/Index/@item.CONTROLLER_ID" class="btn btn_icon_details btn-default"><span class="fa icon fa-list" aria-hidden="true"></span>Danh sách quyền</a> &nbsp;&nbsp;
+                                                    <a href="/LIST_CONTROLLERS/Delete/@item.CONTROLLER_ID" class="btn btn_icon_delete btn-default"><span class="fa icon fa-trash-o" aria-hidden="true"></span>Xóa</a> &nbsp;&nbsp;
+                                                </td>
+                                            </tr>
+                                        }
+                                    </table>
+                                </div>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+</body>

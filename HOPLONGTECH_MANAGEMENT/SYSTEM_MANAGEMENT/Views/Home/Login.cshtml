@@ -18,80 +18,145 @@
 
     <!-- Optional theme -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <link href="~/Content/css/login.css" rel="stylesheet" />
     <!-- Latest compiled and minified JavaScript -->
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 </head>
 
-<body style="background-image: url('/Content/images/login.jpg');">
-    <div class="container">
-        <div id="loginbox" style="margin-top:50px; top: 100px;" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
-            
-            <div class="panel panel-info">
-                <div class="panel-heading">
-                    <div class="panel-title">HopLong System</div>
-                    
-                </div>
-                <div style="padding-top:30px" class="panel-body">
-                    <div style="display:none" id="login-alert" class="alert alert-danger col-sm-12"></div>
-                    <p style="color:red">@ViewBag.error</p>
-                    <table>
-                        <tr>
-                            <td width="25%"><img src="~/Content/images/logo.png" alt="hoplongtech" height="150" width="100%" style="float:left; padding-right:10px;" /></td>
-                            <td width="75%">
-                                <div style="width:auto; padding-left:15px; padding-right:20px; font-family:'Times New Roman'">
+<body>
+    @*<div class="container">
+            <div id="loginbox" style="margin-top:50px; top: 100px;" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
 
-                                    Welcome to HopLongTech System. Please login to enter your work area!
-                                    <form action="/Home/Login" id="loginform" class="form-horizontal" role="form" method="post" style="margin-top:10px;">
+                <div class="panel panel-info">
+                    <div class="panel-heading">
+                        <div class="panel-title">HopLong System</div>
 
-                                        <div style="margin-bottom: 25px; width: auto;" class="input-group">
-                                            <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                                            <input id="login-username" type="text" class="form-control" name="username" value="" placeholder="username">
-                                        </div>
+                    </div>
+                    <div style="padding-top:30px" class="panel-body">
+                        <div style="display:none" id="login-alert" class="alert alert-danger col-sm-12"></div>
+                        <p style="color:red">@ViewBag.error</p>
+                        <table>
+                            <tr>
+                                <td width="25%"><img src="~/Content/images/logo.png" alt="hoplongtech" height="150" width="100%" style="float:left; padding-right:10px;" /></td>
+                                <td width="75%">
+                                    <div style="width:auto; padding-left:15px; padding-right:20px; font-family:'Times New Roman'">
 
-                                        <div style="margin-bottom: 25px; width: auto;" class="input-group">
-                                            <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-                                            <input id="login-password" type="password" class="form-control" name="password" placeholder="password">
-                                        </div>
+                                        Welcome to HopLongTech System. Please login to enter your work area!
+                                        <form action="/Home/Login" id="loginform" class="form-horizontal" role="form" method="post" style="margin-top:10px;">
 
-                                        <center>
-                                            <div style="margin-top:10px; " class="form-group">
-                                                <!-- Button -->
-                                                <div class="col-sm-12 controls">
-                                                    <input type="submit" class="btn btn-success" value="Đăng nhập" />
-                                                    <!--<a id="btn-login" class="btn btn-success">Đăng nhập  </a>-->
-                                                </div>
+                                            <div style="margin-bottom: 25px; width: auto;" class="input-group">
+                                                <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                                                <input id="login-username" type="text" class="form-control" name="username" value="" placeholder="username">
                                             </div>
-                                        </center>
+
+                                            <div style="margin-bottom: 25px; width: auto;" class="input-group">
+                                                <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                                                <input id="login-password" type="password" class="form-control" name="password" placeholder="password">
+                                            </div>
+
+                                            <center>
+                                                <div style="margin-top:10px; " class="form-group">
+                                                    <!-- Button -->
+                                                    <div class="col-sm-12 controls">
+                                                        <input type="submit" class="btn btn-success" value="Đăng nhập" />
+                                                        <!--<a id="btn-login" class="btn btn-success">Đăng nhập  </a>-->
+                                                    </div>
+                                                </div>
+                                            </center>
 
 
-                                    </form>
+                                        </form>
+
+                                    </div>
+
+                                </td>
+                            </tr>
+                        </table>
+
+
+
+
+                        <div class="form-group">
+                            <div class="col-md-12 control">
+                                <div style="border-top: 1px solid#888; padding-top:15px; font-size:85%">
+                                    Liên hệ với Administrator trong trường hợp bạn quên mật khẩu
 
                                 </div>
-
-                            </td>
-                        </tr>
-                    </table>
-                    
-                                   
-                    
-                    
-                    <div class="form-group">
-                        <div class="col-md-12 control">
-                            <div style="border-top: 1px solid#888; padding-top:15px; font-size:85%">
-                                Liên hệ với Administrator trong trường hợp bạn quên mật khẩu
-
                             </div>
                         </div>
+
+
+
                     </div>
-
-                    
-
                 </div>
             </div>
-        </div>
+
+        </div>*@
+    <p style="color:red">@ViewBag.error</p>
+    
+    <div class="main_frm clearfix">
+        <div class="info_mail fl">
+            <div class="gioithieu">
+                <h1><a href="#"><img src="~/Content/images/hl-logo.png" alt="" title="" /></a></h1>
+                
+                <div class="text">
+                    <h3><b>CÔNG TY CỔ PHẦN CÔNG NGHỆ HỢP LONG</b></h3>
+                    <p>Địa chỉ: Số 412 Trần Khát Chân-HN</p>
+                    <p>Điện thoại: 0436617545 - Fax: 04.36.617.560</p>
+                    <p>Email: info@hoplongtech.com.vn</p>
+                </div>
+            </div>
+
+            <p class="title">Công ty cổ phần công nghệ Hợp Long (gọi tắt là Hoplongtech) được thành lập năm 2010 với những con người trẻ tuổi có đam mê kinh doanh và khao khát xây dựng góp phần phát triển nền kinh tế của đất nước.</p>
+            <p class="title_bold">Đăng nhập để biết thêm chi tiết:</p>
+            <ul>
+                <li>
+                    <p>Liên hệ với chúng tôi</p>
+                    <br />
+                </li>
+                <li>
+                    <p>Yêu cầu trợ giúp</p>
+                    <br />
+                </li>
+                <li>
+                    <p>Thông tin về chúng tôi</p>
+                    <br />
+                </li>
+            </ul>
+        </div> <!-- e:Info Mail -->
+        <div class="sign-in corner fr">
+            <div class="signin-box">
+                <div class="signup_button clearfix">
+                    <h2>Đăng nhập</h2>
+                   
+                    <p style="color:red">@ViewBag.error</p>
+                <form action="/Home/Login" id="loginform" method="post" role="form">
+                    <label>
+                        
+                        <input class="boxText user corner" id="login-username" type="text" title="" size="10" name="username" placeholder="Tên đăng nhập" required >
+                    </label>
+                    <label>
+                        
+                        <input  id="login-password" class="boxText boxText1 corner" type="password" title="" size="10" name="password" required>
+                    </label>
+                    <div style="margin-top: 25px;">
+                        <input class="slogin_btn_new btn btn_icon_back creatAccount btn-default" type="submit" value="Đăng nhập">
+                        <a href="#" class="link_frm">Quên mật khẩu?</a>
+                    </div>
+                </form>
+            </div>
+        </div> <!-- e:Sign in -->
 
     </div>
-    
+    <script>
+        function click() {
+            $('.user').click(function () {
+                $('.user').val();
+            });
+        }
+    </script>
 </body>
 </html>
 

@@ -1,0 +1,181 @@
+﻿body {font:normal 12px Arial, Helvetica, sans-serif; background: #fff; color:#333;}
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+caption,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	vertical-align: baseline;
+}
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {display: block;}
+body {line-height: 1;}
+ol, ul {list-style: none;}
+blockquote, q {quotes: none;}
+blockquote:before, blockquote:after,
+q:before, q:after {content: ''; content: none;}
+a, input[type="text"]:focus, input[type="password"]:focus, input[type="submit"]:focus, textarea {outline: 0 none;}
+a {text-decoration:none; color:#333;}
+.fl { float: left; }
+.fr { float: right; }
+.clearfix:after {
+    clear: both;
+    content: ".";
+    display: block;
+    height: 0;
+    line-height: 0;
+    visibility: hidden;
+}
+html[xmlns] .clearfix {
+    display: block;
+}
+html[xmlns] .clearfix { display: block; }
+* html .clearfix { height: 1%; }
+.corner {
+	-moz-border-radius: 5px; 
+	-webkit-border-radius: 5px; 
+	border-radius: 5px;
+}
+.main_frm {
+	max-width: 1200px;
+    min-width: 780px;
+    width: 1100px;
+	margin: 0 auto;
+	padding-top: 70px;
+}
+.sign-in {
+	width: 322px;
+	padding: 20px;
+	background: #f5f5f5;
+	border: 1px solid #e5e5e5;
+}
+.signup_button h2 {
+	float: left;
+	font: normal 16px Arial, Helvetica, sans-serif;
+}
+.signup_button a.creatAccount {
+	float: right;
+	color: #fff;
+	text-align: center;
+	font-size: 11px;
+	font-weight: bold;
+	text-shadow: 0 1px rgba(0, 0, 0, 0.1);
+    text-transform: uppercase;
+	background: #C83929;
+}
+.signup_button a.creatAccount:hover {
+
+}
+.signin-box label {
+    display: block;
+    margin-top: 25px;
+}
+.boxText {
+	width: 277px;
+	height: 42px;
+	border: 1px solid #d9d9d9;
+	color: #555;
+	padding-left: 57px;
+	font: normal 14px Arial, Helvetica, sans-serif;
+	background: #fff url('../../Content/images/login_frm.gif') 10px 6px no-repeat;
+}
+.boxText1 {
+	background: #fff url('../../Content/images/Untitled.jpg') -1px -1px no-repeat;
+}
+a.link_frm {
+	font-size: 13px;
+	color: #1155CC;
+}
+a.link_frm:hover {
+	text-decoration: underline;
+}
+.slogin_btn_new {
+	width: 80px;
+	height: 35px;
+	margin-right: 20px;
+	cursor: pointer;
+	border: none;
+	color: white;
+    background: #31A5DE;
+	font: bold 12px Arial, Helvetica, sans-serif;
+	text-shadow: 0 1px rgba(0, 0, 0, 0.1);
+}
+
+.info_mail {
+	width: 665px;
+	line-height: 18px;
+}
+.info_mail p.title {
+	margin: 10px 0px 20px 0px;
+	font-size: 14px;
+	color: #000;
+}
+.info_mail p.title_bold {
+	font: bold 20px "Times New Roman", Times, serif;
+	color: #333;
+	margin-bottom: 20px;
+}
+.info_mail ul li {
+	padding-left: 40px;
+	margin-bottom: 20px;
+	background: url('../../Content/images/arrow.png') 1px 2px no-repeat;
+}
+.info_mail ul li p {
+	font-weight: bold;
+	text-transform: uppercase;
+	font-family: tahoma;
+    padding-top: 8px;
+}
+.signin-box h2 a {
+	width: 237px;
+	height: 61px;
+	display: block;
+} 
+/*** 18-2-2012 ***/
+
+.g-button-submit {
+    background-color: #4D90FE;
+    background-image: -moz-linear-gradient(center top , #4D90FE, #4787ED);
+    border: 1px solid #3079ED;
+    color: #FFFFFF;
+    text-shadow: 0 1px rgba(0, 0, 0, 0.1);
+	font-family: Arial, Helvetica, sans-serif;
+	height: 27px;
+	line-height: 27px;
+	padding: 0 8px;
+}
+.g-button-submit:hover {
+    background-color: #357AE8;
+    background-image: -moz-linear-gradient(center top , #4D90FE, #357AE8);
+    border: 1px solid #2F5BB7;
+    color: #FFFFFF;
+    text-shadow: 0 1px rgba(0, 0, 0, 0.3);
+}
+.gioithieu{
+    height: 100px;
+    width: 100%;
+}
+.gioithieu h1{
+    width: 140px;
+    display: inline-block;
+    float: left;
+}
+.gioithieu .text{
+    width: 78%;
+    height: 100%;
+    display: inline-block;
+    float: right;
+}
+.text h3{
+    margin-bottom: 10px;
+}

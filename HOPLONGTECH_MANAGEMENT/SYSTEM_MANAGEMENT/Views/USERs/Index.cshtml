@@ -27,13 +27,13 @@
                                 <div class="bg tablescroll">
                                     <table class="table table-bordered table-striped">
                                         <tr class="filters">
-                                            <th>USERNAME</th>
-                                            <th>MẬT KHẨU</th>
-                                            <th>HỌ VÀ TÊN</th>
+                                            <th>Username</th>
+                                            <th>Mật khẩu</th>
+                                            <th>Họ và tên</th>
                                             <th>E-MAIL</th>
-                                            <th>AVATAR</th>
-                                            <th>LÀ QUẢN TRỊ VIÊN</th>
-                                            <th>HOẠT ĐỘNG</th>
+                                            <th>Avatar</th>
+                                            <th>Là quản trị viên</th>
+                                            <th>Hoạt động</th>
                                             <th>
                                                 <em class="fa fa-cog"></em>
                                             </th>
@@ -43,16 +43,16 @@
                                         {
                                             
                                             <tr>
-                                                <td>
+                                                <td class="paddingleft">
                                                     @Html.DisplayFor(modelItem => item.USERNAME)
                                                 </td>
-                                                <td>
+                                                <td class="paddingleft">
                                                     @Html.DisplayFor(modelItem => item.PASSWORD)
                                                 </td>
-                                                <td>
+                                                <td class="paddingleft">
                                                     @Html.DisplayFor(modelItem => item.FULLNAME)
                                                 </td>
-                                                <td>
+                                                <td class="paddingleft">
                                                     @Html.DisplayFor(modelItem => item.EMAIL)
                                                 </td>
                                                 <td>
@@ -65,12 +65,12 @@
                                                     @Html.DisplayFor(modelItem => item.ALLOWED)
                                                 </td>
                                                 <td>
-                                                    <a href="/USERs/Edit/@item.USER_ID"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a> &nbsp;&nbsp;
-                                                    <a href="/USERs/Details/@item.USER_ID"><i class="fa fa-info-circle" aria-hidden="true"></i></a> &nbsp;&nbsp;
-                                                    <a href="/USERs/Delete/@item.USER_ID"><i class="fa fa-trash-o" aria-hidden="true"></i></a> &nbsp;&nbsp;
-                                                    <a href="/USER_PERMISSIONS/Index/@item.USER_ID"><i class="fa fa-cog" aria-hidden="true"></i></a> &nbsp;&nbsp;
-                                                    <a href="/USER_METAS/Create"><i class="fa fa-user-plus" aria-hidden="true"></i></a> &nbsp;&nbsp;
-                                                    <a href="/USER_METAS/Index/@item.USER_ID"><i class="fa fa-user" aria-hidden="true"></i></a> &nbsp;&nbsp;
+                                                    <a href="/USERs/Edit/@item.USER_ID"  class="btn btn_icon_edit btn-default"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>Sửa</a> &nbsp;&nbsp;
+                                                    <a href="/USERs/Details/@item.USER_ID"  class="btn btn_icon_details btn-default"><i class="fa fa-info-circle" aria-hidden="true"></i>Chi tiết</a> &nbsp;&nbsp;
+                                                    <a href="/USERs/Delete/@item.USER_ID"  class="btn btn_icon_delete btn-default"><i class="fa fa-trash-o" aria-hidden="true"></i>Xóa</a> &nbsp;&nbsp;
+                                                    <a href="/USER_PERMISSIONS/Index/@item.USER_ID"  class="btn btn_icon_permission btn-default"><i class="fa fa-cog" aria-hidden="true"></i>Phân quyền</a> &nbsp;&nbsp;
+                                                    <a href="/USER_METAS/Create"  class="btn btn_icon_meta_create btn-default"><i class="fa fa-user-plus" aria-hidden="true"></i>Thêm thông tin cá nhân</a> &nbsp;&nbsp;
+                                                    <a href="/USER_METAS/Index/@item.USER_ID"  class="btn btn_icon_meta btn-default"><i class="fa fa-user" aria-hidden="true"></i>Chi tiết thông tin cá nhân</a> &nbsp;&nbsp;
                                             </tr>                               
                                         }
                                     </table>

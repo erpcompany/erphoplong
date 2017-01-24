@@ -54,10 +54,10 @@
                                                     @Html.DisplayFor(modelItem => item.USER.USERNAME)
                                                 </td>
                                                 <td>
-                                                    <a href="/DEPARTMENTs/Edit/@item.DEPARTMENT_ID"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a> &nbsp;&nbsp;&nbsp;
-                                                    <a href="/DEPARTMENTs/Details/@item.DEPARTMENT_ID"><i class="fa fa-info-circle" aria-hidden="true"></i></a> &nbsp;&nbsp;&nbsp;
-                                                    <a href="/DEPARTMENTs/Delete/@item.DEPARTMENT_ID"><i class="fa fa-trash-o " onclick="return confirm('Bạn có chắc muốn xóa không?')" aria-hidden="true"></i></a> &nbsp;&nbsp;&nbsp;
-                                                    <a href="/DEPARTMENTs/Department_Users/@item.DEPARTMENT_ID"><i class="fa fa-list " aria-hidden="true"></i></a> &nbsp;&nbsp;&nbsp;
+                                                    <a href="/DEPARTMENTs/Edit/@item.DEPARTMENT_ID" class="btn btn_icon_edit btn-default"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>Sửa</a> &nbsp;&nbsp;&nbsp;
+                                                    <a href="/DEPARTMENTs/Details/@item.DEPARTMENT_ID" class="btn btn_icon_details btn-default"><i class="fa fa-info-circle" aria-hidden="true"></i>Chi tiết</a> &nbsp;&nbsp;&nbsp;
+                                                    <a href="/DEPARTMENTs/Delete/@item.DEPARTMENT_ID" class="btn btn_icon_delete btn-default"><i class="fa fa-trash-o " onclick="return confirm('Bạn có chắc muốn xóa không?')" aria-hidden="true"></i>Xóa</a> &nbsp;&nbsp;&nbsp;
+                                                    <a href="/DEPARTMENTs/Department_Users/@item.DEPARTMENT_ID" class="btn btn_icon_depart btn-default"><i class="fa fa-list " aria-hidden="true"></i>Nhân viên phòng ban</a> &nbsp;&nbsp;&nbsp;
 
                                                 </td>
                                             </tr>

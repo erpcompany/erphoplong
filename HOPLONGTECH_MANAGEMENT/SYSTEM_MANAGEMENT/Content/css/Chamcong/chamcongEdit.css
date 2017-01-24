@@ -2,44 +2,71 @@
     margin: 0px;
     padding: 0px;
 }
-hr{
-    border: 2px solid #007ACC;
+h2{
+    margin: 0px;
+    font-family: Arial, Helvetica, sans-serif;
 }
-.form-horizontal{
+form #container_cate{
+    width: 50%;
     margin: auto;
-    border: 4px solid #007ACC;
-    border-radius: 5px;
-    width: 800px;
-    
+    height: 670px;
+    padding-left: 10px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    box-shadow: 0px 1px 10px 3px #888888;
+    font-family: Arial, Helvetica, sans-serif;
 }
-.form-horizontal .CountTable{
-    text-align: center;
-    padding-top: 5px;
-}
-
-.form-group .btn-default:hover{
-    background: aqua;
-    color: black;
-}
-.backlink a:hover{
-    color: red;
-}
-.form-horizontal .control-label{
-    text-align: left;
-}
-.form-group:last-child{
-    border-top: 4px solid #007ACC;
-    padding-top: 0px;
-    height: 30px;
-}
-.form-group a img{
-    height: 30px;
+.editcontent{
+    width: 100%;
+    height: auto;
     float: left;
+    margin: auto;
 }
-#submit{
-    background: url(../../images/1484757847_ic_system_update_tv_48px.png) no-repeat ;
-    background-size: 100%;
-    border: none;
-    float: right;
-    margin-top: 5px;
+.action{
+    float: left;
+    width: 65%;
+    height: auto;
+    margin: auto;
+    margin-top: 20px;
+}
+.editcontent .row{
+    width: 100%;
+    height: 50px;
+    padding-top: 20px;
+    padding-left: 10px;
+}
+.editcontent .row .col{
+    display: inline-block;
+    width: 30%;
+    float: left;
+    height: 100%;
+    padding-top: 7px;
+}
+.editcontent .row .colinput{
+    display: inline-block;
+    width: 69%;
+    float: left;
+    height: 100%;
+}
+.editcontent .row .colinput input{
+    width: 90%;
+    height: 30px;
+    padding-left: 5px;
+}
+.form-group .btn_save{
+    padding-right: 5px;
+}
+.col-md-offset-2{
+    text-align: right;
+}
+.btn_icon_back{
+    background: #ACBAC3;
+    color: white;
+}
+.icon_back{
+    padding-right: 5px;
+}
+.btn_icon_delete{
+    background: red;
+    color: white;
 }

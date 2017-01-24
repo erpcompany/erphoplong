@@ -1,0 +1,10 @@
+﻿*{
+    margin: 0px;
+    padding: 0px;
+    font-family: Lora;
+    font-size: 14px;
+}
+.panel-primary>.panel-heading{
+    background-color: lightskyblue !important;
+    color: white !important;
+}
