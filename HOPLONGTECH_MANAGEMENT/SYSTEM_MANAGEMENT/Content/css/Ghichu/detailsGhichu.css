@@ -10,12 +10,23 @@
 .panel-title span{
     font-size: 10px;
 }
-.fa{
-    font-size: 25px;
-    padding-top: 10px;
-}
 .back,.edit{
     display: inline-block;
     float: left;
-    margin-right: 10px;
+}
+.top{
+    width: 50%
+}
+.back{
+    margin-left: 110px;
+}
+.fa{
+    margin-right: 5px;
+}
+.btn_icon_edit{
+    background: #449D44;
+    color: white;
+}
+.btn_icon_back{
+    background: #E6E6E6;
 }

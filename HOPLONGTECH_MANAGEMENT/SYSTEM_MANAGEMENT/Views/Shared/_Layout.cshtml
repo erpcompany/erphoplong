@@ -142,7 +142,7 @@
                             <h3>Trang cá nhân</h3>
                             <ul class="nav side-menu">
                                 <li>
-                                    <a href="#"><i class="fa fa-bug"></i> Thông tin cá nhân <span class="fa fa-chevron-down"></span></a>
+                                    <a href="#"><img src="~/Content/images/user-info-icon-9309.png" height="18" width="26"/>Thông tin cá nhân <span class="fa fa-chevron-down"></span></a>
                                     <ul class="nav child_menu">
                                         <li>@Html.ActionLink("Thông tin cá nhân", "Index", "USER_METAS", new { id = Session["USER_ID"] }, null)</li>
                                         <li>@Html.ActionLink("Đổi mật khẩu", "ChangePassword", "USERs")</li>
@@ -152,7 +152,7 @@
                                 <li></li>
 
                                 <li>
-                                    <a><i class="fa fa-sitemap"></i> Lương <span class="fa fa-chevron-down"></span></a>
+                                    <a><img src="~/Content/images/bang-luong.png" width="26" height="18"/> Lương <span class="fa fa-chevron-down"></span></a>
                                     <ul class="nav child_menu">
                                         <li>@Html.ActionLink("Chấm công", "Index", "BANG_CHAM_CONG", new { id = Session["USER_ID"] }, null)</li>
                                         <li>

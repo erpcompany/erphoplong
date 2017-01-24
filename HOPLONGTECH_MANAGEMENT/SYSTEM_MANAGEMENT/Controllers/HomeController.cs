@@ -26,12 +26,26 @@ namespace SYSTEM_MANAGEMENT.Controllers
             var user = db.USERS.SingleOrDefault(x => x.USERNAME == username && x.PASSWORD == password && x.ALLOWED == 1);
             if(user !=null)
             {
-                Session["USER_ID"] = user.USER_ID;
-                Session["USERNAME"] = user.USERNAME;
-                Session["FULLNAME"] = user.FULLNAME;
-                Session["IS_AMIN"] = user.IS_ADMIN;
-                Session["AVATAR"] = user.AVATAR;
-                return RedirectToAction("Index");
+               
+                if(user.IS_ADMIN == 1)
+                {
+                    Session["USER_ID"] = user.USER_ID;
+                    Session["USERNAME"] = user.USERNAME;
+                    Session["FULLNAME"] = user.FULLNAME;
+                    Session["IS_AMIN"] = user.IS_ADMIN;
+                    Session["AVATAR"] = user.AVATAR;
+                    return RedirectToAction("Index", "BANG_LUONG");
+                }
+                else
+                {
+                    Session["USER_ID"] = user.USER_ID;
+                    Session["USERNAME"] = user.USERNAME;
+                    Session["FULLNAME"] = user.FULLNAME;
+                    Session["IS_AMIN"] = user.IS_ADMIN;
+                    Session["AVATAR"] = user.AVATAR;
+                    return RedirectToAction("Index");
+                }
+                
             }
             ViewBag.error = "Wrong username or password";
             return View();

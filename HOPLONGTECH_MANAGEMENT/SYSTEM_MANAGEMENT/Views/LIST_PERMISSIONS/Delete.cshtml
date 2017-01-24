@@ -3,46 +3,45 @@
 @{
     ViewBag.Title = "Delete";
 }
+<link href="~/Content/css/ListPermission/listperDelete.css" rel="stylesheet"/>
+<h2 style="text-align:center">Xóa quyền</h2>
 
-<h2>Delete</h2>
-
-<h3>Are you sure you want to delete this?</h3>
-<div>
-    <h4>LIST_PERMISSIONS</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.PERMISSION_NAME)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.PERMISSION_NAME)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.DESCRIPTION)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.DESCRIPTION)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.LIST_CONTROLLERS.CONTROLLER_NAME)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.LIST_CONTROLLERS.CONTROLLER_NAME)
-        </dd>
-
-    </dl>
-
-    @using (Html.BeginForm()) {
-        @Html.AntiForgeryToken()
-
-        <div class="form-actions no-color">
-            <input type="submit" value="Delete" class="btn btn-default" /> |
-            @Html.ActionLink("Back to List", "Index")
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    @Html.HiddenFor(model => model.PERMISSION_ID)
+    <div id="container_cate">
+        <div class="editcontent">
+            <div class="row">
+                <div class="col">TÊN QUYỀN</div>
+                <div class="colinput">
+                    @Html.EditorFor(model => model.PERMISSION_NAME, new { htmlAttributes = new { @readonly = "readonly" } })
+                    @Html.ValidationMessageFor(model => model.PERMISSION_NAME, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">MIÊU TẢ</div>
+                <div class="colinput">
+                    @Html.EditorFor(model => model.DESCRIPTION, new { htmlAttributes = new { @readonly = "readonly" } })
+                    @Html.ValidationMessageFor(model => model.DESCRIPTION, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">TÊN CHỨC NĂNG</div>
+                <div class="colinput">
+                    @Html.EditorFor(model => model.LIST_CONTROLLERS.CONTROLLER_NAME, new { htmlAttributes = new { @readonly = "readonly" } })
+                    @Html.ValidationMessageFor(model => model.LIST_CONTROLLERS.CONTROLLER_NAME, "", new { @class = "text-danger" })
+                </div>
+            </div>
         </div>
-    }
-</div>
+        <div class="action">
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <button type="submit" class="btn btn_icon_delete btn-success"><span class="fa icon_back fa-trash-o" aria-hidden="true"></span>Xóa</button>
+                    <a href="~/LIST_PERMISSIONS/Index" class="btn btn_icon_back btn-default"><span class="fa icon_back fa-arrow-circle-left"></span>Trở về</a>
+                </div>
+            </div>
+        </div>
+    </div>
+}

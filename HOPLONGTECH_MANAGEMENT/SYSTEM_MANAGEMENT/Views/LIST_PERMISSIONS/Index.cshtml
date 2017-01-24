@@ -3,37 +3,60 @@
 @{
     ViewBag.Title = "Danh sách quyền";
 }
+<link href="~/Content/css/ListPermission/listperIndex.css" rel="stylesheet"/>
+<h2 style="text-align:center">Danh Sách Quyền</h2>
 
-<h2>Danh Sách Quyền</h2>
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.PERMISSION_NAME)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.DESCRIPTION)
-        </th>
-        
-        <th></th>
-    </tr>
+<a href="~/LIST_PERMISSIONS/Create" class="btn create btn-default"><span class="glyphicon icon-create glyphicon-plus"></span>Thêm mới</a>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.PERMISSION_NAME)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.DESCRIPTION)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.PERMISSION_ID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.PERMISSION_ID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.PERMISSION_ID })
-        </td>
-    </tr>
-}
+<body>
+    <div class="container">
 
-</table>
+        <div class="creatediv1 marginTop30">
+
+            <div class="row margin-top-50">
+                <div class="col-md-12">
+                    <div class="panel panel-primary filterable">
+                        <div class="main">
+                            <table class="span12" border="1">
+                                <div class="bg tablescroll">
+                                    <table class="table table-bordered table-striped">
+                                        <tr class="filters">
+                                            <th>
+                                                Tên quyền
+                                            </th>
+                                            <th>
+                                                Miêu tả
+                                            </th>
+                                            <th>
+                                                Tác vụ
+                                            </th>
+                                        </tr>
+
+                                        @foreach (var item in Model)
+                                        {
+                                            <tr>
+                                                <td>
+                                                    @Html.DisplayFor(modelItem => item.PERMISSION_NAME)
+                                                </td>
+                                                <td>
+                                                    @Html.DisplayFor(modelItem => item.DESCRIPTION)
+                                                </td>
+                                                <td>
+                                                    <a href="/LIST_PERMISSIONS/Edit/@item.PERMISSION_ID" class="btn btn_icon_edit btn-default"><span class="fa icon fa-pencil-square-o" aria-hidden="true"></span>Sửa</a> &nbsp;&nbsp;
+                                                    <a href="/LIST_PERMISSIONS/Details/@item.PERMISSION_ID" class="btn btn_icon_details btn-default"><span class="fa icon fa-info-circle" aria-hidden="true"></span>Chi tiết</a> &nbsp;&nbsp;
+                                                    <a href="/LIST_PERMISSIONS/Delete/@item.PERMISSION_ID" class="btn btn_icon_delete btn-default"><span class="fa icon fa-trash-o" aria-hidden="true"></span>Xóa</a> &nbsp;&nbsp;
+                                                </td>
+                                            </tr>
+                                        }
+                                    </table>
+                                </div>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+</body>

@@ -16,15 +16,15 @@
                     <div class="panel panel-default coupon">
                         <div class="panel-heading" id="head">
                             <div class="panel-title" id="title">
-                                <span class="col-md-2">
+                                <span class="col-md-2 top">
                                     <div class="col-md-offset-0 col-md-1 edit">
-                                        <a href="/GHI_CHU_CONG_VIEC/Edit/@Session["USER_ID"]"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a> &nbsp;&nbsp;&nbsp;
+                                        <a href="/GHI_CHU_CONG_VIEC/Edit/@Session["USER_ID"]" class="btn btn_icon_edit btn-default"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>Chỉnh sửa</a> &nbsp;&nbsp;&nbsp;
                                     </div> 
                                     <div class="col-md-offset-0 col-md-1 back">
-                                        <a href="/GHI_CHU_CONG_VIEC/Index/@Session["USER_ID"]"><img src="~/Content/images/back_icon.png" /></a>
+                                        <a href="/GHI_CHU_CONG_VIEC/Index/@Session["USER_ID"]" class="btn btn_icon_back btn-default"><i class="fa fa-arrow-circle-left" aria-hidden="true"></i>Quay lại</a>
                                     </div>
                                 </span>
-                                <b>@Html.DisplayFor(model => model.NOTED_NAME)</b>
+                                <b style="font-size: 27px;">@Html.DisplayFor(model => model.NOTED_NAME)</b>
                                 
                             </div>
                         </div>

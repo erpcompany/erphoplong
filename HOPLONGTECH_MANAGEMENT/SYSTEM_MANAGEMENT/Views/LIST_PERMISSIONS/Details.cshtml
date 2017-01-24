@@ -3,40 +3,45 @@
 @{
     ViewBag.Title = "Details";
 }
+<link href="~/Content/css/ListPermission/listperDetails.css" rel="stylesheet"/>
+<h2 style="text-align:center">Chi tiết quyền</h2>
 
-<h2>Details</h2>
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
 
-<div>
-    <h4>LIST_PERMISSIONS</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.PERMISSION_NAME)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.PERMISSION_NAME)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.DESCRIPTION)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.DESCRIPTION)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.LIST_CONTROLLERS.CONTROLLER_NAME)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.LIST_CONTROLLERS.CONTROLLER_NAME)
-        </dd>
-
-    </dl>
-</div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.PERMISSION_ID }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
+    <div id="container_cate">
+        <div class="editcontent">
+            <div class="row">
+                <div class="col">TÊN QUYỀN</div>
+                <div class="colinput">
+                    @Html.EditorFor(model => model.PERMISSION_NAME, new { htmlAttributes = new { @readonly = "readonly" } })
+                    @Html.ValidationMessageFor(model => model.PERMISSION_NAME, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">MIÊU TẢ</div>
+                <div class="colinput">
+                    @Html.EditorFor(model => model.DESCRIPTION, new { htmlAttributes = new { @readonly = "readonly" } })
+                    @Html.ValidationMessageFor(model => model.DESCRIPTION, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">TÊN CHỨC NĂNG</div>
+                <div class="colinput">
+                    @Html.EditorFor(model => model.LIST_CONTROLLERS.CONTROLLER_NAME, new { htmlAttributes = new { @readonly = "readonly" } })
+                    @Html.ValidationMessageFor(model => model.LIST_CONTROLLERS.CONTROLLER_NAME, "", new { @class = "text-danger" })
+                </div>
+            </div>
+        </div>
+        <div class="action">
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <a href="~/LIST_PERMISSIONS/Edit/@Model.PERMISSION_ID" class="btn btn_icon_edit btn-default"><span class="fa icon_back fa-pencil-square-o"></span>Chỉnh sửa</a>
+                    <a href="~/LIST_PERMISSIONS/Index" class="btn btn_icon_back btn-default"><span class="fa icon_back fa-arrow-circle-left"></span>Trở về</a>
+                </div>
+            </div>
+        </div>
+    </div>
+}

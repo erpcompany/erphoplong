@@ -4,110 +4,83 @@
     ViewBag.Title = "Tạo ghi chú";
 }
 
-
-
+<link href="~/Content/css/Ghichu/createGhichu_admin.css" rel="stylesheet"/>
+<h2 style="text-align:center">Tạo mới ghi chú</h2>
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-<link href="~/Content/css/Ghichu/createGhichu_admin.css" rel="stylesheet" type="text/css"/>
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <form id="candidatedata" class="form-horizontal" method="POST">
-
-                    <div class="row">
-                        <div class="col-md-offset-2 col-md-8">
-                            <div class="panel">
-                                <div class="panel-body">
-
-                                    <div class="form-horizontal">
-                                        <h2>Tạo ghi chú mới</h2>
-                                        <hr />
-                                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-                                        @if (Convert.ToInt32(@Session["IS_AMIN"]) == 1)
-                                        {
-                                            <div class="form-group">
-                                                <div class="control-label col-md-2" style="font-size:14px; font-weight:bold; font-family:'Times New Roman'">Người dùng: </div>
-                                                <div class="col-md-10">
-                                                    @Html.DropDownList("USER_ID", null, htmlAttributes: new { @class = "form-control" })
-                                                    @Html.ValidationMessageFor(model => model.USER_ID, "", new { @class = "text-danger" })
-                                                </div>
-                                            </div>
-                                        }
-                                        else
-                                        {
-                                            <div class="form-group">
-                                                <div class="control-label col-md-2" style="font-size:14px; font-weight:bold; font-family:'Times New Roman'">Người dùng: </div>
-                                                <div class="col-md-10">
-                                                    @Html.EditorFor(model => model.USER_ID, new { htmlAttributes = new { @class = "form-control" } })
-                                                    @Html.ValidationMessageFor(model => model.USER_ID, "", new { @class = "text-danger" })
-                                                </div>
-                                            </div>
-                                        }
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
 
 
-
-                                        <div class="form-group">
-                                            <div class="control-label col-md-2" style="font-size:14px; font-weight:bold; font-family:'Times New Roman'">Ngày tạo: </div>
-                                            <div class="col-md-10">
-                                                @Html.EditorFor(model => model.DATE_NOTED, new { htmlAttributes = new { @class = "form-control" } })
-                                                @Html.ValidationMessageFor(model => model.DATE_NOTED, "", new { @class = "text-danger" })
-                                            </div>
-                                        </div>
-
-                                        <div class="form-group">
-                                            <div class="control-label col-md-2" style="font-size:14px; font-weight:bold; font-family:'Times New Roman'">Tên ghi chú: </div>
-                                            <div class="col-md-10">
-                                                @Html.EditorFor(model => model.NOTED_NAME, new { htmlAttributes = new { @class = "form-control" } })
-                                                @Html.ValidationMessageFor(model => model.NOTED_NAME, "", new { @class = "text-danger" })
-                                            </div>
-                                        </div>
-
-                                        <div class="form-group">
-                                            <div class="control-label col-md-2" style="font-size:14px; font-weight:bold; font-family:'Times New Roman'">Nội dung ghi chú: </div>
-                                            <div class="col-md-10">
-                                                @Html.EditorFor(model => model.NOTED_INFO, new { htmlAttributes = new { @class = "form-control" } })
-                                                @Html.ValidationMessageFor(model => model.NOTED_INFO, "", new { @class = "text-danger" })
-                                            </div>
-                                        </div>
-
-                                        <div class="form-group">
-                                            <div class="control-label col-md-2" style="font-size:14px; font-weight:bold; font-family:'Times New Roman'">Trạng thái: </div> 
-                                            <div class="col-md-10">
-                                                @Html.EditorFor(model => model.IS_DONE, new { htmlAttributes = new { @class = "form-control" } })
-                                                @Html.ValidationMessageFor(model => model.IS_DONE, "", new { @class = "text-danger" })
-                                            </div>
-                                        </div>
-
-                                        <div class="form-group">
-                                            <div class="control-label col-md-2" style="font-size:14px; font-weight:bold; font-family:'Times New Roman'">Ngày hoàn thành: </div>
-                                            <div class="col-md-10">
-                                                @Html.EditorFor(model => model.DATE_DONE, new { htmlAttributes = new { @class = "form-control" } })
-                                                @Html.ValidationMessageFor(model => model.DATE_DONE, "", new { @class = "text-danger" })
-                                            </div>
-                                        </div>
-
-                                        <div class="form-group border">
-                                            <div class="col-md-offset-0 col-md-2">
-                                                <a href="/GHI_CHU_CONG_VIEC/Index/@Session["USER_ID"]"><img src="~/Content/images/back_icon.png" /></a>
-                                            </div>
-                                            <div class="col-md-offset-4 col-md-1">
-                                                <input type="submit" id="submit" value="" class="btn btn-default" />
-                                            </div>                                        
-                                        </div>
-                                        <p></p>
-                                    </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </form>
-               
+    <div id="container_cate">
+        <div class="editcontent">
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            @if (Convert.ToInt32(@Session["IS_AMIN"]) == 1)
+                {
+                <div class="row">
+                    <div class="col">Người dùng: </div>
+                    <div class="colinput">
+                        <div style="margin-top:6px;">@Html.DropDownList("USER_ID")</div>
+                        @Html.ValidationMessageFor(model => model.USER_ID, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            }
+            else
+            {
+                <div class="row">
+                    <div class="col">Người dùng</div>
+                    <div class="colinput">
+                        @Html.EditorFor(model => model.USER_ID)
+                        @Html.ValidationMessageFor(model => model.USER_ID, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            }
+            <div class="row">
+                <div class="col">NGÀY GHI CHÚ</div>
+                <div class="colinput">
+                    @Html.EditorFor(model => model.DATE_NOTED)
+                    @Html.ValidationMessageFor(model => model.DATE_NOTED, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">TÊN GHI CHÚ</div>
+                <div class="colinput">
+                    @Html.EditorFor(model => model.NOTED_NAME)
+                    @Html.ValidationMessageFor(model => model.NOTED_NAME, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">THÔNG TIN GHI CHÚ</div>
+                <div class="colinput">
+                    @Html.EditorFor(model => model.NOTED_INFO)
+                    @Html.ValidationMessageFor(model => model.NOTED_INFO, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">ĐÃ HOÀN THÀNH</div>
+                <div class="colinput">
+                    @Html.EditorFor(model => model.IS_DONE)
+                    @Html.ValidationMessageFor(model => model.IS_DONE, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">NGÀY HOÀN THÀNH</div>
+                <div class="colinput">
+                    @Html.EditorFor(model => model.DATE_DONE)
+                    @Html.ValidationMessageFor(model => model.DATE_DONE, "", new { @class = "text-danger" })
+                </div>
+            </div>
+        </div>
+        <div class="action">
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <button type="submit" class="btn btn_icon_create btn-success"><span class="fa icon_back fa-plus-circle" aria-hidden="true"></span>Tạo mới</button>
+                    <button type="reset" class="btn btn_icon_delete btn-success"><span class="fa icon_back fa-ban" aria-hidden="true"></span>Hủy bỏ</button>
+                    <a href="~/GHI_CHU_CONG_VIEC/Danh_Sach_Ghi_Chu" class="btn btn_icon_back btn-default"><span class="fa icon_back fa-arrow-circle-left"></span>Trở về</a>
 
                 </div>
             </div>
         </div>
 
-     }
-
-     
+    </div>
+}
