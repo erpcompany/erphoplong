@@ -4,49 +4,49 @@
     ViewBag.Title = "Create";
 }
 <link href="~/Areas/HopLong/Style/CustomerGroup/create.css" rel="stylesheet"/>
-<h2 class="h2">TẠO MỚI NHÓM KHÁCH HÀNG</h2>
+<h2 style="text-align:center">TẠO MỚI NHÓM KHÁCH HÀNG</h2>
 
-@using (Html.BeginForm()) 
+
+@using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-    
-    <div class="form-horizontal">
-        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-        <div class="form-group">
-            <div class="col-md-1"></div>
-            @Html.LabelFor(model => model.MA_NHOM_KHACH,"MÃ NHÓM KHÁCH", htmlAttributes: new { @class = "control-label col-md-4" })
-            <div class="col-md-4">
-                @Html.EditorFor(model => model.MA_NHOM_KHACH, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.MA_NHOM_KHACH, "", new { @class = "text-danger" })
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+
+    <div id="container_cate">
+        <div class="editcontent">
+            <div class="row">
+                <div class="col">MÃ NHÓM KHÁCH</div>
+                <div class="colinput">
+                    @Html.EditorFor(model => model.MA_NHOM_KHACH)
+                    @Html.ValidationMessageFor(model => model.MA_NHOM_KHACH, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">TÊN NHÓM KHÁCH</div>
+                <div class="colinput">
+                    @Html.EditorFor(model => model.TEN_NHOM_KHACH)
+                    @Html.ValidationMessageFor(model => model.TEN_NHOM_KHACH, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">MÔ TẢ</div>
+                <div class="colinput">
+                    @Html.EditorFor(model => model.MO_TA)
+                    @Html.ValidationMessageFor(model => model.MO_TA, "", new { @class = "text-danger" })
+                </div>
+            </div>    
+        </div>
+        <div class="action">
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <button type="submit" class="btn btn_icon_create btn-success"><span class="fa icon_back fa-plus-circle" aria-hidden="true"></span>Tạo mới</button>
+                    <button type="reset" class="btn btn_icon_delete btn-success"><span class="fa icon_back fa-ban" aria-hidden="true"></span>Hủy bỏ</button>
+                    <a href="~/HopLong/CUSTOMER_GROUPS/Index" class="btn btn_icon_back btn-default"><span class="fa icon_back fa-arrow-circle-left"></span>Trở về</a>
+
+                </div>
             </div>
         </div>
 
-        <div class="form-group">
-            <div class="col-md-1"></div>
-            @Html.LabelFor(model => model.TEN_NHOM_KHACH,"TÊN NHÓM KHÁCH", htmlAttributes: new { @class = "control-label col-md-4" })
-            <div class="col-md-4">
-                @Html.EditorFor(model => model.TEN_NHOM_KHACH, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.TEN_NHOM_KHACH, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            <div class="col-md-1"></div>
-            @Html.LabelFor(model => model.MO_TA,"MÔ TẢ", htmlAttributes: new { @class = "control-label col-md-4" })
-            <div class="col-md-4">
-                @Html.EditorFor(model => model.MO_TA, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.MO_TA, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            <div class="col-md-offset-0 col-md-1">
-                <a href="/HopLong/CUSTOMERs"><img src="~/Content/images/back_icon.png" /></a>
-            </div>
-            <div class="col-md-offset-4 col-md-1">
-                <input type="submit" id="submit" value="" class="btn btn-default" />
-            </div>
-        </div>
     </div>
 }
-

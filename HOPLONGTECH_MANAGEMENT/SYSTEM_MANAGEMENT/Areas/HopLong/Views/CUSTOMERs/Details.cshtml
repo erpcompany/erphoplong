@@ -3,114 +3,103 @@
 @{
     ViewBag.Title = "Details";
 }
-<link href="~/Areas/HopLong/Style/Customers/details.css" rel="stylesheet"/>
-<h2 class="h2">CHI TIẾT KHÁCH HÀNG</h2>
+<link href="~/Areas/HopLong/Style/Customers/details.css" rel="stylesheet" />
+<h2 style="text-align:center">CHI TIẾT KHÁCH HÀNG</h2>
 
 
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    @Html.HiddenFor(model => model.MA_KHACH_HANG)
 
-    <div class="form-horizontal">
-        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-        @Html.HiddenFor(model => model.MA_KHACH_HANG)
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.TEN_KHACH_HANG, "TÊN KHÁCH HÀNG", htmlAttributes: new { @class = "control-label col-md-5" })
-            <div class="col-md-6">
-                @Html.EditorFor(model => model.TEN_KHACH_HANG, new { htmlAttributes = new { @class = "form-control",@readonly="readonly" } })
-                @Html.ValidationMessageFor(model => model.TEN_KHACH_HANG, "", new { @class = "text-danger" })
+    <div id="container_cate">
+        <div class="editcontent">
+            <div class="row">
+                <div class="col">TÊN KHÁCH HÀNG</div>
+                <div class="colinput">
+                    @Html.EditorFor(model => model.TEN_KHACH_HANG, new { htmlAttributes = new { @readonly = "readonly" } })
+                    @Html.ValidationMessageFor(model => model.TEN_KHACH_HANG, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">ĐỊA CHỈ CÔNG TY</div>
+                <div class="colinput">
+                    @Html.EditorFor(model => model.DIA_CHI_CONG_TY, new { htmlAttributes = new { @readonly = "readonly" } })
+                    @Html.ValidationMessageFor(model => model.DIA_CHI_CONG_TY, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">ĐỊA CHỈ XUẤT HÓA ĐƠN</div>
+                <div class="colinput">
+                    @Html.EditorFor(model => model.DIA_CHI_XUAT_HOA_DON, new { htmlAttributes = new { @readonly = "readonly" } })
+                    @Html.ValidationMessageFor(model => model.DIA_CHI_XUAT_HOA_DON, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">MÃ SỐ THUẾ</div>
+                <div class="colinput">
+                    @Html.EditorFor(model => model.MST, new { htmlAttributes = new { @readonly = "readonly" } })
+                    @Html.ValidationMessageFor(model => model.MST, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">ĐIỆN THOẠI</div>
+                <div class="colinput">
+                    @Html.EditorFor(model => model.DIEN_THOAI, new { htmlAttributes = new { @readonly = "readonly" } })
+                    @Html.ValidationMessageFor(model => model.DIEN_THOAI, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">FAX</div>
+                <div class="colinput">
+                    @Html.EditorFor(model => model.FAX, new { htmlAttributes = new { @readonly = "readonly" } })
+                    @Html.ValidationMessageFor(model => model.FAX, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">EMAIL</div>
+                <div class="colinput">
+                    @Html.EditorFor(model => model.EMAIL, new { htmlAttributes = new { @readonly = "readonly" } })
+                    @Html.ValidationMessageFor(model => model.EMAIL, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">WEBSITE</div>
+                <div class="colinput">
+                    @Html.EditorFor(model => model.WEBSITE, new { htmlAttributes = new { @readonly = "readonly" } })
+                    @Html.ValidationMessageFor(model => model.WEBSITE, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">MÔ TẢ</div>
+                <div class="colinput">
+                    @Html.EditorFor(model => model.MO_TA, new { htmlAttributes = new { @readonly = "readonly" } })
+                    @Html.ValidationMessageFor(model => model.MO_TA, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">TÊN NHÓM KHÁCH</div>
+                <div class="colinput">
+                    @Html.EditorFor(model => model.CUSTOMER_GROUPS.TEN_NHOM_KHACH, new { htmlAttributes = new { @readonly = "readonly" } })
+                    @Html.ValidationMessageFor(model => model.CUSTOMER_GROUPS.TEN_NHOM_KHACH, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">USERNAME</div>
+                <div class="colinput">
+                    @Html.EditorFor(model => model.USER.USERNAME, new { htmlAttributes = new { @readonly = "readonly" } })
+                    @Html.ValidationMessageFor(model => model.USER.USERNAME, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="action">
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <a href="~/HopLong/CUSTOMERs/Edit/@Model.MA_KHACH_HANG" class="btn btn_icon_edit btn-default"><span class="fa icon_back fa-pencil-square-o"></span>Chỉnh sửa</a>
+                        <a href="~/HopLong/CUSTOMERs/Index" class="btn btn_icon_back btn-default"><span class="fa icon_back fa-arrow-circle-left"></span>Trở về</a>
+                    </div>
+                </div>
             </div>
         </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.DIA_CHI_CONG_TY, "ĐỊA CHỈ CÔNG TY", htmlAttributes: new { @class = "control-label col-md-5" })
-            <div class="col-md-6">
-                @Html.EditorFor(model => model.DIA_CHI_CONG_TY, new { htmlAttributes = new { @class = "form-control",@readonly="readonly" } })
-                @Html.ValidationMessageFor(model => model.DIA_CHI_CONG_TY, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.DIA_CHI_XUAT_HOA_DON, "ĐỊA CHỈ XUẤT HÓA ĐƠN", htmlAttributes: new { @class = "control-label col-md-5" })
-            <div class="col-md-6">
-                @Html.EditorFor(model => model.DIA_CHI_XUAT_HOA_DON, new { htmlAttributes = new { @class = "form-control",@readonly="readonly" } })
-                @Html.ValidationMessageFor(model => model.DIA_CHI_XUAT_HOA_DON, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.MST, "MÃ SỐ THUẾ", htmlAttributes: new { @class = "control-label col-md-5" })
-            <div class="col-md-6">
-                @Html.EditorFor(model => model.MST, new { htmlAttributes = new { @class = "form-control",@readonly="readonly" } })
-                @Html.ValidationMessageFor(model => model.MST, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.DIEN_THOAI, "ĐIỆN THOẠI", htmlAttributes: new { @class = "control-label col-md-5" })
-            <div class="col-md-6">
-                @Html.EditorFor(model => model.DIEN_THOAI, new { htmlAttributes = new { @class = "form-control",@readonly="readonly" } })
-                @Html.ValidationMessageFor(model => model.DIEN_THOAI, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.FAX, "FAX", htmlAttributes: new { @class = "control-label col-md-5" })
-            <div class="col-md-6">
-                @Html.EditorFor(model => model.FAX, new { htmlAttributes = new { @class = "form-control",@readonly="readonly" } })
-                @Html.ValidationMessageFor(model => model.FAX, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.EMAIL, "E-MAIL", htmlAttributes: new { @class = "control-label col-md-5" })
-            <div class="col-md-6">
-                @Html.EditorFor(model => model.EMAIL, new { htmlAttributes = new { @class = "form-control",@readonly="readonly" } })
-                @Html.ValidationMessageFor(model => model.EMAIL, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.WEBSITE, "WEBSITE", htmlAttributes: new { @class = "control-label col-md-5" })
-            <div class="col-md-6">
-                @Html.EditorFor(model => model.WEBSITE, new { htmlAttributes = new { @class = "form-control",@readonly="readonly" } })
-                @Html.ValidationMessageFor(model => model.WEBSITE, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.MO_TA, "MÔ TẢ", htmlAttributes: new { @class = "control-label col-md-5" })
-            <div class="col-md-6">
-                @Html.EditorFor(model => model.MO_TA, new { htmlAttributes = new { @class = "form-control",@readonly="readonly" } })
-                @Html.ValidationMessageFor(model => model.MO_TA, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.CUSTOMER_GROUPS.TEN_NHOM_KHACH, "TÊN NHÓM KHÁCH", htmlAttributes: new { @class = "control-label col-md-5" })
-            <div class="col-md-6">
-                @Html.EditorFor(model => model.CUSTOMER_GROUPS.TEN_NHOM_KHACH, new { htmlAttributes = new { @class = "form-control",@readonly="readonly" } })
-                @Html.ValidationMessageFor(model => model.MO_TA, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.USER.USERNAME, "USERNAME", htmlAttributes: new { @class = "control-label col-md-5" })
-            <div class="col-md-6">
-                @Html.EditorFor(model => model.USER.USERNAME, new { htmlAttributes = new { @class = "form-control",@readonly="readonly" } })
-                @Html.ValidationMessageFor(model => model.MO_TA, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            <div class="col-md-offset-0 col-md-1">
-                <a href="/HopLong/CUSTOMERs"><img src="~/Content/images/back_icon.png" /></a>
-            </div>
-            <div class="col-md-offset-4 col-md-1">
-                <a href="/HopLong/CUSTOMERs/Edit/@Model.MA_KHACH_HANG"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a> &nbsp;&nbsp;&nbsp;
-            </div>
-        </div>
-        
     </div>
-}  
+}

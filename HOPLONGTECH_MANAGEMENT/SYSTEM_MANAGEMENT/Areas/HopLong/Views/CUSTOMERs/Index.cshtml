@@ -4,11 +4,11 @@
     ViewBag.Title = "Index";
 }
 <link href="~/Areas/HopLong/Style/Customers/index.css" rel="stylesheet" />
-<h2 class="h2">KHÁCH HÀNG</h2>
+<h2 style="text-align:center">KHÁCH HÀNG</h2>
 
-<p>
-    <a href="/HopLong/CUSTOMERs/Create"><img src="~/Content/images/create_icon.png" /></a> &nbsp;&nbsp;&nbsp;
-</p>
+<a href="~/HopLong/CUSTOMERs/Create" class="btn create btn-default"><span class="glyphicon icon-create glyphicon-plus"></span>Thêm mới</a>
+
+
 
 <body>
     <div class="container">
@@ -98,10 +98,10 @@
                                                     @Html.DisplayFor(modelItem => item.USER.USERNAME)
                                                 </td>
                                                 <td>
-                                                    <a href="/HopLong/CUSTOMERs/Edit/@item.MA_KHACH_HANG"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a> &nbsp;&nbsp;&nbsp;
-                                                    <a href="/HopLong/CUSTOMERs/Details/@item.MA_KHACH_HANG"><i class="fa fa-info-circle" aria-hidden="true"></i></a> &nbsp;&nbsp;&nbsp;
-                                                    <a href="/HopLong/CUSTOMERs/Delete/@item.MA_KHACH_HANG"><i class="fa fa-trash-o " onclick="return confirm('Bạn có chắc muốn xóa không?')" aria-hidden="true"></i></a> &nbsp;&nbsp;&nbsp;
-                                                </td>
+                                                    <a href="/HopLong/CUSTOMERs/Edit/@item.MA_KHACH_HANG" class="btn btn_icon_edit btn-default"><span class="fa icon fa-pencil-square-o" aria-hidden="true"></span>Sửa</a> &nbsp;&nbsp;
+                                                    <a href="/HopLong/CUSTOMERs/Details/@item.MA_KHACH_HANG" class="btn btn_icon_details btn-default"><span class="fa icon fa-info-circle" aria-hidden="true"></span>Chi tiết</a> &nbsp;&nbsp;
+                                                    <a href="/HopLong/CUSTOMERs/Delete/@item.MA_KHACH_HANG" class="btn btn_icon_delete btn-default"><span class="fa icon fa-trash-o" aria-hidden="true"></span>Xóa</a> &nbsp;&nbsp;
+                                                 </td>
                                             </tr>
                                         }
                                     </table>

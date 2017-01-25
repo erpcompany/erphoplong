@@ -4,11 +4,10 @@
     ViewBag.Title = "Index";
 }
 <link href="~/Areas/HopLong/Style/CustomerGroup/index.css" rel="stylesheet" />
-<h2 class="h2">NHÓM KHÁCH HÀNG</h2>
+<h2 style="text-align:center">NHÓM KHÁCH HÀNG</h2>
+<a href="~/HopLong/CUSTOMER_GROUPS/Create" class="btn create btn-default"><span class="glyphicon icon-create glyphicon-plus"></span>Thêm mới</a>
 
-<p>
-    <a href="/HopLong/CUSTOMER_GROUPS/Create"><img src="~/Content/images/create_icon.png" /></a> &nbsp;&nbsp;&nbsp;
-</p>
+
 
 <body>
     <div class="container">
@@ -44,10 +43,10 @@
                                                     @Html.DisplayFor(modelItem => item.MO_TA)
                                                 </td>
                                                 <td>
-                                                    <a href="/HopLong/CUSTOMER_GROUPS/Edit/@item.MA_NHOM_KHACH"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a> &nbsp;&nbsp;&nbsp;
-                                                    <a href="/HopLong/CUSTOMER_GROUPS/Details/@item.MA_NHOM_KHACH"><i class="fa fa-info-circle" aria-hidden="true"></i></a> &nbsp;&nbsp;&nbsp;
-                                                    <a href="/HopLong/CUSTOMER_GROUPS/Delete/@item.MA_NHOM_KHACH"><i class="fa fa-trash-o " onclick="return confirm('Bạn có chắc muốn xóa không?')" aria-hidden="true"></i></a> &nbsp;&nbsp;&nbsp;
-                                                </td>
+                                                    <a href="/HopLong/CUSTOMER_GROUPS/Edit/@item.MA_NHOM_KHACH" class="btn btn_icon_edit btn-default"><span class="fa icon fa-pencil-square-o" aria-hidden="true"></span>Sửa</a> &nbsp;&nbsp;
+                                                    <a href="/HopLong/CUSTOMER_GROUPS/Details/@item.MA_NHOM_KHACH" class="btn btn_icon_details btn-default"><span class="fa icon fa-info-circle" aria-hidden="true"></span>Chi tiết</a> &nbsp;&nbsp;
+                                                    <a href="/HopLong/CUSTOMER_GROUPS/Delete/@item.MA_NHOM_KHACH" class="btn btn_icon_delete btn-default"><span class="fa icon fa-trash-o" aria-hidden="true"></span>Xóa</a> &nbsp;&nbsp;
+                                                 </td>
                                             </tr>
                                         }
                                     </table>

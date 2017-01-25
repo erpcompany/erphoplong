@@ -3,40 +3,46 @@
 @{
     ViewBag.Title = "Details";
 }
+<link href="~/Areas/HopLong/Style/Warehouse/WarehouseDetails.css" rel="stylesheet"/>
+<h2 style="text-align:center">Chi tiết danh sách kho</h2>
 
-<h2>Details</h2>
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    @Html.HiddenFor(model => model.MA_KHO)
 
-<div>
-    <h4>Warehouse</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.TEN_KHO)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.TEN_KHO)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.MO_TA)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.MO_TA)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.COMPANY.COMPANY_NAME)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.COMPANY.COMPANY_NAME)
-        </dd>
-
-    </dl>
-</div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.MA_KHO }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
+    <div id="container_cate">
+        <div class="editcontent">
+            <div class="row">
+                <div class="col">TÊN KHO</div>
+                <div class="colinput">
+                    @Html.EditorFor(model => model.TEN_KHO, new { htmlAttributes = new { @readonly = "readonly" } })
+                    @Html.ValidationMessageFor(model => model.TEN_KHO, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">MÔ TẢ</div>
+                <div class="colinput">
+                    @Html.EditorFor(model => model.MO_TA, new { htmlAttributes = new { @readonly = "readonly" } })
+                    @Html.ValidationMessageFor(model => model.MO_TA, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">TÊN CÔNG TY</div>
+                <div class="colinput">
+                    @Html.EditorFor(model => model.COMPANY.COMPANY_NAME, new { htmlAttributes = new { @readonly = "readonly" } })
+                    @Html.ValidationMessageFor(model => model.COMPANY.COMPANY_NAME, "", new { @class = "text-danger" })
+                </div>
+            </div>
+        </div>
+        <div class="action">
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <a href="~/HopLong/Warehouses/Edit/@Model.MA_KHO" class="btn btn_icon_edit btn-default"><span class="fa icon_back fa-pencil-square-o"></span>Chỉnh sửa</a>
+                    <a href="~/HopLong/Warehouses/Index" class="btn btn_icon_back btn-default"><span class="fa icon_back fa-arrow-circle-left"></span>Trở về</a>
+                </div>
+            </div>
+        </div>
+    </div>
+}
