@@ -6,7 +6,7 @@
 <head>
     <link href="~/Content/css/Users/userIndex.css" rel="stylesheet" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    
+
 </head>
 
 <link href="~/Content/css/Users/userIndex.css" rel="stylesheet" />
@@ -25,8 +25,9 @@
                         <div class="main">
                             <table class="span12" border="1">
                                 <div class="bg tablescroll">
-                                    <table class="table table-bordered table-striped">
+                                    <table class="table table-bordered table-condensed table-striped" style="border-collapse:collapse;">
                                         <tr class="filters">
+                                            <th>&nbsp;</th>
                                             <th>Username</th>
                                             <th>Mật khẩu</th>
                                             <th>Họ và tên</th>
@@ -34,15 +35,14 @@
                                             <th>Avatar</th>
                                             <th>Là quản trị viên</th>
                                             <th>Hoạt động</th>
-                                            <th>
-                                                <em class="fa fa-cog"></em>
-                                            </th>
+                                            <th>Tác vụ</th>
                                         </tr>
-
                                         @foreach (var item in Model)
+
                                         {
-                                            
-                                            <tr>
+
+                                            <tr data-toggle="collapse" data-target="#demo-@item.USER_ID" class="accordion-toggle">
+                                                <td><button class="btn btn-default btn-xs"><span class="glyphicon glyphicon-eye-open"></span></button></td>
                                                 <td class="paddingleft">
                                                     @Html.DisplayFor(modelItem => item.USERNAME)
                                                 </td>
@@ -65,13 +65,81 @@
                                                     @Html.DisplayFor(modelItem => item.ALLOWED)
                                                 </td>
                                                 <td>
-                                                    <a href="/USERs/Edit/@item.USER_ID"  class="btn btn_icon_edit btn-default"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>Sửa</a> &nbsp;&nbsp;
-                                                    <a href="/USERs/Details/@item.USER_ID"  class="btn btn_icon_details btn-default"><i class="fa fa-info-circle" aria-hidden="true"></i>Chi tiết</a> &nbsp;&nbsp;
-                                                    <a href="/USERs/Delete/@item.USER_ID"  class="btn btn_icon_delete btn-default"><i class="fa fa-trash-o" aria-hidden="true"></i>Xóa</a> &nbsp;&nbsp;
-                                                    <a href="/USER_PERMISSIONS/Index/@item.USER_ID"  class="btn btn_icon_permission btn-default"><i class="fa fa-cog" aria-hidden="true"></i>Phân quyền</a> &nbsp;&nbsp;
-                                                    <a href="/USER_METAS/Create"  class="btn btn_icon_meta_create btn-default"><i class="fa fa-user-plus" aria-hidden="true"></i>Thêm thông tin cá nhân</a> &nbsp;&nbsp;
-                                                    <a href="/USER_METAS/Index/@item.USER_ID"  class="btn btn_icon_meta btn-default"><i class="fa fa-user" aria-hidden="true"></i>Chi tiết thông tin cá nhân</a> &nbsp;&nbsp;
-                                            </tr>                               
+                                                    <a href="/USERs/Edit/@item.USER_ID" class="btn btn_icon_edit btn-default"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>Sửa</a> &nbsp;&nbsp;
+                                                    <a href="/USERs/Details/@item.USER_ID" class="btn btn_icon_details btn-default"><i class="fa fa-info-circle" aria-hidden="true"></i>Chi tiết</a> &nbsp;&nbsp;
+                                                    <a href="/USERs/Delete/@item.USER_ID" class="btn btn_icon_delete btn-default"><i class="fa fa-trash-o" aria-hidden="true"></i>Xóa</a> &nbsp;&nbsp;
+                                                    <a href="/USER_PERMISSIONS/Index/@item.USER_ID" class="btn btn_icon_permission btn-default"><i class="fa fa-cog" aria-hidden="true"></i>Phân quyền</a> &nbsp;&nbsp;
+                                                    <a href="/USER_METAS/Create" class="btn btn_icon_meta_create btn-default"><i class="fa fa-user-plus" aria-hidden="true"></i>Thêm thông tin cá nhân</a> &nbsp;&nbsp;
+                                                    <a href="/USER_METAS/Index/@item.USER_ID" class="btn btn_icon_meta btn-default"><i class="fa fa-user" aria-hidden="true"></i>Chi tiết thông tin cá nhân</a> &nbsp;&nbsp;
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td colspan="8"  class="hiddenRow" style="border: 0px;">
+                                                    <div id="demo-@item.USER_ID" class="accordian-body collapse">
+                                                        <div class="container">
+                                                            <div class="row">
+                                                                <div class="col-md-7 ">
+                                                                    <div class="panel panel-default">
+                                                                        <div class="panel-body" style="height:auto;padding:0px;">
+                                                                            <div class="box box-info" style="height:auto;">
+
+                                                                                <div class="box-body">
+                                                                                    <div class="col-sm-7">
+                                                                                        <div align="center">
+                                                                                            <img style="float:right;width:100px;height:100px;" alt="User Pic" src="/Content/images/@Session["AVATAR"]" id="profile-image1" class="img-circle img-responsive">
+
+                                                                                            <input id="profile-image-upload" class="hidden" type="file">
+
+                                                                                            <!--Upload Image Js And Css-->
+                                                                                        </div>
+
+                                                                                        <br>
+
+                                                                                        <!-- /input-group -->
+                                                                                    </div>
+
+                                                                                    <div class="clearfix"></div>
+                                                                                    <hr style="margin:5px 0 5px 0;">
+
+
+                                                                                    <div class="col-sm-5 col-xs-6 tital text_font">Họ và Tên :</div><div class="col-sm-7 col-xs-6">@item.USERNAME</div>
+                                                                                    <div class="clearfix" style="padding: 5px"></div>
+                                                                                    <div class="bot-border"></div>
+                                                                                    <div class="col-sm-5 col-xs-6 tital text_font">Ngày sinh:</div><div class="col-sm-7"></div>
+                                                                                    <div class="clearfix" style="padding: 5px"></div>
+                                                                                    <div class="bot-border"></div>
+                                                                                    <div class="col-sm-5 col-xs-6 tital text_font">Giới tính:</div><div class="col-sm-7"></div>
+                                                                                    <div class="clearfix" style="padding: 5px"></div>
+                                                                                    <div class="bot-border"></div>
+                                                                                    <div class="col-sm-5 col-xs-6 tital text_font">Số điện thoại:</div><div class="col-sm-7"></div>
+                                                                                    <div class="clearfix" style="padding: 5px"></div>
+                                                                                    <div class="bot-border"></div>
+                                                                                    <div class="col-sm-5 col-xs-6 tital text_font">Email:</div><div class="col-sm-7"></div>
+                                                                                    <div class="clearfix" style="padding: 5px"></div>
+                                                                                    <div class="bot-border"></div>
+                                                                                    <div class="col-sm-5 col-xs-6 tital text_font">Ngày vào công ty:</div><div class="col-sm-7"></div>
+                                                                                    <div class="clearfix" style="padding: 5px"></div>
+                                                                                    <div class="bot-border"></div>
+                                                                                    <div class="col-sm-5 col-xs-6 tital text_font">Thâm niên:</div><div class="col-sm-7"></div>
+                                                                                    <div class="clearfix" style="padding: 5px"></div>
+                                                                                    <div class="bot-border"></div>
+                                                                                    <div class="col-sm-5 col-xs-6 tital text_font">Quê quán:</div><div class="col-sm-7"></div>
+                                                                                    <div class="clearfix" style="padding: 5px"></div>
+                                                                                    <div class="bot-border"></div>
+                                                                                    <div class="col-sm-5 col-xs-6 tital text_font">Trình độ học vấn:</div><div class="col-sm-7"></div>
+
+                                                                                    <!-- /.box-body -->
+                                                                                </div>
+                                                                                <!-- /.box -->
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            </tr>
                                         }
                                     </table>
                                 </div>

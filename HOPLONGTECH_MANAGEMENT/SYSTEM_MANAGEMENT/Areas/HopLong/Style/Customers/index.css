@@ -1,8 +1,10 @@
 ﻿*{
     margin: 0px;
     padding: 0px;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 14px;    
 }
-.h2{
+.h1{
     text-align: center;
 }
 a{
@@ -48,30 +50,70 @@ a{
 }
 .main td .details{
     padding: 0px 4px 0px 4px;
-    border-left: 2px solid black;
-    border-right: 2px solid black;
+    border-left: 1px solid #ddd;
+    border-right: 1px solid #ddd;
 }
 .main td p a:hover{
     color: blue;
     font-weight: bold;
 }
-.main td .fa{
-    margin-left: 20px;
-}
+
 th{
     color: black;
 }
 .table-bordered>tbody>tr>th{
-    border: 1px solid black;
-    background:  #4285F4;
+    border: 1px solid #ddd;
+    background: #5d91ed;
     color: white;
+    font-family: 'Times New Roman', Times, serif;
 }
 .table-bordered>tbody>tr>td{
-    border: 1px solid black;
+    border: 1px solid #ddd;
+    vertical-align: middle;
+    font-family: 'Times New Roman', Times, serif;
 }
-.fa{
-    font-size: 25px;
-}
+
 a img{
     height: 30px;
+}
+.panel-primary{
+    border: none;
+}
+.main td img{
+    height: 50px;
+    width: 50px;
+}
+.main td .image{
+    width: 25px;
+    height: 25px;
+    margin-bottom: 10px;
+}
+.icon-create{
+    margin-right: 5px;
+}
+.icon-list{
+    font-size: 25px;
+}
+.create{
+    background: #449D44;
+    color: white;
+    font-size: 16px !important;
+}
+.icon{
+    padding-right: 5px;
+}
+.btn_icon_edit{
+    background: #449D44;
+    color: white;
+}
+.btn_icon_details{
+    background: #4862A3;
+    color: white;
+}
+.btn_icon_delete{
+    background: #DE524D;
+    color: white;
+}
+.btn-default{
+    font-size: 11px;
 }

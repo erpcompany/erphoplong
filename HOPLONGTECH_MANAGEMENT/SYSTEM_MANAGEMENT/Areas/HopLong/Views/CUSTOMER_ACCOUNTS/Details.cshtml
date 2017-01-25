@@ -9,54 +9,54 @@
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    @Html.HiddenFor(model => model.MA_KHACH_HANG)
 
-    <div class="form-horizontal">
-        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-        @Html.HiddenFor(model => model.MA_KHACH_HANG)
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.SO_TAI_KHOAN, "TÊN KHÁCH HÀNG", htmlAttributes: new { @class = "control-label col-md-5" })
-            <div class="col-md-6">
-                @Html.EditorFor(model => model.SO_TAI_KHOAN, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+    <div id="container_cate">
+        <div class="editcontent">
+            <div class="row">
+                <div class="col">TÊN CÔNG TY</div>
+                <div class="colinput">
+                    @Html.EditorFor(model => model.SO_TAI_KHOAN, new { htmlAttributes = new { @readonly = "readonly" } })
+                    @Html.ValidationMessageFor(model => model.SO_TAI_KHOAN, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">GHI CHÚ</div>
+                <div class="colinput">
+                    @Html.EditorFor(model => model.TEN_NGAN_HANG, new { htmlAttributes = new { @readonly = "readonly" } })
+                    @Html.ValidationMessageFor(model => model.TEN_NGAN_HANG, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">TÊN NHÓM CÔNG TY</div>
+                <div class="colinput">
+                    @Html.EditorFor(model => model.CHI_NHANH, new { htmlAttributes = new { @readonly = "readonly" } })
+                    @Html.ValidationMessageFor(model => model.CHI_NHANH, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">USERNAME</div>
+                <div class="colinput">
+                    @Html.EditorFor(model => model.TINH_TP, new { htmlAttributes = new { @readonly = "readonly" } })
+                    @Html.ValidationMessageFor(model => model.TINH_TP, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">CÔNG TY</div>
+                <div class="colinput">
+                    @Html.EditorFor(model => model.CUSTOMER.TEN_KHACH_HANG, new { htmlAttributes = new { @readonly = "readonly" } })
+                    @Html.ValidationMessageFor(model => model.CUSTOMER.TEN_KHACH_HANG, "", new { @class = "text-danger" })
+                </div>
             </div>
         </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.TEN_NGAN_HANG, "ĐỊA CHỈ CÔNG TY", htmlAttributes: new { @class = "control-label col-md-5" })
-            <div class="col-md-6">
-                @Html.EditorFor(model => model.TEN_NGAN_HANG, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+        <div class="action">
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <a href="~/HopLong/CUSTOMER_ACCOUNTS/Edit/@Model.MA_KHACH_HANG" class="btn btn_icon_edit btn-default"><span class="fa icon_back fa-pencil-square-o"></span>Chỉnh sửa</a>
+                    <a href="~/HopLong/CUSTOMER_ACCOUNTS/Index" class="btn btn_icon_back btn-default"><span class="fa icon_back fa-arrow-circle-left"></span>Trở về</a>
+                </div>
             </div>
         </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.CHI_NHANH, "ĐỊA CHỈ XUẤT HÓA ĐƠN", htmlAttributes: new { @class = "control-label col-md-5" })
-            <div class="col-md-6">
-                @Html.EditorFor(model => model.CHI_NHANH, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.TINH_TP, "MÃ SỐ THUẾ", htmlAttributes: new { @class = "control-label col-md-5" })
-            <div class="col-md-6">
-                @Html.EditorFor(model => model.TINH_TP, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.CUSTOMER.TEN_KHACH_HANG, "ĐIỆN THOẠI", htmlAttributes: new { @class = "control-label col-md-5" })
-            <div class="col-md-6">
-                @Html.EditorFor(model => model.CUSTOMER.TEN_KHACH_HANG, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
-            </div>
-        </div>
-
-        <div class="form-group">
-            <div class="col-md-offset-0 col-md-1">
-                <a href="/HopLong/CUSTOMER_ACCOUNTS"><img src="~/Content/images/back_icon.png" /></a>
-            </div>
-            <div class="col-md-offset-4 col-md-1">
-                <a href="/HopLong/CUSTOMER_ACCOUNTS/Edit/@Model.MA_KHACH_HANG"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a> &nbsp;&nbsp;&nbsp;
-            </div>
-        </div>
-
     </div>
-}  
+}

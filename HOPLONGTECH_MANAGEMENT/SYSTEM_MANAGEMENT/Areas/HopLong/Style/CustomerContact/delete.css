@@ -2,33 +2,71 @@
     margin: 0px;
     padding: 0px;
 }
-.h2{
-    text-align: center;
+h2{
+    margin: 0px;
+    font-family: Arial, Helvetica, sans-serif;
 }
-.form-horizontal{
-    border: 10px solid #4285F4;
-    border-radius: 20px;
-    padding-top: 10px;
-    width: 600px;
-    margin: auto
+form #container_cate{
+    width: 50%;
+    margin: auto;
+    height: 570px;
+    padding-left: 10px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    box-shadow: 0px 1px 10px 3px #888888;
+    font-family: Arial, Helvetica, sans-serif;
 }
-.form-group:last-child{
-    border-top: 10px solid #4285F4;
-    height: 40px;
-}
-.form-group a img{
-    height: 35px;
+.editcontent{
+    width: 100%;
+    height: auto;
     float: left;
+    margin: auto;
 }
-#submit{
-    background: url(../../../../Content/images/delete_icon.png) no-repeat ;
-    background-size: 100%;
-    border: none;
-    float: right;
-    height: 35px;
-    width: 35px;
+.action{
+    float: left;
+    width: 65%;
+    height: auto;
+    margin: auto;
+    margin-top: 20px;
 }
-.fa{
-    font-size: 35px;
-    margin-top: 3px;
+.editcontent .row{
+    width: 100%;
+    height: 50px;
+    padding-top: 20px;
+    padding-left: 10px;
+}
+.editcontent .row .col{
+    display: inline-block;
+    width: 30%;
+    float: left;
+    height: 100%;
+    padding-top: 7px;
+}
+.editcontent .row .colinput{
+    display: inline-block;
+    width: 69%;
+    float: left;
+    height: 100%;
+}
+.editcontent .row .colinput input{
+    width: 90%;
+    height: 30px;
+    padding-left: 5px;
+}
+.form-group .btn_save{
+    padding-right: 5px;
+}
+.col-md-offset-2{
+    text-align: right;
+}
+.btn_icon_back{
+    background: #ACBAC3;
+    color: white;
+}
+.icon_back{
+    padding-right: 5px;
+}
+.btn_icon_delete{
+    background: red;
+    color: white;
 }

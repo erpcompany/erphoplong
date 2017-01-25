@@ -3,43 +3,59 @@
 @{
     ViewBag.Title = "Index";
 }
+<link href="~/Areas/HopLong/Style/Warehouse/WarehouseIndex.css" rel="stylesheet"/>
+<h2 style="text-align:center">Danh sách kho</h2>
 
-<h2>Index</h2>
+<a href="~/HopLong/Warehouses/Create" class="btn create btn-default"><span class="glyphicon icon-create glyphicon-plus"></span>Thêm mới</a>
+<body>
+    <div class="container">
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.TEN_KHO)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.MO_TA)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.COMPANY.COMPANY_NAME)
-        </th>
-        <th></th>
-    </tr>
+        <div class="creatediv1 marginTop30">
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.TEN_KHO)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.MO_TA)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.COMPANY.COMPANY_NAME)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.MA_KHO }) |
-            @Html.ActionLink("Details", "Details", new { id=item.MA_KHO }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.MA_KHO })
-        </td>
-    </tr>
-}
+            <div class="row margin-top-50">
+                <div class="col-md-12">
+                    <div class="panel panel-primary filterable">
+                        <div class="main">
+                            <table class="span12" border="1">
+                                <div class="bg tablescroll">
+                                    <table class="table table-bordered table-striped">
+                                        <tr class="filters">
+                                            <th>Tên kho</th>
+                                            <th>Mô tả</th>
+                                            <th>Tên công ty</th>
+                                            <th>
+                                                Tác vụ
+                                            </th>
+                                        </tr>
 
-</table>
+                                        @foreach (var item in Model)
+                                        {
+                                            <tr>
+                                                <td>
+                                                    @Html.DisplayFor(modelItem => item.TEN_KHO)
+                                                </td>
+                                                <td>
+                                                    @Html.DisplayFor(modelItem => item.MO_TA)
+                                                </td>
+                                                <td>
+                                                    @Html.DisplayFor(modelItem => item.COMPANY.COMPANY_NAME)
+                                                </td>
+                                                <td>
+                                                    <a href="/HopLong/Warehouses/Edit/@item.MA_KHO" class="btn btn_icon_edit btn-default"><span class="fa icon fa-pencil-square-o" aria-hidden="true"></span>Sửa</a> &nbsp;&nbsp;
+                                                    <a href="/HopLong/Warehouses/Details/@item.MA_KHO" class="btn btn_icon_details btn-default"><span class="fa icon fa-info-circle" aria-hidden="true"></span>Chi tiết</a> &nbsp;&nbsp;
+                                                    <a href="/HopLong/Warehouses/Delete/@item.MA_KHO" class="btn btn_icon_delete btn-default"><span class="fa icon fa-trash-o" aria-hidden="true"></span>Xóa</a> &nbsp;&nbsp;
+                                                </td>
+                                            </tr>
+                                        }
+                                    </table>
+                                </div>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+</body>

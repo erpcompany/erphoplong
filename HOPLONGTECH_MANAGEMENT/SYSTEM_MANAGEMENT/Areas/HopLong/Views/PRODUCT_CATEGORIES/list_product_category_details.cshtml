@@ -3,38 +3,70 @@
 @{
     ViewBag.Title = "list_product_category_details";
 }
+<link href="~/Areas/HopLong/Style/Product_Cate/listproduct_cate.css" rel="stylesheet"/>
+<h2 style="text-align:center">Chi tiết danh sách nhóm hàng</h2>
 
-<h2>list_product_category_details</h2>
+<a href="~/HopLong/PRODUCT_CATEGORY_DETAILS/Create" class="btn create btn-default"><span class="glyphicon icon-create glyphicon-plus"></span>Thêm mới</a>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            Mã chi tiết
-        </th>
-        <th>
-           Mô tả
-        </th>
-        <th></th>
-    </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.MA_CHI_TIET_NHOM_HANG)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.MO_TA)
-        </td>
-        <td>
-            <a href="/HopLong/PRODUCT_CATEGORY_DETAILS/Edit/@item.MA_CHI_TIET_NHOM_HANG"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a> &nbsp;&nbsp;&nbsp;
-            <a href="/HopLong/PRODUCT_CATEGORY_DETAILS/Details/@item.MA_CHI_TIET_NHOM_HANG"><i class="fa fa-info-circle" aria-hidden="true"></i></a> &nbsp;&nbsp;&nbsp;
-            <a href="/HopLong/PRODUCT_CATEGORY_DETAILS/Delete/@item.MA_CHI_TIET_NHOM_HANG"><i class="fa fa-trash-o " aria-hidden="true"></i></a> &nbsp;&nbsp;&nbsp;
-            <a href="/HopLong/PRODUCTs/Index/@item.MA_CHI_TIET_NHOM_HANG"><i class="fa fa-list" aria-hidden="true"></i></a> &nbsp;&nbsp;&nbsp;
-        </td>
-    </tr>
-}
 
-</table>
+<body>
+    <div class="container">
+
+        <div class="creatediv1 marginTop30">
+
+            <div class="row margin-top-50">
+                <div class="col-md-12">
+                    <div class="panel panel-primary filterable">
+                        <div class="main">
+                            <table class="span12" border="1">
+                                <div class="bg tablescroll">
+                                    <table class="table table-bordered table-condensed table-striped" style="border-collapse:collapse;">
+                                            <tr class="filters">
+                                                <th>&nbsp;</th>
+                                                <th>
+                                                    Mã chi tiết
+                                                </th>
+                                                <th>
+                                                    Mô tả
+                                                </th>
+                                                <th> Tác vụ</th>
+                                            </tr>
+                                            @foreach (var item in Model)
+                                            {
+                                                <tr data-toggle="collapse" data-target="#demo-@item.MA_CHI_TIET_NHOM_HANG" class="accordion-toggle">
+                                                    <td><button class="btn btn-default btn-xs"><span class="glyphicon glyphicon-eye-open"></span></button></td>
+                                                    <td>
+                                                        @item.MA_CHI_TIET_NHOM_HANG
+                                                    </td>
+                                                    <td>
+                                                        @item.MO_TA
+                                                    </td>
+                                                    <td>
+                                                        <a href="/HopLong/PRODUCT_CATEGORY_DETAILS/Edit/@item.MA_CHI_TIET_NHOM_HANG" class="btn btn_icon_edit btn-default"><span class="fa icon fa-pencil-square-o" aria-hidden="true"></span>Sửa</a> &nbsp;&nbsp;
+                                                        <a href="/HopLong/PRODUCT_CATEGORY_DETAILS/Details/@item.MA_CHI_TIET_NHOM_HANG" class="btn btn_icon_details btn-default"><span class="fa icon fa-info-circle" aria-hidden="true"></span>Chi tiết</a> &nbsp;&nbsp;
+                                                        <a href="/HopLong/PRODUCT_CATEGORY_DETAILS/Delete/@item.MA_CHI_TIET_NHOM_HANG" class="btn btn_icon_delete btn-default"><span class="fa icon fa-trash-o" aria-hidden="true"></span>Xóa</a> &nbsp;&nbsp;
+                                                        <a href="/HopLong/PRODUCTs/Index/@item.MA_CHI_TIET_NHOM_HANG" class="btn btn_icon_list btn-default"><span class="fa icon fa-list" aria-hidden="true"></span>Danh sách chi tiết nhóm hàng</a> &nbsp;&nbsp;
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td colspan="6" class="hiddenRow"><div id="demo-@item.MA_CHI_TIET_NHOM_HANG" class="accordian-body collapse">@item.MA_CHI_TIET_NHOM_HANG</div></td>
+                                                </tr>
+                                            }
+                                    </table>
+                                </div>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+</body>
+
+
+
+
+
